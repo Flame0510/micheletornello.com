@@ -15,7 +15,7 @@ export const AcademyPreview = () => {
 
   return (
     <section id="academy" className="py-24 px-6 max-w-[1120px] mx-auto overflow-hidden relative">
-      <SectionTitle prefix="06" title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="07" title={t.title} subtitle={t.subtitle} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left: text */}

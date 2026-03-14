@@ -7,6 +7,7 @@ import { Badge } from "../ui/Badge";
 import { fadeUp, stagger } from "../../lib/animations";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 import { caseStudies } from "@/lib/case-studies";
@@ -29,13 +30,14 @@ export const Portfolio = () => {
         {caseStudies.map((study, i) => {
           const project = t.items[i];
           const title = study.content[lang].title;
+          const hasCaseStudy = study.slug !== "pong";
 
           return (
             <motion.div key={study.slug} variants={fadeUp}>
               <Card className="h-full group p-0 overflow-hidden flex flex-col">
-                <div className={`h-48 bg-gradient-to-br ${study.gradient} p-8 flex items-center justify-center relative overflow-hidden`}>
-                  <div className="text-2xl font-bold text-text-muted/20 opacity-30 select-none">IMAGE PLACEHOLDER</div>
-                  <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="h-48 p-0 flex items-center justify-center relative overflow-hidden">
+                  <Image src={study.image} alt={title} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <ExternalLink size={32} className="text-white" />
                   </div>
                 </div>
@@ -50,12 +52,14 @@ export const Portfolio = () => {
                   </div>
                   <h3 className="text-2xl font-bold">{title}</h3>
                   <p className="text-text-muted leading-relaxed">{project.description}</p>
-                  <Link
-                    href={`/portfolio/${study.slug}`}
-                    className="text-sm text-accent/60 hover:text-accent transition-colors font-mono mt-auto flex items-center gap-1 group/link"
-                  >
-                    Case study <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
+                  {hasCaseStudy ? (
+                    <Link
+                      href={`/portfolio/${study.slug}`}
+                      className="text-sm text-accent/60 hover:text-accent transition-colors font-mono mt-auto flex items-center gap-1 group/link"
+                    >
+                      Case study <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : null}
                 </div>
               </Card>
             </motion.div>
