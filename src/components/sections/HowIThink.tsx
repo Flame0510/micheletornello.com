@@ -1,8 +1,18 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
 import { useLang } from "@/lib/LanguageContext";
+
+const letterVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.05 } },
+};
+
+const wordVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.05 } },
+};
 
 export const HowIThink = () => {
   const { lang } = useLang();
@@ -61,29 +71,47 @@ export const HowIThink = () => {
       <div className="space-y-12">
         {t.principles.map((p, i) => (
           <motion.div
-            key={i}
+            key={`${p.num}-${i}`}
             className="flex gap-8 items-start"
-            initial={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.45, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span
-              className="font-display shrink-0 select-none"
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                color: "#1A1A1A",
-                lineHeight: 1,
-                letterSpacing: "-0.02em",
-                minWidth: "3rem",
-              }}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={p.num}
+                className="font-display shrink-0 select-none"
+                style={{
+                  fontSize: "clamp(2rem, 4vw, 3rem)",
+                  color: "#1A1A1A",
+                  lineHeight: 1,
+                  letterSpacing: "-0.02em",
+                  minWidth: "3rem",
+                }}
+                variants={wordVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.6 }}
+              >
+                {p.num.split("").map((char, idx) => (
+                  <motion.span key={`${p.num}-${idx}`} variants={letterVariants}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.span>
+            </AnimatePresence>
+
+            <motion.div
+              className="space-y-3 pt-1"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
             >
-              {p.num}
-            </span>
-            <div className="space-y-3 pt-1">
               <h3 className="text-xl md:text-2xl font-semibold text-text-main leading-snug">{p.title}</h3>
               <p className="text-text-muted leading-relaxed text-lg">{p.body}</p>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>

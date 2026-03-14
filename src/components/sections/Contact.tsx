@@ -15,7 +15,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-24 px-6 max-w-4xl mx-auto overflow-hidden text-center">
-      <SectionTitle title={t.title} subtitle={`${t.subtitle} ${t.note}`} className="text-center flex flex-col items-center" />
+      <SectionTitle prefix="08" title={t.title} subtitle={`${t.subtitle} ${t.note}`} className="text-center flex flex-col items-center" />
 
       <motion.div
         variants={fadeUp}

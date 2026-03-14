@@ -68,7 +68,7 @@ export const WhatIBuild = () => {
 
   return (
     <section id="services" className="py-24 px-6 md:px-12 max-w-[1120px] mx-auto">
-      <SectionTitle prefix="03" title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="04" title={t.title} subtitle={t.subtitle} />
 
       <div className="space-y-px" style={{ border: "1px solid #1A1A1A", borderRadius: "12px", overflow: "hidden" }}>
         {t.items.map((item, i) => (

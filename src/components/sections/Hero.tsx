@@ -1,9 +1,17 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { useLang } from "@/lib/LanguageContext";
 
 export const Hero = () => {
   const { lang } = useLang();
+  const heroRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   const content = {
     it: {
@@ -23,12 +31,14 @@ export const Hero = () => {
   const t = content[lang];
 
   return (
-    <section
+    <motion.section
+      ref={heroRef}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
         backgroundImage: "url(/desk-setup.png)",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPositionX: "center",
+        backgroundPositionY: bgY,
       }}
     >
       <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #060606 0%, rgba(6,6,6,0.5) 50%, rgba(6,6,6,0.3) 100%)", zIndex: 0 }} />
@@ -96,6 +106,6 @@ export const Hero = () => {
           <span className="text-text-muted text-xs">↓</span>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };

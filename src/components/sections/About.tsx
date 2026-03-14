@@ -29,7 +29,7 @@ export const About = () => {
   return (
     <section id="about" className="py-24 px-6 md:px-12">
       <div className="max-w-[1120px] mx-auto">
-        <SectionTitle prefix="01" title={t.title} />
+        <SectionTitle prefix="02" title={t.title} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <motion.div
