@@ -31,7 +31,7 @@ export const Hero = () => {
           ))}
         </h1>
 
-        <p className="text-xl md:text-2xl text-text-muted font-medium">
+        <p className="text-xl md:text-2xl text-[#ADADAD] font-medium">
           {bio.role}
         </p>
 

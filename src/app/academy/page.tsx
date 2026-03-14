@@ -71,11 +71,11 @@ export default function AcademyPage() {
                   <div className="pt-6 border-t border-border flex flex-col gap-2">
                     <Button variant="ghost" disabled className="text-xs justify-between group/btn px-2">
                       <span className="flex items-center gap-2">Slides & Risorse <ExternalLink size={12} /></span>
-                      <span className="text-[10px] opacity-50">Coming soon</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-surface border border-border text-text-muted">coming soon</span>
                     </Button>
                     <Button variant="ghost" disabled className="text-xs justify-between group/btn px-2">
                       <span className="flex items-center gap-2">Repository <ExternalLink size={12} /></span>
-                      <span className="text-[10px] opacity-50">Coming soon</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-surface border border-border text-text-muted">coming soon</span>
                     </Button>
                   </div>
                 </div>

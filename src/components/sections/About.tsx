@@ -12,10 +12,10 @@ export const About = () => {
     <section id="about" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
       <SectionTitle 
         title="Chi Sono" 
-        subtitle="Un viaggio tra bit e architetture scalabili." 
+        subtitle="Dal codice alla strategia di prodotto." 
       />
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-12">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -24,11 +24,18 @@ export const About = () => {
           className="space-y-6 text-lg text-text-muted leading-relaxed"
         >
           <p>{bio.description}</p>
-          <div className="flex items-center gap-4 py-4 border-l-2 border-accent pl-6 bg-accent/5 rounded-r-xl">
-            <span className="text-sm font-mono text-accent uppercase tracking-widest">
+
+          {/* Percorso formativo — verticale su mobile per evitare overflow */}
+          <div className="flex flex-col gap-3 py-4 border-l-2 border-accent pl-6 bg-accent/5 rounded-r-xl">
+            <span className="text-sm font-mono text-accent uppercase tracking-widest mb-1">
               Percorso
             </span>
-            <span className="text-text-main font-medium">{bio.path}</span>
+            {bio.education.map((step, i) => (
+              <div key={i} className="flex flex-col">
+                <span className="text-text-main font-medium text-base">{step.label}</span>
+                {step.detail && <span className="text-text-muted text-sm">{step.detail}</span>}
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -50,7 +57,8 @@ export const About = () => {
             />
           </div>
 
-          <Card className="font-mono text-sm bg-surface-hover/50 backdrop-blur-sm group">
+          {/* Terminal card — with mb on tablet */}
+          <Card className="font-mono text-sm bg-surface-hover/50 backdrop-blur-sm group mt-2 lg:mt-0">
             <div className="flex gap-2 mb-4 opacity-50">
               <div className="w-3 h-3 rounded-full bg-red-500" />
               <div className="w-3 h-3 rounded-full bg-yellow-500" />

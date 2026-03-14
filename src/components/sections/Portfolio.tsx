@@ -38,7 +38,7 @@ export const Portfolio = () => {
               <div className="p-8 space-y-4 flex-grow">
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-[10px]">
+                    <Badge key={tech} variant="outline" className="text-xs">
                       {tech}
                     </Badge>
                   ))}
