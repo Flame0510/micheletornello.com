@@ -41,7 +41,7 @@ export default function AcademyPage() {
             </h4>
             <ul className="space-y-3 text-sm text-text-muted">
               <li>• A.A. 2024 / 2025</li>
-              <li>• Catania / Online</li>
+              <li>• Catania · Caltagirone · Palermo</li>
               <li>• Laboratori pratici</li>
               <li>• Focus sul mercato</li>
             </ul>
