@@ -31,11 +31,11 @@ export const Hero = () => {
           src="/desk-setup.png"
           alt="Michele's workspace"
           fill
-          className="object-cover object-center opacity-40"
+          className="object-cover object-center opacity-70"
           priority
         />
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/60 to-[#060606]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/30 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/70 via-transparent to-transparent" style={{ height: '8rem' }} />
       </div>
 
