@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const MTLogo = () => (
   <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,24 +19,10 @@ const navLinks = [
 ];
 
 export const FloatingNav = () => {
-  const [visible, setVisible] = useState(true);
-  const lastScrollY = useRef(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-
-      if (currentY < 50) {
-        setVisible(true);
-      } else if (currentY > lastScrollY.current + 5) {
-        setVisible(false);
-      } else if (currentY < lastScrollY.current - 5) {
-        setVisible(true);
-      }
-
-      lastScrollY.current = currentY;
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -47,39 +33,40 @@ export const FloatingNav = () => {
   };
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.nav
-          initial={{ y: -80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -80, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 py-6"
-        >
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Home">
-            <MTLogo />
-          </button>
+    <motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 transition-all duration-300"
+      style={{
+        paddingTop: scrolled ? "14px" : "24px",
+        paddingBottom: scrolled ? "14px" : "24px",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
+        background: scrolled ? "rgba(6,6,6,0.7)" : "transparent",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.04)" : "none",
+      }}
+    >
+      <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Home">
+        <MTLogo />
+      </button>
 
-          <div className="flex items-center">
-            {navLinks.map((link, index) => (
-              <div key={link.label} className="flex items-center">
-                <button
-                  onClick={() => handleClick(link.href)}
-                  className="font-mono text-sm text-text-muted hover:text-text-main transition-colors duration-200"
-                  style={{ fontSize: "0.8125rem", letterSpacing: "0.02em" }}
-                >
-                  {link.label}
-                </button>
-                {index < navLinks.length - 1 ? (
-                  <span className="mx-3 font-mono text-text-muted" style={{ fontSize: "0.8125rem" }}>
-                    ·
-                  </span>
-                ) : null}
-              </div>
-            ))}
+      <div className="flex items-center">
+        {navLinks.map((link, index) => (
+          <div key={link.label} className="flex items-center">
+            <button
+              onClick={() => handleClick(link.href)}
+              className="font-mono text-sm text-text-muted hover:text-text-main transition-colors duration-200"
+              style={{ fontSize: "0.8125rem", letterSpacing: "0.02em" }}
+            >
+              {link.label}
+            </button>
+            {index < navLinks.length - 1 && (
+              <span className="mx-3 font-mono text-text-muted" style={{ fontSize: "0.8125rem" }}>·</span>
+            )}
           </div>
-        </motion.nav>
-      )}
-    </AnimatePresence>
+        ))}
+      </div>
+    </motion.nav>
   );
 };

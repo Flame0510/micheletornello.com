@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/sections/Navbar";
+import { FloatingNav } from "@/components/sections/FloatingNav";
 import { Footer } from "@/components/sections/Footer";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -19,7 +19,7 @@ export default function AcademyPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <FloatingNav />
 
       <section className="pt-32 pb-24 px-6 max-w-7xl mx-auto overflow-hidden">
         <Link href="/" className="inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors mb-8 group">
