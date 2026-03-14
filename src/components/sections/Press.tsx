@@ -40,7 +40,7 @@ export const Press = () => {
             className="font-display text-text-main leading-snug mb-8"
             style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)", fontStyle: "italic" }}
           >
-            "Michele Tornello, 22 anni, assunto a tempo indeterminato, insegna nello stesso ITS in cui si è diplomato."
+            "Michele Tornello, assunto a tempo indeterminato a 22 anni, insegna nello stesso ITS in cui si è diplomato."
           </blockquote>
           <MagneticButton strength={0.22}>
             <div className="flex items-center gap-2 font-mono text-sm text-text-muted group-hover:text-text-main transition-colors">

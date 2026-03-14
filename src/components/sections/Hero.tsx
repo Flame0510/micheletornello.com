@@ -128,14 +128,22 @@ export const Hero = () => {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to top, #060606 0%, rgba(6,6,6,0.5) 50%, rgba(6,6,6,0.3) 100%)",
+          background: "linear-gradient(to top, #060606 0%, rgba(6,6,6,0.65) 50%, rgba(6,6,6,0.4) 100%)",
           zIndex: 1,
         }}
       />
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to bottom, rgba(6,6,6,0.7) 0%, transparent 20%)",
+          background: "linear-gradient(to bottom, rgba(6,6,6,0.8) 0%, transparent 25%)",
+          zIndex: 1,
+        }}
+      />
+      {/* Extra gradient on left side to improve text legibility */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to right, rgba(6,6,6,0.6) 0%, transparent 60%)",
           zIndex: 1,
         }}
       />

@@ -82,8 +82,24 @@ export const Portfolio = () => {
               <TiltCard>
                 <Card className="h-full group p-0 overflow-hidden flex flex-col">
                   <div className="h-48 p-0 flex items-center justify-center relative overflow-hidden">
-                    <Image src={study.image} alt={title} fill className="object-cover" />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    {study.image && study.image !== '' ? (
+                      <Image src={study.image} alt={title} fill className="object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                    ) : null}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: [
+                          'linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #C9A84C18 100%)',
+                          'linear-gradient(135deg, #0a0a0a 0%, #080d1a 50%, #5E6AD218 100%)',
+                          'linear-gradient(135deg, #0a0a0a 0%, #0d1208 50%, #2a4a2018 100%)',
+                          'linear-gradient(135deg, #0a0a0a 0%, #120808 50%, #4a102018 100%)',
+                        ][i % 4],
+                        zIndex: 0,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" style={{ zIndex: 2 }}>
                       <ExternalLink size={32} className="text-white" />
                     </div>
                   </div>
