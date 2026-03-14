@@ -3,16 +3,17 @@
 import { motion } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
 import { fadeUp, stagger } from "../../lib/animations";
-import { testimonials } from "../../lib/data";
 import { Quote } from "lucide-react";
+import { useLang } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export const Testimonials = () => {
+  const { lang } = useLang();
+  const t = translations.testimonials[lang];
+
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionTitle
-        title="Cosa dicono"
-        subtitle="Il risultato lo misurano i clienti, non noi."
-      />
+      <SectionTitle title={t.title} subtitle={t.subtitle} />
 
       <motion.div
         variants={stagger}
@@ -21,19 +22,22 @@ export const Testimonials = () => {
         viewport={{ once: true, amount: 0 }}
         className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
       >
-        {testimonials.map((t, i) => (
+        {t.items.map((item, i) => (
           <motion.div
             key={i}
             variants={fadeUp}
             className="relative flex flex-col gap-4 p-8 bg-surface border border-border rounded-xl"
           >
             <Quote size={24} className="text-accent opacity-50" />
-            <p className="text-text-main text-lg leading-relaxed italic">"{t.text}"</p>
+            <p className="text-text-main text-lg leading-relaxed italic">"{item.text}"</p>
             <div className="flex items-center gap-3 mt-2">
               <div className="w-9 h-9 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center text-accent text-xs font-mono font-bold">
-                {t.avatar}
+                {item.avatar}
               </div>
-              <span className="text-text-muted text-sm">{t.author}</span>
+              <div className="flex flex-col">
+                <span className="text-text-main text-sm">{item.author}</span>
+                <span className="text-text-muted text-xs">{item.role}</span>
+              </div>
             </div>
           </motion.div>
         ))}

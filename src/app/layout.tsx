@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Geist } from 'next/font/google';
+import './globals.css';
+import { LanguageProvider } from '@/lib/LanguageContext';
+import { translations } from '@/lib/translations';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Michele Tornello | Product Engineer",
-  description: "Michele Tornello - Product Engineer | Full-Stack & System Architecture | Docente Steve Jobs Academy",
+  title: translations.meta.it.title,
+  description: translations.meta.it.description,
 };
 
 export default function RootLayout({
@@ -20,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="it" className="scroll-smooth">
       <body className={`${geistSans.variable} font-sans antialiased bg-background text-text-main`}>
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

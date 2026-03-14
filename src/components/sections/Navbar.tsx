@@ -5,10 +5,14 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLang } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { lang, setLang } = useLang();
+  const t = translations.navbar[lang];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +23,11 @@ export const Navbar = () => {
   }, []);
 
   const links = [
-    { name: "Chi Sono", href: "/#about" },
-    { name: "Servizi", href: "/#services" },
-    { name: "Portfolio", href: "/#portfolio" },
-    { name: "Academy", href: "/academy" },
-    { name: "Contatti", href: "/#contact" },
+    { name: t.about, href: "/#about" },
+    { name: t.services, href: "/#services" },
+    { name: t.portfolio, href: "/#portfolio" },
+    { name: t.academy, href: "/academy" },
+    { name: t.contact, href: "/#contact" },
   ];
 
   return (
@@ -35,11 +39,10 @@ export const Navbar = () => {
           Michele <span className="text-accent">Tornello</span>
         </Link>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <Link 
-              key={link.name} 
+            <Link
+              key={link.name}
               href={link.href}
               className="text-sm font-medium text-text-muted hover:text-text-main transition-colors"
             >
@@ -47,13 +50,29 @@ export const Navbar = () => {
             </Link>
           ))}
           <Button variant="outline" className="px-5 py-2 text-sm">
-            Contattami
+            {t.cta}
           </Button>
+          <div className="text-sm">
+            <button
+              type="button"
+              onClick={() => setLang("it")}
+              className={lang === "it" ? "text-accent font-bold" : "text-text-muted hover:text-text-main"}
+            >
+              IT
+            </button>
+            <span className="mx-2 text-text-muted">|</span>
+            <button
+              type="button"
+              onClick={() => setLang("en")}
+              className={lang === "en" ? "text-accent font-bold" : "text-text-muted hover:text-text-main"}
+            >
+              EN
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-text-main p-2 rounded-md hover:bg-surface transition-colors" 
+        <button
+          className="md:hidden text-text-main p-2 rounded-md hover:bg-surface transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -61,7 +80,6 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -72,8 +90,8 @@ export const Navbar = () => {
           >
             <div className="flex flex-col p-6 gap-4">
               {links.map((link) => (
-                <Link 
-                  key={link.name} 
+                <Link
+                  key={link.name}
                   href={link.href}
                   className="text-lg font-medium py-2"
                   onClick={() => setIsOpen(false)}
@@ -82,8 +100,25 @@ export const Navbar = () => {
                 </Link>
               ))}
               <Button variant="outline" className="w-full mt-4">
-                Contattami
+                {t.cta}
               </Button>
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={() => setLang("it")}
+                  className={lang === "it" ? "text-accent font-bold" : "text-text-muted hover:text-text-main"}
+                >
+                  IT
+                </button>
+                <span className="mx-2 text-text-muted">|</span>
+                <button
+                  type="button"
+                  onClick={() => setLang("en")}
+                  className={lang === "en" ? "text-accent font-bold" : "text-text-muted hover:text-text-main"}
+                >
+                  EN
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

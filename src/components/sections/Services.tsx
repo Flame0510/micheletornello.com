@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Card } from "../ui/Card";
 import { fadeUp, stagger } from "../../lib/animations";
-import { services } from "../../lib/data";
 import { Layout, Database, Zap } from "lucide-react";
+import { useLang } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const icons = {
   Layout: <Layout size={24} className="text-accent" />,
@@ -14,12 +15,13 @@ const icons = {
 };
 
 export const Services = () => {
+  const { lang } = useLang();
+  const t = translations.services[lang];
+  const items = t.items;
+
   return (
     <section id="services" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
-      <SectionTitle 
-        title="I Miei Servizi" 
-        subtitle="Competenze multidisciplinari per il successo del tuo prodotto digitale." 
-      />
+      <SectionTitle title={t.title} subtitle={t.subtitle} />
 
       <motion.div
         variants={stagger}
@@ -28,16 +30,14 @@ export const Services = () => {
         viewport={{ once: true, amount: 0 }}
         className="grid grid-cols-1 md:grid-cols-3 gap-8"
       >
-        {services.map((service, i) => (
+        {items.map((service, i) => (
           <motion.div key={i} variants={fadeUp}>
             <Card className="h-full border-b-2 hover:border-accent transition-colors">
               <div className="mb-6 p-3 w-fit bg-accent/10 rounded-lg group-hover:scale-110 transition-transform">
-                {icons[service.icon as keyof typeof icons]}
+                {icons[["Layout", "Database", "Zap"][i] as keyof typeof icons]}
               </div>
               <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-              <p className="text-text-muted leading-relaxed">
-                {service.description}
-              </p>
+              <p className="text-text-muted leading-relaxed">{service.description}</p>
             </Card>
           </motion.div>
         ))}

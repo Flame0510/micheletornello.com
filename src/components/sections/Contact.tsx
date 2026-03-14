@@ -6,15 +6,16 @@ import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { fadeUp } from "../../lib/animations";
 import { Mail, Send } from "lucide-react";
+import { useLang } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export const Contact = () => {
+  const { lang } = useLang();
+  const t = translations.contact[lang];
+
   return (
     <section id="contact" className="py-24 px-6 max-w-4xl mx-auto overflow-hidden text-center">
-      <SectionTitle 
-        title="Iniziamo a costruire" 
-        subtitle="Hai un'idea ambiziosa o un sistema da ottimizzare? Raccontami la tua sfida. Rispondo entro 24 ore." 
-        className="text-center flex flex-col items-center"
-      />
+      <SectionTitle title={t.title} subtitle={`${t.subtitle} ${t.note}`} className="text-center flex flex-col items-center" />
 
       <motion.div
         variants={fadeUp}
@@ -27,38 +28,41 @@ export const Contact = () => {
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-text-muted">Nome</label>
-                <input 
-                  type="text" 
+                <label className="text-sm font-medium text-text-muted">{t.name}</label>
+                <input
+                  type="text"
                   className="w-full bg-background border border-border rounded-lg px-4 py-3 text-text-main focus:outline-none focus:border-accent transition-colors"
-                  placeholder="Il tuo nome"
+                  placeholder={t.name}
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-text-muted">Email</label>
-                <input 
-                  type="email" 
+                <label className="text-sm font-medium text-text-muted">{t.email}</label>
+                <input
+                  type="email"
                   className="w-full bg-background border border-border rounded-lg px-4 py-3 text-text-main focus:outline-none focus:border-accent transition-colors"
-                  placeholder="tuaemail@esempio.com"
+                  placeholder="email@example.com"
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-text-muted">Messaggio</label>
-              <textarea 
+              <label className="text-sm font-medium text-text-muted">{t.message}</label>
+              <textarea
                 className="w-full bg-background border border-border rounded-lg px-4 py-3 text-text-main focus:outline-none focus:border-accent transition-colors min-h-[150px]"
-                placeholder="Di cosa vuoi parlare?"
+                placeholder={t.message}
               />
             </div>
             <Button className="w-full gap-2">
-              Invia messaggio <Send size={18} />
+              {t.submit} <Send size={18} />
             </Button>
           </form>
         </Card>
 
         <div className="flex flex-col items-center gap-4">
-          <p className="text-text-muted">Oppure scrivi direttamente a:</p>
-          <a href="mailto:info@micheletornello.com" className="flex items-center gap-2 text-accent hover:text-accent-hover font-bold text-xl transition-colors">
+          <p className="text-text-muted">{t.directEmail}</p>
+          <a
+            href="mailto:info@micheletornello.com"
+            className="flex items-center gap-2 text-accent hover:text-accent-hover font-bold text-xl transition-colors"
+          >
             <Mail size={24} /> info@micheletornello.com
           </a>
         </div>
