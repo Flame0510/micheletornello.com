@@ -25,7 +25,7 @@ export const Press = () => {
           rel="noopener noreferrer"
           className="lg:col-span-2 group block p-8 border border-white/8 rounded-sm hover:border-white/15 transition-colors"
           style={{ background: "#0a0a0a" }}
-          initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0 }}
+          initial={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
           whileInView={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0 * 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -53,7 +53,7 @@ export const Press = () => {
         <motion.div
           className="relative overflow-hidden rounded-sm border border-white/8"
           style={{ minHeight: 280 }}
-          initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0 }}
+          initial={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
           whileInView={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 1 * 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -73,7 +73,7 @@ export const Press = () => {
         <motion.div
           className="lg:col-span-3 relative overflow-hidden rounded-sm border border-white/8"
           style={{ height: 400 }}
-          initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0 }}
+          initial={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
           whileInView={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 2 * 0.2, ease: [0.16, 1, 0.3, 1] }}
