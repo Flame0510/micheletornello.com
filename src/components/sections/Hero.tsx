@@ -6,7 +6,7 @@ import { Button } from "../ui/Button";
 import { GradientText } from "../ui/GradientText";
 import { heroAnimation } from "../../lib/animations";
 import { bio } from "../../lib/data";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
@@ -17,7 +17,9 @@ export const Hero = () => {
 
   return (
     <section className="min-h-[90vh] flex flex-col items-center justify-center relative overflow-hidden px-6 pt-20">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 blur-[120px] rounded-full -z-10" />
+      {/* Asymmetric background glows — not centered blobs */}
+      <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-accent/15 blur-[140px] rounded-full -z-10 pointer-events-none" />
+      <div className="absolute bottom-1/3 left-1/5 w-[300px] h-[300px] bg-accent/8 blur-[100px] rounded-full -z-10 pointer-events-none" />
 
       <motion.div
         variants={heroAnimation}
@@ -25,11 +27,11 @@ export const Hero = () => {
         animate="visible"
         className="text-center max-w-4xl space-y-8"
       >
-        <Badge variant="success" className="animate-pulse">
+        <Badge variant="outline" className="font-mono text-xs tracking-widest uppercase">
           {t.badge}
         </Badge>
 
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.08]">
           {t.tagline.split(" ").map((word, i) =>
             i === 4 ? (
               <span key={i}>
@@ -41,17 +43,19 @@ export const Hero = () => {
           )}
         </h1>
 
-        <p className="text-xl md:text-2xl text-[#ADADAD] font-medium">{bio.role}</p>
+        <p className="text-xl md:text-2xl text-text-muted font-medium">{bio.role}</p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link href="#portfolio">
             <Button className="w-full sm:w-auto gap-2">
-              {t.ctaPrimary} <ArrowRight size={18} />
+              {t.ctaPrimary ?? (lang === "it" ? "Vedi i progetti" : "See projects")} <ArrowRight size={18} />
             </Button>
           </Link>
-          <Button variant="ghost" className="w-full sm:w-auto gap-2">
-            <Download size={18} /> {t.ctaSecondary}
-          </Button>
+          <Link href="#contact">
+            <Button variant="ghost" className="w-full sm:w-auto gap-2">
+              <FileText size={18} /> {t.ctaSecondary ?? (lang === "it" ? "Contattami" : "Get in touch")}
+            </Button>
+          </Link>
         </div>
       </motion.div>
     </section>
