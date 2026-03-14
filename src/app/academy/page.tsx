@@ -1,0 +1,90 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Navbar } from "@/components/sections/Navbar";
+import { Footer } from "@/components/sections/Footer";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { fadeUp, stagger } from "@/lib/animations";
+import { academy } from "@/lib/data";
+import { ArrowLeft, BookOpen, ExternalLink, GraduationCap } from "lucide-react";
+import Link from "next/link";
+
+export default function AcademyPage() {
+  return (
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      
+      <section className="pt-32 pb-24 px-6 max-w-7xl mx-auto overflow-hidden">
+        <Link href="/" className="inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors mb-8 group">
+          <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" /> Torna alla Home
+        </Link>
+
+        <div className="flex flex-col lg:flex-row gap-12 items-start mb-20">
+          <div className="flex-1 space-y-6">
+            <Badge variant="outline" className="gap-2">
+              <GraduationCap size={14} /> Docenza Steve Jobs Academy
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+              Steve Jobs <span className="text-accent">Academy</span>
+            </h1>
+            <p className="text-xl text-text-muted max-w-2xl leading-relaxed">
+              In qualità di docente, mi occupo di formare i futuri professionisti dell'informatica attraverso corsi pratici focalizzati sulle tecnologie più richieste dal mercato.
+            </p>
+          </div>
+          
+          <Card className="lg:w-80 bg-accent/5 border-accent/20 border-dashed">
+            <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+              <BookOpen size={20} className="text-accent" /> Info Corsi
+            </h4>
+            <ul className="space-y-3 text-sm text-text-muted">
+              <li>• A.A. 2024 / 2025</li>
+              <li>• Catania / Online</li>
+              <li>• Laboratori pratici</li>
+              <li>• Focus sul mercato</li>
+            </ul>
+          </Card>
+        </div>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {academy.subjects.map((subject, i) => (
+            <motion.div key={i} variants={fadeUp}>
+              <Card className="h-full group hover:border-accent transition-all duration-500">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
+                      {subject.name}
+                    </h3>
+                  </div>
+                  <p className="text-text-muted leading-relaxed">
+                    {subject.description}
+                  </p>
+                  
+                  <div className="pt-6 border-t border-border flex flex-col gap-2">
+                    <Button variant="ghost" disabled className="text-xs justify-between group/btn px-2">
+                      <span className="flex items-center gap-2">Slides & Risorse <ExternalLink size={12} /></span>
+                      <span className="text-[10px] opacity-50">Coming soon</span>
+                    </Button>
+                    <Button variant="ghost" disabled className="text-xs justify-between group/btn px-2">
+                      <span className="flex items-center gap-2">Repository <ExternalLink size={12} /></span>
+                      <span className="text-[10px] opacity-50">Coming soon</span>
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
