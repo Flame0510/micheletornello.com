@@ -95,21 +95,16 @@ export default function AcademyPage() {
           {lang === "it" ? "Materie" : "Subjects"}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: "rgba(255,255,255,0.06)" }}>
-          {academy.subjects.map((subject, i) => {
-            const total = academy.subjects.length;
-            const remainder = total % 3;
-            const isLast = i === total - 1;
-            const colSpan = remainder === 1 && isLast ? "md:col-span-3" : "";
-            return (
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", borderLeft: "1px solid rgba(255,255,255,0.06)" }}>
+          {academy.subjects.map((subject, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
               initial="visible"
               whileInView="visible"
               viewport={{ once: true }}
-              className={`p-8 space-y-4 ${colSpan}`}
-              style={{ background: "#060606" }}
+              className="p-8 space-y-4"
+              style={{ background: "#060606", borderRight: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
             >
               <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>0{i + 1}</span>
               <h3 className="font-display text-2xl" style={{ color: "#E8E8E8" }}>{subject.name}</h3>
@@ -134,7 +129,7 @@ export default function AcademyPage() {
                 </div>
               </div>
             </motion.div>
-          );})}
+          ))}
         </div>
       </section>
 
