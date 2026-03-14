@@ -1,12 +1,20 @@
 import type { Metadata } from 'next';
-import { Geist } from 'next/font/google';
+import { Geist, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
+import { Cursor } from '@/components/ui/Cursor';
+import { FloatingNav } from '@/components/sections/FloatingNav';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
+  subsets: ['latin'],
+  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -21,8 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className="scroll-smooth">
-      <body className={`${geistSans.variable} font-sans antialiased bg-background text-text-main`}>
-        <LanguageProvider>{children}</LanguageProvider>
+      <body
+        className={`${geistSans.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-text-main`}
+      >
+        <LanguageProvider>
+          <Cursor />
+          <FloatingNav />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
