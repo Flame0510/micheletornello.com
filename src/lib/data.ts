@@ -1,7 +1,7 @@
 export const bio = {
   name: "Michele Tornello",
   role: "Product Engineer | Full-Stack & System Architecture",
-  description: "Michele Tornello è uno sviluppatore full-stack e imprenditore digitale specializzato nella creazione di piattaforme web scalabili e prodotti software innovativi. Lavora tra sviluppo, architettura di sistemi e AI per trasformare idee complesse in soluzioni concrete. Ha fondato e sviluppato diversi progetti digitali, collaborando con aziende, startup e istituzioni formative.",
+  description: "Con un background che unisce la solidità dell'ingegneria informatica alla velocità dello sviluppo freelance, aiuto startup e aziende a costruire prodotti digitali che durano nel tempo. Non scrivo solo codice: progetto sistemi.",
   path: "Perito Informatico → Steve Jobs Academy → Ing. Informatica (L8) → Freelancer & Docente",
   education: [
     { label: "Perito Industriale Informatico", detail: "" },
@@ -11,9 +11,52 @@ export const bio = {
 };
 
 export const hero = {
-  tagline: "Ingegneria di precisione per il web moderno.",
+  tagline: "Trasformo visioni complesse in architetture software scalabili.",
   badge: "Disponibile per nuovi progetti"
 };
+
+export const metrics = [
+  { value: "5+", label: "Anni di esperienza" },
+  { value: "15+", label: "Progetti completati" },
+  { value: "500+", label: "Ore di docenza" },
+  { value: "3", label: "Sedi Academy" },
+];
+
+export const testimonials = [
+  {
+    text: "Michele sa tradurre requisiti complessi in soluzioni tecniche chiare ed efficaci. Un riferimento solido per chi costruisce prodotti ambiziosi.",
+    author: "Cliente — Startup SaaS",
+    avatar: "CS"
+  },
+  {
+    text: "Ho apprezzato il suo approccio metodico: prima capisce il problema, poi costruisce la soluzione. Non si improvvisa mai.",
+    author: "Partner — Agenzia Digitale",
+    avatar: "PA"
+  }
+];
+
+export const process = [
+  {
+    step: "01",
+    title: "Discovery",
+    description: "Analizziamo insieme il tuo progetto, i requisiti tecnici e gli obiettivi di business. Nessun dettaglio è banale.",
+  },
+  {
+    step: "02",
+    title: "Architettura",
+    description: "Definisco lo stack, la struttura del sistema e le scelte tecniche. Tutto documentato e motivato.",
+  },
+  {
+    step: "03",
+    title: "Sviluppo",
+    description: "Iterazioni rapide, codice pulito, testing continuo. Ti tengo aggiornato ad ogni milestone.",
+  },
+  {
+    step: "04",
+    title: "Deploy & Oltre",
+    description: "Rilascio in produzione, monitoring e supporto post-lancio. Il lavoro non finisce al deploy.",
+  },
+];
 
 export const services = [
   {

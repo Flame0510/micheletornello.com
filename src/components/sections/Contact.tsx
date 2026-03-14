@@ -12,7 +12,7 @@ export const Contact = () => {
     <section id="contact" className="py-24 px-6 max-w-4xl mx-auto overflow-hidden text-center">
       <SectionTitle 
         title="Iniziamo a costruire" 
-        subtitle="Hai un progetto ambizioso o vuoi semplicemente fare due chiacchiere? Scrivimi!" 
+        subtitle="Hai un'idea ambiziosa o un sistema da ottimizzare? Raccontami la tua sfida. Rispondo entro 24 ore." 
         className="text-center flex flex-col items-center"
       />
 
@@ -58,8 +58,8 @@ export const Contact = () => {
 
         <div className="flex flex-col items-center gap-4">
           <p className="text-text-muted">Oppure scrivi direttamente a:</p>
-          <a href="mailto:michele.tornello@example.com" className="flex items-center gap-2 text-accent hover:text-accent-hover font-bold text-xl transition-colors">
-            <Mail size={24} /> michele.tornello@example.com
+          <a href="mailto:info@micheletornello.com" className="flex items-center gap-2 text-accent hover:text-accent-hover font-bold text-xl transition-colors">
+            <Mail size={24} /> info@micheletornello.com
           </a>
         </div>
       </motion.div>
