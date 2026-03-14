@@ -51,7 +51,8 @@ export default function AcademyPage() {
         <motion.div
           variants={stagger}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {academy.subjects.map((subject, i) => (

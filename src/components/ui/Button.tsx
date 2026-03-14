@@ -12,7 +12,7 @@ export const Button = ({
   className = "", 
   ...props 
 }: ButtonProps) => {
-  const base = "px-6 py-3 rounded-lg font-medium transition-all duration-300 active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2";
+  const base = "px-6 py-3 rounded-lg font-medium transition-all duration-300 active:scale-95 disabled:opacity-70 flex items-center justify-center gap-2";
   
   const variants = {
     primary: "bg-accent text-white hover:bg-accent-hover glow-accent",

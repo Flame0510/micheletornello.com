@@ -20,7 +20,7 @@ export const Portfolio = () => {
         variants={stagger}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, amount: 0 }}
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
         {portfolio.map((project, i) => (

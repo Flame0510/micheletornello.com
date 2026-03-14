@@ -22,7 +22,7 @@ export const AcademyPreview = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0 }}
           className="space-y-8"
         >
           <div className="p-4 w-fit bg-accent/10 rounded-2xl mb-6">
@@ -42,7 +42,7 @@ export const AcademyPreview = () => {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0 }}
           className="grid grid-cols-2 gap-4"
         >
           {academy.subjects.slice(0, 4).map((subject, i) => (

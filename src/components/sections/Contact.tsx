@@ -20,7 +20,7 @@ export const Contact = () => {
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, amount: 0 }}
         className="space-y-12"
       >
         <Card className="p-8 md:p-12 text-left bg-surface-hover/30 border-accent/20">

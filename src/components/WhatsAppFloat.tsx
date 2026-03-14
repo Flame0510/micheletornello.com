@@ -9,7 +9,8 @@ export const WhatsAppFloat = () => {
       href={social.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 p-4 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110 active:scale-95"
+      className="fixed bottom-8 right-8 z-50 p-4 bg-accent text-white rounded-full shadow-lg shadow-accent/30 hover:bg-accent-hover transition-all hover:scale-110 active:scale-95"
+      aria-label="Contattami su WhatsApp"
     >
       <MessageCircle size={28} />
     </a>

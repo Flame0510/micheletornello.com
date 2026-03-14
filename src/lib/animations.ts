@@ -1,7 +1,5 @@
 import { Variants } from "framer-motion";
 
-// Framer Motion variants
-
 export const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -12,7 +10,9 @@ export const fadeUp: Variants = {
 };
 
 export const stagger: Variants = {
+  hidden: { opacity: 1 },
   visible: { 
+    opacity: 1,
     transition: { staggerChildren: 0.1 } 
   }
 };

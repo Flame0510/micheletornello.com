@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Card } from "../ui/Card";
 import { fadeUp } from "../../lib/animations";
@@ -14,12 +15,12 @@ export const About = () => {
         subtitle="Un viaggio tra bit e architetture scalabili." 
       />
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0 }}
           className="space-y-6 text-lg text-text-muted leading-relaxed"
         >
           <p>{bio.description}</p>
@@ -35,17 +36,28 @@ export const About = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="relative"
+          viewport={{ once: true, amount: 0 }}
+          className="relative flex flex-col gap-6"
         >
-          <Card className="font-mono text-sm bg-surface-hover/50 backdrop-blur-sm p-8 group">
+          {/* Profile photo */}
+          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border">
+            <Image
+              src="/michele-profile.png"
+              alt="Michele Tornello"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+
+          <Card className="font-mono text-sm bg-surface-hover/50 backdrop-blur-sm group">
             <div className="flex gap-2 mb-4 opacity-50">
               <div className="w-3 h-3 rounded-full bg-red-500" />
               <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
             </div>
             
-            <pre className="text-accent leading-6 overflow-x-auto">
+            <pre className="text-accent leading-6 overflow-x-auto text-xs">
 {`{
   "name": "${bio.name}",
   "expertise": [
@@ -54,16 +66,11 @@ export const About = () => {
     "Cloud & AI",
     "Technical Education"
   ],
-  "languages": [
-    "TypeScript", "PHP", "Go",
-    "Python", "SQL", "NoSQL"
-  ],
   "teaching": "Steve Jobs Academy"
 }`}
             </pre>
           </Card>
           
-          {/* Decorative elements */}
           <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/10 blur-2xl -z-10" />
           <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-accent/20 blur-2xl -z-10" />
         </motion.div>

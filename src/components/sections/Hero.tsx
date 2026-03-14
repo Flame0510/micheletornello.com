@@ -27,7 +27,7 @@ export const Hero = () => {
         
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
           {hero.tagline.split(" ").map((word, i) => (
-            i === 3 ? <span key={i}><GradientText>{word}</GradientText> </span> : <span key={i}>{word} </span>
+            i === 2 ? <span key={i}><GradientText>{word}</GradientText> </span> : <span key={i}>{word} </span>
           ))}
         </h1>
 
