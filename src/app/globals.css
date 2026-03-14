@@ -5,7 +5,9 @@
   --color-background: #080808;
   --color-surface: #121212;
   --color-surface-hover: #1a1a1a;
+  --color-surface-elevated: #0f1117;
   --color-border: #222222;
+  --color-border-subtle: #1a1b24;
   --color-accent: #5E6AD2;
   --color-accent-hover: #4b55b5;
   --color-accent-muted: rgba(94, 106, 210, 0.15);
@@ -20,7 +22,9 @@
   --background: #080808;
   --surface: #121212;
   --surface-hover: #1a1a1a;
+  --surface-elevated: #0f1117;
   --border: #222222;
+  --border-subtle: #1a1b24;
   --accent: #5E6AD2;
   --accent-hover: #4b55b5;
   --accent-muted: rgba(94, 106, 210, 0.15);
@@ -34,6 +38,10 @@
   }
   body {
     @apply bg-background text-text-main font-sans antialiased;
+  }
+
+  .font-mono-section {
+    @apply font-mono uppercase tracking-[0.2em] text-xs text-accent/60;
   }
 
   /* Subtle noise texture for premium feel */

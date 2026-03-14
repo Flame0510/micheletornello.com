@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
+import { Badge } from "../ui/Badge";
 import { fadeUp, stagger } from "../../lib/animations";
 import { academy } from "../../lib/data";
 import { GraduationCap, ArrowRight } from "lucide-react";
@@ -17,7 +18,7 @@ export const AcademyPreview = () => {
 
   return (
     <section id="academy" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden relative">
-      <SectionTitle title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="// 04" title={t.title} subtitle={t.subtitle} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div
@@ -31,6 +32,13 @@ export const AcademyPreview = () => {
             <GraduationCap size={40} className="text-accent" />
           </div>
           <p className="text-xl text-text-muted leading-relaxed">{t.intro}</p>
+          
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="outline" className="font-mono text-[10px] py-0 px-2 uppercase border-accent/30 text-accent/80">Catania</Badge>
+            <Badge variant="outline" className="font-mono text-[10px] py-0 px-2 uppercase border-accent/30 text-accent/80">Caltagirone</Badge>
+            <Badge variant="outline" className="font-mono text-[10px] py-0 px-2 uppercase border-accent/30 text-accent/80">Palermo</Badge>
+          </div>
+
           <Link href="/academy" className="inline-block mt-8">
             <Button variant="outline" className="gap-2">
               {t.cta} <ArrowRight size={18} />

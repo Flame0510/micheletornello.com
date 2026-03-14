@@ -5,17 +5,20 @@ import { SectionTitle } from "../ui/SectionTitle";
 import { Card } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { fadeUp, stagger } from "../../lib/animations";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 
 export const Portfolio = () => {
   const { lang } = useLang();
   const t = translations.portfolio[lang];
+  
+  const caseStudies = ["rec-security", "kastalia", "ludelist"];
 
   return (
     <section id="portfolio" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
-      <SectionTitle title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="// 03" title={t.title} subtitle={t.subtitle} />
 
       <motion.div
         variants={stagger}
@@ -44,6 +47,12 @@ export const Portfolio = () => {
                 </div>
                 <h3 className="text-2xl font-bold">{project.title}</h3>
                 <p className="text-text-muted leading-relaxed">{project.description}</p>
+                <Link 
+                  href={`/portfolio/${caseStudies[i] || 'default'}`}
+                  className="text-sm text-accent/60 hover:text-accent transition-colors font-mono mt-auto flex items-center gap-1 group/link"
+                >
+                  Case study <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </Card>
           </motion.div>

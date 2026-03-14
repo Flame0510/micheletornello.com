@@ -21,7 +21,7 @@ export const Services = () => {
 
   return (
     <section id="services" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
-      <SectionTitle title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="// 02" title={t.title} subtitle={t.subtitle} />
 
       <motion.div
         variants={stagger}
@@ -32,7 +32,8 @@ export const Services = () => {
       >
         {items.map((service, i) => (
           <motion.div key={i} variants={fadeUp}>
-            <Card className="h-full border-b-2 hover:border-accent transition-colors">
+            <Card className="h-full border-b-2 hover:border-accent transition-colors group group-hover:border-accent/30 transition-colors">
+              <span className="text-xs font-mono text-accent/40 mb-2 block">0{i+1} / {service.title.toUpperCase()}</span>
               <div className="mb-6 p-3 w-fit bg-accent/10 rounded-lg group-hover:scale-110 transition-transform">
                 {icons[["Layout", "Database", "Zap"][i] as keyof typeof icons]}
               </div>

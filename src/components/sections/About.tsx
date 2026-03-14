@@ -15,7 +15,7 @@ export const About = () => {
 
   return (
     <section id="about" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
-      <SectionTitle title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="// 01" title={t.title} subtitle={t.subtitle} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-12">
         <motion.div
@@ -58,14 +58,18 @@ export const About = () => {
 
             <pre className="text-accent leading-6 overflow-x-auto text-xs">
 {`{
-  "name": "${bio.name}",
-  "expertise": [
-    "Full-Stack Development",
-    "System Architecture",
-    "Cloud & AI",
-    "Technical Education"
-  ],
-  "teaching": "Steve Jobs Academy"
+  "role": "System Architect & Full-Stack Developer",
+  "based_in": "Sicilia, IT",
+  "open_to": ["Remote", "On-site consulenza"],
+  "stack": {
+    "frontend": ["Next.js", "React", "TypeScript"],
+    "backend": ["Node.js", "PHP", "PostgreSQL"],
+    "infra": ["Vercel", "Linux", "Docker"]
+  },
+  "teaching": {
+    "institution": "Steve Jobs Academy",
+    "locations": ["Catania", "Caltagirone", "Palermo"]
+  }
 }`}
             </pre>
           </Card>

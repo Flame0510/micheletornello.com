@@ -32,11 +32,11 @@ export const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-background/80 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
+      scrolled ? "bg-background/80 backdrop-blur-md border-b border-border-subtle py-4" : "bg-transparent py-6"
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold tracking-tighter">
-          Michele <span className="text-accent">Tornello</span>
+          Michele <span className="font-light text-text-muted ml-1">Tornello</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
