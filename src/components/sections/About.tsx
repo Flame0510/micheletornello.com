@@ -29,7 +29,7 @@ export const About = () => {
   return (
     <section id="about" className="py-24 px-6 md:px-12">
       <div className="max-w-[1120px] mx-auto">
-        <SectionTitle prefix="02" title={t.title} />
+        <SectionTitle prefix="01" title={t.title} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           {/* Left: text */}
@@ -58,7 +58,7 @@ export const About = () => {
           >
             {/* Photo */}
             <div className="flex items-start gap-6">
-              <div className="relative shrink-0" style={{ width: 96, height: 128 }}>
+              <div className="relative shrink-0" style={{ width: 160, height: 213 }}>
                 <Image
                   src="/profile-photo.png"
                   alt="Michele Tornello"

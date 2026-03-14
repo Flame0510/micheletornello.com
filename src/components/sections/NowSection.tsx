@@ -38,7 +38,7 @@ export const NowSection = () => {
 
   return (
     <section id="now" className="py-24 px-6 md:px-12 max-w-[1120px] mx-auto">
-      <SectionTitle prefix="03" title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="02" title={t.title} subtitle={t.subtitle} />
 
       <motion.div
         className="rounded-lg overflow-hidden"

@@ -17,7 +17,7 @@ export const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
-      <SectionTitle prefix="// 03" title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="04" title={t.title} subtitle={t.subtitle} />
 
       <motion.div
         variants={stagger}

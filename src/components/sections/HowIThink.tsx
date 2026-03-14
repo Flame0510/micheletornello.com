@@ -56,7 +56,7 @@ export const HowIThink = () => {
 
   return (
     <section id="principles" className="py-24 px-6 md:px-12 max-w-[1120px] mx-auto">
-      <SectionTitle prefix="06" title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="05" title={t.title} subtitle={t.subtitle} />
 
       <div className="space-y-12">
         {t.principles.map((p, i) => (
