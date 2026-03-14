@@ -1,17 +1,108 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import type { CSSProperties } from "react";
+import { motion } from "framer-motion";
 import { useLang } from "@/lib/LanguageContext";
+
+const SplitText = ({
+  text,
+  className,
+  style,
+  staggerDelay = 0.04,
+  baseDelay = 0,
+}: {
+  text: string;
+  className?: string;
+  style?: CSSProperties;
+  staggerDelay?: number;
+  baseDelay?: number;
+}) => {
+  const chars = text.split("");
+
+  return (
+    <span
+      className={className}
+      style={{ ...style, display: "inline-block" }}
+      aria-label={text}
+    >
+      {chars.map((char, i) => (
+        <motion.span
+          key={`${char}-${i}`}
+          initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0, y: 20 }}
+          animate={{ clipPath: "inset(0 0 0% 0)", opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            delay: baseDelay + staggerDelay * i,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          style={{
+            display: "inline-block",
+            whiteSpace: char === " " ? "pre" : "normal",
+            willChange: "transform, clip-path, opacity",
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
+
+const FloatingDot = ({
+  x,
+  y,
+  size,
+  delay,
+}: {
+  x: string;
+  y: string;
+  size: number;
+  delay: number;
+}) => (
+  <motion.div
+    className="absolute rounded-full pointer-events-none"
+    style={{
+      left: x,
+      top: y,
+      width: size,
+      height: size,
+      background: "rgba(201,168,76,0.15)",
+      filter: "blur(1px)",
+    }}
+    animate={{ y: [0, -12, 0], opacity: [0.3, 0.6, 0.3] }}
+    transition={{ duration: 4 + delay, repeat: Infinity, ease: "easeInOut", delay }}
+  />
+);
+
+const FloatingLine = ({
+  x,
+  y,
+  rotation,
+  delay,
+}: {
+  x: string;
+  y: string;
+  rotation: number;
+  delay: number;
+}) => (
+  <motion.div
+    className="absolute pointer-events-none"
+    style={{
+      left: x,
+      top: y,
+      width: 40,
+      height: 1,
+      background: "rgba(94,106,210,0.2)",
+      transform: `rotate(${rotation}deg)`,
+      transformOrigin: "left center",
+    }}
+    animate={{ opacity: [0.2, 0.5, 0.2], scaleX: [1, 1.3, 1] }}
+    transition={{ duration: 3 + delay, repeat: Infinity, ease: "easeInOut", delay }}
+  />
+);
 
 export const Hero = () => {
   const { lang } = useLang();
-  const heroRef = useRef<HTMLElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   const content = {
     it: {
@@ -29,83 +120,112 @@ export const Hero = () => {
   };
 
   const t = content[lang];
+  const stagger = 0.04;
+  const micheleChars = "Michele".length;
+  const tornelloChars = "Tornello".length;
+  const tornelloDelay = micheleChars * stagger + 0.1;
+  const fullNameEnd = tornelloDelay + tornelloChars * stagger;
+  const taglineDelay = fullNameEnd + 0.6;
 
   return (
-    <motion.section
-      ref={heroRef}
+    <section
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
         backgroundImage: "url(/desk-setup.png)",
         backgroundSize: "cover",
-        backgroundPositionX: "center",
-        backgroundPositionY: bgY,
+        backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #060606 0%, rgba(6,6,6,0.5) 50%, rgba(6,6,6,0.3) 100%)", zIndex: 0 }} />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,6,6,0.7) 0%, transparent 20%)", zIndex: 0 }} />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to top, #060606 0%, rgba(6,6,6,0.5) 50%, rgba(6,6,6,0.3) 100%)",
+          zIndex: 0,
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to bottom, rgba(6,6,6,0.7) 0%, transparent 20%)",
+          zIndex: 0,
+        }}
+      />
 
-      <div className="relative max-w-[1120px] mx-auto w-full px-6 md:px-12 pt-24" style={{ zIndex: 1 }}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 1 }}>
+        <FloatingDot x="8%" y="20%" size={4} delay={0} />
+        <FloatingDot x="85%" y="15%" size={3} delay={1.2} />
+        <FloatingDot x="15%" y="70%" size={5} delay={2.1} />
+        <FloatingDot x="90%" y="60%" size={3} delay={0.8} />
+        <FloatingDot x="50%" y="85%" size={4} delay={1.7} />
+
+        <FloatingLine x="5%" y="35%" rotation={-15} delay={0.5} />
+        <FloatingLine x="80%" y="40%" rotation={25} delay={1.4} />
+        <FloatingLine x="60%" y="15%" rotation={-45} delay={2.3} />
+      </div>
+
+      <div className="relative max-w-[1120px] mx-auto w-full px-6 md:px-12 pt-24" style={{ zIndex: 2 }}>
+        <div
+          className="leading-[0.9] tracking-tight mb-8 select-none font-display text-text-main"
+          style={{ fontSize: "clamp(4rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}
+          aria-label="Michele Tornello"
         >
-          <h1
-            className="font-display text-text-main leading-[0.9] tracking-tight mb-8 select-none"
-            style={{ fontSize: "clamp(4rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}
-          >
-            Michele
-            <br />
-            <span>Tornello</span>
+          <div>
+            <SplitText text="Michele" staggerDelay={stagger} />
+          </div>
+          <div>
+            <SplitText text="Tornello" staggerDelay={stagger} baseDelay={tornelloDelay} />
             <motion.span
               className="inline-block ml-2"
-              style={{ color: "#C9A84C", fontFamily: "JetBrains Mono", fontSize: "0.5em" }}
+              style={{ color: "#C9A84C", fontFamily: "var(--font-mono)", fontSize: "0.5em" }}
               animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                ease: "linear",
+                delay: fullNameEnd + 0.6,
+              }}
             >
               _
             </motion.span>
-          </h1>
-        </motion.div>
+          </div>
+        </div>
 
         <motion.div
           className="max-w-2xl mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: taglineDelay, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-2xl md:text-3xl text-text-main font-medium leading-snug mb-1">{t.tagline}</p>
           <p className="text-2xl md:text-3xl text-text-muted font-medium leading-snug">{t.tagline2}</p>
         </motion.div>
 
         <motion.p
-          className="font-mono text-text-muted"
-          style={{ fontSize: "0.8125rem", letterSpacing: "0.05em" }}
+          className="font-mono text-sm text-text-muted tracking-widest uppercase"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, delay: taglineDelay + 0.3 }}
         >
-          {t.role.split(" · ").map((part, i, arr) => (
-            <span key={i}>
-              {part}
-              {i < arr.length - 1 && <span style={{ color: "#5E6AD2", margin: "0 0.5em" }}>·</span>}
-            </span>
-          ))}
+          {t.role}
         </motion.p>
 
         <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="mt-16 flex items-center gap-3"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 6, 0] }}
-          transition={{
-            opacity: { delay: 1.2, duration: 0.5 },
-            y: { delay: 1.2, duration: 2, repeat: Infinity, ease: "easeInOut" },
-          }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: taglineDelay + 0.6 }}
         >
-          <span className="font-mono-label">{t.scroll}</span>
-          <span className="text-text-muted text-xs">↓</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-text-muted">{t.scroll}</span>
+          <motion.span
+            className="text-text-muted"
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            ↓
+          </motion.span>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };

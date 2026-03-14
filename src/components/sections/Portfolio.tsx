@@ -20,8 +20,8 @@ type TiltCardProps = {
 const TiltCard = ({ children }: TiltCardProps) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [8, -8]);
-  const rotateY = useTransform(x, [-100, 100], [-8, 8]);
+  const rotateX = useTransform(y, [-100, 100], [4, -4]);
+  const rotateY = useTransform(x, [-100, 100], [-4, 4]);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

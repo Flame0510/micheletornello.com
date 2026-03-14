@@ -6,18 +6,19 @@ import { useLang } from "@/lib/LanguageContext";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const events = [
-  { year: "2020", it: "Studente — Steve Jobs Academy, Catania", en: "Student — Steve Jobs Academy, Catania" },
-  { year: "2022", it: "Assunto — Paradigma SPA (tempo indeterminato)", en: "Hired — Paradigma SPA (permanent contract)" },
-  { year: "2024", it: "Docente — Steve Jobs Academy", en: "Teacher — Steve Jobs Academy" },
-  { year: "2024", it: "Speaker — React Native · Università di Catania", en: "Speaker — React Native · University of Catania" },
-  { year: "2024", it: "RTL 102.5 — Intervista in diretta nazionale", en: "RTL 102.5 — National live radio interview" },
+  { year: "2020", it: "Studente · Steve Jobs Academy, Catania", en: "Student · Steve Jobs Academy, Catania" },
+  { year: "2022", it: "Assunto · Paradigma SPA (tempo indeterminato)", en: "Hired · Paradigma SPA (permanent contract)" },
+  { year: "2024", it: "Docente · Steve Jobs Academy", en: "Teacher · Steve Jobs Academy" },
+  { year: "2024", it: "Speaker · React Native · Università di Catania", en: "Speaker · React Native · University of Catania" },
+  { year: "2024", it: "RTL 102.5 · Intervista in diretta nazionale", en: "RTL 102.5 · National live radio interview" },
 ];
 
 export const Timeline = () => {
   const { lang } = useLang();
   const reduced = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
-  const lineRef = useRef<SVGLineElement>(null);
+  const lineContainerRef = useRef<HTMLDivElement>(null);
+  const lineFillRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (reduced) return;
@@ -26,26 +27,21 @@ export const Timeline = () => {
 
     const init = async () => {
       const { gsap } = await import("@/lib/gsap");
-      await import("gsap/ScrollTrigger");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
 
-      if (!sectionRef.current || !lineRef.current) return;
+      if (!sectionRef.current || !lineFillRef.current) return;
 
-      const line = lineRef.current;
-      const totalLength = line.getTotalLength();
-
-      gsap.set(line, {
-        strokeDasharray: totalLength,
-        strokeDashoffset: totalLength,
-      });
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.set(lineFillRef.current, { scaleY: 0, transformOrigin: "top center" });
 
       ctx = gsap.context(() => {
-        gsap.to(line, {
-          strokeDashoffset: 0,
+        gsap.to(lineFillRef.current, {
+          scaleY: 1,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 70%",
-            end: "bottom 30%",
+            start: "top 60%",
+            end: "bottom 40%",
             scrub: 0.8,
           },
         });
@@ -65,17 +61,17 @@ export const Timeline = () => {
       </div>
 
       <div className="relative">
-        <svg className="absolute left-[80px] top-0 bottom-0" width="2" style={{ height: "100%" }} overflow="visible">
-          <line
-            ref={lineRef}
-            x1="1"
-            y1="0"
-            x2="1"
-            y2="100%"
-            stroke="rgba(201,168,76,0.4)"
-            strokeWidth="1"
+        <div
+          ref={lineContainerRef}
+          className="absolute left-[80px] top-0 bottom-0 w-px"
+          style={{ background: "rgba(255,255,255,0.06)" }}
+        >
+          <div
+            ref={lineFillRef}
+            className="absolute inset-0"
+            style={{ background: "rgba(201,168,76,0.5)", transformOrigin: "top center" }}
           />
-        </svg>
+        </div>
 
         <div className="space-y-0">
           {events.map((e, i) => (
@@ -88,7 +84,7 @@ export const Timeline = () => {
               className="relative flex items-start gap-8 py-6"
             >
               <div className="w-[80px] shrink-0 text-right">
-                <span className="font-mono text-sm" style={{ color: "#C9A84C" }}>
+                <span className="font-mono text-sm" style={{ color: "#C9A84C", fontFeatureSettings: '"liga" 0, "calt" 0' }}>
                   {e.year}
                 </span>
               </div>
@@ -97,7 +93,9 @@ export const Timeline = () => {
                 style={{ background: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.6)" }}
               />
               <div className="pt-0.5 pl-6">
-                <p className="text-text-main text-base leading-relaxed">{lang === "it" ? e.it : e.en}</p>
+                <p className="text-text-main text-base leading-relaxed" style={{ fontFeatureSettings: '"liga" 0, "calt" 0' }}>
+                  {lang === "it" ? e.it : e.en}
+                </p>
               </div>
             </motion.div>
           ))}

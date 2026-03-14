@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
+import { MagneticButton } from "../ui/MagneticButton";
 import { fadeUp } from "../../lib/animations";
 import { Mail, Send } from "lucide-react";
 import { useLang } from "@/lib/LanguageContext";
@@ -51,9 +52,11 @@ export const Contact = () => {
                 placeholder={t.message}
               />
             </div>
-            <Button className="w-full gap-2">
-              {t.submit} <Send size={18} />
-            </Button>
+            <MagneticButton className="w-full" strength={0.18}>
+              <Button className="w-full gap-2">
+                {t.submit} <Send size={18} />
+              </Button>
+            </MagneticButton>
           </form>
         </Card>
 
