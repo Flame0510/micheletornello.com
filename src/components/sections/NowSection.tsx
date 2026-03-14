@@ -38,7 +38,7 @@ export const NowSection = () => {
 
   return (
     <section id="now" className="py-24 px-6 md:px-12 max-w-[1120px] mx-auto">
-      <SectionTitle prefix="// 03" title={t.title} subtitle={t.subtitle} />
+      <SectionTitle prefix="03" title={t.title} subtitle={t.subtitle} />
 
       <motion.div
         className="rounded-lg overflow-hidden"
@@ -49,7 +49,7 @@ export const NowSection = () => {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flex items-center gap-2 px-4 py-3" style={{ borderBottom: "1px solid #1A1A1A" }}>
-          <div className="w-3 h-3 rounded-full" style={{ background: "#E8734A", opacity: 0.8 }} />
+          <div className="w-3 h-3 rounded-full" style={{ background: "#C9A84C", opacity: 0.8 }} />
           <div className="w-3 h-3 rounded-full" style={{ background: "#707070", opacity: 0.4 }} />
           <div className="w-3 h-3 rounded-full" style={{ background: "#707070", opacity: 0.4 }} />
           <span className="font-mono text-xs text-text-muted ml-2" style={{ fontSize: "0.75rem" }}>

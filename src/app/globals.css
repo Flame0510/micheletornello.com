@@ -10,7 +10,7 @@
   --color-accent: #5E6AD2;
   --color-accent-hover: #4b55b5;
   --color-accent-muted: rgba(94, 106, 210, 0.12);
-  --color-accent-warm: #E8734A;
+  --color-accent-warm: #C9A84C;
   --color-text-main: #E8E8E8;
   --color-text-muted: #707070;
 
@@ -31,7 +31,7 @@
   --surface: #0A0A0A;
   --border: #1A1A1A;
   --accent: #5E6AD2;
-  --accent-warm: #E8734A;
+  --accent-warm: #C9A84C;
   --text-main: #E8E8E8;
   --text-muted: #707070;
 }
@@ -39,7 +39,7 @@
 @layer base {
   * {
     @apply border-border;
-    cursor: none;
+    cursor: auto;
   }
   body {
     @apply bg-background text-text-main font-sans antialiased;

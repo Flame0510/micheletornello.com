@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useLang } from "@/lib/LanguageContext";
+import Image from "next/image";
 
 export const Hero = () => {
   const { lang } = useLang();
@@ -23,28 +24,23 @@ export const Hero = () => {
   const t = content[lang];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden px-6 md:px-12">
-      {/* Background glow */}
-      <div className="hero-glow absolute inset-0 pointer-events-none -z-10" />
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      {/* Background: desk photo */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/desk-setup.png"
+          alt="Michele's workspace"
+          fill
+          className="object-cover object-center opacity-40"
+          priority
+        />
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/60 to-[#060606]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/70 via-transparent to-transparent" style={{ height: '8rem' }} />
+      </div>
 
-      {/* Blueprint grid lines (bottom right) */}
-      <svg
-        className="absolute bottom-0 right-0 opacity-[0.04] pointer-events-none -z-10"
-        width="400"
-        height="400"
-        viewBox="0 0 400 400"
-        fill="none"
-      >
-        <line x1="0" y1="100" x2="400" y2="100" stroke="#5E6AD2" strokeWidth="0.5" />
-        <line x1="0" y1="200" x2="400" y2="200" stroke="#5E6AD2" strokeWidth="0.5" />
-        <line x1="0" y1="300" x2="400" y2="300" stroke="#5E6AD2" strokeWidth="0.5" />
-        <line x1="100" y1="0" x2="100" y2="400" stroke="#5E6AD2" strokeWidth="0.5" />
-        <line x1="200" y1="0" x2="200" y2="400" stroke="#5E6AD2" strokeWidth="0.5" />
-        <line x1="300" y1="0" x2="300" y2="400" stroke="#5E6AD2" strokeWidth="0.5" />
-      </svg>
-
-      <div className="max-w-[1120px] mx-auto w-full pt-20">
-        {/* Name — display font, huge */}
+      <div className="relative max-w-[1120px] mx-auto w-full px-6 md:px-12 pt-24">
+        {/* Name */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,22 +55,35 @@ export const Hero = () => {
             <span>Tornello</span>
             <motion.span
               className="inline-block ml-2"
-              style={{ color: "#E8734A", fontFamily: "JetBrains Mono", fontSize: "0.5em" }}
+              style={{ color: "#C9A84C", fontFamily: "JetBrains Mono", fontSize: "0.5em" }}
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
-            >
-              _
-            </motion.span>
+            >_</motion.span>
           </h1>
         </motion.div>
 
-        {/* Role line */}
+        {/* Tagline — in posizione prominente */}
+        <motion.div
+          className="max-w-2xl mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-2xl md:text-3xl text-text-main font-medium leading-snug mb-1">
+            {t.tagline}
+          </p>
+          <p className="text-2xl md:text-3xl text-text-muted font-medium leading-snug">
+            {t.tagline2}
+          </p>
+        </motion.div>
+
+        {/* Role — sotto la tagline, meno prominente */}
         <motion.p
-          className="font-mono text-text-muted mb-12"
+          className="font-mono text-text-muted"
           style={{ fontSize: "0.8125rem", letterSpacing: "0.05em" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {t.role.split(" · ").map((part, i, arr) => (
             <span key={i}>
@@ -85,21 +94,6 @@ export const Hero = () => {
             </span>
           ))}
         </motion.p>
-
-        {/* Tagline */}
-        <motion.div
-          className="max-w-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p className="text-2xl md:text-3xl text-text-main font-medium leading-snug mb-2">
-            {t.tagline}
-          </p>
-          <p className="text-2xl md:text-3xl text-text-muted font-medium leading-snug">
-            {t.tagline2}
-          </p>
-        </motion.div>
 
         {/* Scroll hint */}
         <motion.div

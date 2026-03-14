@@ -3,7 +3,6 @@ import { Geist, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
-import { Cursor } from '@/components/ui/Cursor';
 import { FloatingNav } from '@/components/sections/FloatingNav';
 
 const geistSans = Geist({
@@ -20,6 +19,10 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: translations.meta.it.title,
   description: translations.meta.it.description,
+  icons: {
+    icon: '/logo-mt.jpg',
+    shortcut: '/logo-mt.jpg',
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +36,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-text-main`}
       >
         <LanguageProvider>
-          <Cursor />
           <FloatingNav />
           {children}
         </LanguageProvider>
