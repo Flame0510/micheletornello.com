@@ -98,9 +98,9 @@ export default function AcademyPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: "rgba(255,255,255,0.06)" }}>
           {academy.subjects.map((subject, i) => {
             const total = academy.subjects.length;
-            const lastRowStart = total - (total % 3 === 0 ? 3 : total % 3);
-            const isLastRowAlone = total % 3 === 1 && i === total - 1;
-            const isLastRowTwo = total % 3 === 2 && i >= total - 2;
+            const remainder = total % 3;
+            const isLast = i === total - 1;
+            const colSpan = remainder === 1 && isLast ? "md:col-span-3" : "";
             return (
             <motion.div
               key={i}
@@ -108,7 +108,7 @@ export default function AcademyPage() {
               initial="visible"
               whileInView="visible"
               viewport={{ once: true }}
-              className={`p-8 space-y-4${isLastRowAlone ? " md:col-span-3" : isLastRowTwo && i === total - 2 ? " md:col-span-1" : ""}`}
+              className={`p-8 space-y-4 ${colSpan}`}
               style={{ background: "#060606" }}
             >
               <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>0{i + 1}</span>
