@@ -140,6 +140,7 @@ export const contact = {
 
 export const social = {
   linkedin: "https://www.linkedin.com/in/michele-tornello-06a6341aa/",
+  github: "https://github.com/micheletornello",
   instagram: "https://www.instagram.com/michele_tornello",
   whatsapp: "https://wa.me/393341593912"
 };

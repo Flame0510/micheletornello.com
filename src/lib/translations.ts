@@ -33,18 +33,22 @@ export const translations = {
   },
   hero: {
     it: {
-      tagline: 'Trasformo visioni complesse in architetture software scalabili.',
-      badge: 'Product Engineer',
-      gradientWord: 'architetture',
-      ctaPrimary: 'Vedi i progetti',
-      ctaSecondary: 'Contattami',
+      versionLine: 'PRODUCT ENGINEER · FULL-STACK · SYSTEM ARCHITECT',
+      roleLine: 'Costruisco prodotti digitali scalabili, dal concept al deploy.',
+      briefBio:
+        "Aiuto startup e aziende a trasformare requisiti complessi in software affidabile. Architettura prima, codice pulito dopo.",
+      ctaProjects: 'Vedi progetti',
+      ctaContact: 'Contattami',
+      ctaAcademy: 'Academy',
     },
     en: {
-      tagline: 'I turn complex visions into scalable software architectures.',
-      badge: 'Product Engineer',
-      gradientWord: 'scalable',
-      ctaPrimary: 'See projects',
-      ctaSecondary: 'Get in touch',
+      versionLine: 'PRODUCT ENGINEER · FULL-STACK · SYSTEM ARCHITECT',
+      roleLine: 'I build scalable digital products, from concept to deployment.',
+      briefBio:
+        'I help startups and companies turn complex requirements into reliable software. Architecture first, clean code second.',
+      ctaProjects: 'See projects',
+      ctaContact: 'Get in touch',
+      ctaAcademy: 'Academy',
     },
   },
   metrics: {
@@ -281,6 +285,54 @@ export const translations = {
           author: 'Alessandra V.',
           role: 'CTO @ digital agency',
           avatar: 'AV',
+        },
+      ],
+    },
+  },
+  stack: {
+    it: {
+      title: 'Stack',
+      subtitle: 'Tecnologie che uso in produzione — nessuna moda, tutto verificato.',
+      categories: {
+        frontend: 'Frontend',
+        backend: 'Backend',
+        infra: 'Infra & DevOps',
+      },
+      columns: [
+        {
+          title: 'Frontend',
+          items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        },
+        {
+          title: 'Backend',
+          items: ['Node.js', 'NestJS', 'Laravel', 'PostgreSQL', 'REST API'],
+        },
+        {
+          title: 'Infra & DevOps',
+          items: ['Docker', 'GitHub Actions', 'Vercel', 'Linux', 'Monitoring'],
+        },
+      ],
+    },
+    en: {
+      title: 'Stack',
+      subtitle: 'Technologies I use in production — no hype, all battle-tested.',
+      categories: {
+        frontend: 'Frontend',
+        backend: 'Backend',
+        infra: 'Infra & DevOps',
+      },
+      columns: [
+        {
+          title: 'Frontend',
+          items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        },
+        {
+          title: 'Backend',
+          items: ['Node.js', 'NestJS', 'Laravel', 'PostgreSQL', 'REST API'],
+        },
+        {
+          title: 'Infra & DevOps',
+          items: ['Docker', 'GitHub Actions', 'Vercel', 'Linux', 'Monitoring'],
         },
       ],
     },

@@ -1,73 +1,62 @@
 "use client";
 
-import { Instagram, Linkedin } from "lucide-react";
-import Link from "next/link";
-import { social } from "../../lib/data";
+import { social } from "@/lib/data";
 import { useLang } from "@/lib/LanguageContext";
-import { translations } from "@/lib/translations";
 
 export const Footer = () => {
-  const { lang } = useLang();
-  const t = translations.footer[lang];
-
-  const links = {
-    it: [
-      { name: "Chi Sono", href: "/#about" },
-      { name: "Servizi", href: "/#services" },
-      { name: "Portfolio", href: "/#portfolio" },
-      { name: "Academy", href: "/academy" },
-    ],
-    en: [
-      { name: "About", href: "/#about" },
-      { name: "Services", href: "/#services" },
-      { name: "Portfolio", href: "/#portfolio" },
-      { name: "Academy", href: "/academy" },
-    ]
-  };
+  const { lang, setLang } = useLang();
 
   return (
-    <footer className="border-t border-border py-12 px-6 max-w-7xl mx-auto overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="space-y-4 text-center md:text-left">
-          <p className="text-xl font-bold tracking-tighter">
-            Michele <span className="font-light text-text-muted ml-1">Tornello</span>
-          </p>
-          <p className="text-text-muted text-sm">{t.tagline}</p>
-          <div className="flex flex-col gap-1">
-            <p className="text-text-muted text-sm">{t.copyright}</p>
-            <p className="text-text-muted text-xs">P.IVA: IT05891780879</p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 mt-4">
-            {links[lang as keyof typeof links].map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href}
-                className="text-text-muted text-xs hover:text-text-main transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex items-center gap-6">
+    <footer className="border-t border-border py-8 px-6 max-w-7xl mx-auto">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <div className="text-sm text-text-muted flex flex-wrap items-center justify-center gap-2">
+          <span>Michele Tornello</span>
+          <span>·</span>
+          <span>2025</span>
+          <span>·</span>
+          <span>Sicilia, IT</span>
+          <span>·</span>
           <a
             href={social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-text-muted hover:text-accent transition-colors"
+            className="hover:text-text-main transition-colors"
           >
-            <Linkedin size={20} />
+            LinkedIn ↗
           </a>
           <a
-            href={social.instagram}
+            href={social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-text-muted hover:text-accent transition-colors"
+            className="hover:text-text-main transition-colors"
           >
-            <Instagram size={20} />
+            GitHub ↗
           </a>
+        </div>
+
+        <p className="text-xs text-text-muted">P.IVA: da configurare</p>
+
+        <div className="flex items-center gap-1 rounded-full border border-border bg-background p-1">
+          <button
+            type="button"
+            onClick={() => setLang("it")}
+            className={`px-2 py-1 text-xs rounded-full transition-colors ${
+              lang === "it" ? "bg-foreground text-background" : "text-text-muted"
+            }`}
+            aria-label="Cambia lingua in Italiano"
+          >
+            IT
+          </button>
+          <button
+            type="button"
+            onClick={() => setLang("en")}
+            className={`px-2 py-1 text-xs rounded-full transition-colors ${
+              lang === "en" ? "bg-foreground text-background" : "text-text-muted"
+            }`}
+            aria-label="Switch language to English"
+          >
+            EN
+          </button>
         </div>
       </div>
     </footer>
