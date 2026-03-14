@@ -199,21 +199,21 @@ export const translations = {
         {
           title: 'REC Security',
           description:
-            "Sistema gestionale completo per un'azienda di sicurezza: turni, operatori, reportistica in tempo reale.",
+            'Turni e presenze per 80 operatori, passando da Excel su WhatsApp a una gestione centralizzata con conferme in tempo reale.',
           tech: ['Next.js', 'TypeScript', 'Tailwind'],
           gradient: 'from-blue-600/20 to-cyan-500/20',
         },
         {
           title: 'Casa Vacanze Kastalia',
           description:
-            'Piattaforma di prenotazione diretta per una struttura ricettiva siciliana, con gestione calendario e pagamenti.',
+            'Canale diretto per 8 appartamenti a Siracusa, con sincronizzazione OTA e pagamenti Stripe per ridurre le commissioni.',
           tech: ['React', 'Node.js', 'PostgreSQL'],
           gradient: 'from-orange-500/20 to-red-500/20',
         },
         {
           title: 'Ludelist',
           description:
-            'App per organizzare e tracciare collezioni di giochi da tavolo, con catalogo condiviso e lista desideri.',
+            'Side project nato da 120+ giochi personali: organizzazione collezioni e serate con disponibilità del gruppo e suggerimenti rapidi.',
           tech: ['PHP', 'Laravel', 'Vue.js'],
           gradient: 'from-purple-600/20 to-pink-500/20',
         },
@@ -226,21 +226,21 @@ export const translations = {
         {
           title: 'REC Security',
           description:
-            'End-to-end management system for a security company: shift scheduling, operator tracking, real-time reporting.',
+            'Shifts and attendance for 80 operators, replacing Excel-on-WhatsApp with centralized management and real-time confirmations.',
           tech: ['Next.js', 'TypeScript', 'Tailwind'],
           gradient: 'from-blue-600/20 to-cyan-500/20',
         },
         {
           title: 'Casa Vacanze Kastalia',
           description:
-            'Direct booking platform for a Sicilian vacation rental, with calendar management and payments.',
+            'Direct channel for 8 Syracuse apartments, with OTA calendar sync and Stripe payments to cut commission costs.',
           tech: ['React', 'Node.js', 'PostgreSQL'],
           gradient: 'from-orange-500/20 to-red-500/20',
         },
         {
           title: 'Ludelist',
           description:
-            'App for organizing and tracking board game collections, with shared catalog and wishlist.',
+            'Side project from a 120+ personal collection: organize board games and game nights with group availability and fast suggestions.',
           tech: ['PHP', 'Laravel', 'Vue.js'],
           gradient: 'from-purple-600/20 to-pink-500/20',
         },
