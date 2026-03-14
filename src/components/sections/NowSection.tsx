@@ -43,7 +43,7 @@ export const NowSection = () => {
       <motion.div
         className="rounded-lg overflow-hidden"
         style={{ background: "#0A0A0A", border: "1px solid #1A1A1A" }}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -64,7 +64,7 @@ export const NowSection = () => {
               key={i}
               className="font-mono pl-4 flex gap-2"
               style={{ fontSize: "0.875rem" }}
-              initial={{ opacity: 0, x: -10 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.4, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}

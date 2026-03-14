@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { NowSection } from "@/components/sections/NowSection";
 import { About } from "@/components/sections/About";
@@ -13,7 +12,6 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background selection:bg-accent/30">
-      <Navbar />
       <Hero />
       <NowSection />
       <About />

@@ -23,7 +23,7 @@ export const AcademyPreview = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div
           variants={fadeUp}
-          initial="hidden"
+          initial="visible"
           whileInView="visible"
           viewport={{ once: true, amount: 0 }}
           className="space-y-8"
@@ -48,7 +48,7 @@ export const AcademyPreview = () => {
 
         <motion.div
           variants={stagger}
-          initial="hidden"
+          initial="visible"
           whileInView="visible"
           viewport={{ once: true, amount: 0 }}
           className="grid grid-cols-2 gap-4"

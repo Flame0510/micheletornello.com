@@ -24,22 +24,18 @@ export const Hero = () => {
   const t = content[lang];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Background: desk photo */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/desk-setup.png"
-          alt="Michele's workspace"
-          fill
-          className="object-cover object-center opacity-70"
-          priority
-        />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/70 via-transparent to-transparent" style={{ height: '8rem' }} />
-      </div>
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      style={{
+        backgroundImage: 'url(/desk-setup.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Gradient overlays */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #060606 0%, rgba(6,6,6,0.5) 50%, rgba(6,6,6,0.3) 100%)', zIndex: 0 }} />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(6,6,6,0.7) 0%, transparent 20%)', zIndex: 0 }} />
 
-      <div className="relative max-w-[1120px] mx-auto w-full px-6 md:px-12 pt-24">
+      <div className="relative max-w-[1120px] mx-auto w-full px-6 md:px-12 pt-24" style={{ zIndex: 1 }}>
         {/* Name */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

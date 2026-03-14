@@ -19,7 +19,7 @@ export const Contact = () => {
 
       <motion.div
         variants={fadeUp}
-        initial="hidden"
+        initial="visible"
         whileInView="visible"
         viewport={{ once: true, amount: 0 }}
         className="space-y-12"
