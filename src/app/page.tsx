@@ -1,143 +1,172 @@
-import { CSSProperties } from 'react';
-import { JetBrains_Mono } from 'next/font/google';
+export default function HomePage() {
+  const statusRows = [
+    { label: '3+ anni produzione', state: 'VERIFIED' },
+    { label: '400+ dev formati', state: 'CONFIRMED' },
+    { label: '4 sistemi live', state: 'ACTIVE' },
+    { label: '<50ms target', state: 'ON TARGET' },
+  ];
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
-});
+  const timeline = [
+    {
+      year: '2020',
+      title: 'PRIMA ARCHITETTURA LIVE',
+      text: 'Primo sistema in produzione. Stabilità reale, utenti reali, responsabilità reale.',
+    },
+    {
+      year: '2022',
+      title: 'SCALING ENTERPRISE',
+      text: 'Dalla build alla resilienza: osservabilità, processi, performance e qualità operativa.',
+    },
+    {
+      year: '2023',
+      title: 'FORMAZIONE TECNICA',
+      text: 'Trasferisce metodo e disciplina a team di sviluppo orientati al lungo periodo.',
+    },
+    {
+      year: '2024',
+      title: 'SYSTEM THINKING',
+      text: 'Focus su sistemi duraturi: design decisionale, manutenzione evolutiva, impatto.',
+    },
+  ];
 
-const statusChecks = [
-  { label: 'DISPONIBILE', value: '[OK]' },
-  { label: 'COMPETENZE', value: '[VERIFIED: 3+ years production]' },
-  { label: 'STUDENTI FORMATI', value: '[CONFIRMED: 400+]' },
-  { label: 'SISTEMI LIVE', value: '[STATUS: 4 active]' },
-  { label: 'LATENZA TARGET', value: '[<50ms avg]' },
-];
+  const operations = [
+    {
+      name: 'ORION CORE',
+      mission: 'Replatforming di un backend legacy mission-critical con rollout progressivo zero-downtime.',
+      notes: 'Node.js · PostgreSQL · Redis · CI/CD con canary release',
+      log: '// 99.98% uptime · node + postgres + redis',
+    },
+    {
+      name: 'ATLAS ACADEMY',
+      mission: 'Sistema didattico per formazione tecnica avanzata con tracking di progressione e feedback.',
+      notes: 'Next.js · TypeScript · Event-driven analytics',
+      log: '// 430+ developer formati · next + ts + analytics',
+    },
+    {
+      name: 'LATTICE OPS',
+      mission: 'Ottimizzazione pipeline applicativa con target di latenza sub-50ms su endpoint critici.',
+      notes: 'Edge caching · profiling continuo · SLA engineering',
+      log: '// <50ms p95 target · edge + profiling + sla',
+    },
+  ];
 
-const deploymentLog = [
-  '[2022-01] REC Security Platform   | LIVE      | 99.9% uptime | PHP+React',
-  '[2023-06] Kastalia App            | LIVE      | 50k+ utenti  | Next.js',
-  '[2024-02] Ludelist Platform       | LIVE      | <50ms p99    | Node+React',
-  '[2024-09] Pong Game (Academy)     | DELIVERED | 400+ studenti',
-];
+  const css = `
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #080808; color: #f2ede8; font-family: 'JetBrains Mono', monospace; }
+    a { color: inherit; text-decoration: none; }
+    main { background: #080808; color: #f2ede8; overflow-x: hidden; }
+    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 30; padding: 0.9rem 1.2rem; border-bottom: 1px solid rgba(184,115,51,.35); backdrop-filter: blur(8px); background: rgba(8,8,8,.78); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
+    .topbar p { margin: 0; }
+    .hero { min-height: 100vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 7rem 1.2rem 4.5rem; }
+    .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.25) 0%, rgba(8,8,8,.56) 48%, rgba(8,8,8,.97) 100%); }
+    .heroContent { position: relative; z-index: 2; max-width: 980px; }
+    .badge { display: inline-block; border: 1px solid rgba(184,115,51,.6); padding: .4rem .7rem; color: #b87333; font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 1rem; }
+    h1,h2,h3,blockquote { font-family: 'Instrument Serif', serif; font-weight: 400; margin: 0; }
+    h1 { font-size: clamp(2.5rem, 5vw, 5.2rem); line-height: .98; max-width: 18ch; }
+    .sub { margin-top: .65rem; font-family: 'Instrument Serif', serif; font-style: italic; color: #b87333; font-size: clamp(1.2rem, 2vw, 2rem); }
+    .credibility { margin: -1.4rem 1.2rem 0; position: relative; z-index: 4; border: 1px solid rgba(242,237,232,.2); background: rgba(18,18,18,.6); padding: .8rem; text-align: center; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; }
+    .sectionWrap { padding: 4.2rem 1.2rem; max-width: 1180px; margin: 0 auto; }
+    .sectionWrap h2 { color: #b87333; font-size: clamp(1.8rem, 3.2vw, 3rem); margin-bottom: 1.5rem; }
+    .statusGrid p { margin: 0; padding: .9rem 0; border-bottom: 1px solid rgba(242,237,232,.18); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; text-transform: uppercase; letter-spacing: .05em; font-size: .88rem; }
+    .dot, .state { color: #b87333; }
+    .about { display: grid; grid-template-columns: minmax(250px,360px) minmax(0,1fr); gap: 2rem; align-items: center; }
+    .aboutMedia img { width: 100%; height: 440px; object-fit: cover; border: 1px solid rgba(184,115,51,.45); filter: grayscale(1); }
+    .aboutText p { margin: 0 0 .85rem; font-size: 1rem; line-height: 1.7; max-width: 52ch; }
+    .timelineLine { border-left: 1px solid rgba(184,115,51,.45); padding-left: 1.2rem; display: grid; gap: 1rem; }
+    .timeCard { position: relative; padding: .95rem 1rem; border: 1px solid rgba(242,237,232,.14); background: rgba(255,255,255,.01); }
+    .timeCard::before { content: ''; position: absolute; left: -1.58rem; top: 1.15rem; width: 9px; height: 9px; border-radius: 50%; background: #b87333; box-shadow: 0 0 0 4px #080808; }
+    .year { margin: 0 0 .3rem; color: #b87333; letter-spacing: .08em; font-size: .8rem; }
+    .timeCard h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+    .timeCard p { margin: 0; line-height: 1.6; font-size: .92rem; }
+    .opsGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
+    .opCard { border: 1px solid rgba(242,237,232,.16); border-left: 3px solid #b87333; padding: 1rem; background: rgba(255,255,255,.015); }
+    .opCard p { margin: 0; line-height: 1.65; font-size: .88rem; }
+    .opLabel { color: #b87333; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .5rem !important; font-size: .76rem !important; }
+    .notes { margin-top: .7rem !important; opacity: .86; }
+    .log { margin-top: .75rem !important; color: #b87333; }
+    .teaching { position: relative; min-height: 540px; margin-top: 1.8rem; }
+    .teaching img { width: 100%; height: 100%; min-height: 540px; object-fit: cover; filter: saturate(.8) contrast(1.02); }
+    .teachingOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,8,.88) 0%, rgba(8,8,8,.62) 55%, rgba(8,8,8,.35) 100%); display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 2rem 1.2rem; max-width: 820px; }
+    .teachingOverlay p { margin: 0; max-width: 60ch; line-height: 1.7; font-size: .95rem; }
+    blockquote { color: #b87333; font-size: clamp(1.45rem,2.3vw,2.4rem); font-style: italic; max-width: 24ch; }
+    .cta { text-align: center; padding-top: 5rem; padding-bottom: 5.4rem; }
+    .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .9rem; }
+    .cta a { color: #f2ede8; border-bottom: 1px solid rgba(184,115,51,.55); }
+    .cta p { margin: 1rem 0 0; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
+    @media (max-width: 980px) {
+      .opsGrid { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .aboutMedia img { height: 360px; }
+      .credibility { margin-top: -.9rem; }
+    }
+  `;
 
-const links = [
-  '→ RTL 102.5      [2024] Interview',
-  '→ Università CT  [2024] React Native seminar',
-  '→ TEDx Catania   [2023] Volunteer staff',
-];
-
-const styles: Record<string, CSSProperties> = {
-  main: { background: '#FFFFFF', color: '#000000', minHeight: '100vh' },
-  shell: { width: 'min(1100px, 100%)', margin: '0 auto', borderLeft: '1px solid #000', borderRight: '1px solid #000' },
-  header: {
-    borderBottom: '1px solid #000',
-    padding: '1rem 1.25rem',
-    fontSize: '1rem',
-    lineHeight: 1.7,
-    whiteSpace: 'nowrap',
-    overflowX: 'auto',
-  },
-  section: { padding: '2rem 1.25rem', borderBottom: '1px solid #E5E7EB' },
-  title: { fontSize: '0.82rem', letterSpacing: '0.08em', marginBottom: '1.1rem', color: '#6B7280' },
-  statusList: { display: 'grid', gap: '0.85rem' },
-  statusRow: { display: 'flex', alignItems: 'center', gap: '0.7rem', flexWrap: 'wrap', fontSize: '0.98rem', lineHeight: 1.8 },
-  dot: { color: '#059669' },
-  label: { minWidth: '15.5rem', letterSpacing: '0.04em' },
-  badge: { color: '#059669', border: '1px solid #059669', padding: '0.08rem 0.45rem' },
-  mono: { margin: 0, whiteSpace: 'pre-wrap', lineHeight: 2, fontSize: '0.95rem' },
-  logSection: { padding: '2rem 1.25rem', borderBottom: '1px solid #E5E7EB', background: '#F9FAFB' },
-  logList: { display: 'grid', gap: '0.4rem' },
-  logRow: { padding: '0.6rem 0.65rem', lineHeight: 1.9, whiteSpace: 'pre-wrap', userSelect: 'text' },
-  image: { width: '100%', height: '400px', objectFit: 'cover', filter: 'grayscale(1)', border: '1px solid #E5E7EB' },
-  teachingLine: { margin: '1rem 0 0', lineHeight: 1.9, fontSize: '0.94rem' },
-  quote: { margin: '0.75rem 0 0', color: '#6B7280' },
-  linksList: { display: 'grid', gap: '0.7rem' },
-  linkRow: { lineHeight: 1.8 },
-  contact: { background: '#000', color: '#FFF', padding: '2rem 1.25rem' },
-  contactBlock: { margin: 0, lineHeight: 1.9, whiteSpace: 'pre-wrap', fontSize: '0.95rem' },
-  cursor: { display: 'inline-block', animation: 'blink 1s step-end infinite' },
-};
-
-export default function Page() {
   return (
-    <main className={jetbrainsMono.className} style={styles.main}>
-      <style>{`@keyframes blink {0%,100%{opacity:1}50%{opacity:0}} @media (max-width:768px){.proof-shell{border-left:none!important;border-right:none!important}.proof-header{white-space:pre-wrap!important;overflow-x:visible!important}.status-label{min-width:0!important}} .log-row:hover{background:#E5E7EB}`}</style>
-      <div className="proof-shell" style={styles.shell}>
-        <header className="proof-header" style={styles.header}>
-          $ whoami → Michele Tornello | System Architect | Catania, IT | +3yr prod
-        </header>
-
-        <section style={styles.section}>
-          <div style={styles.title}>STATUS CHECK</div>
-          <div style={styles.statusList}>
-            {statusChecks.map((item) => (
-              <div key={item.label} style={styles.statusRow}>
-                <span aria-hidden="true" style={styles.dot}>
-                  ●
-                </span>
-                <span className="status-label" style={styles.label}>
-                  {item.label}
-                </span>
-                <span style={styles.badge}>{item.value}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section style={styles.section}>
-          <div style={styles.title}>BIO</div>
-          <pre style={styles.mono}>{`NAME: Tornello, Michele
-DOB:  2001-10-05 (24 anni)
-ROLE: System Architect + Full-Stack Developer
-ORG:  Paradigma SPA (2022 → presente, indeterminato)
-EDU:  Steve Jobs Academy (2020 studente → 2024 docente)
-LANG: TypeScript, PHP, Python, React, Next.js
-NOTE: Speaker nazionale (RTL 102.5, UniCT, TEDx Catania)`}</pre>
-        </section>
-
-        <section style={styles.logSection}>
-          <div style={styles.title}>PORTFOLIO — DEPLOYMENT LOG</div>
-          <div style={styles.logList}>
-            {deploymentLog.map((row) => (
-              <div key={row} className="log-row" style={styles.logRow}>
-                {row}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section style={styles.section}>
-          <div style={styles.title}>TEACHING MODULE</div>
-          <img src="/academy-class.jpg" alt="Classe in aula - Steve Jobs Academy" style={styles.image} />
-          <p style={styles.teachingLine}>
-            INSTRUCTOR: Tornello, Michele @ Steve Jobs Academy, Catania (2024–) | STUDENTS: 400+ | CURRICULUM:
-            Systems Architecture, Full-Stack Dev, Engineering Mindset
-          </p>
-          <p style={styles.quote}>/* Non insegno a programmare. Insegno a pensare da ingegnere. */</p>
-        </section>
-
-        <section style={styles.section}>
-          <div style={styles.title}>PRESS/EXTERNAL LINKS</div>
-          <div style={styles.linksList}>
-            {links.map((row) => (
-              <div key={row} style={styles.linkRow}>
-                {row}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section style={styles.contact}>
-          <pre style={styles.contactBlock}>{`$ contact michele
-> Email:    [email protetta]
-> LinkedIn: /in/michele-tornello-06a6341aa
-> Status:   accepting new projects (2024)
-
-$ `}<span style={styles.cursor}>_</span></pre>
-        </section>
-      </div>
+    <main>
+      <header className="topbar">
+        <p>Michele Tornello · 2024 · Catania · IT</p>
+      </header>
+      <section className="hero" style={{ backgroundImage: "url('/desk-setup.png')" }}>
+        <div className="overlay" />
+        <div className="heroContent">
+          <span className="badge">🟢 Disponibile · 2024</span>
+          <h1>Non costruisco software. Costruisco sistemi.</h1>
+          <p className="sub">Formo chi li costruirà.</p>
+        </div>
+      </section>
+      <section className="credibility"><p>HA PARLATO A: RTL 102.5 · Università di Catania · TEDx Catania</p></section>
+      <section className="status sectionWrap">
+        <h2>STATUS CHECK</h2>
+        <div className="statusGrid">
+          {statusRows.map((row) => (
+            <p key={row.label}><span className="dot">●</span> {row.label}<span className="state">[{row.state}]</span></p>
+          ))}
+        </div>
+      </section>
+      <section className="about sectionWrap">
+        <div className="aboutMedia"><img src="/profile-photo.png" alt="Michele Tornello" /></div>
+        <div className="aboutText">
+          <h2>CHI SONO</h2>
+          <p>Ha costruito il primo sistema in produzione a 22 anni.</p>
+          <p>A 24, ne insegna l&apos;architettura.</p>
+          <p>Non scrive codice. Progetta sistemi.</p>
+        </div>
+      </section>
+      <section className="timeline sectionWrap">
+        <h2>TIMELINE</h2>
+        <div className="timelineLine">
+          {timeline.map((item) => (
+            <article key={item.year} className="timeCard">
+              <p className="year">{item.year}</p><h3>{item.title}</h3><p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="portfolio sectionWrap">
+        <h2>DEPLOYMENT LOG</h2>
+        <div className="opsGrid">
+          {operations.map((op) => (
+            <article key={op.name} className="opCard">
+              <p className="opLabel">OPERAZIONE: {op.name}</p>
+              <p>{op.mission}</p><p className="notes">{op.notes}</p><p className="log">{op.log}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="teaching">
+        <img src="/academy-class.jpg" alt="Docenza in aula" />
+        <div className="teachingOverlay">
+          <h2>DOCENZA</h2>
+          <p>Formazione tecnica orientata alla pratica: architetture reali, revisione decisionale, responsabilità ingegneristica.</p>
+          <blockquote>Non insegno a programmare. Insegno a pensare da ingegnere.</blockquote>
+        </div>
+      </section>
+      <section className="cta sectionWrap">
+        <h2>Hai un sistema che deve durare?</h2>
+        <a href="mailto:micheletornello.dev@gmail.com">micheletornello.dev@gmail.com</a>
+        <p><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></p>
+      </section>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
     </main>
   );
 }
