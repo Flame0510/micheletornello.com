@@ -58,13 +58,13 @@ export default function HomePage() {
     },
     {
       code: '[MT-OP-003]',
-      name: 'Ludelist',
-      mission: 'Ottimizzazione pipeline applicativa con target di latenza sub-50ms su endpoint critici.',
-      notes: 'Edge caching · profiling continuo · SLA engineering',
-      log: '// <50ms p95 target · edge + profiling + sla',
-      year: '2023',
-      stack: 'React/API',
-      metric: '<50ms p99'
+      name: 'Cashbee',
+      mission: 'Piattaforma cashback per negozi fisici: fidelizzazione clienti con premi su ogni acquisto.',
+      notes: 'Next.js · Node · sistema di reward · app mobile',
+      log: '// cashback engine · loyalty system + merchant dashboard',
+      year: '2024',
+      stack: 'Next.js/Node',
+      metric: 'Cashback'
     },
     {
       code: '[MT-OP-004]',
@@ -275,7 +275,7 @@ export default function HomePage() {
           <p><span className="prompt">$</span> systems --list --status=live</p>
           <p>&gt; REC Security    <span className="live">[LIVE]</span>   PHP+React     99.9% uptime</p>
           <p>&gt; Kastalia App    <span className="live">[LIVE]</span>   Next.js+Node  50k+ users</p>
-          <p>&gt; Ludelist        <span className="live">[LIVE]</span>   React+API     &lt;50ms p99</p>
+          <p>&gt; Cashbee         <span className="live">[LIVE]</span>   Next.js/Node  cashback engine</p>
         </div>
 
         <div className="systemsMobileList">
