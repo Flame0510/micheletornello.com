@@ -68,10 +68,10 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const statusRows = [
-    { label: '3+ anni produzione', state: 'VERIFIED' },
-    { label: '400+ dev formati', state: 'CONFIRMED' },
-    { label: '4 sistemi live', state: 'ACTIVE' },
-    { label: '<50ms target', state: 'ON TARGET' },
+    { label: 'System Architect', state: 'VERIFIED' },
+    { label: 'Docente SJA', state: 'CONFIRMED' },
+    { label: 'Intervistato RTL 102.5', state: 'ACTIVE' },
+    { label: 'Founder Indipendente', state: 'ON TARGET' },
   ];
 
   const timeline = [
@@ -386,18 +386,18 @@ export default function HomePage() {
           <div className="svcGrid">
             <div className="svcCol">
               <p className="svcCode">[SVC-01]</p>
-              <p className="svcTitle">ARCHITETTURA</p>
-              <p className="svcBody">Sistemi scalabili, microservizi, infrastruttura cloud.</p>
+              <p className="svcTitle">WEB & MOBILE</p>
+              <p className="svcBody">React, Next.js, Vue, Nuxt, Angular, React Native.</p>
             </div>
             <div className="svcCol">
               <p className="svcCode">[SVC-02]</p>
-              <p className="svcTitle">SVILUPPO</p>
-              <p className="svcBody">TypeScript, PHP, React, Next.js, API.</p>
+              <p className="svcTitle">BACKEND</p>
+              <p className="svcBody">Node.js, PHP, Java, API design, microservizi.</p>
             </div>
             <div className="svcCol">
               <p className="svcCode">[SVC-03]</p>
-              <p className="svcTitle">FORMAZIONE</p>
-              <p className="svcBody">SJA, 400+ studenti, Systems thinking.</p>
+              <p className="svcTitle">ARCHITECTURE</p>
+              <p className="svcBody">Cloud architecture, database design, scalability.</p>
             </div>
           </div>
           

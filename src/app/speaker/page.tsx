@@ -28,42 +28,42 @@ const mono = JetBrains_Mono({
 
 // Content
 const bio = {
-  short: "Michele Tornello, classe 2001, è System Architect, docente presso la Steve Jobs Academy e speaker specializzato in React Native. Già intervistato da RTL 102.5, coordina lo staff tecnico di TEDx Catania. Coniuga lo sviluppo di architetture scalabili per Paradigma SPA alla creazione di memoriali digitali e sistemi di sicurezza evoluti.",
-  long: "Nato a Catania nel 2001, Michele Tornello ha trasformato una passione precoce per il codice in un percorso professionale d’impatto. Formatosi alla Steve Jobs Academy (SJA), viene assunto a tempo indeterminato nel 2022 da Paradigma SPA, partner di Confindustria Catania, dove opera come System Architect su piattaforme web scalabili. La sua dedizione al trasferimento di competenze lo porta nel 2024 a tornare in SJA in veste di docente, formando oltre 400 studenti sulle moderne architetture software. Nello stesso anno, consolida la sua presenza nel circuito dello speaking come relatore su React Native presso l'Università di Catania e con un intervento in diretta nazionale su RTL 102.5. Attivo nell'ecosistema dell'innovazione sociale come volontario nello staff di TEDx Catania, Michele è fondatore di diversi progetti digitali indipendenti: REC Security, Cashbee, Watching Stars e Memory Cloud. Quest’ultimo esplora l’intersezione tra tecnologia NFC e memoria collettiva attraverso memoriali digitali."
+  short: "Michele Tornello è System Architect, sviluppatore full-stack e docente presso la Steve Jobs Academy. Lavora alla progettazione di architetture scalabili per applicazioni web e mobile e sviluppa prodotti digitali indipendenti. È stato intervistato da RTL 102.5 e partecipa attivamente alla community tecnologica italiana.",
+  long: "Michele Tornello è System Architect, sviluppatore full-stack e docente presso la Steve Jobs Academy. Si occupa della progettazione di architetture software scalabili e dello sviluppo di applicazioni web e mobile utilizzate in contesti reali.\n\nLavora con tecnologie moderne dell'ecosistema JavaScript come React, Next.js e React Native, oltre ad avere esperienza con Angular, Vue, Nuxt, PHP e Java. Parallelamente allo sviluppo professionale si dedica alla formazione di nuovi programmatori, contribuendo alla crescita della nuova generazione di sviluppatori.\n\nHa sviluppato diversi progetti digitali indipendenti e partecipa attivamente alla community tecnologica italiana. È stato intervistato da RTL 102.5 e ha collaborato come volontario con TEDx Catania."
 };
 
 const topics = [
   {
-    title: "React Native in produzione: da studente a docente",
-    subtitle: "Evoluzione di un'architettura mobile tra banchi di scuola e sfide enterprise.",
-    abstract: "Come si passa dal compilare il primo \"Hello World\" in React Native al gestire la formazione di 400 futuri sviluppatori? In questo talk, Michele analizza le lezioni apprese durante la transizione da studente a docente e professionista. Verranno esplorate le best practice per mantenere codebase scalabili, la gestione delle performance in contesti enterprise e le metodologie didattiche per trasmettere concetti complessi.",
-    format: "Keynote (30 min) / Podcast",
-    target: "Sviluppatori Junior/Mid, Studenti, Tech Lead",
+    title: "Costruire applicazioni reali con React e React Native",
+    subtitle: "Dal primo prototipo alla produzione: come progettare codebase mantenibili e scalabili per applicazioni web e mobile.",
+    abstract: "Il passaggio da un prototipo a un prodotto in produzione richiede rigore architettonico. Questo talk esplora come progettare sistemi web e mobile che durano nel tempo, concentrandosi su architettura di progetto, gestione dello stato, modularità del codice e risoluzione degli errori comuni che rallentano lo scaling.",
+    format: "Talk tecnico (30-45 min)",
+    target: "Web & Mobile Developer, Tech Lead",
     icon: <Cpu className="w-5 h-5" />
   },
   {
-    title: "Architettura di sistemi per il Sud Italia",
-    subtitle: "Ingegneria del software resiliente oltre i limiti geografici e infrastrutturali.",
-    abstract: "Costruire tecnologia d'eccellenza operando dalla Sicilia richiede una mentalità specifica. Michele condivide l'esperienza maturata in Paradigma SPA e come founder indipendente, dimostrando che l'alta disponibilità e la scalabilità non sono appannaggio esclusivo dei grandi hub internazionali. Il talk approfondisce il concetto di \"costruire senza scorciatoie\": dalla scelta dello stack alla cultura del testing.",
-    format: "Keynote (30 min) / Workshop (60 min)",
-    target: "Architect, CTO, Imprenditori digitali, Dev Community locali",
+    title: "Architettura software pragmatica",
+    subtitle: "Come progettare sistemi scalabili senza creare complessità inutile.",
+    abstract: "Spesso l'over-engineering è il primo nemico della velocità. Michele condivide un approccio pragmatico alla scelta delle tecnologie e alla progettazione di servizi semplici ma robusti. Vedremo come far evolvere le architetture nel tempo, mantenendo la flessibilità necessaria per rispondere al business senza sacrificare la stabilità.",
+    format: "Workshop pratico / Talk",
+    target: "Architect, CTO, Senior Developer",
     icon: <Briefcase className="w-5 h-5" />
   },
   {
-    title: "Memoriali digitali NFC: tecnologia e impatto sociale",
-    subtitle: "Come il cloud e l'hardware low-power possono preservare la memoria collettiva.",
-    abstract: "Con il progetto Memory Cloud, la tecnologia esce dagli uffici per entrare nella sfera emotiva e sociale. Michele illustra come l'integrazione tra tag NFC, architetture cloud e interfacce web minimali possa creare nuovi modi per conservare e condividere il ricordo. Il talk esplora le sfide tecniche della durabilità del dato a lungo termine e l'etica del \"digital afterlife\".",
-    format: "Keynote (30 min) / Intervista Podcast",
-    target: "Innovatori sociali, UX Designer, Product Manager, Maker",
+    title: "Costruire prodotti digitali indipendenti",
+    subtitle: "Dallo sviluppo tecnico alla creazione di prodotti reali: come passare dall'idea al software funzionante.",
+    abstract: "Sviluppare un prodotto non significa solo scrivere codice. Questo intervento analizza il percorso completo: dalla progettazione di un MVP efficace all'iterazione rapida basata sul feedback. Approfondiremo la gestione tecnica del prodotto, la scelta delle infrastrutture e le strategie per garantire la scalabilità fin dal primo giorno.",
+    format: "Panel discussion / Talk",
+    target: "Product Manager, Indie Hackers, Full-stack Developer",
     icon: <Radio className="w-5 h-5" />
   }
 ];
 
 const credentials = [
-  { label: "Docente SJA", detail: "400+ Studenti Formati", icon: <Users className="w-4 h-4" /> },
+  { label: "System Architect", detail: "Software Design", icon: <Terminal className="w-4 h-4" /> },
+  { label: "Docente SJA", detail: "Steve Jobs Academy", icon: <Users className="w-4 h-4" /> },
   { label: "RTL 102.5", detail: "Intervista Nazionale", icon: <Radio className="w-4 h-4" /> },
-  { label: "TEDx Catania", detail: "Staff Volontario", icon: <MapPin className="w-4 h-4" /> },
-  { label: "UniCT", detail: "Speaker React Native", icon: <Terminal className="w-4 h-4" /> }
+  { label: "TEDx Catania", detail: "Volontario Staff", icon: <MapPin className="w-4 h-4" /> }
 ];
 
 export default function SpeakerPage() {
@@ -92,7 +92,7 @@ export default function SpeakerPage() {
           </h1>
           
           <p className="font-mono text-sm md:text-base text-[#F2EDE8]/60 max-w-xl leading-relaxed">
-            System Architect, Docente e Speaker. Costruisco sistemi digitali resilienti con focus su React Native, Architetture Cloud e Impatto Sociale.
+            System Architect · Software Engineer · Tech Educator
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10">
@@ -189,6 +189,23 @@ export default function SpeakerPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Technologies Section */}
+        <section className="mb-24">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#B87333] mb-8 flex items-center gap-2">
+            <span className="w-8 h-[1px] bg-[#B87333]/30" /> Stack & Expertise
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+            <div>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-3">Web & Mobile</h3>
+              <p className="text-lg">React, Next.js, Vue, Nuxt, Angular / React Native</p>
+            </div>
+            <div>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-3">Backend & Architecture</h3>
+              <p className="text-lg">Node.js, PHP, Java / API design, microservizi, cloud architecture, database design</p>
+            </div>
           </div>
         </section>
 
