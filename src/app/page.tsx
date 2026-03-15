@@ -1,4 +1,10 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const statusRows = [
     { label: '3+ anni produzione', state: 'VERIFIED' },
     { label: '400+ dev formati', state: 'CONFIRMED' },
@@ -36,6 +42,9 @@ export default function HomePage() {
       mission: 'Replatforming di un backend legacy mission-critical con rollout progressivo zero-downtime.',
       notes: 'Node.js · PostgreSQL · Redis · CI/CD con canary release',
       log: '// 99.98% uptime · node + postgres + redis',
+      year: '2022',
+      stack: 'Node/PostgreSQL',
+      metric: '99.9% uptime'
     },
     {
       code: '[MT-OP-002]',
@@ -43,6 +52,9 @@ export default function HomePage() {
       mission: 'Sistema didattico per formazione tecnica avanzata con tracking di progressione e feedback.',
       notes: 'Next.js · TypeScript · Event-driven analytics',
       log: '// 430+ developer formati · next + ts + analytics',
+      year: '2023',
+      stack: 'Next.js/TS',
+      metric: '50k+ users'
     },
     {
       code: '[MT-OP-003]',
@@ -50,6 +62,9 @@ export default function HomePage() {
       mission: 'Ottimizzazione pipeline applicativa con target di latenza sub-50ms su endpoint critici.',
       notes: 'Edge caching · profiling continuo · SLA engineering',
       log: '// <50ms p95 target · edge + profiling + sla',
+      year: '2023',
+      stack: 'React/API',
+      metric: '<50ms p99'
     },
     {
       code: '[MT-OP-004]',
@@ -57,6 +72,9 @@ export default function HomePage() {
       mission: 'Progettazione e rilascio di una piattaforma ad alta affidabilità con esperienza utente real-time.',
       notes: 'Realtime architecture · WebSockets · observability stack',
       log: '// realtime uptime · ws + monitoring + incident response',
+      year: '2024',
+      stack: 'WS/Monitoring',
+      metric: 'Realtime'
     },
   ];
 
@@ -65,36 +83,65 @@ export default function HomePage() {
     html, body { margin: 0; padding: 0; background: #080808; color: #f2ede8; font-family: 'JetBrains Mono', monospace; }
     a { color: inherit; text-decoration: none; }
     main { background: #080808; color: #f2ede8; overflow-x: hidden; }
-    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 30; padding: 0.9rem 1.2rem; border-bottom: 1px solid rgba(184,115,51,.35); backdrop-filter: blur(8px); background: rgba(8,8,8,.78); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    
+    /* 1. Navbar Mobile Fix */
+    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; padding: 0.9rem 1.2rem; border-bottom: 1px solid rgba(184,115,51,.35); backdrop-filter: blur(8px); background: rgba(8,8,8,.78); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .topbar p { margin: 0; }
-    .topNav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .topNav { display: flex; align-items: center; gap: 1rem; }
     .topNav a { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: #aaa; letter-spacing: .06em; text-transform: none; }
+    
+    .hamburger { display: none; background: none; border: none; color: #f2ede8; font-size: 1.5rem; cursor: pointer; padding: 0; }
+    .mobileMenu { position: fixed; inset: 0; background: #080808; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; padding: 2rem; }
+    .mobileMenu a { font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #f2ede8; }
+    .closeMenu { position: absolute; top: 1.2rem; right: 1.2rem; background: none; border: none; color: #f2ede8; font-size: 2rem; cursor: pointer; }
+
+    /* 5. Hero Typography Fix */
     .hero { min-height: 100vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 7rem 1.2rem 4.5rem; }
     .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.25) 0%, rgba(8,8,8,.56) 48%, rgba(8,8,8,.97) 100%); }
     .heroContent { position: relative; z-index: 2; max-width: 980px; }
     .badge { display: inline-block; border: 1px solid rgba(184,115,51,.6); padding: .4rem .7rem; color: #B87333; font-family: 'JetBrains Mono', monospace; font-size: .75rem; letter-spacing: .02em; margin-bottom: 1rem; }
-    .thesis { margin: 0 0 .7rem; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: #aaa; }
+    
+    /* 6. Thesis Statement Fix */
+    .thesis { margin: 0 0 .7rem; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: #aaa; max-width: 90vw; }
+    
     h1,h2,h3,blockquote { font-family: 'Instrument Serif', serif; font-weight: 400; margin: 0; }
-    h1 { font-size: clamp(2.5rem, 5vw, 5.2rem); line-height: .98; max-width: 18ch; }
-    .sub { margin-top: .65rem; font-family: 'Instrument Serif', serif; font-style: italic; color: #b87333; font-size: clamp(1.2rem, 2vw, 2rem); }
-    .credibility { margin: -1.4rem 1.2rem 0; position: relative; z-index: 4; border: 1px solid rgba(242,237,232,.2); background: rgba(18,18,18,.6); padding: .8rem; text-align: center; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5.2rem); line-height: 1.1; max-width: 18ch; }
+    .sub { margin-top: .65rem; font-family: 'Instrument Serif', serif; font-style: italic; color: #b87333; font-size: clamp(1.2rem, 4vw, 2rem); }
+    
+    .credibility { margin: -1.4rem 1.2rem 0; position: relative; z-index: 4; border: 1px solid rgba(242,237,232,.2); background: rgba(18,18,18,.6); padding: .8rem; text-align: center; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    
     .sectionWrap { padding: 4.2rem 1.2rem; max-width: 1180px; margin: 0 auto; }
     .sectionWrap h2 { color: #b87333; font-size: clamp(1.8rem, 3.2vw, 3rem); margin-bottom: 1.5rem; }
-    .statusGrid p { margin: 0; padding: .9rem 0; border-bottom: 1px solid rgba(242,237,232,.18); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; text-transform: uppercase; letter-spacing: .05em; font-size: .88rem; }
-    .dot, .state { color: #b87333; }
-    .systemsTable { margin-top: 1rem; background: #111; padding: 16px; border-radius: 0; font-family: 'JetBrains Mono', monospace; font-size: .8rem; line-height: 1.7; }
+    
+    /* 2. Status Check Grid Fix */
+    .statusGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid rgba(242,237,232,.18); }
+    .statusGrid p { margin: 0; padding: .9rem 0.5rem; border-bottom: 1px solid rgba(242,237,232,.18); display: flex; flex-direction: column; gap: 0.2rem; text-transform: uppercase; letter-spacing: .05em; font-size: .7rem; }
+    .dot { color: #b87333; margin-right: 4px; }
+    .state { color: #b87333; font-weight: bold; }
+
+    /* 3. Deployment Log Desktop Table */
+    .systemsTable { margin-top: 1rem; background: #111; padding: 16px; border-radius: 0; font-family: 'JetBrains Mono', monospace; font-size: .8rem; line-height: 1.7; display: block; }
     .systemsTable p { margin: 0; color: rgba(255,255,255,.6); white-space: pre; }
     .systemsTable .prompt, .systemsTable .live { color: #00C87A; }
+    
+    /* 3. Deployment Log Mobile List */
+    .systemsMobileList { display: none; margin-top: 1rem; }
+    .sysItem { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+    .sysItem span { color: #00C87A; }
+
     .about { display: grid; grid-template-columns: minmax(250px,360px) minmax(0,1fr); gap: 2rem; align-items: center; }
     .aboutMedia img { width: 100%; height: 440px; object-fit: cover; border: 1px solid rgba(184,115,51,.45); filter: grayscale(1); }
     .aboutText p { margin: 0 0 .85rem; font-size: 1rem; line-height: 1.7; max-width: 52ch; }
     .execLabel { margin: 0 0 .45rem !important; color: #5A5A5A; font-size: .7rem !important; letter-spacing: .16em; text-transform: uppercase; }
     .execText { margin: 0 0 1.1rem !important; color: #aaa; font-size: .9rem !important; max-width: 600px !important; line-height: 1.7; }
-    .svcGrid { margin: 1rem 0 1.4rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 24px; }
+    
+    /* 4. SVC Grid Responsive Fix */
+    .svcGrid { margin: 1rem 0 1.4rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 24px; }
     .svcCol p { margin: 0; }
     .svcCode { color: #B87333; font-size: .7rem; font-family: 'JetBrains Mono', monospace; margin-bottom: .45rem !important; }
     .svcTitle { color: #fff; font-size: .8rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .45rem !important; }
     .svcBody { color: #aaa; font-size: .85rem; line-height: 1.6; }
+    
     .poeticLine { font-family: 'Instrument Serif', serif; font-style: italic; margin: 0 0 1rem !important; }
     .timelineLine { border-left: 1px solid rgba(184,115,51,.45); padding-left: 1.2rem; display: grid; gap: 1rem; }
     .timeCard { position: relative; padding: .95rem 1rem; border: 1px solid rgba(242,237,232,.14); background: rgba(255,255,255,.01); }
@@ -102,6 +149,7 @@ export default function HomePage() {
     .year { margin: 0 0 .3rem; color: #b87333; letter-spacing: .08em; font-size: .8rem; }
     .timeCard h3 { font-size: 1.3rem; margin-bottom: .5rem; }
     .timeCard p { margin: 0; line-height: 1.6; font-size: .92rem; }
+    
     .opsGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
     .portfolio { background: #F2EDE8; color: #0D0D0D; }
     .portfolio h2 { color: #0D0D0D; }
@@ -112,38 +160,74 @@ export default function HomePage() {
     .opName { margin: 0 0 .5rem !important; font-size: 1rem !important; color: #0D0D0D; }
     .notes { margin-top: .7rem !important; color: #B87333; }
     .log { margin-top: .75rem !important; color: #B87333; }
+    
     .teaching { position: relative; min-height: 540px; margin-top: 1.8rem; }
     .teaching img { width: 100%; height: 100%; min-height: 540px; object-fit: cover; filter: saturate(.8) contrast(1.02); }
     .teachingOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,8,.88) 0%, rgba(8,8,8,.62) 55%, rgba(8,8,8,.35) 100%); display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 2rem 1.2rem; max-width: 820px; }
     .teachingOverlay p { margin: 0; max-width: 60ch; line-height: 1.7; font-size: .95rem; }
     blockquote { color: #b87333; font-size: clamp(1.45rem,2.3vw,2.4rem); font-style: italic; max-width: 24ch; }
     .academyClaim { margin: .4rem 0 0; font-family: 'JetBrains Mono', monospace; color: #B87333; font-size: .85rem; }
+    
     .cta { text-align: center; padding-top: 5rem; padding-bottom: 5.4rem; }
     .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .9rem; }
     .cta a { color: #f2ede8; border-bottom: 1px solid rgba(184,115,51,.55); }
     .cta p { margin: 1rem 0 0; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
-    @media (max-width: 980px) {
-      .topbar { align-items: flex-start; flex-direction: column; }
-      .topNav { gap: .7rem; }
-      .opsGrid { grid-template-columns: 1fr; }
-      .about { grid-template-columns: 1fr; }
+
+    @media (max-width: 768px) {
+       .statusGrid { grid-template-columns: repeat(2, 1fr); }
+       .svcGrid { grid-template-columns: repeat(2, 1fr); }
+       .opsGrid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .topbar p { font-size: 0.7rem; }
+      .topbar .fullInfo { display: none; }
+      .topNav { display: none; }
+      .hamburger { display: block; }
+      
+      .statusGrid { grid-template-columns: repeat(2, 1fr); }
+      .statusGrid p { font-size: 0.65rem; }
+
+      .systemsTable { display: none; }
+      .systemsMobileList { display: block; }
+
       .svcGrid { grid-template-columns: 1fr; }
-      .aboutMedia img { height: 360px; }
-      .credibility { margin-top: -.9rem; }
+      .opsGrid { grid-template-columns: 1fr; }
+      
+      .about { grid-template-columns: 1fr; }
+      .aboutMedia img { height: 320px; }
+      
+      h1 { font-size: 2.8rem; }
+      .thesis { text-align: left; }
     }
   `;
 
   return (
     <main>
       <header className="topbar">
-        <p>Michele Tornello · 2024 · Catania · IT</p>
+        <p>
+          <span className="fullInfo">Michele Tornello · 2024 · Catania · IT</span>
+          <span className="md:hidden">Michele Tornello</span>
+        </p>
         <nav className="topNav">
           <a href="#chi-sono">[01] Chi sono</a>
           <a href="#lavori">[02] Lavori</a>
           <a href="#academy">[03] Academy</a>
           <a href="#contatto">[04] Contatto</a>
         </nav>
+        <button className="hamburger" onClick={() => setIsMenuOpen(true)}>☰</button>
       </header>
+
+      {isMenuOpen && (
+        <div className="mobileMenu">
+          <button className="closeMenu" onClick={() => setIsMenuOpen(false)}>×</button>
+          <a href="#chi-sono" onClick={() => setIsMenuOpen(false)}>[01] Chi sono</a>
+          <a href="#lavori" onClick={() => setIsMenuOpen(false)}>[02] Lavori</a>
+          <a href="#academy" onClick={() => setIsMenuOpen(false)}>[03] Academy</a>
+          <a href="#contatto" onClick={() => setIsMenuOpen(false)}>[04] Contatto</a>
+        </div>
+      )}
+
       <section className="hero" style={{ backgroundImage: "url('/desk-setup.png')" }}>
         <div className="overlay" />
         <div className="heroContent">
@@ -153,27 +237,45 @@ export default function HomePage() {
           <p className="sub">Formo chi li costruirà.</p>
         </div>
       </section>
+
       <section className="credibility"><p>HA PARLATO A: RTL 102.5 · Università di Catania · TEDx Catania</p></section>
+
       <section className="status sectionWrap">
         <h2>STATUS CHECK</h2>
         <div className="statusGrid">
           {statusRows.map((row) => (
-            <p key={row.label}><span className="dot">●</span> {row.label}<span className="state">[{row.state}]</span></p>
+            <p key={row.label}>
+              <span><span className="dot">●</span> {row.label}</span>
+              <span className="state">[{row.state}]</span>
+            </p>
           ))}
         </div>
+        
         <div className="systemsTable">
           <p><span className="prompt">$</span> systems --list --status=live</p>
           <p>&gt; REC Security    <span className="live">[LIVE]</span>   PHP+React     99.9% uptime</p>
           <p>&gt; Kastalia App    <span className="live">[LIVE]</span>   Next.js+Node  50k+ users</p>
           <p>&gt; Ludelist        <span className="live">[LIVE]</span>   React+API     &lt;50ms p99</p>
         </div>
+
+        <div className="systemsMobileList">
+          <p style={{fontFamily:'monospace', color:'#5A5A5A', fontSize:'0.7rem'}}>$ systems --list --status=live</p>
+          {operations.slice(0,3).map(op => (
+             <div key={op.name} className="sysItem">
+                <div>&gt; {op.name} <span>[LIVE]</span></div>
+                <div style={{color:'#888'}}>{op.stack} · {op.metric}</div>
+             </div>
+          ))}
+        </div>
       </section>
+
       <section id="chi-sono" className="about sectionWrap">
         <div className="aboutMedia"><img src="/profile-photo.png" alt="Michele Tornello" /></div>
         <div className="aboutText">
           <h2>CHI SONO</h2>
           <p className="execLabel">CHI È</p>
           <p className="execText">Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. Assunto a tempo indeterminato da Paradigma SPA nel 2022. Dal 2024 docente Steve Jobs Academy con oltre 400 professionisti formati. Speaker nazionale: RTL 102.5, Università di Catania, TEDx Catania.</p>
+          
           <div className="svcGrid">
             <div className="svcCol">
               <p className="svcCode">[SVC-01]</p>
@@ -191,11 +293,13 @@ export default function HomePage() {
               <p className="svcBody">SJA, 400+ studenti, Systems thinking.</p>
             </div>
           </div>
+          
           <p className="poeticLine">Ha costruito il primo sistema in produzione a 22 anni.</p>
           <p className="poeticLine">A 24, ne insegna l&apos;architettura.</p>
           <p className="poeticLine">Non scrive codice. Progetta sistemi.</p>
         </div>
       </section>
+
       <section className="timeline sectionWrap">
         <h2>TIMELINE</h2>
         <div className="timelineLine">
@@ -206,6 +310,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
       <section id="lavori" className="portfolio sectionWrap">
         <h2>DEPLOYMENT LOG</h2>
         <div className="opsGrid">
@@ -219,6 +324,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
       <section id="academy" className="teaching">
         <img src="/academy-class.jpg" alt="Docenza in aula" />
         <div className="teachingOverlay">
@@ -228,11 +334,13 @@ export default function HomePage() {
           <p className="academyClaim">// Non formo programmatori. Formo ingegneri che pensano ai sistemi.</p>
         </div>
       </section>
+
       <section id="contatto" className="cta sectionWrap">
         <h2>Hai un sistema che deve durare?</h2>
         <a href="mailto:micheletornello.dev@gmail.com">micheletornello.dev@gmail.com</a>
         <p><a href="https://www.linkedin.com/in/michele-tornello-06a6341aa/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></p>
       </section>
+
       <style dangerouslySetInnerHTML={{ __html: css }} />
     </main>
   );
