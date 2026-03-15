@@ -84,23 +84,6 @@ export const Timeline = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative flex items-start gap-8 py-6 overflow-hidden"
             >
-              {/* Watermark anno — al livello riga, non nel content div */}
-              <div
-                className="absolute font-display pointer-events-none select-none"
-                style={{
-                  fontSize: "clamp(6rem, 15vw, 12rem)",
-                  color: "#E8E8E8",
-                  opacity: 0.025,
-                  letterSpacing: "-0.05em",
-                  top: "-1.5rem",
-                  left: "88px",
-                  lineHeight: 1,
-                  zIndex: 0,
-                }}
-              >
-                {e.year}
-              </div>
-
               <div className="w-[80px] shrink-0 text-right relative z-10">
                 <ScrambleText
                   text={e.year}
