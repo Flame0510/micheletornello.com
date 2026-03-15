@@ -1,7 +1,9 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef } from "react";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
+import { ScrambleText } from "../ui/ScrambleText";
 import { useLang } from "@/lib/LanguageContext";
 
 const letterVariants = {
@@ -12,6 +14,75 @@ const letterVariants = {
 const wordVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.05 } },
+};
+
+type PrincipleBlockProps = {
+  number: string;
+  title: string;
+  desc: string;
+  i: number;
+};
+
+const PrincipleBlock = ({ number, title, desc, i }: PrincipleBlockProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const numberY = useTransform(scrollYProgress, [0, 1], [20, -20]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="relative flex gap-8 items-start overflow-hidden"
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.35 }}
+      transition={{ duration: 0.45, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={number}
+          className="font-display shrink-0 select-none pointer-events-none"
+          style={{
+            y: numberY,
+            fontSize: "clamp(4rem, 12vw, 8rem)",
+            color: "#1A1A1A",
+            opacity: 0.14,
+            lineHeight: 0.9,
+            letterSpacing: "-0.04em",
+            minWidth: "clamp(4rem, 10vw, 6rem)",
+          }}
+          variants={wordVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          {number.split("").map((char, idx) => (
+            <motion.span key={`${number}-${idx}`} variants={letterVariants}>
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+      </AnimatePresence>
+
+      <motion.div
+        className="space-y-3 pt-1 relative z-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+      >
+        <ScrambleText
+          text={title}
+          duration={500}
+          delay={i * 100}
+          className="text-xl md:text-2xl font-semibold text-text-main leading-snug"
+        />
+        <p className="text-text-muted leading-relaxed text-lg">{desc}</p>
+      </motion.div>
+    </motion.div>
+  );
 };
 
 export const HowIThink = () => {
@@ -70,49 +141,7 @@ export const HowIThink = () => {
 
       <div className="space-y-12">
         {t.principles.map((p, i) => (
-          <motion.div
-            key={`${p.num}-${i}`}
-            className="flex gap-8 items-start"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.45, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={p.num}
-                className="font-display shrink-0 select-none"
-                style={{
-                  fontSize: "clamp(2rem, 4vw, 3rem)",
-                  color: "#1A1A1A",
-                  lineHeight: 1,
-                  letterSpacing: "-0.02em",
-                  minWidth: "3rem",
-                }}
-                variants={wordVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.6 }}
-              >
-                {p.num.split("").map((char, idx) => (
-                  <motion.span key={`${p.num}-${idx}`} variants={letterVariants}>
-                    {char}
-                  </motion.span>
-                ))}
-              </motion.span>
-            </AnimatePresence>
-
-            <motion.div
-              className="space-y-3 pt-1"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
-              <h3 className="text-xl md:text-2xl font-semibold text-text-main leading-snug">{p.title}</h3>
-              <p className="text-text-muted leading-relaxed text-lg">{p.body}</p>
-            </motion.div>
-          </motion.div>
+          <PrincipleBlock key={`${p.num}-${i}`} number={p.num} title={p.title} desc={p.body} i={i} />
         ))}
       </div>
     </section>

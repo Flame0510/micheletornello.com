@@ -15,7 +15,7 @@ export const About = () => {
     offset: ["start end", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
 
   const content = {
     it: {

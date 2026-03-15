@@ -5,6 +5,8 @@ export interface CaseStudy {
   gradient: string;
   image: string;
   tech: string[];
+  impactNumber?: string;
+  impactLabel?: string;
   content: {
     it: CaseStudyContent;
     en: CaseStudyContent;
@@ -89,6 +91,8 @@ export const caseStudies: CaseStudy[] = [
     gradient: 'from-orange-500/20 to-red-500/20',
     image: '/kastalia.jpg',
     tech: ['Astro', 'React', 'Supabase', 'Stripe', 'Vercel'],
+    impactNumber: '+40%',
+    impactLabel: 'prenotazioni dirette',
     content: {
       it: {
         title: 'Casa Vacanze Kastalia',

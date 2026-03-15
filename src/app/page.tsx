@@ -5,6 +5,7 @@ import { About } from "@/components/sections/About";
 import { Timeline } from "@/components/sections/Timeline";
 import { WhatIBuild } from "@/components/sections/WhatIBuild";
 import { Portfolio } from "@/components/sections/Portfolio";
+import { ImpactStats } from "@/components/sections/ImpactStats";
 import { HowIThink } from "@/components/sections/HowIThink";
 import { AcademyPreview } from "@/components/sections/AcademyPreview";
 import { Contact } from "@/components/sections/Contact";
@@ -21,6 +22,7 @@ export default function Home() {
       <Timeline />
       <WhatIBuild />
       <Portfolio />
+      <ImpactStats />
       <HowIThink />
       <AcademyPreview />
       <Contact />

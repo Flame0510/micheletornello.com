@@ -3,6 +3,8 @@ import { Geist, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
+import { PageLoader } from '@/components/ui/PageLoader';
+import { CustomCursor } from '@/components/ui/CustomCursor';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,6 +36,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-text-main`}
       >
+        <PageLoader />
+        <CustomCursor />
         <LanguageProvider>{children}</LanguageProvider>
         <div
           className="fixed inset-0 pointer-events-none"

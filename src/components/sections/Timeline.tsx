@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { ScrambleText } from "../ui/ScrambleText";
 import { useLang } from "@/lib/LanguageContext";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -84,16 +85,35 @@ export const Timeline = () => {
               className="relative flex items-start gap-8 py-6"
             >
               <div className="w-[80px] shrink-0 text-right">
-                <span className="font-mono text-sm" style={{ color: "#C9A84C", fontFeatureSettings: '"liga" 0, "calt" 0' }}>
-                  {e.year}
-                </span>
+                <ScrambleText
+                  text={e.year}
+                  duration={400}
+                  className="font-mono text-sm"
+                  style={{ color: "#C9A84C", fontFeatureSettings: '"liga" 0, "calt" 0' }}
+                />
               </div>
               <div
                 className="absolute left-[76px] top-[26px] w-2 h-2 rounded-full"
                 style={{ background: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.6)" }}
               />
-              <div className="pt-0.5 pl-6">
-                <p className="text-text-main text-base leading-relaxed" style={{ fontFeatureSettings: '"liga" 0, "calt" 0' }}>
+              <div className="pt-0.5 pl-6 relative overflow-hidden">
+                {/* Anno watermark */}
+                <div
+                  className="absolute font-display pointer-events-none select-none"
+                  style={{
+                    fontSize: "clamp(6rem, 15vw, 12rem)",
+                    color: "#E8E8E8",
+                    opacity: 0.025,
+                    letterSpacing: "-0.05em",
+                    top: "-2rem",
+                    left: "-1rem",
+                    lineHeight: 1,
+                    zIndex: 0,
+                  }}
+                >
+                  {e.year}
+                </div>
+                <p className="text-text-main text-base leading-relaxed relative z-10" style={{ fontFeatureSettings: '"liga" 0, "calt" 0' }}>
                   {lang === "it" ? e.it : e.en}
                 </p>
               </div>
