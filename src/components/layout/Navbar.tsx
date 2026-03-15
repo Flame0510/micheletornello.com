@@ -22,7 +22,7 @@ const Navbar = () => {
   const navLinks = [
     { name: '[01] Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
     { name: '[02] Lavori', href: '/#lavori', anchor: '#lavori' },
-    { name: '[03] Academy', href: '/#academy', anchor: '#academy' },
+    { name: '[03] Academy', href: '/academy', anchor: '/academy' },
     { name: '[04] Contatto', href: '/#contatto', anchor: '#contatto' },
   ];
 
