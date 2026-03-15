@@ -148,7 +148,7 @@ export default function PortfolioSection() {
         .pA3_header { display:flex; align-items:center; gap:15px; margin-bottom:80px; border-bottom:1px solid rgba(184,115,51,.2); padding-bottom:20px; }
         .pA3_title { font-size:1.1rem; text-transform:uppercase; letter-spacing:2px; color:#F2EDE8; margin:0; }
         .pA3_counter { color:#B87333; font-weight:700; }
-        .pA3_featured { position:relative; border-left:4px solid #B87333; padding:60px 40px; background:rgba(184,115,51,.02); margin-bottom:120px; overflow:hidden; }
+        .pA3_featured { position:relative; border-left:4px solid #B87333; padding:40px 40px; background:rgba(184,115,51,.02); margin-bottom:80px; overflow:hidden; }
         .pA3_featured_watermark { position:absolute; bottom:-2rem; right:2rem; font-size:clamp(8rem,16vw,16rem); font-family:'Instrument Serif',serif; color:#B87333; opacity:.05; line-height:1; pointer-events:none; }
         .pA3_featured_label { font-size:.8rem; opacity:.6; margin-bottom:10px; }
         .pA3_featured_status { color:#B87333; font-size:.8rem; font-weight:800; margin-bottom:20px; }

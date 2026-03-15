@@ -78,7 +78,9 @@ function ContactForm() {
   return (
     <form className="contactForm" onSubmit={handleSubmit}>
       <div className="contactRow">
+        <label htmlFor="contact-name" className="sr-only">Nome</label>
         <input
+          id="contact-name"
           className="contactInput"
           type="text"
           placeholder="Nome"
@@ -86,7 +88,9 @@ function ContactForm() {
           value={form.name}
           onChange={e => setForm(f => ({...f, name: e.target.value}))}
         />
+        <label htmlFor="contact-email" className="sr-only">Email</label>
         <input
+          id="contact-email"
           className="contactInput"
           type="email"
           placeholder="Email"
@@ -95,7 +99,9 @@ function ContactForm() {
           onChange={e => setForm(f => ({...f, email: e.target.value}))}
         />
       </div>
+      <label htmlFor="contact-message" className="sr-only">Messaggio</label>
       <textarea
+        id="contact-message"
         className="contactInput contactTextarea"
         placeholder="Raccontami il progetto..."
         required
@@ -231,6 +237,30 @@ export default function HomePage() {
           >
             Formo chi li costruirà.
           </motion.p>
+          
+          <motion.a
+            href="#contatto"
+            custom={5}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            style={{
+              display: 'inline-block',
+              marginTop: '2rem',
+              padding: '0.85rem 1.8rem',
+              background: '#B87333',
+              color: '#080808',
+              fontFamily: 'var(--font-jetbrains-mono), monospace',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              textDecoration: 'none',
+              textTransform: 'uppercase' as const,
+            }}
+          >
+            Parliamo del tuo progetto →
+          </motion.a>
         </div>
       </section>
 
@@ -277,8 +307,12 @@ export default function HomePage() {
           <div className="aboutText">
             <h2>CHI SONO</h2>
             <p className="execLabel">CHI È</p>
-            <p className="execText">Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. Assunto a tempo indeterminato da Paradigma SPA nel 2022. Dal 2024 docente Steve Jobs Academy con oltre 400 professionisti formati. Speaker nazionale: RTL 102.5, Università di Catania, TEDx Catania.</p>
+            <p className="execText">Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. Assunto a tempo indeterminato da Paradigma SPA nel 2022. Dal 2022 docente Steve Jobs Academy con oltre 100 studenti formati. Speaker nazionale: RTL 102.5, Università di Catania, TEDx Catania.</p>
             
+            <p className="poeticLine">Ha costruito il primo sistema in produzione a 22 anni.</p>
+            <p className="poeticLine">A 24, ne insegna l&apos;architettura.</p>
+            <p className="poeticLine">Non scrive codice. Progetta sistemi.</p>
+
             <div className="svcGrid">
               {[
                 { code: '[SVC-01]', title: 'WEB & MOBILE', body: 'React, Next.js, Vue, Nuxt, Angular, React Native.' },
@@ -299,10 +333,6 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
-            
-            <p className="poeticLine">Ha costruito il primo sistema in produzione a 22 anni.</p>
-            <p className="poeticLine">A 24, ne insegna l&apos;architettura.</p>
-            <p className="poeticLine">Non scrive codice. Progetta sistemi.</p>
           </div>
         </div>
       </section>

@@ -100,7 +100,7 @@ export const portfolio = [
 export const academy = {
   intro: "Docente presso Steve Jobs Academy, trasmetto competenze tecniche su tecnologie moderne e architetture software a studenti di Catania, Caltagirone e Palermo.",
   locations: ["Catania", "Caltagirone", "Palermo"],
-  year: "A.A. 2024 / 2025",
+  year: "A.A. 2025 / 2026",
   subjects: [
     {
       name: "PHP",

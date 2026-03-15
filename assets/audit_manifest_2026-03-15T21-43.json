@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-03-15T21-43",
+  "port": 3000,
+  "sections": [
+    "lavori",
+    "chi-sono",
+    "academy",
+    "contatto",
+    ".hero",
+    ".credibility",
+    ".timeline"
+  ],
+  "viewports": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "waitMs": 1500,
+  "files": [
+    "/tmp/micheletornello/assets/audit_fullpage_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_lavori_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_chi-sono_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_academy_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_contatto_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.hero_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.credibility_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.timeline_mobile_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_fullpage_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_lavori_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_chi-sono_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_academy_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_contatto_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.hero_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.credibility_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.timeline_tablet_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_fullpage_desktop_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_lavori_desktop_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_chi-sono_desktop_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_academy_desktop_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_contatto_desktop_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.hero_desktop_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.credibility_desktop_2026-03-15T21-43.jpg",
+    "/tmp/micheletornello/assets/audit_.timeline_desktop_2026-03-15T21-43.jpg"
+  ]
+}

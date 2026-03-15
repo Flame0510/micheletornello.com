@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-03-15T21-36",
+  "port": 3000,
+  "sections": [
+    "lavori",
+    "chi-sono",
+    ".hero"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop"
+  ],
+  "waitMs": 1200,
+  "files": [
+    "/tmp/micheletornello/assets/qatest_lavori_mobile_2026-03-15T21-36.jpg",
+    "/tmp/micheletornello/assets/qatest_chi-sono_mobile_2026-03-15T21-36.jpg",
+    "/tmp/micheletornello/assets/qatest_.hero_mobile_2026-03-15T21-36.jpg",
+    "/tmp/micheletornello/assets/qatest_lavori_desktop_2026-03-15T21-36.jpg",
+    "/tmp/micheletornello/assets/qatest_chi-sono_desktop_2026-03-15T21-36.jpg",
+    "/tmp/micheletornello/assets/qatest_.hero_desktop_2026-03-15T21-36.jpg"
+  ]
+}

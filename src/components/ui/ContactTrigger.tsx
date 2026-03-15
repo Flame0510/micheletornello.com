@@ -9,10 +9,12 @@ export default function ContactTrigger() {
   useEffect(() => {
     if (dismissed) return;
     let idleTimer: ReturnType<typeof setTimeout>;
+    let countdownStarted = false;
 
     const handleScroll = () => {
-      clearTimeout(idleTimer);
+      if (countdownStarted) return; // non resettare se già partito
       if (window.scrollY > window.innerHeight * 0.6) {
+        countdownStarted = true;
         idleTimer = setTimeout(() => setVisible(true), 15000);
       }
     };

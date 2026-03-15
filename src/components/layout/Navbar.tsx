@@ -56,8 +56,8 @@ const Navbar = () => {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 width-full z-50 transition-all duration-300 ${
-          scrolled ? 'py-3 bg-[#080808]/80 backdrop-blur-md border-bottom border-[#B87333]/20' : 'py-6 bg-transparent'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled ? 'py-3 bg-[#080808]/80 backdrop-blur-md border-b border-[#B87333]/20' : 'py-6 bg-transparent'
         }`}
         style={{ width: '100%' }}
       >
@@ -104,6 +104,7 @@ const Navbar = () => {
           <button 
             className="md:hidden text-[#F2EDE8] focus:outline-none"
             onClick={() => setIsMenuOpen(true)}
+            aria-label="Apri menu"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -125,6 +126,7 @@ const Navbar = () => {
             <button 
               className="absolute top-8 right-8 text-[#F2EDE8] focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
+              aria-label="Chiudi menu"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
