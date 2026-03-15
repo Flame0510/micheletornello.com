@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useParallax } from '@/hooks/useParallax';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -75,6 +76,7 @@ function ContactForm() {
 }
 
 export default function HomePage() {
+  const parallaxRef = useParallax(0.25);
   const statusRows = [
     { label: 'System Architect', state: 'VERIFIED' },
     { label: 'Docente SJA', state: 'CONFIRMED' },
@@ -170,9 +172,21 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="hero" style={{ backgroundImage: "url('/desk-setup.png')" }}>
-        <div className="overlay" />
-        <div className="heroContent">
+      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
+        <div 
+          ref={parallaxRef}
+          style={{ 
+            position: 'absolute', 
+            inset: '-20% 0',
+            backgroundImage: "url('/desk-setup.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            willChange: 'transform',
+          }} 
+          aria-hidden="true"
+        />
+        <div className="overlay" style={{ position: 'absolute', inset: 0, zIndex: 1 }} />
+        <div className="heroContent" style={{ position: 'relative', zIndex: 2 }}>
           <motion.span 
             className="badge"
             custom={0}
