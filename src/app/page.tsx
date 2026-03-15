@@ -76,6 +76,26 @@ export default function HomePage() {
       stack: 'WS/Monitoring',
       metric: 'Realtime'
     },
+    {
+      code: '[MT-OP-005]',
+      name: 'Watching Stars',
+      mission: 'Piattaforma B2C+B2B per memoriali digitali con e-commerce NFC e integrazione AI.',
+      notes: 'Next.js · Stripe · NFC · AI integration · bilingue IT/EN',
+      log: '// memoriali attivi · nfc + ai + ecommerce + comuni',
+      year: '2024',
+      stack: 'Next/Stripe/NFC',
+      metric: '100+'
+    },
+    {
+      code: '[MT-OP-006]',
+      name: 'Memory Cloud',
+      mission: 'Sistema istituzionale di commemorazione digitale per PA e comuni italiani.',
+      notes: 'Next.js · Node · portali comunali · architettura multi-tenant',
+      log: '// deploy pubblico · multi-tenant + integrazione PA',
+      year: '2024',
+      stack: 'Next/Node/PA',
+      metric: '3+'
+    },
   ];
 
   const css = `
