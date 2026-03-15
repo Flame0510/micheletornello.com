@@ -1,81 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --color-background: #060606;
-  --color-surface: #0A0A0A;
-  --color-surface-hover: #111111;
-  --color-border: #1A1A1A;
-  --color-border-subtle: #111111;
-  --color-accent: #5E6AD2;
-  --color-accent-hover: #4b55b5;
-  --color-accent-muted: rgba(94, 106, 210, 0.12);
-  --color-accent-warm: #C9A84C;
-  --color-text-main: #E8E8E8;
-  --color-text-muted: #707070;
-
-  --font-sans: "Geist", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  --font-display: "Instrument Serif", serif;
-
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
-  --space-2xl: 12rem;
-}
-
 :root {
-  --background: #060606;
-  --surface: #0A0A0A;
-  --border: #1A1A1A;
-  --accent: #5E6AD2;
-  --accent-warm: #C9A84C;
-  --text-main: #E8E8E8;
-  --text-muted: #707070;
+  --ghost-black: #000000;
+  --ghost-white: #ffffff;
+  --ghost-sage: #7c9a7e;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-    cursor: auto;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--ghost-black);
+  color: var(--ghost-white);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.ghost-project-row {
+  transition: color 180ms ease;
+}
+
+.ghost-project-row:hover {
+  color: var(--ghost-sage);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
   }
-  body {
-    @apply bg-background text-text-main font-sans antialiased;
-  }
-  section[id] {
-    scroll-margin-top: 5rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Reveal line animation signature */
-.reveal-line {
-  width: 60px;
-  height: 1px;
-  background: #5E6AD2;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal-line.visible {
-  transform: scaleX(1);
-}
-
-/* Radial glow for hero */
-.hero-glow {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(94,106,210,0.15), transparent);
-}
-
-/* Typography utilities */
-.font-display {
-  font-family: "Instrument Serif", serif;
-}
-.font-mono-label {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #707070;
+.mentor-section {
+  animation: fadeInUp 0.9s ease both;
 }
