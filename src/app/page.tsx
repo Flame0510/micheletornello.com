@@ -65,8 +65,6 @@ function ContactForm() {
 }
 
 export default function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const statusRows = [
     { label: 'System Architect', state: 'VERIFIED' },
     { label: 'Docente SJA', state: 'CONFIRMED' },
@@ -162,53 +160,37 @@ export default function HomePage() {
 
   const css = `
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: #080808; color: #f2ede8; font-family: 'JetBrains Mono', monospace; }
+    html, body { margin: 0; padding: 0; background: #080808; color: #f2ede8; font-family: var(--font-jetbrains-mono), monospace; }
     a { color: inherit; text-decoration: none; }
     main { background: #080808; color: #f2ede8; overflow-x: hidden; }
     
-    /* 1. Navbar Mobile Fix */
-    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; padding: 0.9rem 1.2rem; border-bottom: 1px solid rgba(184,115,51,.35); backdrop-filter: blur(8px); background: rgba(8,8,8,.78); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .topbar p { margin: 0; }
-    .topNav { display: flex; align-items: center; gap: 1rem; }
-    .topNav a { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: #aaa; letter-spacing: .06em; text-transform: none; }
-    
-    .hamburger { display: none; background: none; border: none; color: #f2ede8; font-size: 1.5rem; cursor: pointer; padding: 0; }
-    .mobileMenu { position: fixed; inset: 0; background: #080808; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; padding: 2rem; }
-    .mobileMenu a { font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #f2ede8; }
-    .closeMenu { position: absolute; top: 1.2rem; right: 1.2rem; background: none; border: none; color: #f2ede8; font-size: 2rem; cursor: pointer; }
-
-    /* 5. Hero Typography Fix */
     .hero { min-height: 100vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 7rem 1.2rem 4.5rem; }
     .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.25) 0%, rgba(8,8,8,.56) 48%, rgba(8,8,8,.97) 100%); }
     .heroContent { position: relative; z-index: 2; max-width: 980px; }
-    .badge { display: inline-block; border: 1px solid rgba(184,115,51,.6); padding: .4rem .7rem; color: #B87333; font-family: 'JetBrains Mono', monospace; font-size: .75rem; letter-spacing: .02em; margin-bottom: 1rem; }
+    .badge { display: inline-block; border: 1px solid rgba(184,115,51,.6); padding: .4rem .7rem; color: #B87333; font-family: var(--font-jetbrains-mono), monospace; font-size: .75rem; letter-spacing: .02em; margin-bottom: 1rem; }
     
-    /* 6. Thesis Statement Fix */
-    .thesis { margin: 0 0 .7rem; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: #aaa; max-width: 90vw; }
+    .thesis { margin: 0 0 .7rem; font-family: var(--font-instrument-serif), serif; font-style: italic; font-size: 1.1rem; color: #aaa; max-width: 90vw; }
     
-    h1,h2,h3,blockquote { font-family: 'Instrument Serif', serif; font-weight: 400; margin: 0; }
+    h1,h2,h3,blockquote { font-family: var(--font-instrument-serif), serif; font-weight: 400; margin: 0; }
     h1 { font-size: clamp(2.5rem, 8vw, 5.2rem); line-height: 1.1; max-width: 18ch; }
-    .sub { margin-top: .65rem; font-family: 'Instrument Serif', serif; font-style: italic; color: #b87333; font-size: clamp(1.2rem, 4vw, 2rem); }
+    .sub { margin-top: .65rem; font-family: var(--font-instrument-serif), serif; font-style: italic; color: #b87333; font-size: clamp(1.2rem, 4vw, 2rem); }
     
     .credibility { margin: -1.4rem 1.2rem 0; position: relative; z-index: 4; border: 1px solid rgba(242,237,232,.2); background: rgba(18,18,18,.6); padding: .8rem; text-align: center; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
     
     .sectionWrap { padding: 4.2rem 1.2rem; max-width: 1180px; margin: 0 auto; }
     .sectionWrap h2 { color: #b87333; font-size: clamp(1.8rem, 3.2vw, 3rem); margin-bottom: 1.5rem; }
     
-    /* 2. Status Check Grid Fix */
     .statusGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid rgba(242,237,232,.18); }
     .statusGrid p { margin: 0; padding: .9rem 0.5rem; border-bottom: 1px solid rgba(242,237,232,.18); display: flex; flex-direction: column; gap: 0.2rem; text-transform: uppercase; letter-spacing: .05em; font-size: .7rem; }
     .dot { color: #b87333; margin-right: 4px; }
     .state { color: #b87333; font-weight: bold; }
 
-    /* 3. Deployment Log Desktop Table */
-    .systemsTable { margin-top: 1rem; background: #111; padding: 16px; border-radius: 0; font-family: 'JetBrains Mono', monospace; font-size: .8rem; line-height: 1.7; display: block; }
+    .systemsTable { margin-top: 1rem; background: #111; padding: 16px; border-radius: 0; font-family: var(--font-jetbrains-mono), monospace; font-size: .8rem; line-height: 1.7; display: block; }
     .systemsTable p { margin: 0; color: rgba(255,255,255,.6); white-space: pre; }
     .systemsTable .prompt, .systemsTable .live { color: #00C87A; }
     
-    /* 3. Deployment Log Mobile List */
     .systemsMobileList { display: none; margin-top: 1rem; }
-    .sysItem { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+    .sysItem { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-jetbrains-mono), monospace; font-size: 0.8rem; }
     .sysItem span { color: #00C87A; }
 
     .about { display: grid; grid-template-columns: minmax(250px,360px) minmax(0,1fr); gap: 2rem; align-items: center; }
@@ -217,14 +199,13 @@ export default function HomePage() {
     .execLabel { margin: 0 0 .45rem !important; color: #5A5A5A; font-size: .7rem !important; letter-spacing: .16em; text-transform: uppercase; }
     .execText { margin: 0 0 1.1rem !important; color: #aaa; font-size: .9rem !important; max-width: 600px !important; line-height: 1.7; }
     
-    /* 4. SVC Grid Responsive Fix */
     .svcGrid { margin: 1rem 0 1.4rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 24px; }
     .svcCol p { margin: 0; }
-    .svcCode { color: #B87333; font-size: .7rem; font-family: 'JetBrains Mono', monospace; margin-bottom: .45rem !important; }
-    .svcTitle { color: #fff; font-size: .8rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .45rem !important; }
+    .svcCode { color: #B87333; font-size: .7rem; font-family: var(--font-jetbrains-mono), monospace; margin-bottom: .45rem !important; }
+    .svcTitle { color: #fff; font-size: .8rem; font-family: var(--font-jetbrains-mono), monospace; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .45rem !important; }
     .svcBody { color: #aaa; font-size: .85rem; line-height: 1.6; }
     
-    .poeticLine { font-family: 'Instrument Serif', serif; font-style: italic; margin: 0 0 1rem !important; }
+    .poeticLine { font-family: var(--font-instrument-serif), serif; font-style: italic; margin: 0 0 1rem !important; }
     .timelineLine { border-left: 1px solid rgba(184,115,51,.45); padding-left: 1.2rem; display: grid; gap: 1rem; }
     .timeCard { position: relative; padding: .95rem 1rem; border: 1px solid rgba(242,237,232,.14); background: rgba(255,255,255,.01); }
     .timeCard::before { content: ''; position: absolute; left: -1.58rem; top: 1.15rem; width: 9px; height: 9px; border-radius: 50%; background: #b87333; box-shadow: 0 0 0 4px #080808; }
@@ -248,7 +229,7 @@ export default function HomePage() {
     .teachingOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,8,.88) 0%, rgba(8,8,8,.62) 55%, rgba(8,8,8,.35) 100%); display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 2rem 1.2rem; max-width: 820px; }
     .teachingOverlay p { margin: 0; max-width: 60ch; line-height: 1.7; font-size: .95rem; }
     blockquote { color: #b87333; font-size: clamp(1.45rem,2.3vw,2.4rem); font-style: italic; max-width: 24ch; }
-    .academyClaim { margin: .4rem 0 0; font-family: 'JetBrains Mono', monospace; color: #B87333; font-size: .85rem; }
+    .academyClaim { margin: .4rem 0 0; font-family: var(--font-jetbrains-mono), monospace; color: #B87333; font-size: .85rem; }
     
     .cta { text-align: center; padding-top: 5rem; padding-bottom: 5.4rem; }
     .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .5rem; }
@@ -257,25 +238,25 @@ export default function HomePage() {
     .ctaSub { color: rgba(242,237,232,.55); font-size: .9rem; margin-bottom: 2rem; text-transform: none !important; letter-spacing: 0 !important; }
     .contactForm { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: .8rem; text-align: left; }
     .contactRow { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
-    .contactInput { background: rgba(242,237,232,.05); border: 1px solid rgba(242,237,232,.12); color: #f2ede8; padding: .85rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: .82rem; outline: none; width: 100%; box-sizing: border-box; }
+    .contactInput { background: rgba(242,237,232,.05); border: 1px solid rgba(242,237,232,.12); color: #f2ede8; padding: .85rem 1rem; font-family: var(--font-jetbrains-mono), monospace; font-size: .82rem; outline: none; width: 100%; box-sizing: border-box; }
     .contactInput:focus { border-color: #B87333; }
     .contactInput::placeholder { color: rgba(242,237,232,.3); }
     .contactTextarea { resize: vertical; min-height: 120px; }
-    .contactBtn { background: #B87333; color: #080808; border: none; padding: .9rem 1.6rem; font-family: 'JetBrains Mono', monospace; font-size: .8rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; align-self: flex-start; }
+    .contactBtn { background: #B87333; color: #080808; border: none; padding: .9rem 1.6rem; font-family: var(--font-jetbrains-mono), monospace; font-size: .8rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; align-self: flex-start; }
     .contactBtn:hover { background: #d4944a; }
     .contactBtn:disabled { opacity: .6; cursor: not-allowed; }
-    .contactError { color: #e07070; font-size: .78rem; font-family: 'JetBrains Mono', monospace; }
+    .contactError { color: #e07070; font-size: .78rem; font-family: var(--font-jetbrains-mono), monospace; }
     .contactSuccess { max-width: 560px; margin: 0 auto; text-align: left; padding: 2rem; border: 1px solid rgba(184,115,51,.3); }
-    .contactSuccessCode { color: #B87333; font-family: 'JetBrains Mono', monospace; font-size: .75rem; margin-bottom: .5rem; }
+    .contactSuccessCode { color: #B87333; font-family: var(--font-jetbrains-mono), monospace; font-size: .75rem; margin-bottom: .5rem; }
     @media (max-width: 560px) { .contactRow { grid-template-columns: 1fr; } }
     .newsletter { text-align: center; padding-top: 4rem; padding-bottom: 5rem; border-top: 1px solid rgba(242,237,232,.08); }
-    .newsletterLabel { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: #B87333; letter-spacing: .12em; margin-bottom: 1rem; }
+    .newsletterLabel { font-family: var(--font-jetbrains-mono), monospace; font-size: .72rem; color: #B87333; letter-spacing: .12em; margin-bottom: 1rem; }
     .newsletter h2 { font-size: clamp(1.6rem,2.5vw,2.4rem); margin-bottom: .7rem; }
     .newsletterSub { color: rgba(242,237,232,.6); font-size: .9rem; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
     .newsletterForm { display: flex; gap: .6rem; max-width: 420px; margin: 0 auto 1rem; }
-    .newsletterInput { flex: 1; background: rgba(242,237,232,.06); border: 1px solid rgba(242,237,232,.15); color: #f2ede8; padding: .75rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: .82rem; outline: none; }
+    .newsletterInput { flex: 1; background: rgba(242,237,232,.06); border: 1px solid rgba(242,237,232,.15); color: #f2ede8; padding: .75rem 1rem; font-family: var(--font-jetbrains-mono), monospace; font-size: .82rem; outline: none; }
     .newsletterInput:focus { border-color: #B87333; }
-    .newsletterBtn { background: #B87333; color: #080808; border: none; padding: .75rem 1.4rem; font-family: 'JetBrains Mono', monospace; font-size: .78rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; }
+    .newsletterBtn { background: #B87333; color: #080808; border: none; padding: .75rem 1.4rem; font-family: var(--font-jetbrains-mono), monospace; font-size: .78rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; }
     .newsletterBtn:hover { background: #d4944a; }
     .newsletterNote { color: rgba(242,237,232,.35); font-size: .72rem; letter-spacing: .05em; }
     @media (max-width: 480px) { .newsletterForm { flex-direction: column; } }
@@ -287,11 +268,6 @@ export default function HomePage() {
     }
 
     @media (max-width: 600px) {
-      .topbar p { font-size: 0.7rem; }
-      .topbar .fullInfo { display: none; }
-      .topNav { display: none; }
-      .hamburger { display: block; }
-      
       .statusGrid { grid-template-columns: repeat(2, 1fr); }
       .statusGrid p { font-size: 0.65rem; }
 
@@ -311,34 +287,10 @@ export default function HomePage() {
 
   return (
     <main>
-      <header className="topbar">
-        <p>
-          <span className="fullInfo">Michele Tornello · 2024 · Catania · IT</span>
-          <span className="md:hidden">Michele Tornello</span>
-        </p>
-        <nav className="topNav">
-          <a href="#chi-sono">[01] Chi sono</a>
-          <a href="#lavori">[02] Lavori</a>
-          <a href="#academy">[03] Academy</a>
-          <a href="#contatto">[04] Contatto</a>
-        </nav>
-        <button className="hamburger" onClick={() => setIsMenuOpen(true)}>☰</button>
-      </header>
-
-      {isMenuOpen && (
-        <div className="mobileMenu">
-          <button className="closeMenu" onClick={() => setIsMenuOpen(false)}>×</button>
-          <a href="#chi-sono" onClick={() => setIsMenuOpen(false)}>[01] Chi sono</a>
-          <a href="#lavori" onClick={() => setIsMenuOpen(false)}>[02] Lavori</a>
-          <a href="#academy" onClick={() => setIsMenuOpen(false)}>[03] Academy</a>
-          <a href="#contatto" onClick={() => setIsMenuOpen(false)}>[04] Contatto</a>
-        </div>
-      )}
-
       <section className="hero" style={{ backgroundImage: "url('/desk-setup.png')" }}>
         <div className="overlay" />
         <div className="heroContent">
-          <span className="badge">● Disponibile per nuovi progetti · 2024</span>
+          <span className="badge">● Disponibile per nuovi progetti · {new Date().getFullYear()}</span>
           <p className="thesis">Tra i pochi professionisti italiani under-30 con esperienza enterprise e docenza strutturata.</p>
           <h1>Non costruisco software. Costruisco sistemi.</h1>
           <p className="sub">Formo chi li costruirà.</p>
@@ -446,7 +398,6 @@ export default function HomePage() {
         <h2>Hai un sistema che deve durare?</h2>
         <p className="ctaSub">Raccontami il progetto — rispondo entro 24h.</p>
         <ContactForm />
-        <p style={{marginTop:'2rem'}}><a href="https://www.linkedin.com/in/michele-tornello-06a6341aa/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/Flame0510" target="_blank" rel="noreferrer">GitHub</a></p>
       </section>
 
       <section className="newsletter sectionWrap">

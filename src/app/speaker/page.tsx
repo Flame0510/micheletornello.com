@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { 
   Mic2, 
   MapPin, 
@@ -14,17 +13,6 @@ import {
   Radio,
   Briefcase
 } from 'lucide-react';
-
-const instrument = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-instrument',
-});
-
-const mono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-});
 
 // Content
 const bio = {
@@ -68,19 +56,11 @@ const credentials = [
 
 export default function SpeakerPage() {
   return (
-    <div className={`${instrument.variable} ${mono.variable} min-h-screen bg-[#080808] text-[#F2EDE8] font-sans selection:bg-[#B87333]/30`}>
-      {/* Background grain effect */}
-      <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay z-[99]"
-        style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' /%3E%3C/svg%3E")'
-        }}
-      />
-
+    <div className="min-h-screen text-[#F2EDE8] selection:bg-[#B87333]/30">
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-24 relative z-10">
         
         {/* Header Section */}
-        <header className="mb-20">
+        <header className="mb-20 pt-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#B87333]/30 bg-[#B87333]/5 rounded-full mb-6">
             <span className="w-2 h-2 rounded-full bg-[#B87333] animate-pulse" />
             <span className="text-[10px] font-mono uppercase tracking-widest text-[#B87333]">Available for Speaking</span>
@@ -230,25 +210,11 @@ export default function SpeakerPage() {
             </div>
           </a>
         </section>
-
-        {/* Footer */}
-        <footer className="pt-12 border-t border-[#F2EDE8]/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-display text-2xl">
-            Michele <span className="text-[#B87333]">Tornello</span>
-          </div>
-          <div className="flex gap-8 font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40">
-             <a href="https://linkedin.com/in/michele-tornello-06a6341aa/" className="hover:text-[#B87333] transition-colors">LinkedIn</a>
-             <a href="https://github.com/Flame0510" className="hover:text-[#B87333] transition-colors">GitHub</a>
-             <a href="https://instagram.com/michele_tornello" className="hover:text-[#B87333] transition-colors">Instagram</a>
-          </div>
-        </footer>
-
       </main>
 
-      {/* Global CSS for page-specific styles */}
       <style jsx global>{`
-        .font-display { font-family: var(--font-instrument), serif; }
-        .font-mono { font-family: var(--font-mono), monospace; }
+        .font-display { font-family: var(--font-instrument-serif), serif; }
+        .font-mono { font-family: var(--font-jetbrains-mono), monospace; }
         @media (max-width: 768px) {
           h1 { font-size: 3.5rem; }
         }

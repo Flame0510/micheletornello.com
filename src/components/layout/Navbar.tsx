@@ -1,0 +1,130 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const Navbar = () => {
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: '[01] Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
+    { name: '[02] Lavori', href: '/#lavori', anchor: '#lavori' },
+    { name: '[03] Academy', href: '/#academy', anchor: '#academy' },
+    { name: '[04] Contatto', href: '/#contatto', anchor: '#contatto' },
+  ];
+
+  const currentYear = new Date().getFullYear();
+
+  const isHome = pathname === '/';
+
+  return (
+    <>
+      <header 
+        className={`fixed top-0 left-0 width-full z-50 transition-all duration-300 ${
+          scrolled ? 'py-3 bg-[#080808]/80 backdrop-blur-md border-bottom border-[#B87333]/20' : 'py-6 bg-transparent'
+        }`}
+        style={{ width: '100%' }}
+      >
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="font-mono text-xs md:text-sm tracking-widest uppercase hover:text-[#B87333] transition-colors">
+              Michele Tornello <span className="text-[#B87333]/40">·</span> {currentYear}
+            </Link>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={isHome ? link.anchor : link.href}
+                className="font-mono text-[10px] lg:text-xs uppercase tracking-widest text-[#F2EDE8]/60 hover:text-[#B87333] transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link 
+              href="/speaker"
+              className={`font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors ${
+                pathname === '/speaker' ? 'text-[#B87333]' : 'text-[#F2EDE8]/60 hover:text-[#B87333]'
+              }`}
+            >
+              [05] Speaker
+            </Link>
+          </nav>
+
+          <button 
+            className="md:hidden text-[#F2EDE8] focus:outline-none"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-[100] bg-[#080808] flex flex-col items-center justify-center p-6"
+          >
+            <button 
+              className="absolute top-8 right-8 text-[#F2EDE8] focus:outline-none"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            <nav className="flex flex-col items-center gap-8">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  href={isHome ? link.anchor : link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="font-display text-4xl hover:text-[#B87333] transition-colors italic"
+                >
+                  {link.name.split('] ')[1]}
+                </Link>
+              ))}
+              <Link 
+                href="/speaker"
+                onClick={() => setIsMenuOpen(false)}
+                className={`font-display text-4xl transition-colors italic ${
+                  pathname === '/speaker' ? 'text-[#B87333]' : 'hover:text-[#B87333]'
+                }`}
+              >
+                Speaker
+              </Link>
+            </nav>
+
+            <div className="absolute bottom-12 font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/30">
+              © {currentYear} Michele Tornello · Catania · IT
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Navbar;

@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import { Geist, Instrument_Serif, Merriweather, Playfair_Display } from 'next/font/google';
+import { Geist, Instrument_Serif, Merriweather, Playfair_Display, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 import { PageLoader } from '@/components/ui/PageLoader';
 import { CustomCursor } from '@/components/ui/CustomCursor';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,6 +31,12 @@ const merriweather = Merriweather({
   weight: ['300', '400', '700', '900'],
 });
 
+const jetBrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
 export const metadata: Metadata = {
   title: translations.meta.it.title,
   description: translations.meta.it.description,
@@ -46,11 +54,15 @@ export default function RootLayout({
   return (
     <html lang="it" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${instrumentSerif.variable} ${playfairDisplay.variable} ${merriweather.variable} font-sans antialiased bg-background text-text-main`}
+        className={`${geistSans.variable} ${instrumentSerif.variable} ${playfairDisplay.variable} ${merriweather.variable} ${jetBrainsMono.variable} font-sans antialiased bg-background text-text-main`}
       >
         <PageLoader />
         <CustomCursor />
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LanguageProvider>
         <div
           className="fixed inset-0 pointer-events-none"
           style={{

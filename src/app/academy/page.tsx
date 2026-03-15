@@ -1,11 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FloatingNav } from "@/components/sections/FloatingNav";
-import { Footer } from "@/components/sections/Footer";
 import { fadeUp } from "@/lib/animations";
 import { academy } from "@/lib/data";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
@@ -17,8 +15,6 @@ export default function AcademyPage() {
 
   return (
     <main className="min-h-screen" style={{ background: "#060606" }}>
-      <FloatingNav />
-
       {/* Hero */}
       <section className="pt-40 pb-24 px-6 max-w-[1120px] mx-auto">
         <Link
@@ -38,12 +34,12 @@ export default function AcademyPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "#C9A84C" }}>
+            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "#B87333" }}>
               Docenza · Steve Jobs Academy
             </p>
             <h1 className="font-display leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "#E8E8E8", letterSpacing: "-0.03em" }}>
               Steve Jobs<br />
-              <span style={{ color: "#C9A84C" }}>Academy</span>
+              <span style={{ color: "#B87333" }}>Academy</span>
             </h1>
             <p className="text-lg leading-relaxed max-w-xl" style={{ color: "#707070" }}>
               {t.intro}
@@ -53,9 +49,9 @@ export default function AcademyPage() {
           {/* Info box */}
           <div
             className="rounded-sm p-6 space-y-4"
-            style={{ border: "1px solid rgba(201,168,76,0.15)", background: "rgba(201,168,76,0.03)" }}
+            style={{ border: "1px solid rgba(184,115,51,0.15)", background: "rgba(184,115,51,0.03)" }}
           >
-            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "#C9A84C" }}>
+            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "#B87333" }}>
               {t.infoTitle}
             </p>
             <ul className="space-y-3">
@@ -66,7 +62,7 @@ export default function AcademyPage() {
                 t.infoCard.cta,
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#707070" }}>
-                  <span style={{ color: "#C9A84C" }}>·</span>
+                  <span style={{ color: "#B87333" }}>·</span>
                   {item}
                 </li>
               ))}
@@ -90,7 +86,7 @@ export default function AcademyPage() {
 
       {/* Corsi */}
       <section className="px-6 max-w-[1120px] mx-auto pb-24">
-        <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "#C9A84C" }}>03</p>
+        <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "#B87333" }}>03</p>
         <h2 className="font-display mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
           {lang === "it" ? "Materie" : "Subjects"}
         </h2>
@@ -106,7 +102,7 @@ export default function AcademyPage() {
               className="p-8 space-y-4"
               style={{ background: "#060606", borderRight: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
             >
-              <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>0{i + 1}</span>
+              <span className="font-mono text-xs" style={{ color: "#B87333" }}>0{i + 1}</span>
               <h3 className="font-display text-2xl" style={{ color: "#E8E8E8" }}>{subject.name}</h3>
               <p className="text-sm leading-relaxed" style={{ color: "#707070" }}>{subject.description}</p>
 
@@ -132,8 +128,6 @@ export default function AcademyPage() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
