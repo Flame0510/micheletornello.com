@@ -224,13 +224,6 @@ export default function HomePage() {
     .notes { margin-top: .7rem !important; color: #B87333; }
     .log { margin-top: .75rem !important; color: #B87333; }
     
-    .teaching { position: relative; min-height: 540px; margin-top: 1.8rem; }
-    .teaching img { width: 100%; height: 100%; min-height: 540px; object-fit: cover; filter: saturate(.8) contrast(1.02); }
-    .teachingOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,8,.88) 0%, rgba(8,8,8,.62) 55%, rgba(8,8,8,.35) 100%); display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 2rem 1.2rem; max-width: 820px; }
-    .teachingOverlay p { margin: 0; max-width: 60ch; line-height: 1.7; font-size: .95rem; }
-    blockquote { color: #b87333; font-size: clamp(1.45rem,2.3vw,2.4rem); font-style: italic; max-width: 24ch; }
-    .academyClaim { margin: .4rem 0 0; font-family: var(--font-jetbrains-mono), monospace; color: #B87333; font-size: .85rem; }
-    
     .cta { text-align: center; padding-top: 5rem; padding-bottom: 5.4rem; }
     .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .5rem; }
     .cta a { color: #f2ede8; border-bottom: 1px solid rgba(184,115,51,.55); }
@@ -384,14 +377,160 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="academy" className="teaching">
-        <img src="/academy-class.jpg" alt="Docenza in aula" />
-        <div className="teachingOverlay">
-          <h2>DOCENZA</h2>
-          <p>Formazione tecnica orientata alla pratica: architetture reali, revisione decisionale, responsabilità ingegneristica.</p>
-          <blockquote>Non insegno a programmare. Insegno a pensare da ingegnere.</blockquote>
-          <p className="academyClaim">// Non formo programmatori. Formo ingegneri che pensano ai sistemi.</p>
+      <section id="academy" className="docH_section">
+        <div className="docH_container">
+          <div className="docH_grid">
+            <div className="docH_visual">
+              <div className="docH_imageWrapper">
+                <img src="/academy-class.jpg" alt="Michele Tornello in aula" className="docH_img" />
+                <div className="docH_imageOverlay"></div>
+              </div>
+              <div className="docH_imgMeta">
+                <span className="docH_mono">EST. 2024</span>
+                <span className="docH_mono">SJA · CATANIA</span>
+              </div>
+            </div>
+
+            <div className="docH_content">
+              <header className="docH_header">
+                <span className="docH_label docH_mono">// LA MISSIONE</span>
+                <h2 className="docH_title">
+                  L&apos;eredità non è il codice.<br />
+                  È la <em>forma mentis</em>.
+                </h2>
+              </header>
+
+              <div className="docH_body">
+                <p className="docH_text">
+                  La docenza non è trasferimento di sintassi, ma architettura del pensiero. Nelle aule della Steve Jobs Academy, guido la prossima generazione di sviluppatori verso una comprensione sistemica della tecnologia.
+                </p>
+
+                <blockquote className="docH_quote">
+                  &quot;Non insegno a programmare. Insegno a pensare da ingegnere.&quot;
+                </blockquote>
+
+                <div className="docH_stats">
+                  <div className="docH_stat">
+                    <span className="docH_statVal">400+</span>
+                    <span className="docH_statLab">Studenti Formati</span>
+                  </div>
+                  <div className="docH_stat">
+                    <span className="docH_statVal">2024</span>
+                    <span className="docH_statLab">Inizio Docenza</span>
+                  </div>
+                  <div className="docH_stat">
+                    <span className="docH_statVal">SJA</span>
+                    <span className="docH_statLab">Steve Jobs Academy</span>
+                  </div>
+                  <div className="docH_stat">
+                    <span className="docH_statVal">7</span>
+                    <span className="docH_statLab">Materie Insegnate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <style>{`
+          .docH_section {
+            background-color: #080808;
+            color: #F2EDE8;
+            padding: 100px 24px;
+            overflow: hidden;
+          }
+          .docH_container {
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+          .docH_grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            align-items: center;
+          }
+          @media (min-width: 1024px) {
+            .docH_grid { grid-template-columns: 1fr 1.2fr; gap: 80px; }
+          }
+          .docH_imageWrapper {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border: 1px solid rgba(184,115,51,0.2);
+          }
+          .docH_img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(1) contrast(1.1);
+            transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+          }
+          .docH_imageWrapper:hover .docH_img { transform: scale(1.04); }
+          .docH_imageOverlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, transparent 55%, #080808);
+            pointer-events: none;
+          }
+          .docH_imgMeta {
+            display: flex; justify-content: space-between;
+            margin-top: 12px; opacity: 0.5;
+          }
+          .docH_header { margin-bottom: 32px; }
+          .docH_label {
+            display: block; color: #B87333;
+            margin-bottom: 16px; letter-spacing: 0.1em;
+          }
+          .docH_title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            line-height: 1.15; font-weight: 400;
+          }
+          .docH_title em { font-style: italic; color: #B87333; }
+          .docH_body { max-width: 560px; }
+          .docH_text {
+            font-size: 1.05rem; line-height: 1.7;
+            opacity: 0.75; margin-bottom: 32px;
+          }
+          .docH_quote {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1.5rem; line-height: 1.45;
+            padding-left: 24px;
+            border-left: 2px solid #B87333;
+            margin: 0 0 40px; color: #F2EDE8;
+          }
+          .docH_stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            border-top: 1px solid rgba(242,237,232,0.08);
+            padding-top: 32px;
+          }
+          .docH_stat {
+            display: flex; flex-direction: column; gap: 4px;
+          }
+          .docH_statVal {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.6rem; color: #B87333; line-height: 1;
+          }
+          .docH_statLab {
+            font-size: 0.72rem; text-transform: uppercase;
+            letter-spacing: 0.06em; opacity: 0.5;
+          }
+          .docH_mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+          }
+          @media (max-width: 767px) {
+            .docH_section { padding: 64px 20px; }
+            .docH_title { font-size: 2rem; }
+            .docH_quote { font-size: 1.2rem; }
+            .docH_stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+          }
+          @media (min-width: 768px) and (max-width: 1023px) {
+            .docH_section { padding: 80px 32px; }
+            .docH_stats { grid-template-columns: repeat(4, 1fr); }
+          }
+        `}</style>
       </section>
 
       <section id="contatto" className="cta sectionWrap">
