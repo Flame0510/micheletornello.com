@@ -386,7 +386,7 @@ export default function HomePage() {
                 <div className="docH_imageOverlay"></div>
               </div>
               <div className="docH_imgMeta">
-                <span className="docH_mono">EST. 2024</span>
+                <span className="docH_mono">EST. 2022</span>
                 <span className="docH_mono">SJA · CATANIA</span>
               </div>
             </div>
@@ -411,11 +411,11 @@ export default function HomePage() {
 
                 <div className="docH_stats">
                   <div className="docH_stat">
-                    <span className="docH_statVal">400+</span>
+                    <span className="docH_statVal">100+</span>
                     <span className="docH_statLab">Studenti Formati</span>
                   </div>
                   <div className="docH_stat">
-                    <span className="docH_statVal">2024</span>
+                    <span className="docH_statVal">2022</span>
                     <span className="docH_statLab">Inizio Docenza</span>
                   </div>
                   <div className="docH_stat">
@@ -427,6 +427,8 @@ export default function HomePage() {
                     <span className="docH_statLab">Materie Insegnate</span>
                   </div>
                 </div>
+
+                <a href="/academy" className="docH_cta">Scopri il programma →</a>
               </div>
             </div>
           </div>
@@ -520,6 +522,21 @@ export default function HomePage() {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
           }
+          .docH_cta {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 12px 28px;
+            background: #B87333;
+            color: #080808;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background 0.2s;
+          }
+          .docH_cta:hover { background: #d4944a; }
           @media (max-width: 767px) {
             .docH_section { padding: 64px 20px; }
             .docH_title { font-size: 2rem; }
