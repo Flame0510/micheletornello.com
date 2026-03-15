@@ -58,7 +58,7 @@ export const CustomCursor = () => {
   return (
     <div
       ref={dotRef}
-      className="fixed top-0 left-0 pointer-events-none z-[99999] rounded-full transition-all duration-200"
+      className="fixed top-0 left-0 pointer-events-none z-[99999] rounded-full transition-all duration-150 hidden md:block"
       style={{
         width: hovered ? 32 : 8,
         height: hovered ? 32 : 8,
