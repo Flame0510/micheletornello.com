@@ -2,6 +2,68 @@
 
 import { useState } from 'react';
 
+function ContactForm() {
+  const [status, setStatus] = useState<'idle'|'sending'|'ok'|'error'>('idle');
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      setStatus(res.ok ? 'ok' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  if (status === 'ok') return (
+    <div className="contactSuccess">
+      <p className="contactSuccessCode">// 200 OK</p>
+      <p>Messaggio ricevuto. Ti rispondo entro 24h.</p>
+    </div>
+  );
+
+  return (
+    <form className="contactForm" onSubmit={handleSubmit}>
+      <div className="contactRow">
+        <input
+          className="contactInput"
+          type="text"
+          placeholder="Nome"
+          required
+          value={form.name}
+          onChange={e => setForm(f => ({...f, name: e.target.value}))}
+        />
+        <input
+          className="contactInput"
+          type="email"
+          placeholder="Email"
+          required
+          value={form.email}
+          onChange={e => setForm(f => ({...f, email: e.target.value}))}
+        />
+      </div>
+      <textarea
+        className="contactInput contactTextarea"
+        placeholder="Raccontami il progetto..."
+        required
+        rows={5}
+        value={form.message}
+        onChange={e => setForm(f => ({...f, message: e.target.value}))}
+      />
+      <button className="contactBtn" type="submit" disabled={status === 'sending'}>
+        {status === 'sending' ? '// INVIO...' : 'INVIA MESSAGGIO →'}
+      </button>
+      {status === 'error' && <p className="contactError">Errore nell&apos;invio. Scrivi a micheletornello.dev@gmail.com</p>}
+    </form>
+  );
+}
+
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -189,9 +251,23 @@ export default function HomePage() {
     .academyClaim { margin: .4rem 0 0; font-family: 'JetBrains Mono', monospace; color: #B87333; font-size: .85rem; }
     
     .cta { text-align: center; padding-top: 5rem; padding-bottom: 5.4rem; }
-    .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .9rem; }
+    .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .5rem; }
     .cta a { color: #f2ede8; border-bottom: 1px solid rgba(184,115,51,.55); }
     .cta p { margin: 1rem 0 0; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
+    .ctaSub { color: rgba(242,237,232,.55); font-size: .9rem; margin-bottom: 2rem; text-transform: none !important; letter-spacing: 0 !important; }
+    .contactForm { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: .8rem; text-align: left; }
+    .contactRow { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .contactInput { background: rgba(242,237,232,.05); border: 1px solid rgba(242,237,232,.12); color: #f2ede8; padding: .85rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: .82rem; outline: none; width: 100%; box-sizing: border-box; }
+    .contactInput:focus { border-color: #B87333; }
+    .contactInput::placeholder { color: rgba(242,237,232,.3); }
+    .contactTextarea { resize: vertical; min-height: 120px; }
+    .contactBtn { background: #B87333; color: #080808; border: none; padding: .9rem 1.6rem; font-family: 'JetBrains Mono', monospace; font-size: .8rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; align-self: flex-start; }
+    .contactBtn:hover { background: #d4944a; }
+    .contactBtn:disabled { opacity: .6; cursor: not-allowed; }
+    .contactError { color: #e07070; font-size: .78rem; font-family: 'JetBrains Mono', monospace; }
+    .contactSuccess { max-width: 560px; margin: 0 auto; text-align: left; padding: 2rem; border: 1px solid rgba(184,115,51,.3); }
+    .contactSuccessCode { color: #B87333; font-family: 'JetBrains Mono', monospace; font-size: .75rem; margin-bottom: .5rem; }
+    @media (max-width: 560px) { .contactRow { grid-template-columns: 1fr; } }
     .newsletter { text-align: center; padding-top: 4rem; padding-bottom: 5rem; border-top: 1px solid rgba(242,237,232,.08); }
     .newsletterLabel { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: #B87333; letter-spacing: .12em; margin-bottom: 1rem; }
     .newsletter h2 { font-size: clamp(1.6rem,2.5vw,2.4rem); margin-bottom: .7rem; }
@@ -368,8 +444,9 @@ export default function HomePage() {
 
       <section id="contatto" className="cta sectionWrap">
         <h2>Hai un sistema che deve durare?</h2>
-        <a href="mailto:micheletornello.dev@gmail.com">micheletornello.dev@gmail.com</a>
-        <p><a href="https://www.linkedin.com/in/michele-tornello-06a6341aa/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></p>
+        <p className="ctaSub">Raccontami il progetto — rispondo entro 24h.</p>
+        <ContactForm />
+        <p style={{marginTop:'2rem'}}><a href="https://www.linkedin.com/in/michele-tornello-06a6341aa/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/Flame0510" target="_blank" rel="noreferrer">GitHub</a></p>
       </section>
 
       <section className="newsletter sectionWrap">
