@@ -71,11 +71,11 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const isNavActive = () => {
-                if (pathname !== '/') {
-                  if (link.href === '/academy' && pathname === '/academy') return true;
-                  return false;
-                }
-                const sectionId = link.anchor.replace('#', '').replace('/', '');
+                // Pagine dedicate (non homepage)
+                if (link.href === '/academy') return pathname === '/academy';
+                // Sezioni homepage via scroll
+                if (pathname !== '/') return false;
+                const sectionId = link.anchor.replace('#', '');
                 return activeSection === sectionId;
               };
 
