@@ -311,19 +311,186 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="lavori" className="portfolio sectionWrap">
-        <h2>DEPLOYMENT LOG</h2>
-        <div className="opsGrid">
-          {operations.map((op) => (
-            <article key={op.name} className="opCard">
-              <p className="opRef">{op.code}</p>
-              <p className="opLabel">OPERAZIONE:</p>
-              <p className="opName">{op.name}</p>
-              <p>{op.mission}</p><p className="notes">{op.notes}</p><p className="log">{op.log}</p>
-            </article>
-          ))}
+      <section id="lavori" className="pA3_container">
+  <style>{`
+    .pA3_container {
+      background-color: #080808;
+      color: #F2EDE8;
+      padding: 100px 5% 60px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pA3_header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 80px;
+      border-bottom: 1px solid rgba(184,115,51,.2);
+      padding-bottom: 20px;
+    }
+    .pA3_title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #F2EDE8;
+      margin: 0;
+    }
+    .pA3_counter { color: #B87333; font-weight: 700; }
+    .pA3_featured {
+      position: relative;
+      border-left: 4px solid #B87333;
+      padding: 60px 40px;
+      background: rgba(184,115,51,.02);
+      margin-bottom: 120px;
+      overflow: hidden;
+    }
+    .pA3_featured_watermark {
+      position: absolute;
+      bottom: -2rem;
+      right: 2rem;
+      font-size: clamp(8rem, 16vw, 16rem);
+      font-family: 'Instrument Serif', serif;
+      color: #B87333;
+      opacity: .05;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .pA3_featured_label { font-size: .8rem; opacity: .6; margin-bottom: 10px; }
+    .pA3_featured_status { color: #B87333; font-size: .8rem; font-weight: 800; margin-bottom: 20px; }
+    .pA3_featured_name {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.5rem, 5vw, 7rem);
+      line-height: 1;
+      margin: 20px 0 40px;
+      font-style: italic;
+    }
+    .pA3_featured_log {
+      display: flex;
+      gap: 30px;
+      font-size: .85rem;
+      text-transform: uppercase;
+      flex-wrap: wrap;
+    }
+    .pA3_log_item { display: flex; flex-direction: column; gap: 5px; }
+    .pA3_log_label { opacity: .4; font-size: .7rem; }
+    .pA3_log_value { color: #F2EDE8; }
+    .pA3_log_accent { color: #B87333; }
+    .pA3_list { display: flex; flex-direction: column; }
+    .pA3_item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(242,237,232,.1);
+      transition: transform .4s cubic-bezier(.23,1,.32,1);
+      text-decoration: none;
+      color: inherit;
+    }
+    .pA3_item:first-child { border-top: 1px solid rgba(242,237,232,.1); }
+    .pA3_item:hover { transform: translateX(-20px); }
+    .pA3_item:hover .pA3_hover_code { opacity: 1; }
+    .pA3_item_num {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 3.5rem;
+      opacity: .25;
+    }
+    .pA3_item_content { display: flex; flex-direction: column; gap: 8px; }
+    .pA3_item_name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      line-height: 1.2;
+    }
+    .pA3_item_tagline { font-size: .9rem; opacity: .5; max-width: 600px; }
+    .pA3_pills { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+    .pA3_pill {
+      font-size: .7rem;
+      padding: 2px 10px;
+      border: 1.5px solid #B87333;
+      color: #B87333;
+      text-transform: uppercase;
+      border-radius: 100px;
+      background: transparent;
+    }
+    .pA3_item_year { font-size: 1.2rem; color: #B87333; font-weight: 600; }
+    .pA3_hover_code {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      font-size: .7rem;
+      color: #B87333;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    .pA3_footer {
+      margin-top: 100px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(184,115,51,.3);
+      text-align: center;
+    }
+    .pA3_footer_text {
+      color: #B87333;
+      opacity: .5;
+      font-size: .8rem;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 768px) {
+      .pA3_item { grid-template-columns: 1fr; gap: 20px; }
+      .pA3_item_num { display: none; }
+      .pA3_featured { padding: 40px 20px; }
+    }
+  `}</style>
+
+  <header className="pA3_header">
+    <h2 className="pA3_title">// selected_operations <span className="pA3_counter">[06]</span></h2>
+  </header>
+
+  <div className="pA3_featured">
+    <div className="pA3_featured_watermark">01</div>
+    <div className="pA3_featured_label">Featured Project [MT-OP-001]</div>
+    <div className="pA3_featured_status">// MISSION CRITICAL</div>
+    <h3 className="pA3_featured_name">REC Security</h3>
+    <div className="pA3_featured_log">
+      <div className="pA3_log_item">
+        <span className="pA3_log_label">METRIC</span>
+        <span className="pA3_log_accent">99.98% uptime</span>
+      </div>
+      <div className="pA3_log_item">
+        <span className="pA3_log_label">STACK</span>
+        <span className="pA3_log_value">Node.js · PostgreSQL · Redis</span>
+      </div>
+      <div className="pA3_log_item">
+        <span className="pA3_log_label">YEAR</span>
+        <span className="pA3_log_accent">2022</span>
+      </div>
+    </div>
+  </div>
+
+  <div className="pA3_list">
+    {[
+      {id:'MT-OP-002',num:'02',name:'Kastalia',tagline:'Sistema didattico formazione tecnica avanzata.',stack:['Next.js','TypeScript'],year:'2023'},
+      {id:'MT-OP-003',num:'03',name:'Cashbee',tagline:'Ecosistema cashback negozi fisici.',stack:['Next.js','Node.js'],year:'2024'},
+      {id:'MT-OP-004',num:'04',name:'Pong',tagline:'Infrastruttura realtime WebSockets.',stack:['Node.js'],year:'2024'},
+      {id:'MT-OP-005',num:'05',name:'Watching Stars',tagline:'Memoriali digitali B2C+B2B, AI+NFC+Stripe.',stack:['Next.js'],year:'2024'},
+      {id:'MT-OP-006',num:'06',name:'Memory Cloud',tagline:'Soluzione multi-tenant PA/comuni.',stack:['Next.js','Node.js'],year:'2024'},
+    ].map(p => (
+      <a href={`#${p.id}`} key={p.id} className="pA3_item">
+        <div className="pA3_hover_code">{p.id}</div>
+        <div className="pA3_item_num">{p.num}</div>
+        <div className="pA3_item_content">
+          <h4 className="pA3_item_name">{p.name}</h4>
+          <p className="pA3_item_tagline">{p.tagline}</p>
+          <div className="pA3_pills">{p.stack.map(t => <span key={t} className="pA3_pill">{t}</span>)}</div>
         </div>
-      </section>
+        <div className="pA3_item_year">{p.year}</div>
+      </a>
+    ))}
+  </div>
+
+  <footer className="pA3_footer">
+    <div className="pA3_footer_text">TOTAL OPERATIONS: 06 · PERIOD: 2022—2024 · SYSTEM STATUS: OPTIMAL</div>
+  </footer>
+</section>
 
       <section id="academy" className="docH_section">
         <div className="docH_container">
