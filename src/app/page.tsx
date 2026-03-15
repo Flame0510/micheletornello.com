@@ -231,7 +231,7 @@ export default function HomePage() {
       <section id="contatto" className="cta sectionWrap">
         <h2>Hai un sistema che deve durare?</h2>
         <a href="mailto:micheletornello.dev@gmail.com">micheletornello.dev@gmail.com</a>
-        <p><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/michele-tornello-06a6341aa/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></p>
       </section>
       <style dangerouslySetInnerHTML={{ __html: css }} />
     </main>
