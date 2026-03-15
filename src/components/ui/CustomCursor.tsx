@@ -24,8 +24,8 @@ export const CustomCursor = () => {
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
     const animate = () => {
-      current.current.x = lerp(current.current.x, pos.current.x, 0.15);
-      current.current.y = lerp(current.current.y, pos.current.y, 0.15);
+      current.current.x = lerp(current.current.x, pos.current.x, 0.35);
+      current.current.y = lerp(current.current.y, pos.current.y, 0.35);
       if (dotRef.current) {
         dotRef.current.style.transform = `translate(${current.current.x - 4}px, ${current.current.y - 4}px)`;
       }
