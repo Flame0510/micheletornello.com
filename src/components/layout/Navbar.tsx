@@ -10,6 +10,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +19,28 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (pathname !== '/') return;
+    
+    const sections = ['chi-sono', 'lavori', 'academy', 'contatto'];
+    const observers: IntersectionObserver[] = [];
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach(o => o.disconnect());
+  }, [pathname]);
 
   const navLinks = [
     { name: '[01] Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
@@ -46,15 +69,28 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={isHome ? link.anchor : link.href}
-                className="font-mono text-[10px] lg:text-xs uppercase tracking-widest text-[#F2EDE8]/60 hover:text-[#B87333] transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isNavActive = () => {
+                if (pathname !== '/') {
+                  if (link.href === '/academy' && pathname === '/academy') return true;
+                  return false;
+                }
+                const sectionId = link.anchor.replace('#', '').replace('/', '');
+                return activeSection === sectionId;
+              };
+
+              return (
+                <Link 
+                  key={link.name} 
+                  href={isHome ? link.anchor : link.href}
+                  className={`font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors ${
+                    isNavActive() ? 'text-[#B87333]' : 'text-[#F2EDE8]/60 hover:text-[#B87333]'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             <Link 
               href="/speaker"
               className={`font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors ${

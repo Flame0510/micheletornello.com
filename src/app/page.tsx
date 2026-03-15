@@ -1,6 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] as any }
+  })
+};
 
 function ContactForm() {
   const [status, setStatus] = useState<'idle'|'sending'|'ok'|'error'>('idle');
@@ -163,10 +173,54 @@ export default function HomePage() {
       <section className="hero" style={{ backgroundImage: "url('/desk-setup.png')" }}>
         <div className="overlay" />
         <div className="heroContent">
-          <span className="badge">● Disponibile per nuovi progetti · {new Date().getFullYear()}</span>
-          <p className="thesis">Tra i pochi professionisti italiani under-30 con esperienza enterprise e docenza strutturata.</p>
-          <h1>Non costruisco software. Costruisco sistemi.</h1>
-          <p className="sub">Formo chi li costruirà.</p>
+          <motion.span 
+            className="badge"
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
+            ● Disponibile per nuovi progetti · {new Date().getFullYear()}
+          </motion.span>
+          
+          <motion.p 
+            className="thesis"
+            custom={3}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
+            Tra i pochi professionisti italiani under-30 con esperienza enterprise e docenza strutturata.
+          </motion.p>
+          
+          <div className="flex flex-col">
+            <motion.h1 
+              custom={1}
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp}
+            >
+              Non costruisco software.
+            </motion.h1>
+            <motion.h1 
+              custom={2}
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp}
+            >
+              Costruisco sistemi.
+            </motion.h1>
+          </div>
+          
+          <motion.p 
+            className="sub"
+            custom={3}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
+            Formo chi li costruirà.
+          </motion.p>
         </div>
       </section>
 
