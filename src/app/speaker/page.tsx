@@ -211,14 +211,6 @@ export default function SpeakerPage() {
           </a>
         </section>
       </main>
-
-      <style jsx global>{`
-        .font-display { font-family: var(--font-instrument-serif), serif; }
-        .font-mono { font-family: var(--font-jetbrains-mono), monospace; }
-        @media (max-width: 768px) {
-          h1 { font-size: 3.5rem; }
-        }
-      `}</style>
     </div>
   );
 }
