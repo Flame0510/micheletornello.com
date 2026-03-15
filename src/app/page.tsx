@@ -65,8 +65,10 @@ export default function HomePage() {
     html, body { margin: 0; padding: 0; background: #080808; color: #f2ede8; font-family: 'JetBrains Mono', monospace; }
     a { color: inherit; text-decoration: none; }
     main { background: #080808; color: #f2ede8; overflow-x: hidden; }
-    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 30; padding: 0.9rem 1.2rem; border-bottom: 1px solid rgba(184,115,51,.35); backdrop-filter: blur(8px); background: rgba(8,8,8,.78); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
+    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 30; padding: 0.9rem 1.2rem; border-bottom: 1px solid rgba(184,115,51,.35); backdrop-filter: blur(8px); background: rgba(8,8,8,.78); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .topbar p { margin: 0; }
+    .topNav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .topNav a { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: #aaa; letter-spacing: .06em; text-transform: none; }
     .hero { min-height: 100vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 7rem 1.2rem 4.5rem; }
     .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.25) 0%, rgba(8,8,8,.56) 48%, rgba(8,8,8,.97) 100%); }
     .heroContent { position: relative; z-index: 2; max-width: 980px; }
@@ -87,6 +89,11 @@ export default function HomePage() {
     .aboutText p { margin: 0 0 .85rem; font-size: 1rem; line-height: 1.7; max-width: 52ch; }
     .execLabel { margin: 0 0 .45rem !important; color: #5A5A5A; font-size: .7rem !important; letter-spacing: .16em; text-transform: uppercase; }
     .execText { margin: 0 0 1.1rem !important; color: #aaa; font-size: .9rem !important; max-width: 600px !important; line-height: 1.7; }
+    .svcGrid { margin: 1rem 0 1.4rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 24px; }
+    .svcCol p { margin: 0; }
+    .svcCode { color: #B87333; font-size: .7rem; font-family: 'JetBrains Mono', monospace; margin-bottom: .45rem !important; }
+    .svcTitle { color: #fff; font-size: .8rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .45rem !important; }
+    .svcBody { color: #aaa; font-size: .85rem; line-height: 1.6; }
     .poeticLine { font-family: 'Instrument Serif', serif; font-style: italic; margin: 0 0 1rem !important; }
     .timelineLine { border-left: 1px solid rgba(184,115,51,.45); padding-left: 1.2rem; display: grid; gap: 1rem; }
     .timeCard { position: relative; padding: .95rem 1rem; border: 1px solid rgba(242,237,232,.14); background: rgba(255,255,255,.01); }
@@ -114,8 +121,11 @@ export default function HomePage() {
     .cta a { color: #f2ede8; border-bottom: 1px solid rgba(184,115,51,.55); }
     .cta p { margin: 1rem 0 0; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
     @media (max-width: 980px) {
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .topNav { gap: .7rem; }
       .opsGrid { grid-template-columns: 1fr; }
       .about { grid-template-columns: 1fr; }
+      .svcGrid { grid-template-columns: 1fr; }
       .aboutMedia img { height: 360px; }
       .credibility { margin-top: -.9rem; }
     }
@@ -125,6 +135,12 @@ export default function HomePage() {
     <main>
       <header className="topbar">
         <p>Michele Tornello · 2024 · Catania · IT</p>
+        <nav className="topNav">
+          <a href="#chi-sono">[01] Chi sono</a>
+          <a href="#lavori">[02] Lavori</a>
+          <a href="#academy">[03] Academy</a>
+          <a href="#contatto">[04] Contatto</a>
+        </nav>
       </header>
       <section className="hero" style={{ backgroundImage: "url('/desk-setup.png')" }}>
         <div className="overlay" />
@@ -149,12 +165,29 @@ export default function HomePage() {
           <p>&gt; Ludelist        <span className="live">[LIVE]</span>   React+API     &lt;50ms p99</p>
         </div>
       </section>
-      <section className="about sectionWrap">
+      <section id="chi-sono" className="about sectionWrap">
         <div className="aboutMedia"><img src="/profile-photo.png" alt="Michele Tornello" /></div>
         <div className="aboutText">
           <h2>CHI SONO</h2>
           <p className="execLabel">CHI È</p>
           <p className="execText">Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. Assunto a tempo indeterminato da Paradigma SPA nel 2022. Dal 2024 docente Steve Jobs Academy con oltre 400 professionisti formati. Speaker nazionale: RTL 102.5, Università di Catania, TEDx Catania.</p>
+          <div className="svcGrid">
+            <div className="svcCol">
+              <p className="svcCode">[SVC-01]</p>
+              <p className="svcTitle">ARCHITETTURA</p>
+              <p className="svcBody">Sistemi scalabili, microservizi, infrastruttura cloud.</p>
+            </div>
+            <div className="svcCol">
+              <p className="svcCode">[SVC-02]</p>
+              <p className="svcTitle">SVILUPPO</p>
+              <p className="svcBody">TypeScript, PHP, React, Next.js, API.</p>
+            </div>
+            <div className="svcCol">
+              <p className="svcCode">[SVC-03]</p>
+              <p className="svcTitle">FORMAZIONE</p>
+              <p className="svcBody">SJA, 400+ studenti, Systems thinking.</p>
+            </div>
+          </div>
           <p className="poeticLine">Ha costruito il primo sistema in produzione a 22 anni.</p>
           <p className="poeticLine">A 24, ne insegna l&apos;architettura.</p>
           <p className="poeticLine">Non scrive codice. Progetta sistemi.</p>
@@ -170,7 +203,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <section className="portfolio sectionWrap">
+      <section id="lavori" className="portfolio sectionWrap">
         <h2>DEPLOYMENT LOG</h2>
         <div className="opsGrid">
           {operations.map((op) => (
@@ -183,7 +216,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <section className="teaching">
+      <section id="academy" className="teaching">
         <img src="/academy-class.jpg" alt="Docenza in aula" />
         <div className="teachingOverlay">
           <h2>DOCENZA</h2>
@@ -191,7 +224,7 @@ export default function HomePage() {
           <blockquote>Non insegno a programmare. Insegno a pensare da ingegnere.</blockquote>
         </div>
       </section>
-      <section className="cta sectionWrap">
+      <section id="contatto" className="cta sectionWrap">
         <h2>Hai un sistema che deve durare?</h2>
         <a href="mailto:micheletornello.dev@gmail.com">micheletornello.dev@gmail.com</a>
         <p><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></p>
