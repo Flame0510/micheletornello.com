@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Logo from '../ui/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,9 +19,7 @@ const Footer = () => {
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         
         <div className="flex flex-col gap-2">
-          <div className="font-display text-2xl">
-            Michele <span className="text-[#B87333]">Tornello</span>
-          </div>
+          <Logo />
           <p className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40">
             © {currentYear} Michele Tornello
           </p>

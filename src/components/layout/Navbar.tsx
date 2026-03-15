@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from '../ui/Logo';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -39,9 +40,9 @@ const Navbar = () => {
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/" className="font-mono text-xs md:text-sm tracking-widest uppercase hover:text-[#B87333] transition-colors">
-              Michele Tornello <span className="text-[#B87333]/40">·</span> {currentYear}
-            </Link>
+            <Logo />
+            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[#F2EDE8]/20">·</span>
+            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[#F2EDE8]/60">{currentYear}</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
