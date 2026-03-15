@@ -47,8 +47,8 @@ const PrincipleBlock = ({ number, title, desc, i }: PrincipleBlockProps) => {
           style={{
             y: numberY,
             fontSize: "clamp(4rem, 12vw, 8rem)",
-            color: "#1A1A1A",
-            opacity: 0.14,
+            color: "#E8E8E8",
+            opacity: 0.04,
             lineHeight: 0.9,
             letterSpacing: "-0.04em",
             minWidth: "clamp(4rem, 10vw, 6rem)",
