@@ -4,6 +4,7 @@ import { ChiSonoSection } from "@/components/v11/ChiSonoSection";
 import { PortfolioSection } from "@/components/v11/PortfolioSection";
 import { PressSection } from "@/components/v11/PressSection";
 import { TimelineSection } from "@/components/v11/TimelineSection";
+import { DocenzaSection } from "@/components/v11/DocenzaSection";
 import { ContactSection } from "@/components/v11/ContactSection";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <PortfolioSection />
       <PressSection />
       <TimelineSection />
+      <DocenzaSection />
       <ContactSection />
     </main>
   );
