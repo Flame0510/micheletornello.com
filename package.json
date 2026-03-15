@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "qa": "node scripts/qa-screenshot.js"
   },
   "dependencies": {
     "framer-motion": "^12.36.0",
