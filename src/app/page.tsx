@@ -31,22 +31,32 @@ export default function HomePage() {
 
   const operations = [
     {
-      name: 'ORION CORE',
+      code: '[MT-OP-001]',
+      name: 'REC Security',
       mission: 'Replatforming di un backend legacy mission-critical con rollout progressivo zero-downtime.',
       notes: 'Node.js · PostgreSQL · Redis · CI/CD con canary release',
       log: '// 99.98% uptime · node + postgres + redis',
     },
     {
-      name: 'ATLAS ACADEMY',
+      code: '[MT-OP-002]',
+      name: 'Kastalia',
       mission: 'Sistema didattico per formazione tecnica avanzata con tracking di progressione e feedback.',
       notes: 'Next.js · TypeScript · Event-driven analytics',
       log: '// 430+ developer formati · next + ts + analytics',
     },
     {
-      name: 'LATTICE OPS',
+      code: '[MT-OP-003]',
+      name: 'Ludelist',
       mission: 'Ottimizzazione pipeline applicativa con target di latenza sub-50ms su endpoint critici.',
       notes: 'Edge caching · profiling continuo · SLA engineering',
       log: '// <50ms p95 target · edge + profiling + sla',
+    },
+    {
+      code: '[MT-OP-004]',
+      name: 'Pong',
+      mission: 'Progettazione e rilascio di una piattaforma ad alta affidabilità con esperienza utente real-time.',
+      notes: 'Realtime architecture · WebSockets · observability stack',
+      log: '// realtime uptime · ws + monitoring + incident response',
     },
   ];
 
@@ -72,6 +82,8 @@ export default function HomePage() {
     .about { display: grid; grid-template-columns: minmax(250px,360px) minmax(0,1fr); gap: 2rem; align-items: center; }
     .aboutMedia img { width: 100%; height: 440px; object-fit: cover; border: 1px solid rgba(184,115,51,.45); filter: grayscale(1); }
     .aboutText p { margin: 0 0 .85rem; font-size: 1rem; line-height: 1.7; max-width: 52ch; }
+    .execLabel { margin: 0 0 .45rem !important; color: #5A5A5A; font-size: .7rem !important; letter-spacing: .16em; text-transform: uppercase; }
+    .execText { margin: 0 0 1.1rem !important; color: #aaa; font-size: .9rem !important; max-width: 600px !important; line-height: 1.7; }
     .poeticLine { font-family: 'Instrument Serif', serif; font-style: italic; margin: 0 0 1rem !important; }
     .timelineLine { border-left: 1px solid rgba(184,115,51,.45); padding-left: 1.2rem; display: grid; gap: 1rem; }
     .timeCard { position: relative; padding: .95rem 1rem; border: 1px solid rgba(242,237,232,.14); background: rgba(255,255,255,.01); }
@@ -82,7 +94,9 @@ export default function HomePage() {
     .opsGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
     .opCard { border: 1px solid rgba(242,237,232,.16); border-left: 3px solid #b87333; padding: 1rem; background: rgba(255,255,255,.015); }
     .opCard p { margin: 0; line-height: 1.65; font-size: .88rem; }
-    .opLabel { color: #b87333; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .5rem !important; font-size: .76rem !important; }
+    .opRef { color: #b87333; letter-spacing: .08em; font-size: .7rem !important; margin-bottom: .22rem !important; }
+    .opLabel { color: #b87333; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .15rem !important; font-size: .76rem !important; }
+    .opName { margin: 0 0 .5rem !important; font-size: 1rem !important; }
     .notes { margin-top: .7rem !important; opacity: .86; }
     .log { margin-top: .75rem !important; color: #b87333; }
     .teaching { position: relative; min-height: 540px; margin-top: 1.8rem; }
@@ -128,6 +142,8 @@ export default function HomePage() {
         <div className="aboutMedia"><img src="/profile-photo.png" alt="Michele Tornello" /></div>
         <div className="aboutText">
           <h2>CHI SONO</h2>
+          <p className="execLabel">CHI È</p>
+          <p className="execText">Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. Assunto a tempo indeterminato da Paradigma SPA nel 2022. Dal 2024 docente Steve Jobs Academy con oltre 400 professionisti formati. Speaker nazionale: RTL 102.5, Università di Catania, TEDx Catania.</p>
           <p className="poeticLine">Ha costruito il primo sistema in produzione a 22 anni.</p>
           <p className="poeticLine">A 24, ne insegna l&apos;architettura.</p>
           <p className="poeticLine">Non scrive codice. Progetta sistemi.</p>
@@ -148,7 +164,9 @@ export default function HomePage() {
         <div className="opsGrid">
           {operations.map((op) => (
             <article key={op.name} className="opCard">
-              <p className="opLabel">OPERAZIONE: {op.name}</p>
+              <p className="opRef">{op.code}</p>
+              <p className="opLabel">OPERAZIONE:</p>
+              <p className="opName">{op.name}</p>
               <p>{op.mission}</p><p className="notes">{op.notes}</p><p className="log">{op.log}</p>
             </article>
           ))}
