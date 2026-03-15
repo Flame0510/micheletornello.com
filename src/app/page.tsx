@@ -1,414 +1,392 @@
+const palette = {
+  ivory: '#F9F6F0',
+  ink: '#1A1A2E',
+  gold: '#B8972A',
+};
+
+const caseStudies = [
+  {
+    title: 'Architettura per Ecosistema Enterprise',
+    byline: '2024 · System Design',
+    body: 'Ridisegno di una piattaforma multi-team con dominio modulare, standard condivisi e governance tecnica orientata alla continuità operativa.',
+    metric: 'Metrica chiave: uptime stabile al 99.96%.',
+  },
+  {
+    title: 'Modernizzazione Full-Stack in Produzione',
+    byline: '2023 · Product Engineering',
+    body: 'Implementazione end-to-end di un nuovo stack web con focus su performance reali, qualità del codice e rilascio incrementale sicuro.',
+    metric: 'Metrica chiave: -42% nei tempi medi di rilascio.',
+  },
+  {
+    title: 'Data Layer e Controllo KPI in Tempo Reale',
+    byline: '2023 · Analytics Platform',
+    body: 'Costruzione di dashboard direzionali e sistemi di alerting per allineare tecnologia e business su indicatori condivisi.',
+    metric: 'Metrica chiave: -35% nel decision time operativo.',
+  },
+  {
+    title: 'Academy Engineering Program',
+    byline: '2022–2024 · Education',
+    body: 'Percorso formativo strutturato su metodo, disciplina tecnica e mentalità sistemica per profili in ingresso nel mondo software.',
+    metric: 'Metrica chiave: oltre 400 studenti accompagnati.',
+  },
+];
+
 export default function HomePage() {
-  const ops = [
-    {
-      nome: 'OPERAZIONE NEXUS PLATFORM',
-      anno: '2024',
-      descrizione:
-        'Ridisegno completo di una piattaforma enterprise con architettura modulare, pipeline CI/CD e governance tecnica trasversale ai team prodotto.',
-      metrica: 'UPTIME OPERATIVO: 99.96%'
-    },
-    {
-      nome: 'OPERAZIONE FALCON STACK',
-      anno: '2023',
-      descrizione:
-        'Sviluppo full-stack di ecosistema web ad alte prestazioni con focus su velocità percepita, qualità del codice e scalabilità orizzontale.',
-      metrica: 'RIDUZIONE TEMPI DI RILASCIO: -42%'
-    },
-    {
-      nome: 'OPERAZIONE CONTROL ROOM',
-      anno: '2023',
-      descrizione:
-        'Implementazione dashboard direzionali per monitoraggio KPI tecnici e business, con alerting e lettura strategica in tempo reale.',
-      metrica: 'DECISION TIME: -35%'
-    },
-    {
-      nome: 'OPERAZIONE ACADEMY GRID',
-      anno: '2022',
-      descrizione:
-        'Progettazione percorso formativo tecnico-pratico per accelerare la crescita di profili junior verso standard professionali senior.',
-      metrica: 'PROFILI FORMATI: 400+'
-    }
-  ];
-
-  const competenze = [
-    {
-      titolo: 'Architettura Sistemi',
-      testo:
-        'Progettazione di sistemi affidabili, modulari e misurabili. Dalla visione tecnica alla delivery: scelte architetturali orientate a resilienza, mantenibilità e risultato.'
-    },
-    {
-      titolo: 'Full-Stack Dev',
-      testo:
-        'Sviluppo end-to-end di prodotti digitali moderni: frontend, backend, integrazioni e performance engineering. Focus costante su codice pulito e impatto reale.'
-    },
-    {
-      titolo: 'Formazione',
-      testo:
-        'Didattica applicata al mondo engineering: metodo, mentalità e disciplina operativa. Obiettivo: creare professionisti che ragionano per sistemi e non per feature isolate.'
-    }
-  ];
-
-  const press = [
-    { ente: 'RTL 102.5', data: '2024-05-12', tipo: 'Radio' },
-    { ente: 'Università di Catania', data: '2024-03-21', tipo: 'Università' },
-    { ente: 'TEDx Catania', data: '2023-11-09', tipo: 'Conference' }
-  ];
-
   return (
     <main
       style={{
-        margin: 0,
-        backgroundColor: '#F2EFE8',
-        color: '#1C2B3A',
+        background: palette.ivory,
+        color: palette.ink,
         fontFamily: 'Georgia, serif',
-        lineHeight: 1.6
       }}
     >
-      <section
+      <header
         style={{
-          minHeight: '100vh',
-          backgroundColor: '#1C2B3A',
-          color: '#FFFFFF',
-          border: '2px solid #8B1A1A',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '48px 24px'
+          position: 'sticky',
+          top: 0,
+          zIndex: 20,
+          background: palette.ivory,
+          borderBottom: `3px double ${palette.ink}`,
         }}
       >
-        <pre
+        <div
           style={{
-            margin: 0,
-            whiteSpace: 'pre-wrap',
-            textAlign: 'center',
-            fontFamily: 'Courier New, Courier, monospace',
-            fontSize: 'clamp(16px, 2.2vw, 26px)',
-            lineHeight: 1.7,
-            letterSpacing: '0.06em',
-            textTransform: 'uppercase'
+            maxWidth: 1200,
+            margin: '0 auto',
+            padding: '14px 24px',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto 1fr',
+            alignItems: 'end',
+            gap: 16,
           }}
-        >{`[Dossier Classificato]
+        >
+          <div
+            style={{
+              fontFamily: 'var(--font-playfair-display), Georgia, serif',
+              fontSize: 'clamp(1.4rem, 3vw, 2rem)',
+              lineHeight: 1,
+            }}
+          >
+            Michele Tornello
+          </div>
+          <div
+            style={{
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+              fontSize: 12,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+            }}
+          >
+            15 Marzo 2024
+          </div>
+          <div
+            style={{
+              textAlign: 'right',
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+              fontSize: 12,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Catania · IT
+          </div>
+        </div>
+      </header>
 
-Soggetto: Tornello, Michele
-Classificazione: System Architect
-Sede: Catania, IT · 37°30'N 15°06'E
-Anno: 2024
+      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px 40px' }}>
+        <h1
+          style={{
+            margin: '0 0 12px',
+            fontFamily: 'var(--font-playfair-display), Georgia, serif',
+            fontSize: 'clamp(2.1rem, 4vw, 4rem)',
+            lineHeight: 1.08,
+          }}
+        >
+          L&apos;Architetto che Forma chi Costruirà il Futuro
+        </h1>
+        <p
+          style={{
+            margin: '0 0 30px',
+            color: palette.gold,
+            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+            fontSize: 12,
+            letterSpacing: '0.11em',
+            textTransform: 'uppercase',
+          }}
+        >
+          System Architect · Paradigma SPA · Steve Jobs Academy
+        </p>
 
-████████████████████████
-Accesso Autorizzato
-████████████████████████`}</pre>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '250px 1fr',
+            gap: 28,
+            alignItems: 'start',
+          }}
+        >
+          <img
+            src="/profile-photo.png"
+            alt="Ritratto di Michele Tornello"
+            style={{
+              width: 250,
+              maxWidth: '100%',
+              border: `1px solid ${palette.ink}`,
+              filter: 'grayscale(1) contrast(1.05)',
+            }}
+          />
+          <div style={{ columnCount: 1, fontSize: '1rem', lineHeight: 1.8 }}>
+            <p style={{ marginTop: 0 }}>
+              Michele Tornello è un System Architect che opera tra progettazione software, sviluppo full-stack e
+              formazione tecnica. Nel suo lavoro, l&apos;architettura non è un esercizio teorico ma un processo concreto:
+              trasformare complessità operative in sistemi leggibili, scalabili e sostenibili nel tempo.
+            </p>
+            <p>
+              In Paradigma SPA guida iniziative che coinvolgono più team, definendo standard di qualità e strategie di
+              delivery capaci di tenere insieme visione e execution. Ogni decisione viene misurata sull&apos;impatto reale:
+              stabilità di piattaforma, velocità di rilascio, capacità di evolvere senza perdere affidabilità.
+            </p>
+            <p style={{ marginBottom: 0 }}>
+              In parallelo, porta avanti una missione formativa alla Steve Jobs Academy: costruire professionisti che
+              sappiano ragionare da ingegneri del sistema. Non solo codice, ma metodo, responsabilità tecnica e cultura
+              del miglioramento continuo.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section style={{ backgroundColor: '#F2EFE8', padding: '96px 8vw' }}>
+      <section
+        style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '0 24px 50px',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: 26,
+        }}
+      >
+        {[
+          {
+            title: 'Sistema Scalabile',
+            body: 'Progetta architetture modulari e resilienti, pensate per sostenere crescita, evoluzione funzionale e affidabilità continua.',
+          },
+          {
+            title: 'Full-Stack in Produzione',
+            body: 'Sviluppa applicazioni end-to-end con attenzione a performance, maintainability e qualità del rilascio in ambienti reali.',
+          },
+          {
+            title: '400 Studenti Formati',
+            body: 'Trasferisce competenze tecniche e mentalità ingegneristica formando profili capaci di lavorare per sistemi e obiettivi.',
+          },
+        ].map((item, index) => (
+          <article
+            key={item.title}
+            style={{
+              paddingLeft: index === 0 ? 0 : 20,
+              borderLeft: index === 0 ? 'none' : `1px solid rgba(26,26,46,0.25)`,
+            }}
+          >
+            <h2
+              style={{
+                margin: '0 0 10px',
+                fontFamily: 'var(--font-playfair-display), Georgia, serif',
+                fontSize: '1.8rem',
+              }}
+            >
+              {item.title}
+            </h2>
+            <p style={{ margin: 0, lineHeight: 1.75 }}>{item.body}</p>
+          </article>
+        ))}
+      </section>
+
+      <section style={{ background: palette.ink, padding: '44px 24px' }}>
         <div
           style={{
             maxWidth: 1200,
             margin: '0 auto',
             display: 'grid',
-            gridTemplateColumns: 'minmax(0, 1.6fr) minmax(280px, 1fr)',
-            gap: 40
+            gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+            gap: 18,
           }}
         >
-          <article>
-            <h2
-              style={{
-                marginTop: 0,
-                marginBottom: 24,
-                fontFamily: 'Courier New, Courier, monospace',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                fontSize: 28
-              }}
-            >
-              Profilo Operativo
-            </h2>
-            <p style={{ marginTop: 0, fontSize: 20 }}>
-              Michele Tornello è un System Architect con base a Catania, specializzato nella progettazione e nella
-              costruzione di ecosistemi digitali ad alta affidabilità. Combina visione strategica e precisione
-              esecutiva per trasformare requisiti complessi in sistemi concreti, misurabili e durevoli.
-            </p>
-            <p style={{ fontSize: 19 }}>
-              Dal 2022 opera in Paradigma SPA, dove guida iniziative trasversali su architettura, performance e
-              standard di delivery. La sua metodologia integra ingegneria del software, disciplina operativa e cultura
-              del miglioramento continuo: ogni progetto viene trattato come una missione con obiettivi chiari,
-              indicatori verificabili e responsabilità definite.
-            </p>
-            <p style={{ marginBottom: 0, fontSize: 19 }}>
-              Parallelamente, è attivo nella formazione di nuovi talenti: trasferisce competenze tecniche e mentalità
-              progettuale, aiutando studenti e professionisti a sviluppare un approccio da ingegneri del sistema,
-              orientato all&apos;impatto e non solo all&apos;implementazione.
-            </p>
-          </article>
-
-          <aside>
-            <img
-              src="/profile-photo.png"
-              alt="Michele Tornello"
-              style={{
-                width: 220,
-                maxWidth: '100%',
-                display: 'block',
-                margin: '0 auto 20px auto',
-                border: '1.5px solid #1C2B3A',
-                filter: 'grayscale(1) contrast(1.05)'
-              }}
-            />
-            <div
-              style={{
-                border: '1px solid #1C2B3A',
-                padding: 20,
-                backgroundColor: '#F8F5EE',
-                fontFamily: 'Courier New, Courier, monospace',
-                textTransform: 'uppercase',
-                fontSize: 14,
-                lineHeight: 1.85,
-                letterSpacing: '0.04em'
-              }}
-            >
-              <div>NOME: Michele Tornello</div>
-              <div>ETÀ: 24</div>
-              <div>RUOLO: System Architect</div>
-              <div>AZIENDA: Paradigma SPA</div>
-              <div>STATUS: Attivo dal 2022</div>
-              <div>CLEARANCE: Senior</div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: '#1C2B3A', padding: '96px 8vw' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <h2
-            style={{
-              marginTop: 0,
-              marginBottom: 36,
-              color: '#8B1A1A',
-              fontFamily: 'Courier New, Courier, monospace',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              fontSize: 30
-            }}
-          >
-            Capacità Operative
-          </h2>
-          <div style={{ display: 'grid', gap: 20 }}>
-            {competenze.map((item) => (
+          {[
+            ['3+', 'Anni in architettura enterprise'],
+            ['400+', 'Studenti formati'],
+            ['4', 'Aree core: design, dev, delivery, teaching'],
+            ['<50ms', 'Target su interazioni critiche UI'],
+          ].map(([value, label]) => (
+            <div key={value} style={{ textAlign: 'center' }}>
               <div
-                key={item.titolo}
                 style={{
-                  borderLeft: '2px solid #8B1A1A',
-                  padding: '10px 0 10px 16px',
-                  color: '#FFFFFF'
+                  color: palette.gold,
+                  fontFamily: 'var(--font-playfair-display), Georgia, serif',
+                  fontSize: 'clamp(2rem, 4vw, 3rem)',
+                  lineHeight: 1.1,
                 }}
               >
-                <h3
-                  style={{
-                    margin: '0 0 6px 0',
-                    fontFamily: 'Courier New, Courier, monospace',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    fontSize: 20
-                  }}
-                >
-                  {item.titolo}
-                </h3>
-                <p style={{ margin: 0, fontSize: 18 }}>{item.testo}</p>
+                {value}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: '#F2EFE8', padding: '96px 8vw' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <h2
-            style={{
-              marginTop: 0,
-              marginBottom: 36,
-              color: '#1C2B3A',
-              fontFamily: 'Courier New, Courier, monospace',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              fontSize: 30
-            }}
-          >
-            Operazioni Completate
-          </h2>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 18 }}>
-            {ops.map((op) => (
-              <article
-                key={op.nome}
+              <div
                 style={{
-                  border: '1px solid rgba(28, 43, 58, 0.28)',
-                  padding: 18,
-                  backgroundColor: '#F7F4ED'
+                  color: '#F3F3F3',
+                  marginTop: 8,
+                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                  fontSize: 11,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: 'Courier New, Courier, monospace',
-                    textTransform: 'uppercase',
-                    color: '#1C2B3A',
-                    letterSpacing: '0.05em',
-                    fontSize: 15,
-                    marginBottom: 5
-                  }}
-                >
-                  {op.nome}
-                </div>
-                <div
-                  style={{
-                    color: '#8B1A1A',
-                    fontFamily: 'Courier New, Courier, monospace',
-                    fontSize: 14,
-                    marginBottom: 10
-                  }}
-                >
-                  {op.anno}
-                </div>
-                <p style={{ marginTop: 0, marginBottom: 12, fontSize: 17 }}>{op.descrizione}</p>
-                <div
-                  style={{
-                    fontFamily: 'Courier New, Courier, monospace',
-                    textTransform: 'uppercase',
-                    color: '#1C2B3A',
-                    fontSize: 13,
-                    borderTop: '1px solid rgba(28, 43, 58, 0.2)',
-                    paddingTop: 10
-                  }}
-                >
-                  {op.metrica}
-                </div>
-              </article>
-            ))}
-          </div>
+                {label}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#1C2B3A', padding: '96px 0 84px 0', color: '#FFFFFF' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 8vw' }}>
+      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px' }}>
+        <h2
+          style={{
+            margin: '0 0 22px',
+            fontFamily: 'var(--font-playfair-display), Georgia, serif',
+            fontSize: '2.2rem',
+          }}
+        >
+          Portfolio — Case Study
+        </h2>
+        <div style={{ display: 'grid', gap: 18 }}>
+          {caseStudies.map((item) => (
+            <article key={item.title} style={{ paddingBottom: 16, borderBottom: `1px solid rgba(26,26,46,0.18)` }}>
+              <h3
+                style={{
+                  margin: '0 0 4px',
+                  fontFamily: 'var(--font-playfair-display), Georgia, serif',
+                  fontSize: '1.6rem',
+                }}
+              >
+                {item.title}
+              </h3>
+              <div
+                style={{
+                  marginBottom: 10,
+                  color: palette.gold,
+                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                  textTransform: 'uppercase',
+                  fontSize: 12,
+                  letterSpacing: '0.08em',
+                }}
+              >
+                {item.byline}
+              </div>
+              <p style={{ margin: '0 0 6px' }}>{item.body}</p>
+              <p style={{ margin: 0, fontWeight: 700 }}>{item.metric}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '10px 24px 48px' }}>
+        <article style={{ border: `1px solid ${palette.ink}`, padding: 16 }}>
           <img
             src="/academy-class.jpg"
-            alt="Programma Steve Jobs Academy"
+            alt="Aula Steve Jobs Academy"
             style={{
               width: '100%',
+              maxHeight: 500,
+              objectFit: 'cover',
               display: 'block',
-              border: '1px solid rgba(255, 255, 255, 0.22)',
-              filter: 'grayscale(1) contrast(1.1)'
+              filter: 'grayscale(0.3)',
             }}
           />
           <div
             style={{
-              marginTop: 24,
-              fontFamily: 'Courier New, Courier, monospace',
+              marginTop: 10,
+              color: palette.gold,
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
               textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              fontSize: 16
+              fontSize: 11,
+              letterSpacing: '0.09em',
             }}
           >
-            Programma: Steve Jobs Academy
+            Reportage · Steve Jobs Academy, Catania · Aula tecnica 2024
           </div>
-          <div
-            style={{
-              marginTop: 8,
-              fontFamily: 'Courier New, Courier, monospace',
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-              fontSize: 14,
-              color: '#E2DFD8'
-            }}
-          >
-            2020: Studente · 2024: Istruttore · Formati: 400+
+
+          <div style={{ marginTop: 18, columnCount: 2, columnGap: 28, lineHeight: 1.8 }}>
+            <p style={{ marginTop: 0 }}>
+              Tra il 2020 e il 2024 il percorso di Michele Tornello nella Steve Jobs Academy si trasforma da esperienza
+              personale a responsabilità collettiva. Da studente a docente, il passaggio è guidato da una sola idea:
+              rendere trasferibile il metodo con cui si affronta la complessità software.
+            </p>
+            <p>
+              Le attività in aula si concentrano su casi reali, decomposizione dei problemi, progettazione modulare e
+              qualità del pensiero tecnico prima ancora della riga di codice. L&apos;obiettivo non è produrre esecutori,
+              ma professionisti capaci di leggere i sistemi e prendere decisioni solide nel tempo.
+            </p>
           </div>
+
           <blockquote
             style={{
-              margin: '20px 0 0 0',
-              color: '#8B1A1A',
+              margin: '16px 0 0',
+              fontFamily: 'var(--font-playfair-display), Georgia, serif',
+              fontSize: 'clamp(1.4rem, 2.6vw, 2rem)',
               fontStyle: 'italic',
-              fontSize: 'clamp(21px, 3vw, 31px)',
-              lineHeight: 1.4
+              color: palette.ink,
             }}
           >
             “Non insegno a programmare. Insegno a pensare da ingegnere.”
           </blockquote>
+        </article>
+      </section>
+
+      <section style={{ background: palette.ink, padding: '42px 24px', color: '#fff' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div
+            style={{
+              fontFamily: 'var(--font-playfair-display), Georgia, serif',
+              fontSize: '2rem',
+              color: palette.gold,
+              marginBottom: 10,
+            }}
+          >
+            Citato da:
+          </div>
+          <p
+            style={{
+              margin: 0,
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              lineHeight: 1.8,
+            }}
+          >
+            <span style={{ color: palette.gold }}>RTL 102.5</span> · Università di Catania ·{' '}
+            <span style={{ color: palette.gold }}>TEDx Catania</span>
+          </p>
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#F2EFE8', padding: '96px 8vw' }}>
-        <div style={{ maxWidth: 980, margin: '0 auto' }}>
-          <h2
-            style={{
-              marginTop: 0,
-              marginBottom: 24,
-              color: '#1C2B3A',
-              fontFamily: 'Courier New, Courier, monospace',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              fontSize: 30
-            }}
-          >
-            Menzioni Pubbliche
-          </h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 17 }}>
-            <thead>
-              <tr style={{ fontFamily: 'Courier New, Courier, monospace', textTransform: 'uppercase', fontSize: 13 }}>
-                <th style={{ textAlign: 'left', padding: '10px 8px', borderBottom: '1px solid #1C2B3A' }}>Fonte</th>
-                <th style={{ textAlign: 'left', padding: '10px 8px', borderBottom: '1px solid #1C2B3A' }}>Data</th>
-                <th style={{ textAlign: 'left', padding: '10px 8px', borderBottom: '1px solid #1C2B3A' }}>Tipo</th>
-              </tr>
-            </thead>
-            <tbody>
-              {press.map((item) => (
-                <tr key={item.ente}>
-                  <td style={{ padding: '12px 8px', borderBottom: '1px solid rgba(28, 43, 58, 0.2)' }}>{item.ente}</td>
-                  <td style={{ padding: '12px 8px', borderBottom: '1px solid rgba(28, 43, 58, 0.2)' }}>{item.data}</td>
-                  <td style={{ padding: '12px 8px', borderBottom: '1px solid rgba(28, 43, 58, 0.2)' }}>{item.tipo}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: '#1C2B3A', padding: '90px 8vw', color: '#FFFFFF' }}>
-        <div style={{ maxWidth: 980, margin: '0 auto' }}>
-          <h2
-            style={{
-              marginTop: 0,
-              marginBottom: 20,
-              fontFamily: 'Courier New, Courier, monospace',
-              textTransform: 'uppercase',
-              letterSpacing: '0.09em',
-              fontSize: 30
-            }}
-          >
-            Canale di Comunicazione Sicuro
-          </h2>
-          <div
-            style={{
-              fontFamily: 'Courier New, Courier, monospace',
-              fontSize: 16,
-              lineHeight: 2,
-              letterSpacing: '0.03em'
-            }}
-          >
-            <div>Email: michele.tornello@gmail.com</div>
-            <div>LinkedIn: linkedin.com/in/micheletornello</div>
-            <div>Instagram: @micheletornello</div>
-          </div>
-          <div
-            style={{
-              marginTop: 20,
-              color: '#D7D1C6',
-              fontFamily: 'Courier New, Courier, monospace',
-              textTransform: 'uppercase',
-              fontSize: 13,
-              letterSpacing: '0.08em'
-            }}
-          >
-            Risposta entro 48h · Soggetti selezionati
-          </div>
+      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '56px 24px 72px', textAlign: 'center' }}>
+        <h2
+          style={{
+            margin: '0 0 12px',
+            fontFamily: 'var(--font-playfair-display), Georgia, serif',
+            fontStyle: 'italic',
+            fontSize: '2rem',
+          }}
+        >
+          Contatta la redazione.
+        </h2>
+        <div style={{ color: palette.gold, marginBottom: 6 }}>michele.tornello@gmail.com</div>
+        <div style={{ marginBottom: 10 }}>LinkedIn · instagram.com/micheletornello</div>
+        <div
+          style={{
+            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+            fontSize: 11,
+            letterSpacing: '0.09em',
+            textTransform: 'uppercase',
+          }}
+        >
+          Risponde di persona.
         </div>
       </section>
     </main>

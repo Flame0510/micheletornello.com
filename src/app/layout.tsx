@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Instrument_Serif } from 'next/font/google';
+import { Geist, Instrument_Serif, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -15,6 +15,12 @@ const instrumentSerif = Instrument_Serif({
   variable: '--font-instrument-serif',
   subsets: ['latin'],
   weight: '400',
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: '--font-playfair-display',
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="it" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-text-main`}
+        className={`${geistSans.variable} ${instrumentSerif.variable} ${playfairDisplay.variable} font-sans antialiased bg-background text-text-main`}
       >
         <PageLoader />
         <CustomCursor />
