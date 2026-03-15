@@ -301,37 +301,100 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="chi-sono" className="about sectionWrap">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%', display: 'flex', flexWrap: 'wrap' }}>
-          <div className="aboutMedia"><img src="/profile-photo.png" alt="Michele Tornello" /></div>
-          <div className="aboutText">
-            <h2>CHI SONO</h2>
-            <p className="execLabel">CHI È</p>
-            <p className="execText">Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. Assunto a tempo indeterminato da Paradigma SPA nel 2022. Dal 2022 docente Steve Jobs Academy con oltre 100 studenti formati. Speaker nazionale: RTL 102.5, Università di Catania, TEDx Catania.</p>
-            
-            <p className="poeticLine">Ha costruito il primo sistema in produzione a 22 anni.</p>
-            <p className="poeticLine">A 24, ne insegna l&apos;architettura.</p>
-            <p className="poeticLine">Non scrive codice. Progetta sistemi.</p>
+      <section id="chi-sono" className="chiB_section">
+        <div className="chiB_container">
+          <div className="chiB_story">
+            <header className="chiB_header">
+              <span className="chiB_label">// CHI SONO</span>
+              <h2 className="chiB_title">
+                Prima il <em>pensiero</em>.<br />
+                Poi il codice.
+              </h2>
+              <p className="chiB_intro">
+                Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. 
+                Assunto a tempo indeterminato da Paradigma SPA nel 2022.
+              </p>
+            </header>
 
-            <div className="svcGrid">
-              {[
-                { code: '[SVC-01]', title: 'WEB & MOBILE', body: 'React, Next.js, Vue, Nuxt, Angular, React Native.' },
-                { code: '[SVC-02]', title: 'BACKEND', body: 'Node.js, PHP, Java, API design, microservizi.' },
-                { code: '[SVC-03]', title: 'ARCHITECTURE', body: 'Cloud architecture, database design, scalability.' }
-              ].map((svc, i) => (
-                <motion.div 
-                  key={svc.code} 
-                  className="svcCol"
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                >
-                  <p className="svcCode">{svc.code}</p>
-                  <p className="svcTitle">{svc.title}</p>
-                  <p className="svcBody">{svc.body}</p>
-                </motion.div>
-              ))}
+            <div className="chiB_flow">
+              <div className="chiB_step">
+                <div className="chiB_stepMeta">
+                  <span className="chiB_node"></span>
+                  <span className="chiB_year">2020</span>
+                  <span className="chiB_stepTag">PRIMA ARCHITETTURA LIVE</span>
+                </div>
+                <p className="chiB_stepText">
+                  Primo sistema in produzione.<br />
+                  Stabilità reale, utenti reali, responsabilità reale.
+                </p>
+              </div>
+
+              <div className="chiB_step chiB_highlight">
+                <div className="chiB_stepMeta">
+                  <span className="chiB_node"></span>
+                  <span className="chiB_year">2022</span>
+                  <span className="chiB_stepTag">SCALING ENTERPRISE</span>
+                </div>
+                <p className="chiB_stepText">
+                  Dalla build alla resilienza: osservabilità,<br />
+                  performance e qualità operativa.
+                </p>
+              </div>
+
+              <div className="chiB_step">
+                <div className="chiB_stepMeta">
+                  <span className="chiB_node"></span>
+                  <span className="chiB_year">2024</span>
+                  <span className="chiB_stepTag">SYSTEM THINKING</span>
+                </div>
+                <p className="chiB_stepText">
+                  Focus su sistemi duraturi: design decisionale,<br />
+                  manutenzione evolutiva, impatto globale.
+                </p>
+              </div>
+            </div>
+            
+            <div style={{ marginTop: '20px' }}>
+              <a 
+                href="#contatto" 
+                style={{
+                  display: 'inline-block',
+                  color: '#B87333',
+                  fontFamily: 'var(--font-jetbrains-mono), monospace',
+                  fontSize: '0.85rem',
+                  textDecoration: 'none',
+                  letterSpacing: '0.05em',
+                  fontWeight: 600
+                }}
+              >
+                Parliamo del tuo progetto →
+              </a>
+            </div>
+          </div>
+
+          <div className="chiB_visual">
+            <div className="chiB_photoBox">
+              <img src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" />
+              <div className="chiB_texture"></div>
+            </div>
+
+            <div className="chiB_stats">
+              <div className="chiB_stat">
+                <span className="chiB_val">2022</span>
+                <span className="chiB_lab">Inizio Docenza SJA</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">100+</span>
+                <span className="chiB_lab">Studenti Formati</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">06</span>
+                <span className="chiB_lab">Progetti Lanciati</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">SJA</span>
+                <span className="chiB_lab">Partner Tecnico</span>
+              </div>
             </div>
           </div>
         </div>

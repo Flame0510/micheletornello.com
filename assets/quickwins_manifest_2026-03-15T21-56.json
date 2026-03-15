@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-15T21-56",
+  "port": 3000,
+  "sections": [
+    ".hero",
+    "chi-sono",
+    "lavori",
+    "contatto"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop"
+  ],
+  "waitMs": 1200,
+  "files": [
+    "/tmp/micheletornello/assets/quickwins_.hero_mobile_2026-03-15T21-56.jpg",
+    "/tmp/micheletornello/assets/quickwins_chi-sono_mobile_2026-03-15T21-56.jpg",
+    "/tmp/micheletornello/assets/quickwins_lavori_mobile_2026-03-15T21-56.jpg",
+    "/tmp/micheletornello/assets/quickwins_contatto_mobile_2026-03-15T21-56.jpg",
+    "/tmp/micheletornello/assets/quickwins_.hero_desktop_2026-03-15T21-56.jpg",
+    "/tmp/micheletornello/assets/quickwins_chi-sono_desktop_2026-03-15T21-56.jpg",
+    "/tmp/micheletornello/assets/quickwins_lavori_desktop_2026-03-15T21-56.jpg",
+    "/tmp/micheletornello/assets/quickwins_contatto_desktop_2026-03-15T21-56.jpg"
+  ]
+}
