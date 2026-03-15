@@ -73,6 +73,7 @@ export default function HomePage() {
     .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.25) 0%, rgba(8,8,8,.56) 48%, rgba(8,8,8,.97) 100%); }
     .heroContent { position: relative; z-index: 2; max-width: 980px; }
     .badge { display: inline-block; border: 1px solid rgba(184,115,51,.6); padding: .4rem .7rem; color: #B87333; font-family: 'JetBrains Mono', monospace; font-size: .75rem; letter-spacing: .02em; margin-bottom: 1rem; }
+    .thesis { margin: 0 0 .7rem; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: #aaa; }
     h1,h2,h3,blockquote { font-family: 'Instrument Serif', serif; font-weight: 400; margin: 0; }
     h1 { font-size: clamp(2.5rem, 5vw, 5.2rem); line-height: .98; max-width: 18ch; }
     .sub { margin-top: .65rem; font-family: 'Instrument Serif', serif; font-style: italic; color: #b87333; font-size: clamp(1.2rem, 2vw, 2rem); }
@@ -116,6 +117,7 @@ export default function HomePage() {
     .teachingOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,8,.88) 0%, rgba(8,8,8,.62) 55%, rgba(8,8,8,.35) 100%); display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 2rem 1.2rem; max-width: 820px; }
     .teachingOverlay p { margin: 0; max-width: 60ch; line-height: 1.7; font-size: .95rem; }
     blockquote { color: #b87333; font-size: clamp(1.45rem,2.3vw,2.4rem); font-style: italic; max-width: 24ch; }
+    .academyClaim { margin: .4rem 0 0; font-family: 'JetBrains Mono', monospace; color: #B87333; font-size: .85rem; }
     .cta { text-align: center; padding-top: 5rem; padding-bottom: 5.4rem; }
     .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .9rem; }
     .cta a { color: #f2ede8; border-bottom: 1px solid rgba(184,115,51,.55); }
@@ -146,6 +148,7 @@ export default function HomePage() {
         <div className="overlay" />
         <div className="heroContent">
           <span className="badge">● Disponibile per nuovi progetti · 2024</span>
+          <p className="thesis">Tra i pochi professionisti italiani under-30 con esperienza enterprise e docenza strutturata.</p>
           <h1>Non costruisco software. Costruisco sistemi.</h1>
           <p className="sub">Formo chi li costruirà.</p>
         </div>
@@ -222,6 +225,7 @@ export default function HomePage() {
           <h2>DOCENZA</h2>
           <p>Formazione tecnica orientata alla pratica: architetture reali, revisione decisionale, responsabilità ingegneristica.</p>
           <blockquote>Non insegno a programmare. Insegno a pensare da ingegnere.</blockquote>
+          <p className="academyClaim">// Non formo programmatori. Formo ingegneri che pensano ai sistemi.</p>
         </div>
       </section>
       <section id="contatto" className="cta sectionWrap">
