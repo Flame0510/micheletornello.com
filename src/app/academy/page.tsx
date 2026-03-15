@@ -1,100 +1,136 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/sections/Navbar";
+import { FloatingNav } from "@/components/sections/FloatingNav";
 import { Footer } from "@/components/sections/Footer";
-import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-import { fadeUp, stagger } from "@/lib/animations";
+import { fadeUp } from "@/lib/animations";
 import { academy } from "@/lib/data";
-import { ArrowLeft, BookOpen, ExternalLink, GraduationCap } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
+import Image from "next/image";
 
 export default function AcademyPage() {
   const { lang } = useLang();
   const t = translations.academyPage[lang];
 
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
+    <main className="min-h-screen" style={{ background: "#060606" }}>
+      <FloatingNav />
 
-      <section className="pt-32 pb-24 px-6 max-w-7xl mx-auto overflow-hidden">
-        <Link href="/" className="inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors mb-8 group">
-          <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" /> {t.backHome}
+      {/* Hero */}
+      <section className="pt-40 pb-24 px-6 max-w-[1120px] mx-auto">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest transition-colors mb-16 group"
+          style={{ color: "#707070" }}
+        >
+          <motion.span
+            className="inline-block"
+            animate={{ x: [0, -3, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            ←
+          </motion.span>
+          <span className="group-hover:text-white transition-colors">{t.backHome}</span>
         </Link>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-start mb-20">
-          <div className="flex-1 space-y-6">
-            <Badge variant="outline" className="gap-2">
-              <GraduationCap size={14} /> {t.badge}
-            </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-              Steve Jobs <span className="text-accent">Academy</span>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "#C9A84C" }}>
+              Docenza · Steve Jobs Academy
+            </p>
+            <h1 className="font-display leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "#E8E8E8", letterSpacing: "-0.03em" }}>
+              Steve Jobs<br />
+              <span style={{ color: "#C9A84C" }}>Academy</span>
             </h1>
-            <p className="text-xl text-text-muted max-w-2xl leading-relaxed">{t.intro}</p>
+            <p className="text-lg leading-relaxed max-w-xl" style={{ color: "#707070" }}>
+              {t.intro}
+            </p>
           </div>
 
-          <Card className="lg:w-80 bg-accent/5 border-accent/20 border-dashed">
-            <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
-              <BookOpen size={20} className="text-accent" /> {t.infoTitle}
-            </h4>
-            <ul className="space-y-3 text-sm text-text-muted">
-              <li>
-                • {t.infoCard.yearLabel}: {academy.year}
-              </li>
-              <li>
-                • {t.infoCard.locationsLabel}: {academy.locations.join(" · ")}
-              </li>
-              <li>
-                • {t.infoCard.formatLabel}: {t.infoCard.formatValue}
-              </li>
-              <li>• {t.infoCard.cta}</li>
+          {/* Info box */}
+          <div
+            className="rounded-sm p-6 space-y-4"
+            style={{ border: "1px solid rgba(201,168,76,0.15)", background: "rgba(201,168,76,0.03)" }}
+          >
+            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "#C9A84C" }}>
+              {t.infoTitle}
+            </p>
+            <ul className="space-y-3">
+              {[
+                `${t.infoCard.yearLabel}: ${academy.year}`,
+                `${t.infoCard.locationsLabel}: ${academy.locations.join(" · ")}`,
+                `${t.infoCard.formatLabel}: ${t.infoCard.formatValue}`,
+                t.infoCard.cta,
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#707070" }}>
+                  <span style={{ color: "#C9A84C" }}>·</span>
+                  {item}
+                </li>
+              ))}
             </ul>
-          </Card>
+          </div>
         </div>
+      </section>
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+      {/* Photo strip */}
+      <div className="relative h-64 overflow-hidden mb-24">
+        <Image
+          src="/academy-class.jpg"
+          alt="Classe Steve Jobs Academy"
+          fill
+          className="object-cover object-center"
+          style={{ filter: "grayscale(80%) contrast(1.1)", opacity: 0.6 }}
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #060606 0%, transparent 30%, transparent 70%, #060606 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, #060606 0%, transparent 20%, transparent 80%, #060606 100%)" }} />
+      </div>
+
+      {/* Corsi */}
+      <section className="px-6 max-w-[1120px] mx-auto pb-24">
+        <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "#C9A84C" }}>03</p>
+        <h2 className="font-display mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
+          {lang === "it" ? "Materie" : "Subjects"}
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", borderLeft: "1px solid rgba(255,255,255,0.06)" }}>
           {academy.subjects.map((subject, i) => (
-            <motion.div key={i} variants={fadeUp}>
-              <Card className="h-full group hover:border-accent transition-all duration-500">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold group-hover:text-accent transition-colors">{subject.name}</h3>
-                  </div>
-                  <p className="text-text-muted leading-relaxed">{subject.description}</p>
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              initial="visible"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="p-8 space-y-4"
+              style={{ background: "#060606", borderRight: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+            >
+              <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>0{i + 1}</span>
+              <h3 className="font-display text-2xl" style={{ color: "#E8E8E8" }}>{subject.name}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "#707070" }}>{subject.description}</p>
 
-                  <div className="pt-6 border-t border-border flex flex-col gap-2">
-                    <Button variant="ghost" disabled className="text-xs justify-between group/btn px-2">
-                      <span className="flex items-center gap-2">
-                        {t.resourcesLabel} <ExternalLink size={12} />
-                      </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-surface border border-border text-text-muted">
-                        {t.comingSoon}
-                      </span>
-                    </Button>
-                    <Button variant="ghost" disabled className="text-xs justify-between group/btn px-2">
-                      <span className="flex items-center gap-2">
-                        {t.repositoryLabel} <ExternalLink size={12} />
-                      </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-surface border border-border text-text-muted">
-                        {t.comingSoon}
-                      </span>
-                    </Button>
-                  </div>
+              <div className="pt-6 space-y-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 font-mono text-xs" style={{ color: "#707070" }}>
+                    {t.resourcesLabel} <ExternalLink size={10} />
+                  </span>
+                  <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ color: "#404040", border: "1px solid rgba(255,255,255,0.06)" }}>
+                    {t.comingSoon}
+                  </span>
                 </div>
-              </Card>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 font-mono text-xs" style={{ color: "#707070" }}>
+                    {t.repositoryLabel} <ExternalLink size={10} />
+                  </span>
+                  <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ color: "#404040", border: "1px solid rgba(255,255,255,0.06)" }}>
+                    {t.comingSoon}
+                  </span>
+                </div>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       <Footer />

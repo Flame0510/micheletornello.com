@@ -3,7 +3,10 @@ export type Lang = 'it' | 'en';
 export interface CaseStudy {
   slug: string;
   gradient: string;
+  image: string;
   tech: string[];
+  impactNumber?: string;
+  impactLabel?: string;
   content: {
     it: CaseStudyContent;
     en: CaseStudyContent;
@@ -24,6 +27,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'rec-security',
     gradient: 'from-blue-600/20 to-cyan-500/20',
+    image: '/rec-security.jpg',
     tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Supabase', 'Vercel'],
     content: {
       it: {
@@ -85,7 +89,10 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'kastalia',
     gradient: 'from-orange-500/20 to-red-500/20',
+    image: '/kastalia.jpg',
     tech: ['Astro', 'React', 'Supabase', 'Stripe', 'Vercel'],
+    impactNumber: '+40%',
+    impactLabel: 'prenotazioni dirette',
     content: {
       it: {
         title: 'Casa Vacanze Kastalia',
@@ -142,6 +149,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'ludelist',
     gradient: 'from-purple-600/20 to-pink-500/20',
+    image: '/ludelist.jpg',
     tech: ['PHP', 'Laravel', 'Vue.js', 'PostgreSQL'],
     content: {
       it: {
@@ -194,6 +202,46 @@ export const caseStudies: CaseStudy[] = [
       },
     },
   },
+  {
+    slug: 'pong',
+    gradient: 'from-amber-500/20 to-yellow-400/20',
+    image: '/pong-project.jpg',
+    tech: ['Ionic', 'TypeScript', 'WebSocket'],
+    content: {
+      it: {
+        title: 'Pong Multiplayer',
+        subtitle: 'Progetto finale Academy — gioco multiplayer online in Ionic.',
+        overview: 'Progetto finale Academy sviluppato in team: un Pong multiplayer online real-time costruito con Ionic e TypeScript.',
+        challenge: ['Gestione sincronizzazione real-time della partita su connessioni variabili.', 'Struttura del gameplay pensata per mantenere latenza percepita bassa.', 'Consegna in tempi accademici con scope ben definito.'],
+        solution: [
+          { label: 'Stack', description: 'Ionic, TypeScript, WebSocket' },
+          { label: 'Realtime', description: 'Aggiornamenti stato partita in tempo reale via WebSocket' },
+          { label: 'Scope', description: 'Focus su gameplay multiplayer e stabilità della sessione' },
+        ],
+        results: [
+          { metric: 'Tipo progetto', value: 'Finale Academy' },
+          { metric: 'Modalità', value: 'Multiplayer online' },
+        ],
+        lesson: 'Un gioco multiplayer semplice è un ottimo banco di prova per timing, stato condiviso e gestione della latenza.',
+      },
+      en: {
+        title: 'Pong Multiplayer',
+        subtitle: 'Academy final project — online multiplayer game in Ionic.',
+        overview: 'Final Academy team project: a real-time online multiplayer Pong built with Ionic and TypeScript.',
+        challenge: ['Real-time game-state synchronization across variable network conditions.', 'Gameplay structure aimed at keeping perceived latency low.', 'Delivery within academic timelines and a constrained scope.'],
+        solution: [
+          { label: 'Stack', description: 'Ionic, TypeScript, WebSocket' },
+          { label: 'Realtime', description: 'Real-time match state updates via WebSocket' },
+          { label: 'Scope', description: 'Focus on multiplayer gameplay and session stability' },
+        ],
+        results: [
+          { metric: 'Project type', value: 'Academy final project' },
+          { metric: 'Mode', value: 'Online multiplayer' },
+        ],
+        lesson: 'Even a simple multiplayer game is an excellent testbed for timing, shared state, and latency handling.',
+      },
+    },
+  },
 ];
 
-export const getCaseStudy = (slug: string) => caseStudies.find(cs => cs.slug === slug);
+export const getCaseStudy = (slug: string) => caseStudies.find((cs) => cs.slug === slug);

@@ -221,6 +221,12 @@ export const translations = {
           tech: ['PHP', 'Laravel', 'Vue.js'],
           gradient: 'from-purple-600/20 to-pink-500/20',
         },
+        {
+          title: 'Pong Multiplayer',
+          description: 'Progetto finale Academy — gioco multiplayer online in Ionic.',
+          tech: ['Ionic', 'TypeScript', 'WebSocket'],
+          gradient: 'from-amber-500/20 to-yellow-400/20',
+        },
       ],
     },
     en: {
@@ -247,6 +253,12 @@ export const translations = {
             'Side project from a 120+ personal collection: organize board games and game nights with group availability and fast suggestions.',
           tech: ['PHP', 'Laravel', 'Vue.js'],
           gradient: 'from-purple-600/20 to-pink-500/20',
+        },
+        {
+          title: 'Pong Multiplayer',
+          description: 'Academy final project — online multiplayer game in Ionic.',
+          tech: ['Ionic', 'TypeScript', 'WebSocket'],
+          gradient: 'from-amber-500/20 to-yellow-400/20',
         },
       ],
     },
@@ -341,16 +353,14 @@ export const translations = {
     it: {
       title: 'Academy',
       subtitle: 'Insegno quello che costruisco.',
-      intro:
-        'Docente alla Steve Jobs Academy in tre sedi siciliane. Corsi in presenza su sviluppo software, architetture e metodologie reali — non teoria da manuale.',
+      intro: 'Da studente a docente. Nella stessa aula.',
       cta: 'Scopri i corsi',
       courseLabel: 'Corso 2025/26',
     },
     en: {
       title: 'Academy',
       subtitle: 'I teach what I build.',
-      intro:
-        'Instructor at the Steve Jobs Academy across three locations in Sicily. In-person courses on software development, architecture and real-world methodologies — not textbook theory.',
+      intro: 'From student to teacher. In the same classroom.',
       cta: 'Explore courses',
       courseLabel: 'Course 2025/26',
     },

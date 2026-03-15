@@ -1,12 +1,12 @@
-import { Navbar } from "@/components/sections/Navbar";
+import { FloatingNav } from "@/components/sections/FloatingNav";
 import { Hero } from "@/components/sections/Hero";
-import { Metrics } from "@/components/sections/Metrics";
+import { Press } from "@/components/sections/Press";
 import { About } from "@/components/sections/About";
-import { Services } from "@/components/sections/Services";
-import { Stack } from "@/components/sections/Stack";
-import { Process } from "@/components/sections/Process";
+import { Timeline } from "@/components/sections/Timeline";
+import { WhatIBuild } from "@/components/sections/WhatIBuild";
 import { Portfolio } from "@/components/sections/Portfolio";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { ImpactStats } from "@/components/sections/ImpactStats";
+import { HowIThink } from "@/components/sections/HowIThink";
 import { AcademyPreview } from "@/components/sections/AcademyPreview";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -15,15 +15,15 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background selection:bg-accent/30">
-      <Navbar />
+      <FloatingNav />
       <Hero />
-      <Metrics />
+      <Press />
       <About />
-      <Stack />
-      <Services />
-      <Process />
+      <Timeline />
+      <WhatIBuild />
       <Portfolio />
-      <Testimonials />
+      <ImpactStats />
+      <HowIThink />
       <AcademyPreview />
       <Contact />
       <Footer />

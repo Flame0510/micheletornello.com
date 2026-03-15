@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
+import { MagneticButton } from "../ui/MagneticButton";
 import { fadeUp } from "../../lib/animations";
 import { Mail, Send } from "lucide-react";
 import { useLang } from "@/lib/LanguageContext";
@@ -15,11 +16,11 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-24 px-6 max-w-4xl mx-auto overflow-hidden text-center">
-      <SectionTitle title={t.title} subtitle={`${t.subtitle} ${t.note}`} className="text-center flex flex-col items-center" />
+      <SectionTitle prefix="08" title={t.title} subtitle={`${t.subtitle} ${t.note}`} className="text-center flex flex-col items-center" />
 
       <motion.div
         variants={fadeUp}
-        initial="hidden"
+        initial="visible"
         whileInView="visible"
         viewport={{ once: true, amount: 0 }}
         className="space-y-12"
@@ -51,9 +52,11 @@ export const Contact = () => {
                 placeholder={t.message}
               />
             </div>
-            <Button className="w-full gap-2">
-              {t.submit} <Send size={18} />
-            </Button>
+            <MagneticButton className="w-full" strength={0.18}>
+              <Button className="w-full gap-2" style={{ background: "#C9A84C", color: "#060606" }}>
+                {t.submit} <Send size={18} />
+              </Button>
+            </MagneticButton>
           </form>
         </Card>
 
