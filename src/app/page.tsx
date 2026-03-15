@@ -192,6 +192,17 @@ export default function HomePage() {
     .cta h2 { font-size: clamp(2rem,3vw,3.2rem); margin-bottom: .9rem; }
     .cta a { color: #f2ede8; border-bottom: 1px solid rgba(184,115,51,.55); }
     .cta p { margin: 1rem 0 0; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
+    .newsletter { text-align: center; padding-top: 4rem; padding-bottom: 5rem; border-top: 1px solid rgba(242,237,232,.08); }
+    .newsletterLabel { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: #B87333; letter-spacing: .12em; margin-bottom: 1rem; }
+    .newsletter h2 { font-size: clamp(1.6rem,2.5vw,2.4rem); margin-bottom: .7rem; }
+    .newsletterSub { color: rgba(242,237,232,.6); font-size: .9rem; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .newsletterForm { display: flex; gap: .6rem; max-width: 420px; margin: 0 auto 1rem; }
+    .newsletterInput { flex: 1; background: rgba(242,237,232,.06); border: 1px solid rgba(242,237,232,.15); color: #f2ede8; padding: .75rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: .82rem; outline: none; }
+    .newsletterInput:focus { border-color: #B87333; }
+    .newsletterBtn { background: #B87333; color: #080808; border: none; padding: .75rem 1.4rem; font-family: 'JetBrains Mono', monospace; font-size: .78rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; }
+    .newsletterBtn:hover { background: #d4944a; }
+    .newsletterNote { color: rgba(242,237,232,.35); font-size: .72rem; letter-spacing: .05em; }
+    @media (max-width: 480px) { .newsletterForm { flex-direction: column; } }
 
     @media (max-width: 768px) {
        .statusGrid { grid-template-columns: repeat(2, 1fr); }
@@ -359,6 +370,29 @@ export default function HomePage() {
         <h2>Hai un sistema che deve durare?</h2>
         <a href="mailto:micheletornello.dev@gmail.com">micheletornello.dev@gmail.com</a>
         <p><a href="https://www.linkedin.com/in/michele-tornello-06a6341aa/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></p>
+      </section>
+
+      <section className="newsletter sectionWrap">
+        <p className="newsletterLabel">// BUILD DIFFERENT</p>
+        <h2>Architettura, sistemi e tech dal Sud Italia.</h2>
+        <p className="newsletterSub">Una newsletter per developer e decision maker. Niente rumore — solo insight densi ogni settimana.</p>
+        <form
+          action="https://app.beehiiv.com/subscribe"
+          method="POST"
+          target="_blank"
+          className="newsletterForm"
+        >
+          <input type="hidden" name="publication_id" value="fa05d1d5-3790-43f2-aa11-04a59c249428" />
+          <input
+            type="email"
+            name="email"
+            placeholder="la-tua@email.com"
+            required
+            className="newsletterInput"
+          />
+          <button type="submit" className="newsletterBtn">ISCRIVITI</button>
+        </form>
+        <p className="newsletterNote">Zero spam. Annulla quando vuoi.</p>
       </section>
 
       <style dangerouslySetInnerHTML={{ __html: css }} />
