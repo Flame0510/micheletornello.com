@@ -60,7 +60,7 @@ export default function HomePage() {
     .hero { min-height: 100vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 7rem 1.2rem 4.5rem; }
     .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.25) 0%, rgba(8,8,8,.56) 48%, rgba(8,8,8,.97) 100%); }
     .heroContent { position: relative; z-index: 2; max-width: 980px; }
-    .badge { display: inline-block; border: 1px solid rgba(184,115,51,.6); padding: .4rem .7rem; color: #b87333; font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 1rem; }
+    .badge { display: inline-block; border: 1px solid rgba(184,115,51,.6); padding: .4rem .7rem; color: #B87333; font-family: 'JetBrains Mono', monospace; font-size: .75rem; letter-spacing: .02em; margin-bottom: 1rem; }
     h1,h2,h3,blockquote { font-family: 'Instrument Serif', serif; font-weight: 400; margin: 0; }
     h1 { font-size: clamp(2.5rem, 5vw, 5.2rem); line-height: .98; max-width: 18ch; }
     .sub { margin-top: .65rem; font-family: 'Instrument Serif', serif; font-style: italic; color: #b87333; font-size: clamp(1.2rem, 2vw, 2rem); }
@@ -72,6 +72,7 @@ export default function HomePage() {
     .about { display: grid; grid-template-columns: minmax(250px,360px) minmax(0,1fr); gap: 2rem; align-items: center; }
     .aboutMedia img { width: 100%; height: 440px; object-fit: cover; border: 1px solid rgba(184,115,51,.45); filter: grayscale(1); }
     .aboutText p { margin: 0 0 .85rem; font-size: 1rem; line-height: 1.7; max-width: 52ch; }
+    .poeticLine { font-family: 'Instrument Serif', serif; font-style: italic; margin: 0 0 1rem !important; }
     .timelineLine { border-left: 1px solid rgba(184,115,51,.45); padding-left: 1.2rem; display: grid; gap: 1rem; }
     .timeCard { position: relative; padding: .95rem 1rem; border: 1px solid rgba(242,237,232,.14); background: rgba(255,255,255,.01); }
     .timeCard::before { content: ''; position: absolute; left: -1.58rem; top: 1.15rem; width: 9px; height: 9px; border-radius: 50%; background: #b87333; box-shadow: 0 0 0 4px #080808; }
@@ -109,7 +110,7 @@ export default function HomePage() {
       <section className="hero" style={{ backgroundImage: "url('/desk-setup.png')" }}>
         <div className="overlay" />
         <div className="heroContent">
-          <span className="badge">🟢 Disponibile · 2024</span>
+          <span className="badge">● Disponibile per nuovi progetti · 2024</span>
           <h1>Non costruisco software. Costruisco sistemi.</h1>
           <p className="sub">Formo chi li costruirà.</p>
         </div>
@@ -127,9 +128,9 @@ export default function HomePage() {
         <div className="aboutMedia"><img src="/profile-photo.png" alt="Michele Tornello" /></div>
         <div className="aboutText">
           <h2>CHI SONO</h2>
-          <p>Ha costruito il primo sistema in produzione a 22 anni.</p>
-          <p>A 24, ne insegna l&apos;architettura.</p>
-          <p>Non scrive codice. Progetta sistemi.</p>
+          <p className="poeticLine">Ha costruito il primo sistema in produzione a 22 anni.</p>
+          <p className="poeticLine">A 24, ne insegna l&apos;architettura.</p>
+          <p className="poeticLine">Non scrive codice. Progetta sistemi.</p>
         </div>
       </section>
       <section className="timeline sectionWrap">
