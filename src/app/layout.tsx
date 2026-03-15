@@ -7,6 +7,7 @@ import { PageLoader } from '@/components/ui/PageLoader';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ContactTrigger from '@/components/ui/ContactTrigger';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -62,6 +63,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <ContactTrigger />
         </LanguageProvider>
         <div
           className="fixed inset-0 pointer-events-none"
