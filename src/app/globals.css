@@ -29,3 +29,18 @@ body {
 .ghost-project-row:hover {
   color: var(--ghost-sage);
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mentor-section {
+  animation: fadeInUp 0.9s ease both;
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Instrument_Serif, Playfair_Display } from 'next/font/google';
+import { Geist, Instrument_Serif, Merriweather, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -23,6 +23,12 @@ const playfairDisplay = Playfair_Display({
   weight: ['400', '600', '700'],
 });
 
+const merriweather = Merriweather({
+  variable: '--font-merriweather',
+  subsets: ['latin'],
+  weight: ['300', '400', '700', '900'],
+});
+
 export const metadata: Metadata = {
   title: translations.meta.it.title,
   description: translations.meta.it.description,
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="it" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${instrumentSerif.variable} ${playfairDisplay.variable} font-sans antialiased bg-background text-text-main`}
+        className={`${geistSans.variable} ${instrumentSerif.variable} ${playfairDisplay.variable} ${merriweather.variable} font-sans antialiased bg-background text-text-main`}
       >
         <PageLoader />
         <CustomCursor />
