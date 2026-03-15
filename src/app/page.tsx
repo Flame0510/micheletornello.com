@@ -79,6 +79,9 @@ export default function HomePage() {
     .sectionWrap h2 { color: #b87333; font-size: clamp(1.8rem, 3.2vw, 3rem); margin-bottom: 1.5rem; }
     .statusGrid p { margin: 0; padding: .9rem 0; border-bottom: 1px solid rgba(242,237,232,.18); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; text-transform: uppercase; letter-spacing: .05em; font-size: .88rem; }
     .dot, .state { color: #b87333; }
+    .systemsTable { margin-top: 1rem; background: #111; padding: 16px; border-radius: 0; font-family: 'JetBrains Mono', monospace; font-size: .8rem; line-height: 1.7; }
+    .systemsTable p { margin: 0; color: rgba(255,255,255,.6); white-space: pre; }
+    .systemsTable .prompt, .systemsTable .live { color: #00C87A; }
     .about { display: grid; grid-template-columns: minmax(250px,360px) minmax(0,1fr); gap: 2rem; align-items: center; }
     .aboutMedia img { width: 100%; height: 440px; object-fit: cover; border: 1px solid rgba(184,115,51,.45); filter: grayscale(1); }
     .aboutText p { margin: 0 0 .85rem; font-size: 1rem; line-height: 1.7; max-width: 52ch; }
@@ -92,13 +95,15 @@ export default function HomePage() {
     .timeCard h3 { font-size: 1.3rem; margin-bottom: .5rem; }
     .timeCard p { margin: 0; line-height: 1.6; font-size: .92rem; }
     .opsGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
-    .opCard { border: 1px solid rgba(242,237,232,.16); border-left: 3px solid #b87333; padding: 1rem; background: rgba(255,255,255,.015); }
-    .opCard p { margin: 0; line-height: 1.65; font-size: .88rem; }
-    .opRef { color: #b87333; letter-spacing: .08em; font-size: .7rem !important; margin-bottom: .22rem !important; }
-    .opLabel { color: #b87333; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .15rem !important; font-size: .76rem !important; }
-    .opName { margin: 0 0 .5rem !important; font-size: 1rem !important; }
-    .notes { margin-top: .7rem !important; opacity: .86; }
-    .log { margin-top: .75rem !important; color: #b87333; }
+    .portfolio { background: #F2EDE8; color: #0D0D0D; }
+    .portfolio h2 { color: #0D0D0D; }
+    .opCard { border: 1px solid rgba(13,13,13,.16); border-left: 3px solid #B87333; padding: 1rem; background: rgba(255,255,255,.35); }
+    .opCard p { margin: 0; line-height: 1.65; font-size: .88rem; color: #0D0D0D; }
+    .opRef { color: #B87333; letter-spacing: .08em; font-size: .7rem !important; margin-bottom: .22rem !important; }
+    .opLabel { color: #0D0D0D; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .15rem !important; font-size: .76rem !important; }
+    .opName { margin: 0 0 .5rem !important; font-size: 1rem !important; color: #0D0D0D; }
+    .notes { margin-top: .7rem !important; color: #B87333; }
+    .log { margin-top: .75rem !important; color: #B87333; }
     .teaching { position: relative; min-height: 540px; margin-top: 1.8rem; }
     .teaching img { width: 100%; height: 100%; min-height: 540px; object-fit: cover; filter: saturate(.8) contrast(1.02); }
     .teachingOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,8,.88) 0%, rgba(8,8,8,.62) 55%, rgba(8,8,8,.35) 100%); display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 2rem 1.2rem; max-width: 820px; }
@@ -136,6 +141,12 @@ export default function HomePage() {
           {statusRows.map((row) => (
             <p key={row.label}><span className="dot">●</span> {row.label}<span className="state">[{row.state}]</span></p>
           ))}
+        </div>
+        <div className="systemsTable">
+          <p><span className="prompt">$</span> systems --list --status=live</p>
+          <p>&gt; REC Security    <span className="live">[LIVE]</span>   PHP+React     99.9% uptime</p>
+          <p>&gt; Kastalia App    <span className="live">[LIVE]</span>   Next.js+Node  50k+ users</p>
+          <p>&gt; Ludelist        <span className="live">[LIVE]</span>   React+API     &lt;50ms p99</p>
         </div>
       </section>
       <section className="about sectionWrap">
