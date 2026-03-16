@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-03-16T19-47",
+  "port": 3000,
+  "sections": [
+    "lavori"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop"
+  ],
+  "waitMs": 1500,
+  "files": [
+    "/tmp/micheletornello/assets/portfolio-lab_lavori_mobile_2026-03-16T19-47.jpg",
+    "/tmp/micheletornello/assets/portfolio-lab_lavori_desktop_2026-03-16T19-47.jpg"
+  ]
+}

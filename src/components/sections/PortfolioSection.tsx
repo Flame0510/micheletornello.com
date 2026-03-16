@@ -7,10 +7,10 @@ const projects = [
     id: 'MT-OP-001',
     num: '01',
     name: 'REC Security',
-    tagline: 'Backend legacy replatforming zero-downtime.',
-    stack: ['Node.js', 'PostgreSQL', 'Redis'],
+    tagline: 'Sito vetrina + prototipo sistema sirene IoT (ESP8266).',
+    stack: ['IoT', 'Next.js', 'C++'],
     year: '2022',
-    metric: '99.98% uptime',
+    metric: 'HARDWARE+WEB',
     featured: true,
   },
   {
@@ -32,32 +32,41 @@ const projects = [
     metric: 'GOV-TECH',
   },
   {
-    id: 'MT-OP-002',
-    num: '04',
-    name: 'Kastalia',
-    tagline: 'Sistema didattico per formazione tecnica avanzata.',
-    stack: ['Next.js', 'TypeScript'],
-    year: '2023',
-    metric: 'EDUCATION',
-  },
-  {
-    id: 'MT-OP-003',
-    num: '05',
-    name: 'Cashbee',
-    tagline: 'Ecosistema cashback per negozi fisici.',
-    stack: ['Next.js', 'Node.js'],
-    year: '2024',
-    metric: 'FINTECH',
-  },
-  {
     id: 'MT-OP-004',
-    num: '06',
+    num: '04',
     name: 'Pong',
     tagline: 'Infrastruttura realtime con WebSockets.',
-    stack: ['Node.js'],
-    year: '2024',
-    metric: 'INFRA',
+    stack: ['Node.js', 'Socket.io'],
+    year: '2022',
+    metric: 'REALTIME',
   },
+  {
+    id: 'MT-OP-002',
+    num: '05',
+    name: 'Paradigma.me',
+    tagline: 'Sviluppato durante gli anni in Paradigma SPA.',
+    stack: ['Enterprise', 'System'],
+    year: '2022',
+    metric: 'PARADIGMA',
+  },
+];
+
+const startupLab = [
+  {
+    id: 'LAB-001',
+    name: 'Cashbee',
+    url: 'cashbee.it',
+    description: 'Piattaforma cashback e marketing digitale per PMI (bar, ristoranti, negozi). Visione: suite modulare per digitalizzare le piccole imprese ancora su carta.',
+    stack: ['React Native', 'App'],
+    status: '// STANDBY'
+  },
+  {
+    id: 'LAB-002',
+    name: 'Ludelist',
+    description: 'Social network per videogiocatori — trova un player per il tuo gioco in 3 passaggi: titolo, piattaforma, regione. Lista immediata + chat real-time. Visione futura: matchmaking automatico via API gaming.',
+    stack: ['Web', 'Real-time'],
+    status: '// STANDBY'
+  }
 ];
 
 function ProjectItem({ project, index }: { project: typeof projects[0]; index: number }) {
@@ -173,7 +182,23 @@ export default function PortfolioSection() {
         .pA3_hover_code { position:absolute; top:20px; right:0; font-size:.7rem; color:#B87333; opacity:0; transition:opacity .3s ease; pointer-events:none; }
         .pA3_footer { margin-top:100px; padding-top:40px; border-top:1px solid rgba(184,115,51,.3); text-align:center; }
         .pA3_footer_text { color:#B87333; opacity:.5; font-size:.8rem; letter-spacing:1px; }
-        @media(max-width:768px){ .pA3_item { grid-template-columns:1fr; gap:16px; padding-left:16px !important; } .pA3_item_num { display:none; } .pA3_featured { padding:40px 20px; } }
+
+        /* STARTUP LAB */
+        .startupLab_container { margin-top: 120px; padding-top: 60px; border-top: 1px dashed rgba(184,115,51,0.2); }
+        .startupLab_header { margin-bottom: 40px; }
+        .startupLab_title { font-family: 'Instrument Serif', serif; font-size: 3rem; font-style: italic; color: #F2EDE8; margin-bottom: 10px; }
+        .startupLab_headline { font-size: 0.9rem; color: #B87333; font-family: 'JetBrains Mono', monospace; opacity: 0.8; max-width: 500px; line-height: 1.6; }
+        .startupLab_grid { display: grid; grid-template-cols: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .startupLab_card { position: relative; border: 1px dashed rgba(242,237,232,0.2); padding: 30px; background: rgba(242,237,232,0.02); transition: all 0.3s ease; }
+        .startupLab_card:hover { border-color: #B87333; background: rgba(184,115,51,0.03); transform: translateY(-5px); }
+        .startupLab_badge { position: absolute; top: 20px; right: 20px; font-size: 0.7rem; color: #B87333; font-weight: 800; }
+        .startupLab_name { font-family: 'Instrument Serif', serif; font-size: 2rem; color: #F2EDE8; margin-bottom: 15px; }
+        .startupLab_desc { font-size: 0.85rem; color: #F2EDE8; opacity: 0.6; line-height: 1.6; margin-bottom: 25px; min-height: 80px; }
+        .startupLab_footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(242,237,232,0.1); padding-top: 15px; }
+        .startupLab_stack { display: flex; gap: 8px; }
+        .startupLab_pill { font-size: 0.65rem; color: #F2EDE8; opacity: 0.4; text-transform: uppercase; }
+        .startupLab_url { font-size: 0.7rem; color: #B87333; opacity: 0.6; }
+        @media(max-width:768px){ .pA3_item { grid-template-columns:1fr; gap:16px; padding-left:16px !important; } .pA3_item_num { display:none; } .pA3_featured { padding:40px 20px; } .startupLab_grid { grid-template-cols: 1fr; } }
       `}</style>
 
       <div className="pA3_inner">
@@ -201,8 +226,32 @@ export default function PortfolioSection() {
           ))}
         </div>
 
+        {/* STARTUP LAB */}
+        <div className="startupLab_container">
+          <header className="startupLab_header">
+            <h3 className="startupLab_title">Startup Lab</h3>
+            <p className="startupLab_headline">Idee che hanno trovato il mercato ma non (ancora) il momento giusto.</p>
+          </header>
+
+          <div className="startupLab_grid">
+            {startupLab.map((lab) => (
+              <div key={lab.id} className="startupLab_card">
+                <div className="startupLab_badge">{lab.status}</div>
+                <h4 className="startupLab_name">{lab.name}</h4>
+                <p className="startupLab_desc">{lab.description}</p>
+                <div className="startupLab_footer">
+                  <div className="startupLab_stack">
+                    {lab.stack.map(s => <span key={s} className="startupLab_pill">{s}</span>)}
+                  </div>
+                  {lab.url && <span className="startupLab_url">{lab.url}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <footer className="pA3_footer">
-          <div className="pA3_footer_text">TOTAL OPERATIONS: 06 · PERIOD: 2022—2024 · SYSTEM STATUS: OPTIMAL</div>
+          <div className="pA3_footer_text">TOTAL OPERATIONS: {projects.length} · PERIOD: 2022—{new Date().getFullYear()} · SYSTEM STATUS: OPTIMAL</div>
         </footer>
       </div>
     </section>
