@@ -784,7 +784,7 @@ h1 {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 100px;
+  gap: 40px;
 }
 
 @media (min-width: 1024px) {
