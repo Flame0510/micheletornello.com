@@ -1123,7 +1123,8 @@ h1 {
 
 @media (max-width: 767px) {
   .entG_section {
-    padding-top: 100px;
+    padding-top: 140px;
+    scroll-margin-top: 80px;
   }
   .entG_stats {
     grid-template-columns: 1fr;
