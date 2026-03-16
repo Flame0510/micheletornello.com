@@ -102,7 +102,7 @@ const Navbar = () => {
           </nav>
 
           <button 
-            className="md:hidden text-[#F2EDE8] focus:outline-none"
+            className="md:hidden text-[#F2EDE8] focus:outline-none p-3 -mr-3"
             onClick={() => setIsMenuOpen(true)}
             aria-label="Apri menu"
           >

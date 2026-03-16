@@ -245,6 +245,7 @@ export default function HomePage() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
+            className="hero-cta"
             style={{
               display: 'inline-block',
               marginTop: '2rem',
@@ -257,7 +258,10 @@ export default function HomePage() {
               letterSpacing: '0.08em',
               textDecoration: 'none',
               textTransform: 'uppercase' as const,
+              transition: 'opacity 0.2s ease',
             }}
+            onMouseOver={(e) => (e.currentTarget.style.opacity = '0.85')}
+            onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
           >
             Parliamo del tuo progetto →
           </motion.a>
@@ -359,13 +363,19 @@ export default function HomePage() {
                 href="#contatto" 
                 style={{
                   display: 'inline-block',
-                  color: '#B87333',
+                  background: '#B87333',
+                  color: '#080808',
                   fontFamily: 'var(--font-jetbrains-mono), monospace',
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  padding: '0.85rem 1.8rem',
                   textDecoration: 'none',
-                  letterSpacing: '0.05em',
-                  fontWeight: 600
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase' as const,
+                  transition: 'opacity 0.2s ease',
                 }}
+                onMouseOver={(e) => (e.currentTarget.style.opacity = '0.85')}
+                onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
               >
                 Parliamo del tuo progetto →
               </a>

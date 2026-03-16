@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-03-16T00-16",
+  "port": 3000,
+  "sections": [
+    ".hero",
+    "chi-sono",
+    "lavori",
+    "academy",
+    "contatto"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop"
+  ],
+  "waitMs": 2000,
+  "files": [
+    "/tmp/micheletornello/assets/review-qa_.hero_mobile_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_chi-sono_mobile_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_lavori_mobile_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_academy_mobile_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_contatto_mobile_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_.hero_desktop_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_chi-sono_desktop_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_lavori_desktop_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_academy_desktop_2026-03-16T00-16.jpg",
+    "/tmp/micheletornello/assets/review-qa_contatto_desktop_2026-03-16T00-16.jpg"
+  ]
+}

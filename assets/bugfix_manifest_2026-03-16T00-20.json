@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-03-16T00-20",
+  "port": 3000,
+  "sections": [
+    ".hero",
+    "chi-sono"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop"
+  ],
+  "waitMs": 1500,
+  "files": [
+    "/tmp/micheletornello/assets/bugfix_.hero_mobile_2026-03-16T00-20.jpg",
+    "/tmp/micheletornello/assets/bugfix_chi-sono_mobile_2026-03-16T00-20.jpg",
+    "/tmp/micheletornello/assets/bugfix_.hero_desktop_2026-03-16T00-20.jpg",
+    "/tmp/micheletornello/assets/bugfix_chi-sono_desktop_2026-03-16T00-20.jpg"
+  ]
+}
