@@ -1122,6 +1122,9 @@ h1 {
 }
 
 @media (max-width: 767px) {
+  .entG_section {
+    padding-top: 100px;
+  }
   .entG_stats {
     grid-template-columns: 1fr;
     gap: 1.5rem;
