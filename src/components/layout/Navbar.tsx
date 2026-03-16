@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => {
     if (pathname !== '/') return;
     
-    const sections = ['chi-sono', 'enterprise', 'lavori', 'academy', 'contatto'];
+    const sections = ['enterprise', 'chi-sono', 'lavori', 'academy', 'contatto'];
     const observers: IntersectionObserver[] = [];
 
     sections.forEach(id => {
@@ -43,8 +43,8 @@ const Navbar = () => {
   }, [pathname]);
 
   const navLinks = [
-    { name: '[01] Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
-    { name: '[02] Enterprise', href: '/#enterprise', anchor: '#enterprise' },
+    { name: '[01] Enterprise', href: '/#enterprise', anchor: '#enterprise' },
+    { name: '[02] Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
     { name: '[03] Lavori', href: '/#lavori', anchor: '#lavori' },
     { name: '[04] Academy', href: '/academy', anchor: '/academy' },
     { name: '[05] Contatto', href: '/#contatto', anchor: '#contatto' },
