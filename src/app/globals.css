@@ -923,19 +923,35 @@ h1 {
   .chiB_container {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 48px; /* Ridotto gap per mobile */
   }
   
   .chiB_visual {
     order: -1; /* Foto in cima su mobile */
+    width: 100%;
+  }
+
+  .chiB_photoBox {
+    aspect-ratio: 16/9; /* Più orizzontale su mobile per non occupare tutto lo schermo */
+    max-height: 350px;
+    width: 100%;
+  }
+
+  .chiB_img {
+    object-position: center 20%; /* Inquadra meglio il volto se tagliata */
   }
 
   .chiB_story {
-    gap: 40px;
+    gap: 32px;
   }
 
   .chiB_title {
-    font-size: clamp(2rem, 8vw, 3.2rem);
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+
+  .chiB_flow {
+    padding-left: 20px;
+    gap: 32px;
   }
 }
 
