@@ -169,7 +169,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
+      <section id="hero" className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div 
           ref={parallaxRef}
           style={{ 
@@ -265,6 +265,39 @@ export default function HomePage() {
           >
             Parliamo del tuo progetto →
           </motion.a>
+        </div>
+      </section>
+
+      <section id="credibility" className="credStrip_wrapper">
+        <div className="credStrip_container">
+          <h3 className="credStrip_title">// RICONOSCIMENTI & COMMUNITY</h3>
+          <div className="credStrip_list">
+            <div className="credStrip_item">
+              <span className="credStrip_name">RTL 102.5</span>
+              <span className="credStrip_sep">·</span>
+              <span className="credStrip_role">Intervista in diretta nazionale</span>
+            </div>
+            <div className="credStrip_item">
+              <span className="credStrip_name">Università di Catania</span>
+              <span className="credStrip_sep">·</span>
+              <span className="credStrip_role">Speaker React Native</span>
+            </div>
+            <div className="credStrip_item">
+              <span className="credStrip_name">TEDx Catania</span>
+              <span className="credStrip_sep">·</span>
+              <span className="credStrip_role">Staff Volontario</span>
+            </div>
+            <div className="credStrip_item">
+              <span className="credStrip_name">Friends of Figma Catania</span>
+              <span className="credStrip_sep">·</span>
+              <span className="credStrip_role">Contributore</span>
+            </div>
+            <div className="credStrip_item">
+              <span className="credStrip_name">Google Developer Group Catania</span>
+              <span className="credStrip_sep">·</span>
+              <span className="credStrip_role">Membro attivo</span>
+            </div>
+          </div>
         </div>
       </section>
 

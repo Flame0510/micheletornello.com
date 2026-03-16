@@ -1012,7 +1012,93 @@ h1 {
   position: relative;
 }
 
-/* --- ENTERPRISE SECTION (Gamma + Alpha) --- */
+/* --- CREDIBILITY STRIP --- */
+.credStrip_wrapper {
+  background: #080808;
+  border-top: 1px solid rgba(242, 237, 232, 0.08);
+  border-bottom: 1px solid rgba(242, 237, 232, 0.08);
+  padding: 2rem 1.5rem;
+}
+
+.credStrip_container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.credStrip_title {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(242, 237, 232, 0.4);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.credStrip_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.credStrip_item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.credStrip_name {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #F2EDE8;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.credStrip_sep {
+  color: #B87333;
+  opacity: 0.4;
+  font-size: 0.8rem;
+}
+
+.credStrip_role {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.65rem;
+  color: rgba(242, 237, 232, 0.4);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .credStrip_list {
+    gap: 1.5rem 1rem;
+  }
+  .credStrip_item {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .credStrip_wrapper {
+    padding: 1.5rem 1rem;
+  }
+  .credStrip_list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .credStrip_container {
+    align-items: flex-start;
+  }
+}
+
 .entG_section {
   background: #080808;
   border-top: 1px solid rgba(242, 237, 232, 0.1);
