@@ -156,11 +156,6 @@ export default function HomePage() {
       metric: '99.9% uptime'
     },
     {
-      name: 'Kastalia',
-      stack: 'Next.js/TS',
-      metric: '50k+ users'
-    },
-    {
       name: 'Cashbee',
       stack: 'Next.js/Node',
       metric: 'Cashback'
@@ -475,7 +470,6 @@ export default function HomePage() {
           <div className="systemsTable">
             <p><span className="prompt">$</span> systems --list --status=live</p>
             <p>&gt; REC Security    <span className="live">[LIVE]</span>   PHP+React     99.9% uptime</p>
-            <p>&gt; Kastalia App    <span className="live">[LIVE]</span>   Next.js+Node  50k+ users</p>
             <p>&gt; Cashbee         <span className="live">[LIVE]</span>   Next.js/Node  cashback engine</p>
           </div>
 
