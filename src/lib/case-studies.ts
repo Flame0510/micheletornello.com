@@ -148,62 +148,6 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
-    slug: 'ludelist',
-    gradient: 'from-purple-600/20 to-pink-500/20',
-    image: '/ludelist.jpg',
-    tech: ['PHP', 'Laravel', 'Vue.js', 'PostgreSQL'],
-    content: {
-      it: {
-        title: 'Ludelist',
-        subtitle: 'App per organizzare collezioni di giochi da tavolo e coordinare serate di gioco',
-        overview: 'Nato come side project per un problema personale: avevo una collezione di 120+ giochi da tavolo e nessun modo decente per gestirla con il mio gruppo di gioco. BoardGameGeek esiste, ma è progettato per collezionisti ossessivi — non per coordinare chi porta cosa il venerdì sera.',
-        challenge: [
-          'Il dataset di giochi da tavolo è grande: BGG cataloga oltre 150.000 titoli. Costruire un proprio catalogo era fuori questione. Ho integrato l\'API pubblica di BGG (XMLAPI2) come fonte di verità per i dati dei giochi — titolo, immagine, numero giocatori, durata, meccaniche. Il problema: BGG non ha rate limiting documentato ma ti blocca se fai troppo scraping. Ho implementato un layer di caching su Redis con TTL di 7 giorni per i dati statici dei giochi e 24 ore per i rating.',
-          'Il feature che ha richiesto più iterazioni: "chi è disponibile stasera?" Ho iniziato con un sistema di disponibilità settimanale, poi l\'ho semplificato in un semplice toggle "disponibile questa settimana" per ciascun membro del gruppo. Real-time con Laravel WebSockets (Pusher-compatible) — quando qualcuno si segna disponibile, tutti i membri del gruppo vedono l\'aggiornamento istantaneamente.',
-          'Performance con collezioni grandi. Un utente con 500 giochi che filtra per numero di giocatori, tempo di gioco e meccaniche deve avere risposta in <200ms. Ho usato PostgreSQL con indici GIN per i campi array (meccaniche, categorie) e full-text search per il nome. La query più complessa — "giochi che possono giocare in 4, durata max 60 min, che non abbiamo giocato nelle ultime 3 settimane" — si risolve in ~40ms.',
-        ],
-        solution: [
-          { label: 'Stack', description: 'Laravel (backend API), Vue.js 3 (frontend SPA), PostgreSQL, Redis per caching, Laravel WebSockets' },
-          { label: 'Dati giochi', description: 'Integrazione BGG XMLAPI2 con caching Redis 7 giorni per dati statici, 24h per rating' },
-          { label: 'Real-time', description: 'Laravel WebSockets per disponibilità e notifiche sessione' },
-          { label: 'Search', description: 'PostgreSQL full-text search + indici GIN per array (meccaniche, categorie), query complesse <200ms' },
-          { label: 'Feature principale', description: 'Wishlist condivisa per gruppo, tracking partite giocate, suggerimento automatico basato su disponibilità' },
-        ],
-        results: [
-          { metric: 'Utenti attivi mensili', value: '340 (crescita organica)' },
-          { metric: 'Sessioni organizzate', value: '1.200+ in 12 mesi' },
-          { metric: 'Giochi tracciati', value: '8.500+ nella piattaforma' },
-          { metric: 'Performance search', value: 'P95 < 180ms' },
-        ],
-        lesson: 'La differenza principale tra costruire per te e costruire per altri: le tue assunzioni non valgono. Avevo costruito l\'interfaccia basandomi su come io uso i giochi da tavolo — e avevo torto su quasi tutto. I primi utenti hanno usato l\'app in modi che non avevo previsto. Il feature più usato (la wishlist condivisa) non era nei requisiti originali — è emerso da una richiesta durante i beta test.',
-      },
-      en: {
-        title: 'Ludelist',
-        subtitle: 'App for organizing board game collections and coordinating game nights',
-        overview: 'Born as a side project to solve a personal problem: I had a collection of 120+ board games and no decent way to manage it with my play group. BoardGameGeek exists, but it\'s designed for obsessive collectors — not for coordinating who brings what on Friday night.',
-        challenge: [
-          'The board game dataset is large: BGG catalogs over 150,000 titles. Building my own catalog was out of the question. I integrated the public BGG API (XMLAPI2) as the source of truth for game data — title, image, player count, duration, mechanics. Problem: BGG has no documented rate limiting but blocks you if you scrape too aggressively. I implemented a Redis caching layer with 7-day TTL for static game data and 24-hour TTL for ratings.',
-          'The feature that required the most iteration: "who\'s available tonight?" I started with a weekly availability system, then simplified it to a "available this week" toggle for each group member. Real-time with Laravel WebSockets (Pusher-compatible) — when someone marks themselves available, all group members see the update instantly.',
-          'Performance with large collections. A user with 500 games filtering by player count, play time, and mechanics needs a response in <200ms. I used PostgreSQL with GIN indexes for array fields (mechanics, categories) and full-text search for names. The most complex query — "games that 4 people can play, max 60 min, that we haven\'t played in the last 3 weeks" — resolves in ~40ms.',
-        ],
-        solution: [
-          { label: 'Stack', description: 'Laravel (backend API), Vue.js 3 (frontend SPA), PostgreSQL, Redis for caching, Laravel WebSockets' },
-          { label: 'Game data', description: 'BGG XMLAPI2 integration with Redis caching 7 days for static data, 24h for ratings' },
-          { label: 'Real-time', description: 'Laravel WebSockets for availability and session notifications' },
-          { label: 'Search', description: 'PostgreSQL full-text search + GIN indexes for arrays (mechanics, categories), complex queries <200ms' },
-          { label: 'Key feature', description: 'Shared group wishlist, played games tracking, automatic suggestions based on availability' },
-        ],
-        results: [
-          { metric: 'Monthly active users', value: '340 (organic growth)' },
-          { metric: 'Sessions organized', value: '1,200+ in 12 months' },
-          { metric: 'Games tracked', value: '8,500+ on the platform' },
-          { metric: 'Search performance', value: 'P95 < 180ms' },
-        ],
-        lesson: 'The main difference between building for yourself and building for others: your assumptions don\'t hold. I built the interface based on how I use board games — and I was wrong about almost everything. The first users used the app in ways I hadn\'t anticipated. The most-used feature (shared wishlist) wasn\'t in the original requirements — it emerged from a request during beta testing.',
-      },
-    },
-  },
-  {
     slug: 'cashbee',
     gradient: 'from-green-600/20 to-emerald-500/20',
     image: '/cashbee.jpg',
