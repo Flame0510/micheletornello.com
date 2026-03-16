@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-03-16T00-29",
+  "port": 3000,
+  "sections": [
+    "chi-sono"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop"
+  ],
+  "waitMs": 3000,
+  "files": [
+    "/tmp/micheletornello/assets/chiSono-v4-retry_chi-sono_mobile_2026-03-16T00-29.jpg",
+    "/tmp/micheletornello/assets/chiSono-v4-retry_chi-sono_desktop_2026-03-16T00-29.jpg"
+  ]
+}

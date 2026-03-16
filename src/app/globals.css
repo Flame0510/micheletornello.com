@@ -792,6 +792,8 @@ h1 {
     grid-template-columns: 1.2fr 1fr;
     align-items: center;
   }
+  .chiB_story { order: 0; }
+  .chiB_visual { order: 1; }
 }
 
 .chiB_story {
@@ -927,7 +929,6 @@ h1 {
   }
   
   .chiB_visual {
-    order: -1; /* Foto in cima su mobile */
     width: 100%;
   }
 

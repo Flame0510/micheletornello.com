@@ -307,6 +307,32 @@ export default function HomePage() {
 
       <section id="chi-sono" className="chiB_section">
         <div className="chiB_container">
+          <div className="chiB_visual">
+            <div className="chiB_photoBox">
+              <img src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" />
+              <div className="chiB_texture"></div>
+            </div>
+
+            <div className="chiB_stats">
+              <div className="chiB_stat">
+                <span className="chiB_val">2022</span>
+                <span className="chiB_lab">Inizio Docenza SJA</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">100+</span>
+                <span className="chiB_lab">Studenti Formati</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">06</span>
+                <span className="chiB_lab">Progetti Lanciati</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">SJA</span>
+                <span className="chiB_lab">Partner Tecnico</span>
+              </div>
+            </div>
+          </div>
+
           <div className="chiB_story">
             <header className="chiB_header">
               <span className="chiB_label">// CHI SONO</span>
@@ -379,32 +405,6 @@ export default function HomePage() {
               >
                 Parliamo del tuo progetto →
               </a>
-            </div>
-          </div>
-
-          <div className="chiB_visual">
-            <div className="chiB_photoBox">
-              <img src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" />
-              <div className="chiB_texture"></div>
-            </div>
-
-            <div className="chiB_stats">
-              <div className="chiB_stat">
-                <span className="chiB_val">2022</span>
-                <span className="chiB_lab">Inizio Docenza SJA</span>
-              </div>
-              <div className="chiB_stat">
-                <span className="chiB_val">100+</span>
-                <span className="chiB_lab">Studenti Formati</span>
-              </div>
-              <div className="chiB_stat">
-                <span className="chiB_val">06</span>
-                <span className="chiB_lab">Progetti Lanciati</span>
-              </div>
-              <div className="chiB_stat">
-                <span className="chiB_val">SJA</span>
-                <span className="chiB_lab">Partner Tecnico</span>
-              </div>
             </div>
           </div>
         </div>
