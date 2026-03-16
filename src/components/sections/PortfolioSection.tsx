@@ -31,15 +31,6 @@ const projects = [
     year: '2024',
     metric: 'GOV-TECH',
   },
-  {
-    id: 'MT-OP-002',
-    num: '04',
-    name: 'Paradigma.me',
-    tagline: 'Sviluppato durante gli anni in Paradigma SPA.',
-    stack: ['Enterprise', 'System'],
-    year: '2022',
-    metric: 'PARADIGMA',
-  },
 ];
 
 const startupLab = [
@@ -52,13 +43,7 @@ const startupLab = [
     status: '// COMPLETED V1',
     standby: true
   },
-  {
-    id: 'LAB-002',
-    name: 'Ludelist',
-    description: 'Social network per videogiocatori — trova un player per il tuo gioco in 3 passaggi: titolo, piattaforma, regione. Lista immediata + chat real-time. Visione futura: matchmaking automatico via API gaming.',
-    stack: ['Web', 'Real-time'],
-    status: '// STANDBY'
-  }
+
 ];
 
 function ProjectItem({ project, index }: { project: typeof projects[0]; index: number }) {
