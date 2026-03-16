@@ -1011,3 +1011,117 @@ h1 {
 .chiB_flow .chiB_stepMeta {
   position: relative;
 }
+
+/* --- ENTERPRISE SECTION (Gamma + Alpha) --- */
+.entG_section {
+  background: #080808;
+  border-top: 1px solid rgba(242, 237, 232, 0.1);
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.entG_container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.entG_main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .entG_main {
+    grid-template-columns: 0.6fr 0.4fr;
+  }
+}
+
+.entG_headline {
+  font-family: var(--font-instrument-serif);
+  font-style: italic;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+
+.entG_body {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(242, 237, 232, 0.7);
+  max-width: 540px;
+}
+
+.entG_stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.5rem;
+}
+
+.entG_stat {
+  border-left: 1px solid rgba(184, 115, 51, 0.2);
+  padding-left: 1.5rem;
+}
+
+.entG_number {
+  display: block;
+  font-family: var(--font-instrument-serif);
+  font-style: italic;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: #B87333;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.entG_label {
+  display: block;
+  font-family: var(--font-jetbrains-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: rgba(242, 237, 232, 0.4);
+}
+
+.entG_footer {
+  border-top: 1px solid rgba(242, 237, 232, 0.05);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.entG_sectors {
+  font-family: var(--font-jetbrains-mono);
+  font-size: 0.75rem;
+  color: rgba(242, 237, 232, 0.5);
+  transition: color 0.6s ease;
+  cursor: default;
+}
+
+.entG_sectors:hover {
+  color: rgba(242, 237, 232, 1);
+}
+
+.entG_firma {
+  font-family: var(--font-jetbrains-mono);
+  font-size: 0.7rem;
+  color: #B87333;
+  opacity: 0.3;
+  letter-spacing: 0.05em;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .entG_stats {
+    grid-template-columns: 1fr;
+  }
+}

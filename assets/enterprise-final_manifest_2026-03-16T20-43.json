@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-03-16T20-43",
+  "port": 3000,
+  "sections": [
+    "enterprise"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop"
+  ],
+  "waitMs": 1500,
+  "files": [
+    "/tmp/micheletornello/assets/enterprise-final_enterprise_mobile_2026-03-16T20-43.jpg",
+    "/tmp/micheletornello/assets/enterprise-final_enterprise_desktop_2026-03-16T20-43.jpg"
+  ]
+}

@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => {
     if (pathname !== '/') return;
     
-    const sections = ['chi-sono', 'lavori', 'academy', 'contatto'];
+    const sections = ['chi-sono', 'enterprise', 'lavori', 'academy', 'contatto'];
     const observers: IntersectionObserver[] = [];
 
     sections.forEach(id => {
@@ -44,9 +44,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: '[01] Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
-    { name: '[02] Lavori', href: '/#lavori', anchor: '#lavori' },
-    { name: '[03] Academy', href: '/academy', anchor: '/academy' },
-    { name: '[04] Contatto', href: '/#contatto', anchor: '#contatto' },
+    { name: '[02] Enterprise', href: '/#enterprise', anchor: '#enterprise' },
+    { name: '[03] Lavori', href: '/#lavori', anchor: '#lavori' },
+    { name: '[04] Academy', href: '/academy', anchor: '/academy' },
+    { name: '[05] Contatto', href: '/#contatto', anchor: '#contatto' },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -97,7 +98,7 @@ const Navbar = () => {
                 pathname === '/speaker' ? 'text-[#B87333]' : 'text-[#F2EDE8]/60 hover:text-[#B87333]'
               }`}
             >
-              [05] Speaker
+              [06] Speaker
             </Link>
           </nav>
 
