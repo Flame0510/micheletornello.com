@@ -453,35 +453,85 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="status sectionWrap">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
-          <h2>// SYSTEM_STATUS</h2>
-          <div className="statusTerminal">
-            {statusRows.map((row) => (
-              <div key={row.label} className="statusLine">
-                <span className="statusBullet">●</span>
-                <span className="statusLabel">{row.label}</span>
-                <span className="statusDesc">{row.desc}</span>
-                <span className="statusState">[{row.state}]</span>
-              </div>
-            ))}
-          </div>
-          
-          <div className="systemsTable">
-            <p><span className="prompt">$</span> systems --list --status=live</p>
-            <p>&gt; REC Security    <span className="live">[LIVE]</span>   PHP+React     99.9% uptime</p>
-            <p>&gt; Cashbee         <span className="live">[LIVE]</span>   Next.js/Node  cashback engine</p>
+      {/* SYSTEM STATUS — Tournament Winner (Alpha+Beta+Gamma hybrid) */}
+      <section className="sysH_section sectionWrap">
+        <div className="sysH_kicker">// PROOF_OF_WORK</div>
+        <h2 className="sysH_headline">
+          Sistemi in <em>produzione.</em><br/>
+          Persone <em>formate.</em>
+        </h2>
+
+        <div className="sysH_grid">
+          <div className="sysH_card sysH_card--featured">
+            <div className="sysH_card_top">
+              <span className="sysH_tag">EDU</span>
+              <span className="sysH_dot sysH_dot--green">●</span>
+            </div>
+            <div className="sysH_card_value">400<span>+</span></div>
+            <div className="sysH_card_key">STUDENTI FORMATI</div>
+            <div className="sysH_card_sub">Steve Jobs Academy Catania · 2024</div>
           </div>
 
-          <div className="systemsMobileList">
-            <p style={{fontFamily:'monospace', color:'#5A5A5A', fontSize:'0.7rem'}}>$ systems --list --status=live</p>
-            {operations.map(op => (
-               <div key={op.name} className="sysItem">
-                  <div>&gt; {op.name} <span>[LIVE]</span></div>
-                  <div style={{color:'#888'}}>{op.stack} · {op.metric}</div>
-               </div>
-            ))}
+          <div className="sysH_card">
+            <div className="sysH_card_top">
+              <span className="sysH_tag">LIVE</span>
+              <span className="sysH_dot sysH_dot--green">●</span>
+            </div>
+            <div className="sysH_card_value">99.9<span>%</span></div>
+            <div className="sysH_card_key">UPTIME</div>
+            <div className="sysH_card_sub">REC Security — sistema in produzione</div>
           </div>
+
+          <div className="sysH_card">
+            <div className="sysH_card_top">
+              <span className="sysH_tag">OPS</span>
+              <span className="sysH_dot sysH_dot--green">●</span>
+            </div>
+            <div className="sysH_card_value">3</div>
+            <div className="sysH_card_key">ANNI ENTERPRISE</div>
+            <div className="sysH_card_sub">Paradigma SPA · 2022–2024</div>
+          </div>
+
+          <div className="sysH_card sysH_card--wide">
+            <div className="sysH_card_top">
+              <span className="sysH_tag">SIGNAL</span>
+              <span className="sysH_dot sysH_dot--green">●</span>
+            </div>
+            <div className="sysH_card_tags">
+              <span className="sysH_chip">RTL 102.5 <em>Nazionale</em></span>
+              <span className="sysH_chip">TEDx Catania <em>Staff</em></span>
+              <span className="sysH_chip">UniCT <em>Speaker</em></span>
+              <span className="sysH_chip">GDG Catania <em>Membro</em></span>
+              <span className="sysH_chip">FOF Catania <em>Contributore</em></span>
+            </div>
+            <div className="sysH_card_key">PRESENZA PUBBLICA VERIFICATA</div>
+          </div>
+
+          <div className="sysH_card">
+            <div className="sysH_card_top">
+              <span className="sysH_tag">INDUSTRY</span>
+              <span className="sysH_dot sysH_dot--green">●</span>
+            </div>
+            <div className="sysH_card_value">5</div>
+            <div className="sysH_card_key">SETTORI</div>
+            <div className="sysH_card_sub">IoT · Health · Cloud · Food · Energy</div>
+          </div>
+
+          <div className="sysH_card">
+            <div className="sysH_card_top">
+              <span className="sysH_tag">CORE</span>
+              <span className="sysH_dot sysH_dot--green">●</span>
+            </div>
+            <div className="sysH_card_value">∞</div>
+            <div className="sysH_card_key">SYSTEM ARCHITECT</div>
+            <div className="sysH_card_sub">Full-Stack · Independent · 2024→</div>
+          </div>
+        </div>
+
+        <div className="sysH_footer">
+          <span>LAST_VERIFIED: {new Date().getFullYear()}</span>
+          <span className="sysH_footer_dot">·</span>
+          <span>STATUS: <em>OPERATIONAL</em></span>
         </div>
       </section>
 

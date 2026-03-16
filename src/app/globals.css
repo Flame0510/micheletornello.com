@@ -164,96 +164,46 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-.statusTerminal {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  font-family: 'JetBrains Mono', monospace;
-}
-.statusLine {
-  display: grid;
-  grid-template-columns: 1rem 5rem 1fr auto;
-  gap: 1rem;
-  align-items: center;
-  color: var(--color-text);
-}
-.statusBullet { color: var(--color-brand); }
-.statusLabel { color: var(--color-brand); font-size: 0.75rem; letter-spacing: 0.1em; }
-.statusDesc { font-size: 0.875rem; opacity: 0.8; }
-.statusState { font-size: 0.75rem; opacity: 0.6; white-space: nowrap; }
+/* === SYSTEM STATUS — Hybrid Winner === */
+.sysH_section { padding: 6rem 0; border-top: 1px solid rgba(242,237,232,0.08); }
+.sysH_kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: #B87333; margin-bottom: 1.25rem; display: block; }
+.sysH_headline { font-family: 'Instrument Serif', serif; font-size: clamp(2rem, 4vw, 3.5rem); color: #F2EDE8; line-height: 1.1; margin-bottom: 3rem; }
+.sysH_headline em { font-style: italic; color: #B87333; }
 
-@media (max-width: 640px) {
-  .statusLine {
-    grid-template-columns: 1rem 4rem 1fr;
-    grid-template-rows: auto auto;
-  }
-  .statusState { grid-column: 3; font-size: 0.7rem; }
-}
+.sysH_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(242,237,232,0.07); border: 1px solid rgba(242,237,232,0.07); margin-bottom: 1.5rem; }
+.sysH_card { background: #080808; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.4rem; transition: background 0.2s; }
+.sysH_card:hover { background: rgba(184,115,51,0.04); }
+.sysH_card--featured { background: rgba(184,115,51,0.05); }
+.sysH_card--wide { grid-column: span 2; }
 
-.statusGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border-top: 1px solid rgba(242,237,232,.18);
-}
+.sysH_card_top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.sysH_tag { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: #B87333; }
+.sysH_dot { font-size: 0.7rem; }
+.sysH_dot--green { color: #4CAF7D; }
+.sysH_dot--amber { color: #B87333; }
 
-.statusGrid p {
-  margin: 0;
-  padding: .9rem 0.5rem;
-  border-bottom: 1px solid rgba(242,237,232,.18);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  font-size: .7rem;
-}
+.sysH_card_value { font-family: 'Instrument Serif', serif; font-size: clamp(2.5rem, 5vw, 3.75rem); color: #F2EDE8; line-height: 1; }
+.sysH_card_value span { color: #B87333; }
+.sysH_card_key { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; color: rgba(184,115,51,0.7); margin-top: 0.2rem; }
+.sysH_card_sub { font-size: 0.78rem; color: rgba(242,237,232,0.45); margin-top: 0.2rem; }
 
-.dot {
-  color: var(--color-brand);
-  margin-right: 4px;
-}
+.sysH_card_tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
+.sysH_chip { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; padding: 0.25rem 0.6rem; border: 1px solid rgba(184,115,51,0.25); color: rgba(242,237,232,0.7); }
+.sysH_chip em { color: #B87333; font-style: normal; margin-left: 0.3rem; }
 
-.state {
-  color: var(--color-brand);
-  font-weight: bold;
-}
+.sysH_footer { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(242,237,232,0.25); display: flex; gap: 1rem; align-items: center; }
+.sysH_footer em { color: #B87333; font-style: normal; }
+.sysH_footer_dot { color: #B87333; }
 
-.systemsTable {
-  margin-top: 1rem;
-  background: #111;
-  padding: 16px;
-  border-radius: 0;
-  font-family: var(--font-jetbrains-mono), monospace;
-  font-size: .8rem;
-  line-height: 1.7;
-  display: block;
+@media (max-width: 768px) {
+  .sysH_grid { grid-template-columns: repeat(2, 1fr); }
+  .sysH_card--wide { grid-column: span 2; }
+  .sysH_card { padding: 1.25rem; }
 }
-
-.systemsTable p {
-  margin: 0;
-  color: rgba(255,255,255,.6);
-  white-space: pre;
-}
-
-.systemsTable .prompt, .systemsTable .live {
-  color: #00C87A;
-}
-
-.systemsMobileList {
-  display: none;
-  margin-top: 1rem;
-}
-
-.sysItem {
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  font-family: var(--font-jetbrains-mono), monospace;
-  font-size: 0.8rem;
-}
-
-.sysItem span {
-  color: #00C87A;
+@media (max-width: 480px) {
+  .sysH_grid { grid-template-columns: 1fr; }
+  .sysH_card--wide { grid-column: span 1; }
+  .sysH_footer { flex-direction: column; gap: 0.35rem; }
 }
 
 .about {
