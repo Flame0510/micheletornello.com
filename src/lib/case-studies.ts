@@ -4,6 +4,7 @@ export interface CaseStudy {
   slug: string;
   gradient: string;
   image: string;
+  status?: string;
   tech: string[];
   impactNumber?: string;
   impactLabel?: string;
@@ -203,42 +204,41 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
-    slug: 'pong',
-    gradient: 'from-amber-500/20 to-yellow-400/20',
-    image: '/pong-project.jpg',
-    tech: ['Ionic', 'TypeScript', 'WebSocket'],
+    slug: 'cashbee',
+    gradient: 'from-green-600/20 to-emerald-500/20',
+    image: '/cashbee.jpg',
+    status: 'standby',
+    tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind'],
     content: {
       it: {
-        title: 'Pong Multiplayer',
-        subtitle: 'Progetto finale Academy — gioco multiplayer online in Ionic.',
-        overview: 'Progetto finale Academy sviluppato in team: un Pong multiplayer online real-time costruito con Ionic e TypeScript.',
-        challenge: ['Gestione sincronizzazione real-time della partita su connessioni variabili.', 'Struttura del gameplay pensata per mantenere latenza percepita bassa.', 'Consegna in tempi accademici con scope ben definito.'],
+        title: 'Cashbee',
+        subtitle: 'Piattaforma di cashback e marketing digitale per PMI',
+        overview: 'Startup Lab — suite di strumenti (cashback, gestionale, advertising, CRM) per digitalizzare le piccole imprese. App online, sviluppo in standby.',
+        challenge: ['Creazione di un motore di cashback modulare.', 'Integrazione di sistemi di pagamento e CRM.', 'Scalabilità per gestire flussi di transazioni elevati.'],
         solution: [
-          { label: 'Stack', description: 'Ionic, TypeScript, WebSocket' },
-          { label: 'Realtime', description: 'Aggiornamenti stato partita in tempo reale via WebSocket' },
-          { label: 'Scope', description: 'Focus su gameplay multiplayer e stabilità della sessione' },
+          { label: 'Stack', description: 'Next.js, Node.js, PostgreSQL' },
+          { label: 'Core', description: 'Motore di cashback e CRM integrato' },
         ],
         results: [
-          { metric: 'Tipo progetto', value: 'Finale Academy' },
-          { metric: 'Modalità', value: 'Multiplayer online' },
+          { metric: 'Stato', value: 'Standby' },
+          { metric: 'Focus', value: 'Digitalizzazione PMI' },
         ],
-        lesson: 'Un gioco multiplayer semplice è un ottimo banco di prova per timing, stato condiviso e gestione della latenza.',
+        lesson: 'La complessità di un sistema di cashback risiede nella gestione atomica delle transazioni e nella semplicità d\'uso per l\'esercente.',
       },
       en: {
-        title: 'Pong Multiplayer',
-        subtitle: 'Academy final project — online multiplayer game in Ionic.',
-        overview: 'Final Academy team project: a real-time online multiplayer Pong built with Ionic and TypeScript.',
-        challenge: ['Real-time game-state synchronization across variable network conditions.', 'Gameplay structure aimed at keeping perceived latency low.', 'Delivery within academic timelines and a constrained scope.'],
+        title: 'Cashbee',
+        subtitle: 'Digital marketing and cashback platform for SMEs',
+        overview: 'Startup Lab — suite of tools (cashback, management, advertising, CRM) to digitalize small businesses. App online, development on standby.',
+        challenge: ['Building a modular cashback engine.', 'Payment and CRM systems integration.', 'Scalability for high transaction volumes.'],
         solution: [
-          { label: 'Stack', description: 'Ionic, TypeScript, WebSocket' },
-          { label: 'Realtime', description: 'Real-time match state updates via WebSocket' },
-          { label: 'Scope', description: 'Focus on multiplayer gameplay and session stability' },
+          { label: 'Stack', description: 'Next.js, Node.js, PostgreSQL' },
+          { label: 'Core', description: 'Integrated cashback engine and CRM' },
         ],
         results: [
-          { metric: 'Project type', value: 'Academy final project' },
-          { metric: 'Mode', value: 'Online multiplayer' },
+          { metric: 'Status', value: 'Standby' },
+          { metric: 'Focus', value: 'SME Digitalization' },
         ],
-        lesson: 'Even a simple multiplayer game is an excellent testbed for timing, shared state, and latency handling.',
+        lesson: 'The complexity of a cashback system lies in atomic transaction management and merchant ease of use.',
       },
     },
   },

@@ -120,10 +120,10 @@ function ContactForm() {
 export default function HomePage() {
   const parallaxRef = useParallax(0.25);
   const statusRows = [
-    { label: 'System Architect', state: 'VERIFIED' },
-    { label: 'Docente SJA', state: 'CONFIRMED' },
-    { label: 'Intervistato RTL 102.5', state: 'ACTIVE' },
-    { label: 'Founder Indipendente', state: 'ON TARGET' },
+    { label: 'ROLE', desc: 'System Architect & Full-Stack Dev', state: 'STABLE' },
+    { label: 'EDU', desc: 'SJA Lecturer — 400+ devs trained', state: 'DEPLOYED' },
+    { label: 'PRESS', desc: 'RTL 102.5 National Interview', state: 'VERIFIED' },
+    { label: 'OPS', desc: 'Independent Founder & Enterprise Dev', state: 'ACTIVE' },
   ];
 
   const timeline = [
@@ -460,13 +460,15 @@ export default function HomePage() {
 
       <section className="status sectionWrap">
         <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
-          <h2>STATUS CHECK</h2>
-          <div className="statusGrid">
+          <h2>// SYSTEM_STATUS</h2>
+          <div className="statusTerminal">
             {statusRows.map((row) => (
-              <p key={row.label}>
-                <span><span className="dot">●</span> {row.label}</span>
-                <span className="state">[{row.state}]</span>
-              </p>
+              <div key={row.label} className="statusLine">
+                <span className="statusBullet">●</span>
+                <span className="statusLabel">{row.label}</span>
+                <span className="statusDesc">{row.desc}</span>
+                <span className="statusState">[{row.state}]</span>
+              </div>
             ))}
           </div>
           

@@ -32,17 +32,8 @@ const projects = [
     metric: 'GOV-TECH',
   },
   {
-    id: 'MT-OP-004',
-    num: '04',
-    name: 'Pong',
-    tagline: 'Infrastruttura realtime con WebSockets.',
-    stack: ['Node.js', 'Socket.io'],
-    year: '2022',
-    metric: 'REALTIME',
-  },
-  {
     id: 'MT-OP-002',
-    num: '05',
+    num: '04',
     name: 'Paradigma.me',
     tagline: 'Sviluppato durante gli anni in Paradigma SPA.',
     stack: ['Enterprise', 'System'],
@@ -58,7 +49,8 @@ const startupLab = [
     url: 'cashbee.it',
     description: 'Piattaforma cashback e marketing digitale per PMI (bar, ristoranti, negozi). Visione: suite modulare per digitalizzare le piccole imprese ancora su carta.',
     stack: ['React Native', 'App'],
-    status: '// STANDBY'
+    status: '// COMPLETED V1',
+    standby: true
   },
   {
     id: 'LAB-002',
@@ -235,8 +227,8 @@ export default function PortfolioSection() {
 
           <div className="startupLab_grid">
             {startupLab.map((lab) => (
-              <div key={lab.id} className="startupLab_card">
-                <div className="startupLab_badge">{lab.status}</div>
+              <div key={lab.id} className="startupLab_card" style={lab.standby ? { opacity: 0.8 } : {}}>
+                <div className="startupLab_badge" style={lab.id === 'LAB-001' ? { color: '#B87333' } : {}}>{lab.status}</div>
                 <h4 className="startupLab_name">{lab.name}</h4>
                 <p className="startupLab_desc">{lab.description}</p>
                 <div className="startupLab_footer">
