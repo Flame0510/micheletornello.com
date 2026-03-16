@@ -919,9 +919,38 @@ h1 {
   text-transform: uppercase;
 }
 
+@media (max-width: 1023px) {
+  .chiB_container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .chiB_visual {
+    order: -1; /* Foto in cima su mobile */
+  }
+
+  .chiB_story {
+    gap: 40px;
+  }
+
+  .chiB_title {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+}
+
 @media (max-width: 768px) {
+  .chiB_section {
+    padding: 80px 24px 60px;
+  }
+  
   .chiB_stepText {
     font-size: 1.2rem;
+  }
+
+  .chiB_stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
