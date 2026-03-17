@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { CookieConsent } from '@/components/ui/CookieConsent';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,6 +68,8 @@ export default function RootLayout({
           <Footer />
           <ContactTrigger />
         </LanguageProvider>
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-6SQB1T42VN" />
+        <CookieConsent />
         <div
           className="fixed inset-0 pointer-events-none"
           style={{

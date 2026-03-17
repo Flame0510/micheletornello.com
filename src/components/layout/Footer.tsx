@@ -24,6 +24,9 @@ const Footer = () => {
             © {currentYear} Michele Tornello
           </p>
           <p className="font-mono text-[9px] uppercase tracking-widest text-[#F2EDE8]/20">P.IVA 06217000873</p>
+          <a href="/privacy" className="font-mono text-[9px] uppercase tracking-widest text-[#F2EDE8]/20 hover:text-[#B87333] transition-colors">
+            Privacy & Cookie Policy
+          </a>
         </div>
 
         <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4">

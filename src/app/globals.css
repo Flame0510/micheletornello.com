@@ -1170,3 +1170,87 @@ h1 {
 @media (max-width: 640px) {
   /* .entG_stats already handled by 767px */
 }
+
+/* === COOKIE CONSENT SYSTEM === */
+.ck_text { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #F2EDE8; opacity: 0.8; margin-bottom: 1rem; line-height: 1.6; }
+.ck_title { font-family: 'Instrument Serif', serif; font-size: 1.3rem; color: #B87333; margin-bottom: 1.5rem; }
+.ck_link { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(184,115,51,0.7); text-decoration: underline; }
+.ck_link:hover { color: #B87333; }
+
+.ck_banner {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  width: calc(100% - 3rem); max-width: 360px;
+  background: #080808; border: 1px solid #B87333;
+  padding: 1.25rem; z-index: 9999;
+  box-shadow: 0 0 30px rgba(184,115,51,0.15);
+}
+.ck_banner_header {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+  color: #B87333; letter-spacing: 0.12em; margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem; border-bottom: 1px dashed rgba(184,115,51,0.3);
+}
+.ck_banner_links { margin-top: 0.75rem; }
+.ck_actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.ck_float_btn {
+  position: fixed; bottom: 1.5rem; left: 1.5rem;
+  background: #080808; border: 1px solid rgba(242,237,232,0.15);
+  color: rgba(242,237,232,0.5); font-family: 'JetBrains Mono', monospace;
+  padding: 0.4rem 0.7rem; font-size: 0.65rem; z-index: 9998; cursor: pointer;
+  transition: all 0.2s;
+}
+.ck_float_btn:hover { border-color: #B87333; color: #B87333; }
+
+.ck_overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+  z-index: 10000; backdrop-filter: blur(2px);
+}
+.ck_panel {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 100%; max-width: 400px;
+  background: #080808; border-left: 1px solid #B87333;
+  z-index: 10001; overflow-y: auto;
+}
+.ck_panel_content { padding: 2rem; display: flex; flex-direction: column; min-height: 100%; }
+.ck_panel_footer { margin-top: auto; padding-top: 1.5rem; }
+.ck_panel_links { margin-top: 1rem; }
+
+.ck_setting_item {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(184,115,51,0.08);
+}
+.ck_setting_info { flex: 1; }
+.ck_setting_label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #F2EDE8; margin-bottom: 0.25rem; }
+.ck_setting_desc { display: block; font-size: 0.75rem; color: rgba(242,237,232,0.45); line-height: 1.5; }
+.ck_badge { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #B87333; border: 1px solid rgba(184,115,51,0.4); padding: 0.2rem 0.5rem; white-space: nowrap; flex-shrink: 0; }
+
+.ck_btn {
+  padding: 0.5rem 0.85rem; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+  cursor: pointer; border: 1px solid rgba(242,237,232,0.2);
+  background: transparent; color: #F2EDE8; transition: all 0.2s; white-space: nowrap;
+}
+.ck_btn:hover { border-color: rgba(242,237,232,0.5); }
+.ck_btn_primary { border-color: #B87333; color: #B87333; }
+.ck_btn_primary:hover { background: #B87333; color: #080808; }
+.ck_btn_ghost { border-color: transparent; opacity: 0.45; }
+.ck_btn_ghost:hover { opacity: 0.8; }
+.ck_btn_full { display: block; width: 100%; text-align: center; }
+
+/* Toggle Switch */
+.ck_switch { position: relative; display: inline-block; width: 42px; height: 22px; flex-shrink: 0; }
+.ck_switch input { opacity: 0; width: 0; height: 0; }
+.ck_slider {
+  position: absolute; cursor: pointer; inset: 0;
+  background: rgba(242,237,232,0.1); transition: 0.3s; border: 1px solid rgba(242,237,232,0.2);
+}
+.ck_slider:before {
+  position: absolute; content: ''; height: 14px; width: 14px;
+  left: 3px; bottom: 3px; background: rgba(242,237,232,0.5); transition: 0.3s;
+}
+.ck_switch input:checked + .ck_slider { background: rgba(184,115,51,0.2); border-color: #B87333; }
+.ck_switch input:checked + .ck_slider:before { transform: translateX(20px); background: #B87333; }
+
+@media (max-width: 480px) {
+  .ck_banner { bottom: 0; right: 0; left: 0; max-width: 100%; border-left: none; border-right: none; border-bottom: none; }
+  .ck_panel { max-width: 100%; }
+}
