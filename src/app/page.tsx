@@ -149,19 +149,6 @@ export default function HomePage() {
     },
   ];
 
-  const operations = [
-    {
-      name: 'Watching Stars',
-      stack: 'Next.js/Node',
-      metric: 'Live'
-    },
-    {
-      name: 'Memory Cloud',
-      stack: 'Next.js/Node',
-      metric: 'Live'
-    }
-  ];
-
   return (
     <main>
       <section id="hero" className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -454,131 +441,103 @@ export default function HomePage() {
       </section>
 
       {/* ========== PROOF OF WORK ========== */}
-      <section className="pwH_section" id="proof">
-        <div className="pwH_container">
-          
-          {/* Header */}
-          <header className="pwH_header">
-            <span className="pwH_overline">// TECHNICAL_VALIDATION · 2022—2025</span>
-            <h2 className="pwH_title">Sistemi in produzione.<br/><em>Impatto misurabile.</em></h2>
+      <section id="proof" className="pv3G_section">
+        <div className="pv3G_container">
+          <header className="pv3G_header">
+            <span className="pv3G_badge">// PROOF_OF_WORK</span>
+            <h2 className="pv3G_title">Architetture validate<br /><em>su scala reale.</em></h2>
+            <p className="pv3G_subtitle">
+              Dall&apos;infrastruttura critica energetica ai sistemi IoT globali. Dati verificabili, non promesse.
+            </p>
           </header>
 
-          {/* Hero Number — 99.9% full width */}
-          <div className="pwH_hero_stat">
-            <div className="pwH_hero_inner">
-              <span className="pwH_hero_num">99.9<span className="pwH_hero_pct">%</span></span>
-              <div className="pwH_hero_meta">
-                <span className="pwH_hero_label">UPTIME OPERATIVO</span>
-                <span className="pwH_hero_sub">Sistemi live in produzione — Watching Stars · Memory Cloud</span>
-                <div className="pwH_status_bus">
-                  <span className="pwH_pulse"></span>
-                  <code className="pwH_status_code">SYSTEM_STATUS: OPERATIONAL</code>
+          <div className="pv3G_grid">
+            {/* Main Card: Enterprise Impact - span 8 */}
+            <div className="pv3G_card pv3G_col8 pv3G_enterprise">
+              <div className="pv3G_card_content">
+                <div className="pv3G_meta">2022 — 2024 · SENIOR FRONTEND / REACT NATIVE</div>
+                <h3 className="pv3G_card_title">Enterprise Systems Architecture</h3>
+                <div className="pv3G_stats_grid">
+                  {[
+                    { value: '5', label: 'Settori critici' },
+                    { value: '130+', label: 'Paesi raggiunti' },
+                    { value: '32.7k', label: 'km di rete' },
+                    { value: '1.15B€', label: 'Volume gruppo' },
+                  ].map((s) => (
+                    <div key={s.label} className="pv3G_stat_item">
+                      <span className="pv3G_stat_value">{s.value}</span>
+                      <span className="pv3G_stat_label">{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="pv3G_sectors">
+                  {['Smart Home / IoT', 'Healthcare IT', 'Cloud Networking', 'Food-Tech', 'Energia & Infrastrutture'].map((s) => (
+                    <span key={s} className="pv3G_sector_tag">{s}</span>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="pwH_uptime_bar"><div className="pwH_uptime_fill"></div></div>
-          </div>
 
-          {/* Grid modulare */}
-          <div className="pwH_grid">
-            
-            {/* ENTERPRISE IMPACT - v2 Audit Log */}
-            <div className="pvG2_container pwH_span2">
-              <div className="pvG2_header">
-                <div className="pvG2_dot" />
-                <h3 className="pvG2_title">SYSTEM_ARCH_IMPACT // ENTERPRISE_LOG</h3>
-                <span className="pvG2_version">v2.0</span>
-              </div>
-              <div className="pvG2_table_wrapper">
-                <table className="pvG2_table">
-                  <thead>
-                    <tr>
-                      <th>SECTOR_DOMAIN</th>
-                      <th>SCALE_DATA</th>
-                      <th className="pvG2_hide_mobile">SYSTEM_METRIC</th>
-                      <th className="pvG2_hide_mobile">STACK_ROLE</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      { sector: "CLOUD NETWORKING", scale: "130+ COUNTRIES", metric: "GLOBAL_REACH", tech: "React Native / Edge" },
-                      { sector: "SMART HOME / IOT", scale: "1.15B€ GROUP", metric: "CORP_VALUATION", tech: "React Native / BLE" },
-                      { sector: "HEALTHCARE IT", scale: "EUROPEAN SCALE", metric: "PHARMA_LOGISTICS", tech: "Enterprise React" },
-                      { sector: "FOOD-TECH", scale: "160+ STORES", metric: "RETAIL_FOOTPRINT", tech: "React Native / Kiosk" },
-                      { sector: "ENERGY & INFRA", scale: "32.700 KM NET", metric: "INFRA_MONITORING", tech: "AEM / Core Web" },
-                    ].map((row, i) => (
-                      <tr key={i} className="pvG2_row">
-                        <td className="pvG2_sector">{row.sector}</td>
-                        <td className="pvG2_scale">{row.scale}</td>
-                        <td className="pvG2_metric pvG2_hide_mobile">{row.metric}</td>
-                        <td className="pvG2_tech pvG2_hide_mobile">{row.tech}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="pvG2_footer">
-                <p>[AUTH_LEVEL: SENIOR_FRONTEND_DEV] — Zero client disclosure policy in effect · Role: Senior Frontend Developer · React Native Enterprise Architectures</p>
+            {/* Education - span 4 */}
+            <div className="pv3G_card pv3G_col4 pv3G_education">
+              <div className="pv3G_card_content">
+                <div className="pv3G_meta">DOCENZA · SJA CATANIA</div>
+                <div className="pv3G_big_stat">150+</div>
+                <p className="pv3G_card_text">
+                  Developer formati presso la <strong>Steve Jobs Academy</strong> di Catania. Architetture enterprise, React Native e standard di qualità industriale.
+                </p>
               </div>
             </div>
 
-            {/* Module 2: Live Products */}
-            <div className="pwH_module">
-              <div className="pwH_mod_label">LIVE SYSTEMS</div>
-              <div className="pwH_live_list">
-                <div className="pwH_live_item">
-                  <div className="pwH_live_dot"></div>
-                  <div>
-                    <div className="pwH_live_name">Watching Stars</div>
-                    <div className="pwH_live_stack">Next.js · Node.js</div>
+            {/* Presenza verificabile - span 6 */}
+            <div className="pv3G_card pv3G_col6 pv3G_presence">
+              <div className="pv3G_card_content">
+                <div className="pv3G_meta">PRESENZA VERIFICABILE</div>
+                <ul className="pv3G_list">
+                  <li><strong>RTL 102.5</strong><span>Intervista nazionale</span></li>
+                  <li><strong>UniCT</strong><span>Speaker React Native</span></li>
+                  <li><strong>TEDx Catania</strong><span>Staff volontario</span></li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Community - span 6 */}
+            <div className="pv3G_card pv3G_col6 pv3G_community">
+              <div className="pv3G_card_content">
+                <div className="pv3G_meta">COMMUNITY & ECOSYSTEM</div>
+                <div className="pv3G_logos">
+                  <span>GDG Catania</span>
+                  <span className="pv3G_sep">/</span>
+                  <span>Friends of Figma</span>
+                  <span className="pv3G_sep">/</span>
+                  <span>SJA Catania</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Sistemi live - span 12 */}
+            <div className="pv3G_card pv3G_col12 pv3G_live">
+              <div className="pv3G_live_inner">
+                <div className="pv3G_live_header">
+                  <div className="pv3G_meta">SISTEMI LIVE IN PRODUZIONE</div>
+                  <div className="pv3G_pulse_wrap">
+                    <span className="pv3G_pulse"></span>
+                    <span className="pv3G_pulse_label">Online & verificabili</span>
                   </div>
                 </div>
-                <div className="pwH_live_item">
-                  <div className="pwH_live_dot"></div>
-                  <div>
-                    <div className="pwH_live_name">Memory Cloud</div>
-                    <div className="pwH_live_stack">Next.js · Node.js</div>
-                  </div>
+                <div className="pv3G_live_grid">
+                  <a href="https://watchingstars.it" target="_blank" rel="noopener noreferrer" className="pv3G_live_link">
+                    <span className="pv3G_live_name">Watching Stars</span>
+                    <span className="pv3G_live_url">watchingstars.it →</span>
+                  </a>
+                  <a href="https://memorycloud.it" target="_blank" rel="noopener noreferrer" className="pv3G_live_link">
+                    <span className="pv3G_live_name">Memory Cloud</span>
+                    <span className="pv3G_live_url">memorycloud.it →</span>
+                  </a>
                 </div>
               </div>
             </div>
-
-            {/* Module 3: Education — narrativo da Beta */}
-            <div className="pwH_module pwH_span3">
-              <div className="pwH_mod_label">KNOWLEDGE TRANSFER</div>
-              <div className="pwH_edu_content">
-                <div className="pwH_edu_num">150<span className="pwH_edu_plus">+</span></div>
-                <div className="pwH_edu_text">
-                  <p className="pwH_edu_copy">Scalare la conoscenza per scalare i sistemi. Come docente presso <strong>SJA Catania</strong>, ho guidato oltre 150 developer verso standard enterprise su React, Cloud e Architetture OS.</p>
-                  <div className="pwH_edu_tags">
-                    <span>React</span><span>Angular</span><span>PHP</span><span>Cloud Computing</span><span>OS</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-
-          {/* Footer metrics — da Gamma */}
-          <div className="pwH_footer_metrics">
-            <div className="pwH_footer_item">
-              <span className="pwH_footer_mono">PRESS</span>
-              <span className="pwH_footer_val">RTL 102.5 — Intervista Nazionale</span>
-            </div>
-            <div className="pwH_footer_item">
-              <span className="pwH_footer_mono">STAGE</span>
-              <span className="pwH_footer_val">UniCT Speaker · TEDx Catania Staff</span>
-            </div>
-            <div className="pwH_footer_item">
-              <span className="pwH_footer_mono">COMMUNITY</span>
-              <span className="pwH_footer_val">GDG Catania · Friends of Figma</span>
-            </div>
-            <div className="pwH_footer_item">
-              <span className="pwH_footer_mono">BASE</span>
-              <span className="pwH_footer_val">Sicily-based · Global Reach</span>
-            </div>
-          </div>
-
         </div>
       </section>
 
