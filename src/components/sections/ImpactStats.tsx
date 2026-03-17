@@ -16,16 +16,16 @@ interface Stat {
 
 const stats: { it: Stat[]; en: Stat[] } = {
   it: [
-    { value: "-90%", prefix: "-", numericValue: 90, suffix: "%", label: "errori nei turni", sublabel: "REC Security" },
-    { value: "80", numericValue: 80, label: "operatori gestiti", sublabel: "REC Security" },
-    { value: "+40%", prefix: "+", numericValue: 40, suffix: "%", label: "prenotazioni dirette", sublabel: "Casa Vacanze Kastalia" },
-    { value: "4+", numericValue: 4, suffix: "+", label: "anni in produzione", sublabel: "dal 2020" },
+    { value: "150+", numericValue: 150, suffix: "+", label: "sviluppatori formati", sublabel: "SJA Catania" },
+    { value: "3", numericValue: 3, label: "sistemi live in produzione", sublabel: "personali" },
+    { value: "3", numericValue: 3, label: "anni enterprise", sublabel: "Paradigma SPA" },
+    { value: "5", numericValue: 5, label: "settori industry", sublabel: "2022–2024" },
   ],
   en: [
-    { value: "-90%", prefix: "-", numericValue: 90, suffix: "%", label: "scheduling errors", sublabel: "REC Security" },
-    { value: "80", numericValue: 80, label: "operators managed", sublabel: "REC Security" },
-    { value: "+40%", prefix: "+", numericValue: 40, suffix: "%", label: "direct bookings", sublabel: "Casa Vacanze Kastalia" },
-    { value: "4+", numericValue: 4, suffix: "+", label: "years in production", sublabel: "since 2020" },
+    { value: "150+", numericValue: 150, suffix: "+", label: "developers trained", sublabel: "SJA Catania" },
+    { value: "3", numericValue: 3, label: "live systems in production", sublabel: "personal projects" },
+    { value: "3", numericValue: 3, label: "enterprise years", sublabel: "Paradigma SPA" },
+    { value: "5", numericValue: 5, label: "industry sectors", sublabel: "2022–2024" },
   ],
 };
 
