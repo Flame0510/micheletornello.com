@@ -121,7 +121,7 @@ export default function HomePage() {
   const parallaxRef = useParallax(0.25);
   const statusRows = [
     { label: 'ROLE', desc: 'System Architect & Full-Stack Dev', state: 'STABLE' },
-    { label: 'EDU', desc: 'SJA Lecturer — 400+ devs trained', state: 'DEPLOYED' },
+    { label: 'EDU', desc: 'SJA Lecturer — 150+ devs trained', state: 'DEPLOYED' },
     { label: 'PRESS', desc: 'RTL 102.5 National Interview', state: 'VERIFIED' },
     { label: 'OPS', desc: 'Independent Founder & Enterprise Dev', state: 'ACTIVE' },
   ];
@@ -547,9 +547,9 @@ export default function HomePage() {
             <div className="pwH_module pwH_span3">
               <div className="pwH_mod_label">KNOWLEDGE TRANSFER</div>
               <div className="pwH_edu_content">
-                <div className="pwH_edu_num">400<span className="pwH_edu_plus">+</span></div>
+                <div className="pwH_edu_num">150<span className="pwH_edu_plus">+</span></div>
                 <div className="pwH_edu_text">
-                  <p className="pwH_edu_copy">Scalare la conoscenza per scalare i sistemi. Come docente presso <strong>SJA Catania</strong>, ho guidato oltre 400 developer verso standard enterprise su React, Cloud e Architetture OS.</p>
+                  <p className="pwH_edu_copy">Scalare la conoscenza per scalare i sistemi. Come docente presso <strong>SJA Catania</strong>, ho guidato oltre 150 developer verso standard enterprise su React, Cloud e Architetture OS.</p>
                   <div className="pwH_edu_tags">
                     <span>React</span><span>Angular</span><span>PHP</span><span>Cloud Computing</span><span>OS</span>
                   </div>
