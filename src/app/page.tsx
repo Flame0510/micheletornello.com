@@ -482,37 +482,44 @@ export default function HomePage() {
           {/* Grid modulare */}
           <div className="pwH_grid">
             
-            {/* Module 1: Enterprise — span 2 */}
-            <div className="pwH_module pwH_span2">
-              <div className="pwH_mod_label">ENTERPRISE IMPACT</div>
-              <div className="pwH_client_list">
-                <div className="pwH_client_item">
-                  <span className="pwH_client_name">Tanaza</span>
-                  <span className="pwH_client_tag">Cloud Networking</span>
-                  <span className="pwH_client_reach">130+ paesi</span>
-                </div>
-                <div className="pwH_client_item">
-                  <span className="pwH_client_name">Haier Smart Home</span>
-                  <span className="pwH_client_tag">IoT / hOn</span>
-                  <span className="pwH_client_reach">Global</span>
-                </div>
-                <div className="pwH_client_item">
-                  <span className="pwH_client_name">CGM G3 Pharmacy</span>
-                  <span className="pwH_client_tag">Healthcare IT</span>
-                  <span className="pwH_client_reach">1.15B€ gruppo</span>
-                </div>
-                <div className="pwH_client_item">
-                  <span className="pwH_client_name">Poke House</span>
-                  <span className="pwH_client_tag">Food-Tech</span>
-                  <span className="pwH_client_reach">160+ store</span>
-                </div>
-                <div className="pwH_client_item">
-                  <span className="pwH_client_name">Snam</span>
-                  <span className="pwH_client_tag">Energia & Infrastrutture</span>
-                  <span className="pwH_client_reach">32.700 km rete</span>
-                </div>
+            {/* ENTERPRISE IMPACT - v2 Audit Log */}
+            <div className="pvG2_container pwH_span2">
+              <div className="pvG2_header">
+                <div className="pvG2_dot" />
+                <h3 className="pvG2_title">SYSTEM_ARCH_IMPACT // ENTERPRISE_LOG</h3>
+                <span className="pvG2_version">v2.0</span>
               </div>
-              <div className="pwH_mod_footer">Ruolo: Senior Frontend Developer · React Native</div>
+              <div className="pvG2_table_wrapper">
+                <table className="pvG2_table">
+                  <thead>
+                    <tr>
+                      <th>SECTOR_DOMAIN</th>
+                      <th>SCALE_DATA</th>
+                      <th className="pvG2_hide_mobile">SYSTEM_METRIC</th>
+                      <th className="pvG2_hide_mobile">STACK_ROLE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { sector: "CLOUD NETWORKING", scale: "130+ COUNTRIES", metric: "GLOBAL_REACH", tech: "React Native / Edge" },
+                      { sector: "SMART HOME / IOT", scale: "1.15B€ GROUP", metric: "CORP_VALUATION", tech: "React Native / BLE" },
+                      { sector: "HEALTHCARE IT", scale: "EUROPEAN SCALE", metric: "PHARMA_LOGISTICS", tech: "Enterprise React" },
+                      { sector: "FOOD-TECH", scale: "160+ STORES", metric: "RETAIL_FOOTPRINT", tech: "React Native / Kiosk" },
+                      { sector: "ENERGY & INFRA", scale: "32.700 KM NET", metric: "INFRA_MONITORING", tech: "AEM / Core Web" },
+                    ].map((row, i) => (
+                      <tr key={i} className="pvG2_row">
+                        <td className="pvG2_sector">{row.sector}</td>
+                        <td className="pvG2_scale">{row.scale}</td>
+                        <td className="pvG2_metric pvG2_hide_mobile">{row.metric}</td>
+                        <td className="pvG2_tech pvG2_hide_mobile">{row.tech}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="pvG2_footer">
+                <p>[AUTH_LEVEL: SENIOR_FRONTEND_DEV] — Zero client disclosure policy in effect · Role: Senior Frontend Developer · React Native Enterprise Architectures</p>
+              </div>
             </div>
 
             {/* Module 2: Live Products */}
