@@ -212,12 +212,33 @@ h1 {
 
 /* Education */
 .pwH_span3 { grid-column: span 3; }
-.pwH_edu_content { display: flex; align-items: flex-start; gap: 3rem; }
+.pwH_edu_content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+}
 .pwH_edu_num { font-family: 'Instrument Serif', serif; font-size: clamp(3rem, 6vw, 5rem); color: #B87333; line-height: 1; flex-shrink: 0; }
 .pwH_edu_plus { font-size: 0.5em; vertical-align: top; }
-.pwH_edu_copy { font-size: 0.95rem; line-height: 1.7; opacity: 0.75; margin-bottom: 1rem; }
+.pwH_edu_text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.pwH_edu_copy {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  opacity: 0.75;
+  max-width: 100%;
+  margin: 0;
+}
 .pwH_edu_copy strong { color: #F2EDE8; opacity: 1; border-bottom: 1px solid #B87333; }
-.pwH_edu_tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pwH_edu_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
 .pwH_edu_tags span { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; padding: 3px 10px; border: 1px solid rgba(242,237,232,0.15); }
 
 /* Footer metrics */
