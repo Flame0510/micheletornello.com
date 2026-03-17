@@ -453,85 +453,125 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SYSTEM STATUS — Tournament Winner (Alpha+Beta+Gamma hybrid) */}
-      <section className="sysH_section sectionWrap">
-        <div className="sysH_kicker">// PROOF_OF_WORK</div>
-        <h2 className="sysH_headline">
-          Sistemi in <em>produzione.</em><br/>
-          Persone <em>formate.</em>
-        </h2>
+      {/* ========== PROOF OF WORK ========== */}
+      <section className="pwH_section" id="proof">
+        <div className="pwH_container">
+          
+          {/* Header */}
+          <header className="pwH_header">
+            <span className="pwH_overline">// TECHNICAL_VALIDATION · 2022—2025</span>
+            <h2 className="pwH_title">Sistemi in produzione.<br/><em>Impatto misurabile.</em></h2>
+          </header>
 
-        <div className="sysH_grid">
-          <div className="sysH_card sysH_card--featured">
-            <div className="sysH_card_top">
-              <span className="sysH_tag">EDU</span>
-              <span className="sysH_dot sysH_dot--green">●</span>
+          {/* Hero Number — 99.9% full width */}
+          <div className="pwH_hero_stat">
+            <div className="pwH_hero_inner">
+              <span className="pwH_hero_num">99.9<span className="pwH_hero_pct">%</span></span>
+              <div className="pwH_hero_meta">
+                <span className="pwH_hero_label">UPTIME OPERATIVO</span>
+                <span className="pwH_hero_sub">Sistemi live in produzione — REC Security · Cashbee</span>
+                <div className="pwH_status_bus">
+                  <span className="pwH_pulse"></span>
+                  <code className="pwH_status_code">SYSTEM_STATUS: OPERATIONAL</code>
+                </div>
+              </div>
             </div>
-            <div className="sysH_card_value">400<span>+</span></div>
-            <div className="sysH_card_key">STUDENTI FORMATI</div>
-            <div className="sysH_card_sub">Steve Jobs Academy Catania · 2024</div>
+            <div className="pwH_uptime_bar"><div className="pwH_uptime_fill"></div></div>
           </div>
 
-          <div className="sysH_card">
-            <div className="sysH_card_top">
-              <span className="sysH_tag">LIVE</span>
-              <span className="sysH_dot sysH_dot--green">●</span>
+          {/* Grid modulare */}
+          <div className="pwH_grid">
+            
+            {/* Module 1: Enterprise — span 2 */}
+            <div className="pwH_module pwH_span2">
+              <div className="pwH_mod_label">ENTERPRISE IMPACT</div>
+              <div className="pwH_client_list">
+                <div className="pwH_client_item">
+                  <span className="pwH_client_name">Tanaza</span>
+                  <span className="pwH_client_tag">Cloud Networking</span>
+                  <span className="pwH_client_reach">130+ paesi</span>
+                </div>
+                <div className="pwH_client_item">
+                  <span className="pwH_client_name">Haier Smart Home</span>
+                  <span className="pwH_client_tag">IoT / hOn</span>
+                  <span className="pwH_client_reach">Global</span>
+                </div>
+                <div className="pwH_client_item">
+                  <span className="pwH_client_name">CGM G3 Pharmacy</span>
+                  <span className="pwH_client_tag">Healthcare IT</span>
+                  <span className="pwH_client_reach">1.15B€ gruppo</span>
+                </div>
+                <div className="pwH_client_item">
+                  <span className="pwH_client_name">Poke House</span>
+                  <span className="pwH_client_tag">Food-Tech</span>
+                  <span className="pwH_client_reach">160+ store</span>
+                </div>
+                <div className="pwH_client_item">
+                  <span className="pwH_client_name">Snam</span>
+                  <span className="pwH_client_tag">Energia & Infrastrutture</span>
+                  <span className="pwH_client_reach">32.700 km rete</span>
+                </div>
+              </div>
+              <div className="pwH_mod_footer">Ruolo: Senior Frontend Developer · React Native</div>
             </div>
-            <div className="sysH_card_value">99.9<span>%</span></div>
-            <div className="sysH_card_key">UPTIME</div>
-            <div className="sysH_card_sub">REC Security — sistema in produzione</div>
+
+            {/* Module 2: Live Products */}
+            <div className="pwH_module">
+              <div className="pwH_mod_label">LIVE SYSTEMS</div>
+              <div className="pwH_live_list">
+                <div className="pwH_live_item">
+                  <div className="pwH_live_dot"></div>
+                  <div>
+                    <div className="pwH_live_name">REC Security</div>
+                    <div className="pwH_live_stack">PHP · React · IoT</div>
+                  </div>
+                </div>
+                <div className="pwH_live_item">
+                  <div className="pwH_live_dot"></div>
+                  <div>
+                    <div className="pwH_live_name">Cashbee</div>
+                    <div className="pwH_live_stack">Next.js · Node.js</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Module 3: Education — narrativo da Beta */}
+            <div className="pwH_module pwH_span2">
+              <div className="pwH_mod_label">KNOWLEDGE TRANSFER</div>
+              <div className="pwH_edu_content">
+                <div className="pwH_edu_num">400<span className="pwH_edu_plus">+</span></div>
+                <div className="pwH_edu_text">
+                  <p className="pwH_edu_copy">Scalare la conoscenza per scalare i sistemi. Come docente presso <strong>SJA Catania</strong>, ho guidato oltre 400 developer verso standard enterprise su React, Cloud e Architetture OS.</p>
+                  <div className="pwH_edu_tags">
+                    <span>React</span><span>Angular</span><span>PHP</span><span>Cloud Computing</span><span>OS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <div className="sysH_card">
-            <div className="sysH_card_top">
-              <span className="sysH_tag">OPS</span>
-              <span className="sysH_dot sysH_dot--green">●</span>
+          {/* Footer metrics — da Gamma */}
+          <div className="pwH_footer_metrics">
+            <div className="pwH_footer_item">
+              <span className="pwH_footer_mono">PRESS</span>
+              <span className="pwH_footer_val">RTL 102.5 — Intervista Nazionale</span>
             </div>
-            <div className="sysH_card_value">3</div>
-            <div className="sysH_card_key">ANNI ENTERPRISE</div>
-            <div className="sysH_card_sub">Paradigma SPA · 2022–2024</div>
+            <div className="pwH_footer_item">
+              <span className="pwH_footer_mono">STAGE</span>
+              <span className="pwH_footer_val">UniCT Speaker · TEDx Catania Staff</span>
+            </div>
+            <div className="pwH_footer_item">
+              <span className="pwH_footer_mono">COMMUNITY</span>
+              <span className="pwH_footer_val">GDG Catania · Friends of Figma</span>
+            </div>
+            <div className="pwH_footer_item">
+              <span className="pwH_footer_mono">BASE</span>
+              <span className="pwH_footer_val">Sicily-based · Global Reach</span>
+            </div>
           </div>
 
-          <div className="sysH_card sysH_card--wide">
-            <div className="sysH_card_top">
-              <span className="sysH_tag">SIGNAL</span>
-              <span className="sysH_dot sysH_dot--green">●</span>
-            </div>
-            <div className="sysH_card_tags">
-              <span className="sysH_chip">RTL 102.5 <em>Nazionale</em></span>
-              <span className="sysH_chip">TEDx Catania <em>Staff</em></span>
-              <span className="sysH_chip">UniCT <em>Speaker</em></span>
-              <span className="sysH_chip">GDG Catania <em>Membro</em></span>
-              <span className="sysH_chip">FOF Catania <em>Contributore</em></span>
-            </div>
-            <div className="sysH_card_key">PRESENZA PUBBLICA VERIFICATA</div>
-          </div>
-
-          <div className="sysH_card">
-            <div className="sysH_card_top">
-              <span className="sysH_tag">INDUSTRY</span>
-              <span className="sysH_dot sysH_dot--green">●</span>
-            </div>
-            <div className="sysH_card_value">5</div>
-            <div className="sysH_card_key">SETTORI</div>
-            <div className="sysH_card_sub">IoT · Health · Cloud · Food · Energy</div>
-          </div>
-
-          <div className="sysH_card">
-            <div className="sysH_card_top">
-              <span className="sysH_tag">CORE</span>
-              <span className="sysH_dot sysH_dot--green">●</span>
-            </div>
-            <div className="sysH_card_value">∞</div>
-            <div className="sysH_card_key">SYSTEM ARCHITECT</div>
-            <div className="sysH_card_sub">Full-Stack · Independent · 2024→</div>
-          </div>
-        </div>
-
-        <div className="sysH_footer">
-          <span>LAST_VERIFIED: {new Date().getFullYear()}</span>
-          <span className="sysH_footer_dot">·</span>
-          <span>STATUS: <em>OPERATIONAL</em></span>
         </div>
       </section>
 
