@@ -23,8 +23,7 @@ const Footer = () => {
           <p className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40">
             © {currentYear} Michele Tornello
           </p>
-          {/* TODO: Inserire P.IVA reale qui (es: ITXXXXXXXXXXXX) */}
-          {/* <p className="font-mono text-[9px] uppercase tracking-widest text-[#F2EDE8]/20">P.IVA 12345678901</p> */}
+          <p className="font-mono text-[9px] uppercase tracking-widest text-[#F2EDE8]/20">P.IVA 06217000873</p>
         </div>
 
         <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4">
