@@ -4,27 +4,18 @@ import { useInView } from 'framer-motion';
 
 const projects = [
   {
-    id: 'MT-OP-001',
-    num: '01',
-    name: 'REC Security',
-    tagline: 'Sito vetrina + prototipo sistema sirene IoT (ESP8266).',
-    stack: ['IoT', 'Next.js', 'C++'],
-    year: '2022',
-    metric: 'HARDWARE+WEB',
-    featured: true,
-  },
-  {
     id: 'MT-OP-005',
-    num: '02',
+    num: '01',
     name: 'Watching Stars',
     tagline: 'Memoriali digitali B2C+B2B con AI, NFC e Stripe.',
     stack: ['Next.js', 'AI', 'Stripe'],
     year: '2024',
     metric: 'B2C+B2B',
+    featured: true,
   },
   {
     id: 'MT-OP-006',
-    num: '03',
+    num: '02',
     name: 'Memory Cloud',
     tagline: 'Soluzione multi-tenant per PA e comuni.',
     stack: ['Next.js', 'Node.js'],

@@ -17,13 +17,13 @@ interface Stat {
 const stats: { it: Stat[]; en: Stat[] } = {
   it: [
     { value: "150+", numericValue: 150, suffix: "+", label: "sviluppatori formati", sublabel: "SJA Catania" },
-    { value: "3", numericValue: 3, label: "sistemi live in produzione", sublabel: "personali" },
+    { value: "2", numericValue: 2, label: "sistemi live in produzione", sublabel: "personali" },
     { value: "3", numericValue: 3, label: "anni enterprise", sublabel: "Paradigma SPA" },
     { value: "5", numericValue: 5, label: "settori industry", sublabel: "2022–2024" },
   ],
   en: [
     { value: "150+", numericValue: 150, suffix: "+", label: "developers trained", sublabel: "SJA Catania" },
-    { value: "3", numericValue: 3, label: "live systems in production", sublabel: "personal projects" },
+    { value: "2", numericValue: 2, label: "live systems in production", sublabel: "personal projects" },
     { value: "3", numericValue: 3, label: "enterprise years", sublabel: "Paradigma SPA" },
     { value: "5", numericValue: 5, label: "industry sectors", sublabel: "2022–2024" },
   ],
