@@ -112,7 +112,7 @@ function ContactForm() {
       <button className="contactBtn" type="submit" disabled={status === 'sending'}>
         {status === 'sending' ? '// INVIO...' : 'INVIA MESSAGGIO →'}
       </button>
-      {status === 'error' && <p className="contactError">Errore nell&apos;invio. Scrivi a micheletornello.dev@gmail.com</p>}
+      {status === 'error' && <p className="contactError">Errore nell&apos;invio. Scrivi a micheletornello5@gmail.com</p>}
     </form>
   );
 }
@@ -349,7 +349,7 @@ export default function HomePage() {
                 <span className="chiB_lab">Inizio Docenza SJA</span>
               </div>
               <div className="chiB_stat">
-                <span className="chiB_val">100+</span>
+                <span className="chiB_val">150+</span>
                 <span className="chiB_lab">Studenti Formati</span>
               </div>
               <div className="chiB_stat">
@@ -590,7 +590,7 @@ export default function HomePage() {
                   </blockquote>
 
                   <div className="docH_stats">
-                    <StatBox value="100+" label="Studenti Formati" />
+                    <StatBox value="150+" label="Studenti Formati" />
                     <StatBox value={2022} label="Inizio Docenza" />
                     <StatBox value="SJA" label="Steve Jobs Academy" isNumber={false} />
                     <StatBox value={7} label="Materie Insegnate" />
