@@ -151,14 +151,14 @@ export default function HomePage() {
 
   const operations = [
     {
-      name: 'REC Security',
-      stack: 'Node/PostgreSQL',
-      metric: '99.9% uptime'
+      name: 'Watching Stars',
+      stack: 'Next.js/Node',
+      metric: 'Live'
     },
     {
-      name: 'Cashbee',
+      name: 'Memory Cloud',
       stack: 'Next.js/Node',
-      metric: 'Cashback'
+      metric: 'Live'
     }
   ];
 
@@ -469,7 +469,7 @@ export default function HomePage() {
               <span className="pwH_hero_num">99.9<span className="pwH_hero_pct">%</span></span>
               <div className="pwH_hero_meta">
                 <span className="pwH_hero_label">UPTIME OPERATIVO</span>
-                <span className="pwH_hero_sub">Sistemi live in produzione — REC Security · Cashbee</span>
+                <span className="pwH_hero_sub">Sistemi live in produzione — Watching Stars · Memory Cloud</span>
                 <div className="pwH_status_bus">
                   <span className="pwH_pulse"></span>
                   <code className="pwH_status_code">SYSTEM_STATUS: OPERATIONAL</code>
@@ -529,14 +529,14 @@ export default function HomePage() {
                 <div className="pwH_live_item">
                   <div className="pwH_live_dot"></div>
                   <div>
-                    <div className="pwH_live_name">REC Security</div>
-                    <div className="pwH_live_stack">PHP · React · IoT</div>
+                    <div className="pwH_live_name">Watching Stars</div>
+                    <div className="pwH_live_stack">Next.js · Node.js</div>
                   </div>
                 </div>
                 <div className="pwH_live_item">
                   <div className="pwH_live_dot"></div>
                   <div>
-                    <div className="pwH_live_name">Cashbee</div>
+                    <div className="pwH_live_name">Memory Cloud</div>
                     <div className="pwH_live_stack">Next.js · Node.js</div>
                   </div>
                 </div>
