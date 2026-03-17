@@ -211,7 +211,8 @@ h1 {
 .pwH_live_stack { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; opacity: 0.4; margin-top: 0.25rem; }
 
 /* Education */
-.pwH_edu_content { display: flex; align-items: flex-start; gap: 2.5rem; }
+.pwH_span3 { grid-column: span 3; }
+.pwH_edu_content { display: flex; align-items: flex-start; gap: 3rem; }
 .pwH_edu_num { font-family: 'Instrument Serif', serif; font-size: clamp(3rem, 6vw, 5rem); color: #B87333; line-height: 1; flex-shrink: 0; }
 .pwH_edu_plus { font-size: 0.5em; vertical-align: top; }
 .pwH_edu_copy { font-size: 0.95rem; line-height: 1.7; opacity: 0.75; margin-bottom: 1rem; }
@@ -228,7 +229,7 @@ h1 {
 /* Mobile */
 @media (max-width: 900px) {
   .pwH_grid { grid-template-columns: 1fr; }
-  .pwH_span2 { grid-column: span 1; }
+  .pwH_span2, .pwH_span3 { grid-column: span 1; }
   .pwH_hero_inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .pwH_hero_num { font-size: clamp(4rem, 20vw, 7rem); }
   .pwH_client_item { grid-template-columns: 1fr; gap: 0.25rem; }

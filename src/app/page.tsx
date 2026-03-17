@@ -537,7 +537,7 @@ export default function HomePage() {
             </div>
 
             {/* Module 3: Education — narrativo da Beta */}
-            <div className="pwH_module pwH_span2">
+            <div className="pwH_module pwH_span3">
               <div className="pwH_mod_label">KNOWLEDGE TRANSFER</div>
               <div className="pwH_edu_content">
                 <div className="pwH_edu_num">400<span className="pwH_edu_plus">+</span></div>
