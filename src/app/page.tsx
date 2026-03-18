@@ -159,7 +159,7 @@ export default function HomePage() {
             inset: '-20% 0',
             backgroundImage: "url('/desk-setup.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: '30% center',
             willChange: 'transform',
           }} 
           aria-hidden="true"
