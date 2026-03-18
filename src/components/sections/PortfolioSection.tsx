@@ -121,8 +121,6 @@ function ProjectItem({ project, index, t }: { project: any; index: number; t: an
 export default function PortfolioSection() {
   const { lang } = useLang();
   const t = translations.portfolio[lang];
-  const featured = t.items[0];
-  const list = t.items.slice(1);
 
   return (
     <section id="lavori" className="pA3_container">
@@ -217,23 +215,9 @@ export default function PortfolioSection() {
           <h2 className="pA3_title">// {lang === 'it' ? 'portfolio_live' : 'live_portfolio'} <span className="pA3_counter">[{t.items.length.toString().padStart(2, '0')}]</span></h2>
         </header>
 
-        {/* FEATURED */}
-        <div className="pA3_featured">
-          <div className="pA3_featured_watermark">01</div>
-          <div className="pA3_featured_label">Featured Project [{featured.id}]</div>
-          <div className="pA3_featured_status">// MISSION CRITICAL</div>
-          <h3 className="pA3_featured_name">{featured.title}</h3>
-          <p className="pA3_featured_desc" style={{ marginBottom: '40px', maxWidth: '800px', opacity: 0.8, lineHeight: 1.6 }}>{featured.description}</p>
-          <div className="pA3_featured_log">
-            <div className="pA3_log_item"><span className="pA3_log_label">METRIC</span><span className="pA3_log_accent">B2C + B2B</span></div>
-            <div className="pA3_log_item"><span className="pA3_log_label">STACK</span><span className="pA3_log_value">{featured.tech.join(' · ')}</span></div>
-            <div className="pA3_log_item"><span className="pA3_log_label">YEAR</span><span className="pA3_log_accent">2024</span></div>
-          </div>
-        </div>
-
         {/* LIST */}
         <div className="pA3_list">
-          {list.map((p: any, i: number) => (
+          {t.items.map((p: any, i: number) => (
             <ProjectItem key={p.id} project={p} index={i + 1} t={t} />
           ))}
         </div>
