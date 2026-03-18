@@ -81,13 +81,13 @@ const Navbar = () => {
                 return activeSection === sectionId;
               };
 
+              const active = isNavActive();
               return (
                 <Link 
                   key={link.name} 
                   href={isHome ? link.anchor : link.href}
-                  className={`font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors ${
-                    isNavActive() ? 'text-[#B87333]' : 'text-[#F2EDE8]/60 hover:text-[#B87333]'
-                  }`}
+                  className="font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors"
+                  style={{ color: active ? '#B87333' : 'rgba(242, 237, 232, 0.6)' }}
                 >
                   {link.name}
                 </Link>
@@ -95,9 +95,8 @@ const Navbar = () => {
             })}
             <Link 
               href="/speaker"
-              className={`font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors ${
-                pathname === '/speaker' ? 'text-[#B87333]' : 'text-[#F2EDE8]/60 hover:text-[#B87333]'
-              }`}
+              className="font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors"
+              style={{ color: pathname === '/speaker' ? '#B87333' : 'rgba(242, 237, 232, 0.6)' }}
             >
               [07] Speaker
             </Link>
