@@ -37,7 +37,7 @@ const startupLab = [
   {
     id: 'LAB-002',
     name: 'Ludelist',
-    description: 'Social network per videogiocatori — ricerca in 3 step per trovare player per gioco/piattaforma/regione + chat real-time',
+    description: 'Social network per videogiocatori — ricerca in 3 step per trovare player per gioco/piattaforma/regione + chat real-time. Visione futura: matchmaking automatico via API gaming.',
     stack: ['Founder/Dev'],
     status: '// IN DEVELOPMENT',
     standby: true
