@@ -48,7 +48,7 @@ export const Hero = () => {
       style={{
         backgroundImage: "url('/desk-setup.png')",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "30% center",
       }}
     >
       <div className="absolute inset-0" style={{ background: "rgba(4,4,4,0.88)" }} />
