@@ -31,7 +31,7 @@ const startupLab = [
 ];
 
 function ProjectItem({ project, index, t }: { project: any; index: number; t: any }) {
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isActive = useInView(ref, {
     margin: '-10% 0px -30% 0px',
     amount: 0.4,
@@ -39,7 +39,7 @@ function ProjectItem({ project, index, t }: { project: any; index: number; t: an
 
   return (
     <div
-      ref={ref as any}
+      ref={ref}
       className="pA3_item"
       style={{
         boxShadow: isActive ? 'inset 2px 0 0 0 #B87333' : 'inset 0px 0 0 0 #B87333',
@@ -56,15 +56,43 @@ function ProjectItem({ project, index, t }: { project: any; index: number; t: an
         {String(index + 1).padStart(2, '0')}
       </div>
       <div className="pA3_item_content">
-        <h4 className="pA3_item_name">{project.title}</h4>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <h4 className="pA3_item_name">{project.title}</h4>
+          {project.target && (
+            <span className="pA3_target_badge">
+              {project.target}
+            </span>
+          )}
+        </div>
         <p className="pA3_item_tagline">{project.description}</p>
+
+        {project.link && (
+          <a 
+            href={project.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{ 
+              fontSize: '0.75rem', 
+              color: '#B87333', 
+              textDecoration: 'none', 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '6px',
+              marginTop: '4px',
+              opacity: isActive ? 1 : 0.6,
+              transition: 'opacity 0.3s ease'
+            }}
+          >
+            → {project.link.replace('https://', '')}
+          </a>
+        )}
 
         {/* Log line — appare solo quando attivo */}
         <div
           style={{
             display: 'flex',
             gap: '20px',
-            marginTop: '8px',
+            marginTop: '12px',
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '0.72rem',
             textTransform: 'uppercase',
@@ -83,12 +111,6 @@ function ProjectItem({ project, index, t }: { project: any; index: number; t: an
             <span style={{ opacity: 0.4, marginRight: '6px' }}>YEAR</span>
             <span style={{ color: '#B87333' }}>2024</span>
           </span>
-        </div>
-
-        <div className="pA3_pills" style={{ marginTop: '10px' }}>
-          {project.tech.map((t: string) => (
-            <span key={t} className="pA3_pill">{t}</span>
-          ))}
         </div>
       </div>
       <div className="pA3_item_year">2024</div>
@@ -134,7 +156,8 @@ export default function PortfolioSection() {
         .pA3_item_tagline { font-size:.9rem; opacity:.5; max-width:800px; line-height:1.6; }
         .pA3_pills { display:flex; gap:10px; flex-wrap:wrap; }
         .pA3_pill { font-size:.7rem; padding:2px 10px; border:1.5px solid #B87333; color:#B87333; text-transform:uppercase; border-radius:100px; background:transparent; }
-        .pA3_item_year { font-size:1.2rem; color:#B87333; font-weight:600; }
+        .pA3_target_badge { font-size: 0.65rem; color: #B87333; border: 1px solid rgba(184,115,51,0.3); padding: 2px 8px; font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+        .pA3_item_year { font-size: 1.2rem; color: #B87333; font-weight: 600; }
         .pA3_hover_code { position:absolute; top:20px; right:0; font-size:.7rem; color:#B87333; opacity:0; transition:opacity .3s ease; pointer-events:none; }
 
         /* GITHUB BANNER */

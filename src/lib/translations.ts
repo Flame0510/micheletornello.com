@@ -207,14 +207,18 @@ export const translations = {
         {
           id: 'MT-OP-005',
           title: 'Watching Stars',
-          description: 'Piattaforma di memoriali digitali che unisce fisico e digitale tramite tecnologia NFC e QR Code. Gestione completa B2C e B2B con pagamenti Stripe e profili AI-driven.',
+          description: 'Piattaforma Memorial Tech che unisce tributi fisici e digitali tramite NFC e QR Code. Gestione profili commemorativi AI-driven con pagamenti Stripe. Soluzione completa per il mercato B2B (onoranze funebri) e B2C (famiglie).',
           tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
+          target: 'B2B · B2C',
+          link: 'https://watchingstars.it'
         },
         {
           id: 'MT-OP-006',
           title: 'Memory Cloud',
-          description: 'Soluzione multi-tenant dedicata alla Pubblica Amministrazione per la digitalizzazione dei servizi cimiteriali. Architettura scalabile per la gestione di migliaia di record e comuni.',
+          description: 'Software gestionale Memorial Tech / Gov-Tech per la digitalizzazione dei servizi cimiteriali nella Pubblica Amministrazione. Architettura multi-tenant scalabile progettata per il mercato B2G (Comuni).',
           tech: ['Next.js', 'Node.js', 'PostgreSQL'],
+          target: 'B2G · PA',
+          link: 'https://memorycloud.it'
         },
       ],
     },
@@ -229,14 +233,18 @@ export const translations = {
         {
           id: 'MT-OP-005',
           title: 'Watching Stars',
-          description: 'Digital memorial platform bridging physical and digital through NFC and QR technology. Full B2C and B2B management with Stripe payments and AI-driven profiles.',
+          description: 'Memorial Tech platform bridging physical and digital tributes via NFC and QR technology. AI-driven commemorative profiles with Stripe integration. Comprehensive solution for B2B (funeral homes) and B2C (families).',
           tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
+          target: 'B2B · B2C',
+          link: 'https://watchingstars.it'
         },
         {
           id: 'MT-OP-006',
           title: 'Memory Cloud',
-          description: 'Multi-tenant Gov-Tech solution for public administration cemetery services. Scalable architecture designed to manage thousands of records across multiple municipalities.',
+          description: 'Memorial Tech / Gov-Tech management software for digitalizing public administration cemetery services. Scalable multi-tenant architecture designed for the B2G market (Municipalities).',
           tech: ['Next.js', 'Node.js', 'PostgreSQL'],
+          target: 'B2G · PA',
+          link: 'https://memorycloud.it'
         },
       ],
     },
