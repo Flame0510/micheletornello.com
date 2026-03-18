@@ -199,6 +199,34 @@ export const translations = {
     it: {
       title: 'Portfolio',
       subtitle: 'Progetti live e Startup Lab.',
+      startupLab: {
+        title: '// STARTUP LAB',
+        subtitle: 'Prodotti indipendenti in sviluppo',
+        items: [
+          {
+            id: 'SL-001',
+            title: 'Cashbee',
+            status: '// COMPLETED V1',
+            tech: 'Nuxt 3',
+            description: {
+              it: 'Piattaforma di cashback e marketing digitale per PMI. Suite modulare per bar, ristoranti e piccole imprese.',
+              en: 'Cashback and digital marketing platform for SMEs. Modular suite for bars, restaurants and small businesses.'
+            },
+            target: ['B2C', 'PMI']
+          },
+          {
+            id: 'SL-002',
+            title: 'Ludelist',
+            status: '// IN DEVELOPMENT',
+            tech: 'TBD',
+            description: {
+              it: 'Social network per videogiocatori con ricerca avanzata per gioco, piattaforma e regione. Visione: matchmaking automatico via API gaming.',
+              en: 'Social network for gamers with advanced search by game, platform and region. Vision: automatic matchmaking via gaming APIs.'
+            },
+            target: ['B2C', 'Gaming']
+          }
+        ]
+      },
       githubBanner: {
         text: 'Tutto il resto vive su GitHub.',
         cta: 'github.com/Flame0510'
@@ -239,6 +267,34 @@ export const translations = {
     en: {
       title: 'Portfolio',
       subtitle: 'Live projects and Startup Lab.',
+      startupLab: {
+        title: '// STARTUP LAB',
+        subtitle: 'Independent products in development',
+        items: [
+          {
+            id: 'SL-001',
+            title: 'Cashbee',
+            status: '// COMPLETED V1',
+            tech: 'Nuxt 3',
+            description: {
+              it: 'Piattaforma di cashback e marketing digitale per PMI. Suite modulare per bar, ristoranti e piccole imprese.',
+              en: 'Cashback and digital marketing platform for SMEs. Modular suite for bars, restaurants and small businesses.'
+            },
+            target: ['B2C', 'PMI']
+          },
+          {
+            id: 'SL-002',
+            title: 'Ludelist',
+            status: '// IN DEVELOPMENT',
+            tech: 'TBD',
+            description: {
+              it: 'Social network per videogiocatori con ricerca avanzata per gioco, piattaforma e regione. Visione: matchmaking automatico via API gaming.',
+              en: 'Social network for gamers with advanced search by game, platform and region. Vision: automatic matchmaking via gaming APIs.'
+            },
+            target: ['B2C', 'Gaming']
+          }
+        ]
+      },
       githubBanner: {
         text: 'Everything else lives on GitHub.',
         cta: 'github.com/Flame0510'

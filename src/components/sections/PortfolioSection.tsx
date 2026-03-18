@@ -40,6 +40,38 @@ function GammaCard({ project, lang }: { project: any; lang: 'it' | 'en' }) {
   );
 }
 
+function StartupCard({ project, lang }: { project: any; lang: 'it' | 'en' }) {
+  return (
+    <div className="pGamma_card" style={{ opacity: 0.8, borderColor: 'rgba(184, 115, 51, 0.3)' }}>
+      <header className="pGamma_header">
+        <span className="pGamma_id">{project.id}</span>
+        <span className="pGamma_status" style={{ color: '#707070', fontFamily: 'var(--font-mono)' }}>
+          {project.status}
+        </span>
+      </header>
+      
+      <div className="pGamma_content">
+        <h3 className="pGamma_title">{project.title}</h3>
+        <div className="pGamma_sector" style={{ color: '#B87333', fontSize: '0.8rem', letterSpacing: '0.05em' }}>
+          STACK: {project.tech}
+        </div>
+        <p className="pGamma_description">{project.description[lang]}</p>
+      </div>
+
+      <footer className="pGamma_footer">
+        <div className="pGamma_target_wrapper">
+          <span className="pGamma_label">TARGET:</span>
+          <div className="pGamma_badges">
+            {project.target.map((t: string) => (
+              <span key={t} className="pGamma_badge">[{t}]</span>
+            ))}
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 export default function PortfolioSection() {
   const { lang } = useLang();
   const t = translations.portfolio[lang];
@@ -47,6 +79,7 @@ export default function PortfolioSection() {
   return (
     <section id="lavori" className="pGamma_container">
       <div className="pGamma_inner">
+        {/* LIVE PROJECTS */}
         <header className="pGamma_section_header">
           <h2 className="pGamma_section_title">
             // {lang === 'it' ? 'portfolio_live' : 'live_portfolio'} 
@@ -60,6 +93,32 @@ export default function PortfolioSection() {
           ))}
         </div>
 
+        {/* SEPARATOR */}
+        <div style={{ height: '4rem' }} />
+
+        {/* STARTUP LAB */}
+        <header className="pGamma_section_header">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <h2 className="pGamma_section_title" style={{ color: '#B87333' }}>
+              {t.startupLab.title}
+            </h2>
+            <p style={{ 
+              fontSize: '0.9rem', 
+              color: 'var(--text-dim)', 
+              fontFamily: 'var(--font-mono)',
+              opacity: 0.7 
+            }}>
+              {t.startupLab.subtitle}
+            </p>
+          </div>
+        </header>
+
+        <div className="pGamma_grid">
+          {t.startupLab.items.map((project: any) => (
+            <StartupCard key={project.id} project={project} lang={lang} />
+          ))}
+        </div>
+
         {/* GITHUB BANNER */}
         <div className="pA3_github_banner">
           <div className="pA3_github_text">{t.githubBanner.text}</div>
@@ -70,7 +129,7 @@ export default function PortfolioSection() {
 
         <footer className="pA3_summary_footer">
           <div className="pA3_summary_text">
-            TOTAL OPERATIONS: {t.items.length} · SYSTEM STATUS: OPTIMAL
+            TOTAL OPERATIONS: {t.items.length + t.startupLab.items.length} · SYSTEM STATUS: OPTIMAL
           </div>
         </footer>
       </div>
