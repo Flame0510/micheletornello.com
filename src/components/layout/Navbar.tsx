@@ -103,7 +103,7 @@ const Navbar = () => {
           </nav>
 
           <button 
-            className="md:hidden text-[#F2EDE8] focus:outline-none p-3 -mr-3"
+            className="md:hidden text-[#F2EDE8] focus-visible:outline-none p-3 -mr-3"
             onClick={() => setIsMenuOpen(true)}
             aria-label="Apri menu"
           >
@@ -125,7 +125,7 @@ const Navbar = () => {
             className="fixed inset-0 z-[100] bg-[#080808] flex flex-col items-center justify-center p-6"
           >
             <button 
-              className="absolute top-8 right-8 text-[#F2EDE8] focus:outline-none"
+              className="absolute top-8 right-8 text-[#F2EDE8] focus-visible:outline-none"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Chiudi menu"
             >

@@ -45,6 +45,27 @@ export const metadata: Metadata = {
     icon: '/logo-mt.jpg',
     shortcut: '/logo-mt.jpg',
   },
+  openGraph: {
+    title: 'Michele Tornello — System Architect · Software Engineer · Tech Educator',
+    description: 'Architetture scalabili, sviluppo web e mobile, formazione di nuovi sviluppatori.',
+    url: 'https://micheletornello.com',
+    siteName: 'Michele Tornello',
+    locale: 'it_IT',
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Michele Tornello — System Architect · Software Engineer · Tech Educator',
+    description: 'Architetture scalabili, sviluppo web e mobile, formazione di nuovi sviluppatori.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://micheletornello.com',
+  },
 };
 
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';

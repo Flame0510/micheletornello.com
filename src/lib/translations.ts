@@ -245,7 +245,7 @@ export const translations = {
           },
           tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
           target: ['B2B', 'B2C'],
-          link: 'https://watchingstars.it'
+          link: 'https://www.watchingstars.it'
         },
         {
           id: 'PRJ-002',
@@ -313,7 +313,7 @@ export const translations = {
           },
           tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
           target: ['B2B', 'B2C'],
-          link: 'https://watchingstars.it'
+          link: 'https://www.watchingstars.it'
         },
         {
           id: 'PRJ-002',
