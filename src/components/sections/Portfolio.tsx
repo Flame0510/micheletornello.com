@@ -151,7 +151,7 @@ export const Portfolio = () => {
                         ))}
                       </div>
                       <h3 className="text-2xl font-bold">{title}</h3>
-                      <p className="text-text-muted leading-relaxed">{project.description}</p>
+                      <p className="text-text-muted leading-relaxed">{project.description[lang]}</p>
                       {hasCaseStudy ? (
                         <Link
                           href={`/portfolio/${study.slug}`}

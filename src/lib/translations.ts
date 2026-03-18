@@ -205,19 +205,33 @@ export const translations = {
       },
       items: [
         {
-          id: 'MT-OP-005',
+          id: 'PRJ-001',
           title: 'Watching Stars',
-          description: 'Piattaforma Memorial Tech che unisce tributi fisici e digitali tramite NFC e QR Code. Gestione profili commemorativi AI-driven con pagamenti Stripe. Soluzione completa per il mercato B2B (onoranze funebri) e B2C (famiglie).',
+          sector: {
+            it: 'Memorial Tech',
+            en: 'Memorial Tech'
+          },
+          description: {
+            it: 'Piattaforma di tributi digitali con NFC, QR Code e Stripe. Soluzione per onoranze funebri e famiglie.',
+            en: 'Digital tribute platform with NFC, QR Code, and Stripe. Solution for funeral homes and families.'
+          },
           tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
-          target: 'B2B · B2C',
+          target: ['B2B', 'B2C'],
           link: 'https://watchingstars.it'
         },
         {
-          id: 'MT-OP-006',
+          id: 'PRJ-002',
           title: 'Memory Cloud',
-          description: 'Software gestionale Memorial Tech / Gov-Tech per la digitalizzazione dei servizi cimiteriali nella Pubblica Amministrazione. Architettura multi-tenant scalabile progettata per il mercato B2G (Comuni).',
+          sector: {
+            it: 'Memorial Tech · Gov-Tech',
+            en: 'Memorial Tech · Gov-Tech'
+          },
+          description: {
+            it: 'Software gestionale per la digitalizzazione dei servizi cimiteriali nella Pubblica Amministrazione. Multi-tenant, scalabile.',
+            en: 'Management software for digitalizing cemetery services in Public Administration. Multi-tenant, scalable.'
+          },
           tech: ['Next.js', 'Node.js', 'PostgreSQL'],
-          target: 'B2G · PA',
+          target: ['B2G', 'PA'],
           link: 'https://memorycloud.it'
         },
       ],
@@ -231,19 +245,33 @@ export const translations = {
       },
       items: [
         {
-          id: 'MT-OP-005',
+          id: 'PRJ-001',
           title: 'Watching Stars',
-          description: 'Memorial Tech platform bridging physical and digital tributes via NFC and QR technology. AI-driven commemorative profiles with Stripe integration. Comprehensive solution for B2B (funeral homes) and B2C (families).',
+          sector: {
+            it: 'Memorial Tech',
+            en: 'Memorial Tech'
+          },
+          description: {
+            it: 'Piattaforma di tributi digitali con NFC, QR Code e Stripe. Soluzione per onoranze funebri e famiglie.',
+            en: 'Digital tribute platform with NFC, QR Code, and Stripe. Solution for funeral homes and families.'
+          },
           tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
-          target: 'B2B · B2C',
+          target: ['B2B', 'B2C'],
           link: 'https://watchingstars.it'
         },
         {
-          id: 'MT-OP-006',
+          id: 'PRJ-002',
           title: 'Memory Cloud',
-          description: 'Memorial Tech / Gov-Tech management software for digitalizing public administration cemetery services. Scalable multi-tenant architecture designed for the B2G market (Municipalities).',
+          sector: {
+            it: 'Memorial Tech · Gov-Tech',
+            en: 'Memorial Tech · Gov-Tech'
+          },
+          description: {
+            it: 'Software gestionale per la digitalizzazione dei servizi cimiteriali nella Pubblica Amministrazione. Multi-tenant, scalabile.',
+            en: 'Management software for digitalizing cemetery services in Public Administration. Multi-tenant, scalable.'
+          },
           tech: ['Next.js', 'Node.js', 'PostgreSQL'],
-          target: 'B2G · PA',
+          target: ['B2G', 'PA'],
           link: 'https://memorycloud.it'
         },
       ],
