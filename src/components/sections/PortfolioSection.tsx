@@ -2,7 +2,31 @@
 import { useLang } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 
-function GammaCard({ project, lang }: { project: any; lang: 'it' | 'en' }) {
+interface LocalizedString {
+  it: string;
+  en: string;
+}
+
+interface PortfolioProject {
+  id: string;
+  title: string;
+  sector: LocalizedString;
+  description: LocalizedString;
+  tech: string[];
+  target: string[];
+  link: string;
+}
+
+interface StartupProject {
+  id: string;
+  title: string;
+  status: string;
+  tech: string;
+  description: LocalizedString;
+  target: string[];
+}
+
+function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 'en' }) {
   return (
     <div className="pGamma_card">
       <header className="pGamma_header">
@@ -40,7 +64,7 @@ function GammaCard({ project, lang }: { project: any; lang: 'it' | 'en' }) {
   );
 }
 
-function StartupCard({ project, lang }: { project: any; lang: 'it' | 'en' }) {
+function StartupCard({ project, lang }: { project: StartupProject; lang: 'it' | 'en' }) {
   return (
     <div className="pGamma_card" style={{ opacity: 0.8, borderColor: 'rgba(184, 115, 51, 0.3)' }}>
       <header className="pGamma_header">
@@ -88,7 +112,7 @@ export default function PortfolioSection() {
         </header>
 
         <div className="pGamma_grid">
-          {t.items.map((project: any) => (
+          {t.items.map((project: PortfolioProject) => (
             <GammaCard key={project.id} project={project} lang={lang} />
           ))}
         </div>
@@ -114,7 +138,7 @@ export default function PortfolioSection() {
         </header>
 
         <div className="pGamma_grid">
-          {t.startupLab.items.map((project: any) => (
+          {t.startupLab.items.map((project: StartupProject) => (
             <StartupCard key={project.id} project={project} lang={lang} />
           ))}
         </div>

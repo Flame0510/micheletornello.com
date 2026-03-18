@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useInView as useFramerInView } from 'framer-motion';
 import { useParallax } from '@/hooks/useParallax';
 import PortfolioSection from '@/components/sections/PortfolioSection';
+import Image from 'next/image';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -345,7 +346,7 @@ export default function HomePage() {
         <div className="chiB_container">
           <div className="chiB_visual">
             <div className="chiB_photoBox">
-              <img src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" />
+              <Image src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" fill style={{ objectFit: 'cover', filter: 'grayscale(1) contrast(1.1)' }} />
               <div className="chiB_texture"></div>
             </div>
 
@@ -568,7 +569,7 @@ export default function HomePage() {
             <div className="docH_grid">
               <div className="docH_visual">
                 <div className="docH_imageWrapper">
-                  <img src="/academy-class.jpg" alt="Michele Tornello in aula" className="docH_img" />
+                  <Image src="/academy-class.jpg" alt="Michele Tornello in aula" className="docH_img" fill style={{ objectFit: 'cover', filter: 'grayscale(1) contrast(1.1)', transition: 'transform 0.8s cubic-bezier(0.16,1,0.3,1)' }} />
                   <div className="docH_imageOverlay"></div>
                 </div>
                 <div className="docH_imgMeta">
