@@ -51,7 +51,7 @@ export const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0" style={{ background: "rgba(6,6,6,0.75)" }} />
+      <div className="absolute inset-0" style={{ background: "rgba(4,4,4,0.88)" }} />
       <div className="relative z-10 px-6 md:px-16 max-w-[1120px] mx-auto w-full">
         <div ref={word1Ref} className="font-display leading-none mb-2" style={{ fontSize: "clamp(3rem, 8vw, 7rem)", color: "#E8E8E8" }}>
           Costruisco sistemi.
