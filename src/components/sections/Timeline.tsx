@@ -79,9 +79,9 @@ export const Timeline = () => {
           {events.map((e, i) => (
             <motion.div
               key={`${e.year}-${i}`}
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative flex items-start gap-8 py-6 overflow-hidden"
             >

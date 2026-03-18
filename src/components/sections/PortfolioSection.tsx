@@ -34,7 +34,14 @@ const startupLab = [
     status: '// COMPLETED V1',
     standby: true
   },
-
+  {
+    id: 'LAB-002',
+    name: 'Ludelist',
+    description: 'Social network per videogiocatori — ricerca in 3 step per trovare player per gioco/piattaforma/regione + chat real-time',
+    stack: ['Founder/Dev'],
+    status: '// IN DEVELOPMENT',
+    standby: true
+  },
 ];
 
 function ProjectItem({ project, index }: { project: typeof projects[0]; index: number }) {

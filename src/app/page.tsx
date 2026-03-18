@@ -144,6 +144,11 @@ export default function HomePage() {
     },
     {
       year: '2024',
+      title: 'LAUREA IN INGEGNERIA INFORMATICA',
+      text: 'BSc Computer Engineering — Percorso accademico focalizzato su sistemi complessi e architetture software.',
+    },
+    {
+      year: '2024',
       title: 'SYSTEM THINKING',
       text: 'Focus su sistemi duraturi: design decisionale, manutenzione evolutiva, impatto.',
     },
