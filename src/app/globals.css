@@ -41,7 +41,7 @@ main {
 .hero {
   min-height: 100vh;
   background-size: cover;
-  background-position: center;
+  background-position: 30% center;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -54,7 +54,6 @@ main {
     min-height: 100svh;
     align-items: center;
     padding: 7rem 1.4rem 3rem;
-    background-position: 30% center;
   }
 }
 
