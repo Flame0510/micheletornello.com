@@ -16,15 +16,15 @@ import {
 
 // Content
 const bio = {
-  short: "Michele Tornello è System Architect, sviluppatore full-stack e docente presso la Steve Jobs Academy. Lavora alla progettazione di architetture scalabili per applicazioni web e mobile e sviluppa prodotti digitali indipendenti. È stato intervistato da RTL 102.5 e partecipa attivamente alla community tecnologica italiana.",
-  long: "Michele Tornello è System Architect, sviluppatore full-stack e docente presso la Steve Jobs Academy. Si occupa della progettazione di architetture software scalabili e dello sviluppo di applicazioni web e mobile utilizzate in contesti reali.\n\nLavora con tecnologie moderne dell'ecosistema JavaScript come React, Next.js e React Native, oltre ad avere esperienza con Angular, Vue, Nuxt, PHP e Java. Parallelamente allo sviluppo professionale si dedica alla formazione di nuovi programmatori, contribuendo alla crescita della nuova generazione di sviluppatori.\n\nHa sviluppato diversi progetti digitali indipendenti e partecipa attivamente alla community tecnologica italiana. È stato intervistato da RTL 102.5 e ha collaborato come volontario con TEDx Catania."
+  short: "Michele Tornello è System Architect, Software Engineer e docente presso la Steve Jobs Academy. Lavora alla progettazione di architetture scalabili per applicazioni web e mobile e sviluppa prodotti digitali indipendenti. È stato intervistato da RTL 102.5 e partecipa attivamente alla community tecnologica italiana.",
+  long: "Michele Tornello è System Architect, Software Engineer e docente presso la Steve Jobs Academy. Si occupa della progettazione di architetture software scalabili e dello sviluppo di applicazioni web e mobile utilizzate in contesti reali.\n\nLavora con tecnologie moderne dell'ecosistema JavaScript come React, Next.js e React Native, oltre ad avere esperienza con Angular, Vue, Nuxt, PHP e Java. Parallelamente allo sviluppo professionale si dedica alla formazione di nuovi programmatori, contribuendo alla crescita della nuova generazione di sviluppatori.\n\nHa sviluppato diversi progetti digitali indipendenti e partecipa attivamente alla community tecnologica italiana. È stato intervistato da RTL 102.5 e ha collaborato come volontario con TEDx Catania."
 };
 
 const topics = [
   {
-    title: "Costruire applicazioni reali con React e React Native",
-    subtitle: "Dal primo prototipo alla produzione: come progettare codebase mantenibili e scalabili per applicazioni web e mobile.",
-    abstract: "Il passaggio da un prototipo a un prodotto in produzione richiede rigore architettonico. Questo talk esplora come progettare sistemi web e mobile che durano nel tempo, concentrandosi su architettura di progetto, gestione dello stato, modularità del codice e risoluzione degli errori comuni che rallentano lo scaling.",
+    title: "Sviluppo software e architetture enterprise",
+    subtitle: "Dal primo prototipo alla produzione: come progettare codebase mantenibili e scalabili.",
+    abstract: "Il passaggio da un prototipo a un prodotto in produzione richiede rigore architettonico. Questo talk esplora come progettare sistemi che durano nel tempo, concentrandosi su architettura di progetto, gestione dello stato, modularità del codice e risoluzione degli errori comuni che rallentano lo scaling.",
     format: "Talk tecnico (30-45 min)",
     target: "Web & Mobile Developer, Tech Lead",
     icon: <Cpu className="w-5 h-5" />
@@ -179,8 +179,8 @@ export default function SpeakerPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             <div>
-              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-3">Web & Mobile</h3>
-              <p className="text-lg">React, Next.js, Vue, Nuxt, Angular / React Native</p>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-3">Sistemi Web & Mobile</h3>
+              <p className="text-lg">React, Next.js, Vue, Nuxt, Angular, React Native</p>
             </div>
             <div>
               <h3 className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-3">Backend & Architecture</h3>

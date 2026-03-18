@@ -30,7 +30,7 @@ const startupLab = [
     name: 'Cashbee',
     url: 'cashbee.it',
     description: 'Piattaforma cashback e marketing digitale per PMI (bar, ristoranti, negozi). Visione: suite modulare per digitalizzare le piccole imprese ancora su carta.',
-    stack: ['React Native', 'App'],
+    stack: ['Nuxt 3', 'App'],
     status: '// COMPLETED V1',
     standby: true
   },

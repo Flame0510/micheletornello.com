@@ -39,7 +39,7 @@ export const Press = () => {
 
   const pressItems = [
     { label: "RTL 102.5", title: lang === "it" ? "Intervista in diretta nazionale" : "National live interview", year: "2024" },
-    { label: "Università di Catania", title: lang === "it" ? "Speaker React Native" : "React Native Speaker", year: "2024" },
+    { label: "Università di Catania", title: lang === "it" ? "Speaker · Architetture Mobile" : "Speaker · Mobile Architectures", year: "2024" },
     { label: "TEDx Catania", title: lang === "it" ? "Staff organizzativo" : "Organizing Staff", year: "2023" },
   ];
 

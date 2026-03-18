@@ -138,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
     gradient: 'from-green-600/20 to-emerald-500/20',
     image: '/cashbee.jpg',
     status: 'standby',
-    tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind'],
+    tech: ['Nuxt 3', 'Node.js', 'PostgreSQL', 'Tailwind'],
     content: {
       it: {
         title: 'Cashbee',
@@ -146,7 +146,7 @@ export const caseStudies: CaseStudy[] = [
         overview: 'Startup Lab — suite di strumenti (cashback, gestionale, advertising, CRM) per digitalizzare le piccole imprese. App online, sviluppo in standby.',
         challenge: ['Creazione di un motore di cashback modulare.', 'Integrazione di sistemi di pagamento e CRM.', 'Scalabilità per gestire flussi di transazioni elevati.'],
         solution: [
-          { label: 'Stack', description: 'Next.js, Node.js, PostgreSQL' },
+          { label: 'Stack', description: 'Nuxt 3, Node.js, PostgreSQL' },
           { label: 'Core', description: 'Motore di cashback e CRM integrato' },
         ],
         results: [
@@ -161,7 +161,7 @@ export const caseStudies: CaseStudy[] = [
         overview: 'Startup Lab — suite of tools (cashback, management, advertising, CRM) to digitalize small businesses. App online, development on standby.',
         challenge: ['Building a modular cashback engine.', 'Payment and CRM systems integration.', 'Scalability for high transaction volumes.'],
         solution: [
-          { label: 'Stack', description: 'Next.js, Node.js, PostgreSQL' },
+          { label: 'Stack', description: 'Nuxt 3, Node.js, PostgreSQL' },
           { label: 'Core', description: 'Integrated cashback engine and CRM' },
         ],
         results: [

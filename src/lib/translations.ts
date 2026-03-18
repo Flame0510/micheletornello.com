@@ -3,14 +3,14 @@ export type Lang = 'it' | 'en';
 export const translations = {
   meta: {
     it: {
-      title: 'Michele Tornello — Product Engineer & System Architect',
+      title: 'Michele Tornello — System Architect · Software Engineer',
       description:
-        'Full-Stack Development, System Architecture e consulenza tecnica per startup e aziende. Docente Steve Jobs Academy in Sicilia.',
+        'System Architecture, Software Engineering e consulenza tecnica per startup e aziende. Docente Steve Jobs Academy in Sicilia.',
     },
     en: {
-      title: 'Michele Tornello — Product Engineer & System Architect',
+      title: 'Michele Tornello — System Architect · Software Engineer',
       description:
-        'Full-Stack Development, System Architecture and tech consulting for startups and enterprises. Steve Jobs Academy instructor in Sicily.',
+        'System Architecture, Software Engineering and tech consulting for startups and enterprises. Steve Jobs Academy instructor in Sicily.',
     },
   },
   navbar: {
@@ -33,7 +33,7 @@ export const translations = {
   },
   hero: {
     it: {
-      versionLine: 'PRODUCT ENGINEER · FULL-STACK · SYSTEM ARCHITECT',
+      versionLine: 'SYSTEM ARCHITECT · SOFTWARE ENGINEER · TECH EDUCATOR',
       roleLine: 'Costruisco prodotti digitali scalabili, dal concept al deploy.',
       briefBio:
         "Aiuto startup e aziende a trasformare requisiti complessi in software affidabile. Architettura prima, codice pulito dopo.",
@@ -42,7 +42,7 @@ export const translations = {
       ctaAcademy: 'Academy',
     },
     en: {
-      versionLine: 'PRODUCT ENGINEER · FULL-STACK · SYSTEM ARCHITECT',
+      versionLine: 'SYSTEM ARCHITECT · SOFTWARE ENGINEER · TECH EDUCATOR',
       roleLine: 'I build scalable digital products, from concept to deployment.',
       briefBio:
         'I help startups and companies turn complex requirements into reliable software. Architecture first, clean code second.',
@@ -68,8 +68,8 @@ export const translations = {
   about: {
     it: {
       title: 'Chi Sono',
-      subtitle: 'Ingegnere, non solo sviluppatore.',
-      bio: "Con un background che unisce la solidità dell'ingegneria informatica alla velocità dello sviluppo freelance, aiuto startup e aziende a costruire prodotti digitali che durano nel tempo. Non scrivo solo codice: progetto sistemi. Insegno quello che costruisco — in aula, in presenza, alla Steve Jobs Academy.",
+      subtitle: 'System Architect, non solo sviluppatore.',
+      bio: "Con un background che unisce la solidità dell'architettura software alla velocità dello sviluppo enterprise, aiuto startup e aziende a costruire prodotti digitali che durano nel tempo. Non scrivo solo codice: progetto sistemi. Insegno quello che costruisco — in aula, in presenza, alla Steve Jobs Academy.",
       pathLabel: 'Il mio percorso',
       education: [
         { label: 'Perito Industriale Informatico', detail: '' },
@@ -79,8 +79,8 @@ export const translations = {
     },
     en: {
       title: 'About',
-      subtitle: 'Engineer, not just a developer.',
-      bio: "With a background that combines the rigor of computer engineering with the speed of freelance development, I help startups and companies build digital products that last. I don't just write code — I design systems. I teach what I build, in person, at the Steve Jobs Academy.",
+      subtitle: 'System Architect, not just a developer.',
+      bio: "With a background that combines the rigor of software architecture with the speed of enterprise development, I help startups and companies build digital products that last. I don't just write code — I design systems. I teach what I build, in person, at the Steve Jobs Academy.",
       pathLabel: 'My path',
       education: [
         { label: 'Industrial Technical Diploma (Computer Science)', detail: '' },
@@ -95,7 +95,7 @@ export const translations = {
       subtitle: 'Quello che faccio, fatto bene.',
       items: [
         {
-          title: 'Full-Stack Development',
+          title: 'Software Engineering',
           description:
             "Dal database all'interfaccia, costruisco applicazioni web e mobile complete. Stack moderno, codice manutenibile, zero debito tecnico nascosto.",
         },
@@ -116,7 +116,7 @@ export const translations = {
       subtitle: 'What I do, done right.',
       items: [
         {
-          title: 'Full-Stack Development',
+          title: 'Software Engineering',
           description:
             'From database to interface, I build complete web and mobile applications. Modern stack, maintainable code, zero hidden tech debt.',
         },
@@ -306,13 +306,13 @@ export const translations = {
       title: 'Stack',
       subtitle: 'Tecnologie che uso in produzione — nessuna moda, tutto verificato.',
       categories: {
-        frontend: 'Frontend',
+        web_mobile: 'Web & Mobile',
         backend: 'Backend',
         infra: 'Infra & DevOps',
       },
       columns: [
         {
-          title: 'Frontend',
+          title: 'Web & Mobile',
           items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
         },
         {
@@ -329,13 +329,13 @@ export const translations = {
       title: 'Stack',
       subtitle: 'Technologies I use in production — no hype, all battle-tested.',
       categories: {
-        frontend: 'Frontend',
+        web_mobile: 'Web & Mobile',
         backend: 'Backend',
         infra: 'Infra & DevOps',
       },
       columns: [
         {
-          title: 'Frontend',
+          title: 'Web & Mobile',
           items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
         },
         {

@@ -10,7 +10,7 @@ const events = [
   { year: "2020", it: "Studente · Steve Jobs Academy, Catania", en: "Student · Steve Jobs Academy, Catania" },
   { year: "2022", it: "Assunto · Paradigma SPA (tempo indeterminato)", en: "Hired · Paradigma SPA (permanent contract)" },
   { year: "2024", it: "Docente · Steve Jobs Academy", en: "Teacher · Steve Jobs Academy" },
-  { year: "2024", it: "Speaker · React Native · Università di Catania", en: "Speaker · React Native · University of Catania" },
+  { year: "2024", it: "Speaker · Architetture Mobile · Università di Catania", en: "Speaker · Mobile Architectures · University of Catania" },
   { year: "2024", it: "RTL 102.5 · Intervista in diretta nazionale", en: "RTL 102.5 · National live radio interview" },
 ];
 

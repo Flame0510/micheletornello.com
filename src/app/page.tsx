@@ -256,7 +256,7 @@ export default function HomePage() {
         <div className="credStrip_items">
           <span className="credStrip_item"><span className="credStrip_name">RTL 102.5</span><span className="credStrip_role">Intervista in diretta nazionale</span></span>
           <span className="credStrip_sep">·</span>
-          <span className="credStrip_item"><span className="credStrip_name">Università di Catania</span><span className="credStrip_role">Speaker React Native</span></span>
+          <span className="credStrip_item"><span className="credStrip_name">Università di Catania</span><span className="credStrip_role">Speaker · Architetture Mobile</span></span>
           <span className="credStrip_sep">·</span>
           <span className="credStrip_item"><span className="credStrip_name">TEDx Catania</span><span className="credStrip_role">Staff Volontario</span></span>
           <span className="credStrip_sep">·</span>
@@ -371,7 +371,7 @@ export default function HomePage() {
                 Poi il codice.
               </h2>
               <p className="chiB_intro">
-                Tornello, Michele — System Architect e Developer Full-Stack con oltre 3 anni di esperienza su sistemi enterprise in produzione. 
+                Tornello, Michele — System Architect · Software Engineer · Tech Educator con oltre 3 anni di esperienza su sistemi enterprise in produzione. 
                 Assunto a tempo indeterminato da Paradigma SPA nel 2022.
               </p>
             </header>
@@ -455,7 +455,7 @@ export default function HomePage() {
             {/* Main Card: Enterprise Impact - span 8 */}
             <div className="pv3G_card pv3G_col8 pv3G_enterprise">
               <div className="pv3G_card_content">
-                <div className="pv3G_meta">2022 — 2024 · SENIOR FRONTEND / REACT NATIVE</div>
+                <div className="pv3G_meta">2022 — 2024 · SYSTEM ARCHITECT · ENTERPRISE</div>
                 <h3 className="pv3G_card_title">Enterprise Systems Architecture</h3>
                 <div className="pv3G_stats_grid">
                   {[
@@ -484,7 +484,7 @@ export default function HomePage() {
                 <div className="pv3G_meta">DOCENZA · SJA CATANIA</div>
                 <div className="pv3G_big_stat">150+</div>
                 <p className="pv3G_card_text">
-                  Developer formati presso la <strong>Steve Jobs Academy</strong> di Catania. Architetture enterprise, React Native e standard di qualità industriale.
+                  Developer formati presso la <strong>Steve Jobs Academy</strong> di Catania. Architetture enterprise, sistemi mobile e standard di qualità industriale.
                 </p>
               </div>
             </div>
@@ -495,7 +495,7 @@ export default function HomePage() {
                 <div className="pv3G_meta">PRESENZA VERIFICABILE</div>
                 <ul className="pv3G_list">
                   <li><strong>RTL 102.5</strong><span>Intervista nazionale</span></li>
-                  <li><strong>UniCT</strong><span>Speaker React Native</span></li>
+                  <li><strong>UniCT</strong><span>Speaker · Architetture Mobile</span></li>
                   <li><strong>TEDx Catania</strong><span>Staff volontario</span></li>
                 </ul>
               </div>
