@@ -198,67 +198,45 @@ export const translations = {
   portfolio: {
     it: {
       title: 'Portfolio',
-      subtitle: 'Alcuni progetti recenti.',
+      subtitle: 'Progetti live e Startup Lab.',
+      githubBanner: {
+        text: 'Tutto il resto vive su GitHub.',
+        cta: 'github.com/Flame0510'
+      },
       items: [
         {
-          title: 'REC Security',
-          description:
-            'Turni e presenze per 80 operatori, passando da Excel su WhatsApp a una gestione centralizzata con conferme in tempo reale.',
-          tech: ['Next.js', 'TypeScript', 'Tailwind'],
-          gradient: 'from-blue-600/20 to-cyan-500/20',
+          id: 'MT-OP-005',
+          title: 'Watching Stars',
+          description: 'Piattaforma di memoriali digitali che unisce fisico e digitale tramite tecnologia NFC e QR Code. Gestione completa B2C e B2B con pagamenti Stripe e profili AI-driven.',
+          tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
         },
         {
-          title: 'Casa Vacanze Kastalia',
-          description:
-            'Canale diretto per 8 appartamenti a Siracusa, con sincronizzazione OTA e pagamenti Stripe per ridurre le commissioni.',
-          tech: ['React', 'Node.js', 'PostgreSQL'],
-          gradient: 'from-orange-500/20 to-red-500/20',
-        },
-        {
-          title: 'Ludelist',
-          description:
-            'Side project nato da 120+ giochi personali: organizzazione collezioni e serate con disponibilità del gruppo e suggerimenti rapidi.',
-          tech: ['PHP', 'Laravel', 'Vue.js'],
-          gradient: 'from-purple-600/20 to-pink-500/20',
-        },
-        {
-          title: 'Pong Multiplayer',
-          description: 'Progetto finale Academy — gioco multiplayer online in Ionic.',
-          tech: ['Ionic', 'TypeScript', 'WebSocket'],
-          gradient: 'from-amber-500/20 to-yellow-400/20',
+          id: 'MT-OP-006',
+          title: 'Memory Cloud',
+          description: 'Soluzione multi-tenant dedicata alla Pubblica Amministrazione per la digitalizzazione dei servizi cimiteriali. Architettura scalabile per la gestione di migliaia di record e comuni.',
+          tech: ['Next.js', 'Node.js', 'PostgreSQL'],
         },
       ],
     },
     en: {
       title: 'Portfolio',
-      subtitle: 'Some recent projects.',
+      subtitle: 'Live projects and Startup Lab.',
+      githubBanner: {
+        text: 'Everything else lives on GitHub.',
+        cta: 'github.com/Flame0510'
+      },
       items: [
         {
-          title: 'REC Security',
-          description:
-            'Shifts and attendance for 80 operators, replacing Excel-on-WhatsApp with centralized management and real-time confirmations.',
-          tech: ['Next.js', 'TypeScript', 'Tailwind'],
-          gradient: 'from-blue-600/20 to-cyan-500/20',
+          id: 'MT-OP-005',
+          title: 'Watching Stars',
+          description: 'Digital memorial platform bridging physical and digital through NFC and QR technology. Full B2C and B2B management with Stripe payments and AI-driven profiles.',
+          tech: ['Next.js', 'AI', 'Stripe', 'NFC'],
         },
         {
-          title: 'Casa Vacanze Kastalia',
-          description:
-            'Direct channel for 8 Syracuse apartments, with OTA calendar sync and Stripe payments to cut commission costs.',
-          tech: ['React', 'Node.js', 'PostgreSQL'],
-          gradient: 'from-orange-500/20 to-red-500/20',
-        },
-        {
-          title: 'Ludelist',
-          description:
-            'Side project from a 120+ personal collection: organize board games and game nights with group availability and fast suggestions.',
-          tech: ['PHP', 'Laravel', 'Vue.js'],
-          gradient: 'from-purple-600/20 to-pink-500/20',
-        },
-        {
-          title: 'Pong Multiplayer',
-          description: 'Academy final project — online multiplayer game in Ionic.',
-          tech: ['Ionic', 'TypeScript', 'WebSocket'],
-          gradient: 'from-amber-500/20 to-yellow-400/20',
+          id: 'MT-OP-006',
+          title: 'Memory Cloud',
+          description: 'Multi-tenant Gov-Tech solution for public administration cemetery services. Scalable architecture designed to manage thousands of records across multiple municipalities.',
+          tech: ['Next.js', 'Node.js', 'PostgreSQL'],
         },
       ],
     },
