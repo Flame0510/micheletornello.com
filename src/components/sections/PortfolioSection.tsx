@@ -28,7 +28,7 @@ interface StartupProject {
 
 function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 'en' }) {
   return (
-    <div className="pGamma_card">
+    <div className="pGamma_card group">
       <header className="pGamma_header">
         <span className="pGamma_id">{project.id}</span>
         <span className="pGamma_status">
@@ -55,9 +55,9 @@ function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 
           href={project.link} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="pGamma_link"
+          className="pGamma_link text-[#F2EDE8] hover:text-[#B87333] transition-colors"
         >
-          ↗ {project.link.replace('https://', '')}
+          ↗ {project.link.replace('https://', '').replace('www.', '')}
         </a>
       </footer>
     </div>
@@ -66,10 +66,10 @@ function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 
 
 function StartupCard({ project, lang }: { project: StartupProject; lang: 'it' | 'en' }) {
   return (
-    <div className="pGamma_card" style={{ opacity: 0.8, borderColor: 'rgba(184, 115, 51, 0.3)' }}>
+    <div className="pGamma_card opacity-80" style={{ borderColor: 'rgba(184, 115, 51, 0.2)' }}>
       <header className="pGamma_header">
         <span className="pGamma_id">{project.id}</span>
-        <span className="pGamma_status" style={{ color: '#707070', fontFamily: 'var(--font-mono)' }}>
+        <span className="pGamma_status" style={{ color: '#707070', fontFamily: 'var(--font-jetbrains-mono)' }}>
           {project.status}
         </span>
       </header>
