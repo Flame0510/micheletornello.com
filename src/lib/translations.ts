@@ -439,10 +439,10 @@ export const translations = {
     it: {
       backHome: 'Torna alla Home',
       badge: 'Docenza Steve Jobs Academy',
-      heroTitle: 'Steve Jobs Academy',
+      heroTitle: 'Steve Jobs Academy – Dove la teoria incontra il codice.',
       heroSubtitle: 'Formazione tecnica in presenza, in Sicilia.',
       intro:
-        'Insegno sviluppo software e architettura dei sistemi alla Steve Jobs Academy. Lezioni in aula, esercitazioni pratiche, progetti reali. Quello che porto in classe è lo stesso approccio che uso con i miei clienti: risolvere problemi concreti con strumenti concreti.',
+        'Insegno sviluppo software e architettura dei sistemi alla Steve Jobs Academy. Lezioni in aula, esercitazioni pratiche, progetti reali. Più di 150 studenti formati, 3 sedi in Sicilia, talk universitari e workshop. Trasferisco l’esperienza concreta di chi costruisce software per professione.',
       infoTitle: 'Info Corsi',
       infoCard: {
         yearLabel: 'Anno Accademico',
@@ -458,10 +458,10 @@ export const translations = {
     en: {
       backHome: 'Back to Home',
       badge: 'Steve Jobs Academy Instructor',
-      heroTitle: 'Steve Jobs Academy',
+      heroTitle: 'Steve Jobs Academy – Where theory meets code.',
       heroSubtitle: 'In-person technical training, in Sicily.',
       intro:
-        'I teach software development and system architecture at the Steve Jobs Academy. Classroom lectures, hands-on exercises, real projects. What I bring to class is the same approach I use with my clients: solving real problems with real tools.',
+        'I teach software development and system architecture at the Steve Jobs Academy. Classroom lectures, hands‑on exercises, real projects. Over 150 students trained, 3 locations in Sicily, university talks and workshops. I transfer the concrete experience of someone who builds software for a living.',
       infoTitle: 'Course Info',
       infoCard: {
         yearLabel: 'Academic Year',
@@ -473,6 +473,36 @@ export const translations = {
       resourcesLabel: 'Slides & Resources',
       repositoryLabel: 'Repository',
       comingSoon: 'coming soon',
+    },
+  },
+  academyStats: {
+    it: {
+      title: 'Impatto Reale',
+      subtitle: 'Numeri che raccontano il percorso.',
+      stats: [
+        { value: '150+', label: 'Studenti formati' },
+        { value: '3', label: 'Sedi attive' },
+        { value: '500+', label: 'Ore di docenza' },
+        { value: '10+', label: 'Talk universitari' },
+        { value: '5+', label: 'Workshop organizzati' },
+        { value: '2', label: 'Panel come speaker' },
+      ],
+      cta: 'Vuoi portare questa esperienza nella tua università o azienda?',
+      ctaButton: 'Contattami',
+    },
+    en: {
+      title: 'Real Impact',
+      subtitle: 'Numbers that tell the journey.',
+      stats: [
+        { value: '150+', label: 'Students trained' },
+        { value: '3', label: 'Active locations' },
+        { value: '500+', label: 'Teaching hours' },
+        { value: '10+', label: 'University talks' },
+        { value: '5+', label: 'Workshops organized' },
+        { value: '2', label: 'Speaker panels' },
+      ],
+      cta: 'Want to bring this experience to your university or company?',
+      ctaButton: 'Get in touch',
     },
   },
   contact: {
