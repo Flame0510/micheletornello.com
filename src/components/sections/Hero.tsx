@@ -56,7 +56,7 @@ export const Hero = () => {
         <div ref={word1Ref} className="font-display leading-none mb-2" style={{ fontSize: "clamp(3rem, 8vw, 7rem)", color: "#E8E8E8" }}>
           Costruisco sistemi.
         </div>
-        <div ref={word2Ref} className="font-display leading-none mb-8" style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)", color: "#C9A84C" }}>
+        <div ref={word2Ref} className="font-display leading-none mb-8" style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)", color: "var(--color-brand-alt)" }}>
           Formo chi li costruirà.
         </div>
         <div ref={taglineRef} className="font-mono text-sm mb-6" style={{ color: "#707070", letterSpacing: "0.1em" }}>

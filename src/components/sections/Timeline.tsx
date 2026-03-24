@@ -90,12 +90,12 @@ export const Timeline = () => {
                   text={e.year}
                   duration={400}
                   className="font-mono text-sm"
-                  style={{ color: "#C9A84C", fontFeatureSettings: '"liga" 0, "calt" 0' }}
+                  style={{ color: "var(--color-brand-alt)", fontFeatureSettings: '"liga" 0, "calt" 0' }}
                 />
               </div>
               <div
                 className="absolute left-[76px] top-[26px] w-2 h-2 rounded-full"
-                style={{ background: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.6)", zIndex: 10 }}
+                style={{ background: "var(--color-brand-alt)", boxShadow: "0 0 8px rgba(201,168,76,0.6)", zIndex: 10 }}
               />
               <div className="pt-0.5 pl-6 flex-1 min-w-0 relative z-10">
                 <p className="text-text-main text-base leading-relaxed" style={{ fontFeatureSettings: '"liga" 0, "calt" 0' }}>

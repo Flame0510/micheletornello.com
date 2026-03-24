@@ -41,7 +41,7 @@ export default function AcademyPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start relative z-10">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "#B87333" }}>
+            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "var(--color-brand)" }}>
               Docenza · Steve Jobs Academy
             </p>
             <h1 className="font-display leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "#E8E8E8", letterSpacing: "-0.03em" }}>
@@ -57,7 +57,7 @@ export default function AcademyPage() {
             className="rounded-sm p-6 space-y-4"
             style={{ border: "1px solid rgba(184,115,51,0.15)", background: "rgba(184,115,51,0.03)" }}
           >
-            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "#B87333" }}>
+            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-brand)" }}>
               {t.infoTitle}
             </p>
             <ul className="space-y-3">
@@ -68,7 +68,7 @@ export default function AcademyPage() {
                 t.infoCard.cta,
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#707070" }}>
-                  <span style={{ color: "#B87333" }}>·</span>
+                  <span style={{ color: "var(--color-brand)" }}>·</span>
                   {item}
                 </li>
               ))}
@@ -116,7 +116,7 @@ export default function AcademyPage() {
           <motion.a
             href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
             className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-            style={{ background: "#B87333", color: "#080808" }}
+            style={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -127,8 +127,8 @@ export default function AcademyPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-            style={{ border: "1px solid #B87333", color: "#B87333" }}
-            whileHover={{ background: "#B87333", color: "#080808" }}
+            style={{ border: "1px solid var(--color-brand)", color: "var(--color-brand)" }}
+            whileHover={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
             whileTap={{ scale: 0.98 }}
           >
             {lang === "it" ? "Scrivimi su WhatsApp" : "Message on WhatsApp"}

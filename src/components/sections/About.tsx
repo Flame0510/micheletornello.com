@@ -73,7 +73,7 @@ export const About = () => {
           <div className="space-y-4 text-text-muted leading-relaxed">
             <p className="text-lg whitespace-pre-line">{t.about}</p>
             <p className="font-mono text-sm leading-relaxed">{t.teaching}</p>
-            <p className="font-mono leading-relaxed" style={{ fontSize: "0.75rem", color: "#C9A84C", fontStyle: "italic" }}>
+            <p className="font-mono leading-relaxed" style={{ fontSize: "0.75rem", color: "var(--color-brand-alt)", fontStyle: "italic" }}>
               {t.rubik}
             </p>
           </div>

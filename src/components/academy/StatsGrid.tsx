@@ -13,7 +13,7 @@ export default function StatsGrid() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "#B87333" }}>
+      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--color-brand)" }}>
         02
       </p>
       <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
@@ -40,9 +40,9 @@ export default function StatsGrid() {
               whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
             >
               <div className="absolute top-6 right-6">
-                <Icon size={24} style={{ color: "#B87333", opacity: 0.5 }} />
+                <Icon size={24} style={{ color: "var(--color-brand)", opacity: 0.5 }} />
               </div>
-              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "#B87333" }}>
+              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "var(--color-brand)" }}>
                 {stat.value}
               </div>
               <div className="font-mono text-sm uppercase tracking-widest" style={{ color: "#707070" }}>
@@ -53,13 +53,13 @@ export default function StatsGrid() {
         })}
       </div>
       <div className="mt-24 text-center">
-        <p className="text-xl mb-8" style={{ color: "#F2EDE8" }}>
+        <p className="text-xl mb-8" style={{ color: "var(--color-text)" }}>
           {t.cta}
         </p>
         <motion.a
           href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
           className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-          style={{ background: "#B87333", color: "#080808" }}
+          style={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
         >

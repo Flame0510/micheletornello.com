@@ -88,8 +88,8 @@ export default function ChiSonoSection() {
               href="#contatto"
               style={{
                 display: 'inline-block',
-                background: '#B87333',
-                color: '#080808',
+                background: 'var(--color-brand)',
+                color: 'var(--color-bg)',
                 fontFamily: 'var(--font-jetbrains-mono), monospace',
                 fontSize: '0.8rem',
                 fontWeight: 700,

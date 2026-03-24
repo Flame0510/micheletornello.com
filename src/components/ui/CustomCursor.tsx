@@ -62,8 +62,8 @@ export const CustomCursor = () => {
       style={{
         width: hovered ? 32 : 8,
         height: hovered ? 32 : 8,
-        background: hovered ? "transparent" : "#C9A84C",
-        border: hovered ? "1px solid #C9A84C" : "none",
+        background: hovered ? "transparent" : "var(--color-brand-alt)",
+        border: hovered ? "1px solid var(--color-brand-alt)" : "none",
         marginLeft: hovered ? -12 : 0,
         marginTop: hovered ? -12 : 0,
         mixBlendMode: "normal",

@@ -58,7 +58,7 @@ export default function ValueProposition() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "#B87333" }}>
+      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--color-brand)" }}>
         03
       </p>
       <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
@@ -80,7 +80,7 @@ export default function ValueProposition() {
             whileHover={{ y: -8, transition: { duration: 0.2 } }}
           >
             <div className="mb-6">
-              <item.icon size={32} style={{ color: "#B87333" }} />
+              <item.icon size={32} style={{ color: "var(--color-brand)" }} />
             </div>
             <h3 className="font-display text-xl mb-4" style={{ color: "#E8E8E8" }}>
               {item.title}
