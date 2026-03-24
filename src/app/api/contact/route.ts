@@ -17,10 +17,10 @@ export async function POST(req: Request) {
       replyTo: email,
       subject: `Nuovo messaggio dal sito — ${name}`,
       html: `
-        <div style="font-family: monospace; background: #080808; color: #F2EDE8; padding: 32px; max-width: 600px;">
-          <p style="color: #B87333; font-size: 12px; letter-spacing: 0.1em;">// NUOVO MESSAGGIO — micheletornello.com</p>
+        <div style="font-family: monospace; background: var(--color-bg); color: var(--color-text); padding: 32px; max-width: 600px;">
+          <p style="color: var(--color-brand); font-size: 12px; letter-spacing: 0.1em;">// NUOVO MESSAGGIO — micheletornello.com</p>
           <p><strong>Nome:</strong> ${name}</p>
-          <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #B87333;">${email}</a></p>
+          <p><strong>Email:</strong> <a href="mailto:${email}" style="color: var(--color-brand);">${email}</a></p>
           <hr style="border-color: rgba(242,237,232,0.1); margin: 24px 0;" />
           <p style="white-space: pre-wrap;">${message}</p>
         </div>

@@ -59,15 +59,15 @@ const Navbar = () => {
     <>
       <header 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'py-3 bg-[#080808]/80 backdrop-blur-md border-b border-[#B87333]/20' : 'py-6 bg-transparent'
+          scrolled ? 'py-3 bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--color-brand)]/20' : 'py-6 bg-transparent'
         }`}
         style={{ width: '100%' }}
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Logo />
-            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[#F2EDE8]/20">·</span>
-            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[#F2EDE8]/60">{currentYear}</span>
+            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[var(--color-text)]/20">·</span>
+            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[var(--color-text)]/60">{currentYear}</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -87,7 +87,7 @@ const Navbar = () => {
                   key={link.name} 
                   href={isHome ? link.anchor : link.href}
                   className="font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors"
-                  style={{ color: active ? '#B87333' : 'rgba(242, 237, 232, 0.6)' }}
+                  style={{ color: active ? 'var(--color-brand)' : 'rgba(242, 237, 232, 0.6)' }}
                 >
                   {link.name}
                 </Link>
@@ -96,14 +96,14 @@ const Navbar = () => {
             <Link 
               href="/speaker"
               className="font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors"
-              style={{ color: pathname === '/speaker' ? '#B87333' : 'rgba(242, 237, 232, 0.6)' }}
+              style={{ color: pathname === '/speaker' ? 'var(--color-brand)' : 'rgba(242, 237, 232, 0.6)' }}
             >
               [07] Speaker
             </Link>
           </nav>
 
           <button 
-            className="md:hidden text-[#F2EDE8] focus-visible:outline-none p-3 -mr-3"
+            className="md:hidden text-[var(--color-text)] focus-visible:outline-none p-3 -mr-3"
             onClick={() => setIsMenuOpen(true)}
             aria-label="Apri menu"
           >
@@ -122,10 +122,10 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[100] bg-[#080808] flex flex-col items-center justify-center p-6"
+            className="fixed inset-0 z-[100] bg-[var(--color-bg)] flex flex-col items-center justify-center p-6"
           >
             <button 
-              className="absolute top-8 right-8 text-[#F2EDE8] focus-visible:outline-none"
+              className="absolute top-8 right-8 text-[var(--color-text)] focus-visible:outline-none"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Chiudi menu"
             >
@@ -141,7 +141,7 @@ const Navbar = () => {
                   key={link.name} 
                   href={isHome ? link.anchor : link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="font-display text-4xl hover:text-[#B87333] transition-colors italic"
+                  className="font-display text-4xl hover:text-[var(--color-brand)] transition-colors italic"
                 >
                   {link.name.split('] ')[1]}
                 </Link>
@@ -150,14 +150,14 @@ const Navbar = () => {
                 href="/speaker"
                 onClick={() => setIsMenuOpen(false)}
                 className={`font-display text-4xl transition-colors italic ${
-                  pathname === '/speaker' ? 'text-[#B87333]' : 'hover:text-[#B87333]'
+                  pathname === '/speaker' ? 'text-[var(--color-brand)]' : 'hover:text-[var(--color-brand)]'
                 }`}
               >
                 Speaker
               </Link>
             </nav>
 
-            <div className="absolute bottom-12 font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/30">
+            <div className="absolute bottom-12 font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/30">
               © {currentYear} Michele Tornello · Catania · IT
             </div>
           </motion.div>

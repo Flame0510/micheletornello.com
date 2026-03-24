@@ -33,7 +33,7 @@ export default function CourseGrid() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto pb-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "#B87333" }}>
+      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--color-brand)" }}>
         04
       </p>
       <h2 className="font-display mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
@@ -51,7 +51,7 @@ export default function CourseGrid() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative overflow-hidden rounded-lg"
               style={{
-                background: "#0d0d0d",
+                background: "var(--color-bg-surface)",
                 border: "1px solid rgba(184,115,51,0.2)",
               }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
@@ -59,14 +59,14 @@ export default function CourseGrid() {
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <span className="font-mono text-xs" style={{ color: "#B87333" }}>
+                    <span className="font-mono text-xs" style={{ color: "var(--color-brand)" }}>
                       0{i + 1}
                     </span>
                     <h3 className="font-display text-2xl mt-2" style={{ color: "#E8E8E8" }}>
                       {subject.name}
                     </h3>
                   </div>
-                  {Icon && <Icon size={32} style={{ color: "#B87333", opacity: 0.7 }} />}
+                  {Icon && <Icon size={32} style={{ color: "var(--color-brand)", opacity: 0.7 }} />}
                 </div>
                 <p className="text-sm leading-relaxed mb-8" style={{ color: "#707070" }}>
                   {subject.description}

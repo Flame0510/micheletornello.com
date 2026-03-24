@@ -39,25 +39,25 @@ export default function ContactTrigger() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-6 right-6 z-50 bg-[#0d0d0d] border border-[#B87333]/40 p-5 shadow-2xl"
+          className="fixed bottom-6 right-6 z-50 bg-[var(--color-bg-surface)] border border-[var(--color-brand)]/40 p-5 shadow-2xl"
           style={{ minWidth: '220px' }}
         >
           <button
             onClick={dismiss}
-            className="absolute top-3 right-3 text-[#F2EDE8]/30 hover:text-[#F2EDE8]/70 transition-colors text-xs font-mono"
+            className="absolute top-3 right-3 text-[var(--color-text)]/30 hover:text-[var(--color-text)]/70 transition-colors text-xs font-mono"
             aria-label="Chiudi"
           >
             ✕
           </button>
 
-          <p className="font-mono text-[10px] uppercase tracking-widest text-[#B87333] mb-3">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-brand)] mb-3">
             // Contatto diretto
           </p>
 
           <div className="flex flex-col gap-2">
             <a
               href="mailto:micheletornello5@gmail.com"
-              className="font-mono text-xs text-[#F2EDE8]/70 hover:text-[#B87333] transition-colors tracking-wide"
+              className="font-mono text-xs text-[var(--color-text)]/70 hover:text-[var(--color-brand)] transition-colors tracking-wide"
             >
               → Email
             </a>
@@ -65,13 +65,13 @@ export default function ContactTrigger() {
               href="https://www.linkedin.com/in/michele-tornello-06a6341aa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-[#F2EDE8]/70 hover:text-[#B87333] transition-colors tracking-wide"
+              className="font-mono text-xs text-[var(--color-text)]/70 hover:text-[var(--color-brand)] transition-colors tracking-wide"
             >
               → LinkedIn
             </a>
             <a
               href="/#contatto"
-              className="font-mono text-xs text-[#F2EDE8]/70 hover:text-[#B87333] transition-colors tracking-wide"
+              className="font-mono text-xs text-[var(--color-text)]/70 hover:text-[var(--color-brand)] transition-colors tracking-wide"
             >
               → Form contatti
             </a>

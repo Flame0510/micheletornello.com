@@ -61,7 +61,7 @@ export const Press = () => {
               marginRight: "2rem",
             }}
           >
-            <span className="font-mono text-xs mb-4" style={{ color: "#C9A84C" }}>{item.year}</span>
+            <span className="font-mono text-xs mb-4" style={{ color: "var(--color-brand-alt)" }}>{item.year}</span>
             <p className="font-display mb-2" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "#E8E8E8" }}>{item.label}</p>
             <p className="font-mono text-sm" style={{ color: "#707070" }}>{item.title}</p>
           </div>

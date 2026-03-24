@@ -53,7 +53,7 @@ export const Contact = () => {
               />
             </div>
             <MagneticButton className="w-full" strength={0.18}>
-              <Button className="w-full gap-2" style={{ background: "#C9A84C", color: "#060606" }}>
+              <Button className="w-full gap-2" style={{ background: "var(--color-brand-alt)", color: "#060606" }}>
                 {t.submit} <Send size={18} />
               </Button>
             </MagneticButton>

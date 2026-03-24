@@ -115,7 +115,7 @@ export const Portfolio = () => {
                       className="absolute inset-0"
                       style={{
                         background: [
-                          'linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #C9A84C18 100%)',
+                          'linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, var(--color-brand-alt)18 100%)',
                           'linear-gradient(135deg, #0a0a0a 0%, #080d1a 50%, #5E6AD218 100%)',
                           'linear-gradient(135deg, #0a0a0a 0%, #0d1208 50%, #2a4a2018 100%)',
                           'linear-gradient(135deg, #0a0a0a 0%, #120808 50%, #4a102018 100%)',
@@ -128,7 +128,7 @@ export const Portfolio = () => {
                       <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ zIndex: 1 }}>
                         <span
                           className="font-display leading-none"
-                          style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "#C9A84C", letterSpacing: "-0.03em" }}
+                          style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--color-brand-alt)", letterSpacing: "-0.03em" }}
                         >
                           {study.impactNumber}
                         </span>

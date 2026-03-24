@@ -56,33 +56,33 @@ const credentials = [
 
 export default function SpeakerPage() {
   return (
-    <div className="min-h-screen text-[#F2EDE8] selection:bg-[#B87333]/30">
+    <div className="min-h-screen text-[var(--color-text)] selection:bg-[var(--color-brand)]/30">
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-24 relative z-10">
         
         {/* Header Section */}
         <header className="mb-20 pt-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#B87333]/30 bg-[#B87333]/5 rounded-full mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#B87333] animate-pulse" />
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#B87333]">Available for Speaking</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[var(--color-brand)]/30 bg-[var(--color-brand)]/5 rounded-full mb-6">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-brand)] animate-pulse" />
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-brand)]">Available for Speaking</span>
           </div>
           
           <h1 className="font-display text-6xl md:text-8xl mb-6 leading-[0.9] tracking-tighter">
             Michele <br />
-            <span className="text-[#B87333]">Tornello</span>
+            <span className="text-[var(--color-brand)]">Tornello</span>
           </h1>
           
-          <p className="font-mono text-sm md:text-base text-[#F2EDE8]/60 max-w-xl leading-relaxed">
+          <p className="font-mono text-sm md:text-base text-[var(--color-text)]/60 max-w-xl leading-relaxed">
             System Architect · Software Engineer · Tech Educator
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10">
             <a 
               href="mailto:ciao@micheletornello.com" 
-              className="px-6 py-3 bg-[#B87333] text-[#080808] font-mono text-sm font-bold flex items-center gap-2 hover:bg-[#B87333]/90 transition-colors"
+              className="px-6 py-3 bg-[var(--color-brand)] text-[var(--color-bg)] font-mono text-sm font-bold flex items-center gap-2 hover:bg-[var(--color-brand)]/90 transition-colors"
             >
               BOOK FOR EVENT <ArrowUpRight className="w-4 h-4" />
             </a>
-            <button className="px-6 py-3 border border-[#F2EDE8]/10 hover:border-[#B87333]/40 transition-colors font-mono text-sm flex items-center gap-2">
+            <button className="px-6 py-3 border border-[var(--color-text)]/10 hover:border-[var(--color-brand)]/40 transition-colors font-mono text-sm flex items-center gap-2">
               DOWNLOAD KIT <Download className="w-4 h-4" />
             </button>
           </div>
@@ -91,41 +91,41 @@ export default function SpeakerPage() {
         {/* Bio Section */}
         <section className="mb-24 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-8">
-            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#B87333] mb-6 flex items-center gap-2">
-              <span className="w-8 h-[1px] bg-[#B87333]/30" /> Biography
+            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-6 flex items-center gap-2">
+              <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Biography
             </h2>
             <div className="space-y-6">
               <p className="font-display text-2xl md:text-3xl leading-snug">
                 {bio.short}
               </p>
-              <p className="text-[#F2EDE8]/70 leading-relaxed font-light">
+              <p className="text-[var(--color-text)]/70 leading-relaxed font-light">
                 {bio.long}
               </p>
             </div>
           </div>
           <div className="md:col-span-4">
-             <div className="aspect-[3/4] bg-[#111] border border-[#F2EDE8]/5 relative group overflow-hidden">
+             <div className="aspect-[3/4] bg-[#111] border border-[var(--color-text)]/5 relative group overflow-hidden">
                 {/* Placeholder for Speaker Photo */}
-                <div className="absolute inset-0 flex items-center justify-center text-[#F2EDE8]/20 font-mono text-[10px] uppercase tracking-widest p-12 text-center">
+                <div className="absolute inset-0 flex items-center justify-center text-[var(--color-text)]/20 font-mono text-[10px] uppercase tracking-widest p-12 text-center">
                   Speaker Portrait (B&W)
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080808] to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4 right-4 h-1 bg-[#B87333]/20 overflow-hidden">
-                  <div className="w-1/3 h-full bg-[#B87333]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] to-transparent opacity-60" />
+                <div className="absolute bottom-4 left-4 right-4 h-1 bg-[var(--color-brand)]/20 overflow-hidden">
+                  <div className="w-1/3 h-full bg-[var(--color-brand)]" />
                 </div>
              </div>
           </div>
         </section>
 
         {/* Credentials Grid */}
-        <section className="mb-24 border-y border-[#F2EDE8]/5 py-12">
+        <section className="mb-24 border-y border-[var(--color-text)]/5 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {credentials.map((item, i) => (
               <div key={i} className="group">
-                <div className="text-[#B87333] mb-3 group-hover:scale-110 transition-transform origin-left">
+                <div className="text-[var(--color-brand)] mb-3 group-hover:scale-110 transition-transform origin-left">
                   {item.icon}
                 </div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-1">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/40 mb-1">
                   {item.label}
                 </div>
                 <div className="font-display text-xl">
@@ -138,28 +138,28 @@ export default function SpeakerPage() {
 
         {/* Topics List */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#B87333] mb-12 flex items-center gap-2">
-            <span className="w-8 h-[1px] bg-[#B87333]/30" /> Speaking Topics
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-12 flex items-center gap-2">
+            <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Speaking Topics
           </h2>
           
           <div className="space-y-12">
             {topics.map((topic, i) => (
-              <div key={i} className="group relative border-l border-[#F2EDE8]/5 pl-8 hover:border-[#B87333]/40 transition-colors">
-                <div className="absolute -left-2.5 top-0 w-5 h-5 bg-[#080808] border border-[#F2EDE8]/10 rounded-full flex items-center justify-center text-[#B87333] group-hover:border-[#B87333]/40 transition-colors">
+              <div key={i} className="group relative border-l border-[var(--color-text)]/5 pl-8 hover:border-[var(--color-brand)]/40 transition-colors">
+                <div className="absolute -left-2.5 top-0 w-5 h-5 bg-[var(--color-bg)] border border-[var(--color-text)]/10 rounded-full flex items-center justify-center text-[var(--color-brand)] group-hover:border-[var(--color-brand)]/40 transition-colors">
                   {topic.icon}
                 </div>
                 <div className="mb-4">
-                  <h3 className="font-display text-3xl mb-2 group-hover:text-[#B87333] transition-colors leading-tight">
+                  <h3 className="font-display text-3xl mb-2 group-hover:text-[var(--color-brand)] transition-colors leading-tight">
                     {topic.title}
                   </h3>
-                  <p className="font-mono text-xs text-[#B87333]/80 italic">
+                  <p className="font-mono text-xs text-[var(--color-brand)]/80 italic">
                     {topic.subtitle}
                   </p>
                 </div>
-                <p className="text-[#F2EDE8]/60 text-sm leading-relaxed max-w-2xl mb-6">
+                <p className="text-[var(--color-text)]/60 text-sm leading-relaxed max-w-2xl mb-6">
                   {topic.abstract}
                 </p>
-                <div className="flex flex-wrap gap-6 font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40">
+                <div className="flex flex-wrap gap-6 font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/40">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-3 h-3" /> {topic.format}
                   </div>
@@ -174,16 +174,16 @@ export default function SpeakerPage() {
 
         {/* Technologies Section */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#B87333] mb-8 flex items-center gap-2">
-            <span className="w-8 h-[1px] bg-[#B87333]/30" /> Stack & Expertise
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-8 flex items-center gap-2">
+            <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Stack & Expertise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             <div>
-              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-3">Sistemi Web & Mobile</h3>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/40 mb-3">Sistemi Web & Mobile</h3>
               <p className="text-lg">React, Next.js, Vue, Nuxt, Angular, React Native</p>
             </div>
             <div>
-              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[#F2EDE8]/40 mb-3">Backend & Architecture</h3>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/40 mb-3">Backend & Architecture</h3>
               <p className="text-lg">Node.js, PHP, Java / API design, microservizi, cloud architecture, database design</p>
             </div>
           </div>
@@ -191,22 +191,22 @@ export default function SpeakerPage() {
 
         {/* Past Media */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#B87333] mb-8 flex items-center gap-2">
-            <span className="w-8 h-[1px] bg-[#B87333]/30" /> Featured In
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-8 flex items-center gap-2">
+            <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Featured In
           </h2>
           <a 
             href="https://play.rtl.it/ospiti/1/michele-tornello-il-post-in-fabbrica-mercoledi-27-marzo-2024/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-8 border border-[#F2EDE8]/5 bg-[#F2EDE8]/[0.02] hover:bg-[#B87333]/5 hover:border-[#B87333]/20 transition-all group"
+            className="block p-8 border border-[var(--color-text)]/5 bg-[var(--color-text)]/[0.02] hover:bg-[var(--color-brand)]/5 hover:border-[var(--color-brand)]/20 transition-all group"
           >
             <div className="flex justify-between items-start">
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-[#B87333] mb-2">Interview / Radio</div>
-                <h3 className="font-display text-2xl group-hover:underline decoration-[#B87333]">RTL 102.5 — Il Post in Fabbrica</h3>
-                <p className="text-[#F2EDE8]/50 text-sm mt-2 font-mono">27 Marzo 2024</p>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-brand)] mb-2">Interview / Radio</div>
+                <h3 className="font-display text-2xl group-hover:underline decoration-[var(--color-brand)]">RTL 102.5 — Il Post in Fabbrica</h3>
+                <p className="text-[var(--color-text)]/50 text-sm mt-2 font-mono">27 Marzo 2024</p>
               </div>
-              <ExternalLink className="w-5 h-5 text-[#F2EDE8]/20 group-hover:text-[#B87333] transition-colors" />
+              <ExternalLink className="w-5 h-5 text-[var(--color-text)]/20 group-hover:text-[var(--color-brand)] transition-colors" />
             </div>
           </a>
         </section>
