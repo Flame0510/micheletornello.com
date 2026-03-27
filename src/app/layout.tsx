@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Michele Tornello',
     locale: 'it_IT',
     type: 'website',
-    images: [{ url: '/og-image.jpg' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Michele Tornello — System Architect · Software Engineer · Tech Educator' }],
   },
   twitter: {
     card: 'summary_large_image',
