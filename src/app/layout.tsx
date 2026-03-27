@@ -31,8 +31,13 @@ export const metadata: Metadata = {
   title: translations.meta.it.title,
   description: translations.meta.it.description,
   icons: {
-    icon: '/logo-mt.jpg',
-    shortcut: '/logo-mt.jpg',
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.png',
   },
   openGraph: {
     title: 'Michele Tornello — System Architect · Software Engineer · Tech Educator',
