@@ -45,10 +45,10 @@ const Footer = () => {
 
         <div className="flex flex-col gap-2 md:items-end">
            <a 
-            href="mailto:ciao@micheletornello.com" 
+            href="mailto:micheletornello5@gmail.com" 
             className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-brand)] hover:underline"
           >
-            ciao@micheletornello.com
+            micheletornello5@gmail.com
           </a>
           <p className="font-mono text-[9px] uppercase tracking-widest text-[var(--color-text)]/20">
             Catania · IT · Europe

@@ -77,7 +77,7 @@ export default function SpeakerPage() {
 
           <div className="flex flex-wrap gap-4 mt-10">
             <a 
-              href="mailto:ciao@micheletornello.com" 
+              href="mailto:micheletornello5@gmail.com" 
               className="px-6 py-3 bg-[var(--color-brand)] text-[var(--color-bg)] font-mono text-sm font-bold flex items-center gap-2 hover:bg-[var(--color-brand)]/90 transition-colors"
             >
               BOOK FOR EVENT <ArrowUpRight className="w-4 h-4" />
