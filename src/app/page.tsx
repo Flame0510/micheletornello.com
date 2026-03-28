@@ -4,6 +4,7 @@ import ChiSonoSection from '@/components/sections/ChiSonoSection';
 import AcademySection from '@/components/sections/AcademySection';
 import ContactSection from '@/components/sections/ContactSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
+import ProcessSection from '@/components/sections/ProcessSection';
 
 const timeline = [
   {
@@ -172,6 +173,9 @@ export default function HomePage() {
       </section>
 
       {/* 7. Portfolio */}
+      <ProcessSection />
+
+      {/* 8. Portfolio */}
       <PortfolioSection />
 
       {/* 8. Academy */}
