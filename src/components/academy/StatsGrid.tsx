@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Users, MapPin, Clock, Mic, Calendar, TrendingUp } from "lucide-react";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
@@ -10,6 +10,7 @@ const iconsList = [Users, MapPin, Clock, Mic, Calendar, TrendingUp];
 export default function StatsGrid() {
   const { lang } = useLang();
   const t = translations.academyStats[lang];
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-24">
@@ -28,10 +29,10 @@ export default function StatsGrid() {
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
               className="relative p-8 rounded-lg"
               style={{
                 background: "linear-gradient(145deg, rgba(184,115,51,0.05) 0%, rgba(184,115,51,0.01) 100%)",

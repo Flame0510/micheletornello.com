@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ExternalLink, Code, Server, Cpu, Cloud, Database, GitBranch, Layout } from "lucide-react";
 import { academy } from "@/lib/data";
 import { useLang } from "@/lib/LanguageContext";
@@ -30,6 +30,7 @@ export default function CourseGrid() {
   const { lang } = useLang();
   const t = translations.academyPage[lang];
   const icons = lang === "it" ? iconMap : iconMapEn;
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto pb-24">
@@ -45,10 +46,10 @@ export default function CourseGrid() {
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
               className="relative overflow-hidden rounded-lg"
               style={{
                 background: "var(--color-bg-surface)",
