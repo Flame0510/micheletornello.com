@@ -148,7 +148,7 @@ export default function SpeakerPage() {
         {/* Bio Section */}
         <section className="mb-24 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-8">
-            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-6 flex items-center gap-2">
+            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-14 flex items-center gap-2">
               <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Biography
             </h2>
             <div className="space-y-6">
@@ -195,7 +195,7 @@ export default function SpeakerPage() {
 
         {/* Topics List */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-12 flex items-center gap-2">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-14 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Speaking Topics
           </h2>
           
@@ -270,7 +270,7 @@ export default function SpeakerPage() {
 
         {/* Booking Form */}
         <section ref={formRef} className="mb-24 scroll-mt-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-12 flex items-center gap-2">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-14 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Book for Your Event
           </h2>
 
