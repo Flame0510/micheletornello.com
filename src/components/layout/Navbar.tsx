@@ -21,6 +21,11 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     if (pathname !== '/') return;
     
     const sections = ['enterprise', 'chi-sono', 'proof', 'lavori', 'academy', 'contatto'];
