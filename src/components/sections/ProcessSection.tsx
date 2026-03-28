@@ -78,7 +78,7 @@ export default function ProcessSection() {
           <p className="proc_cta_text">
             Mettiamo alla prova la tua visione: parliamo di architettura.
           </p>
-          <a href="#contact" className="proc_cta_btn">
+          <a href="#contatto" className="proc_cta_btn">
             Inizia la conversazione
             <span className="proc_cta_arrow" aria-hidden="true">→</span>
           </a>
