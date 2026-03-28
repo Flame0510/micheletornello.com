@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import { useLang } from "@/lib/LanguageContext";
 
@@ -56,6 +56,7 @@ const events = {
 export default function EventTimeline() {
   const { lang } = useLang();
   const items = events[lang];
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-24">
@@ -71,10 +72,10 @@ export default function EventTimeline() {
         {items.map((event, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.2 }}
+            transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.2 }}
             className="relative pl-24 pb-16 last:pb-0"
           >
             {/* Punto sulla timeline */}

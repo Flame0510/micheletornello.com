@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 import { useParallax } from '@/hooks/useParallax';
 
 const fadeUp = {
@@ -12,11 +13,32 @@ const fadeUp = {
   })
 };
 
+const fadeUpReduced = {
+  hidden: { opacity: 0, y: 0 },
+  visible: () => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.1 }
+  })
+};
+
 export default function HeroSection() {
   const parallaxRef = useParallax(0.25);
+  const shouldReduceMotion = useReducedMotion();
+  const variants = shouldReduceMotion ? fadeUpReduced : fadeUp;
 
   return (
     <section id="hero" className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* LCP preload: priority image for desk-setup.png hero background */}
+      <Image
+        src="/desk-setup.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        style={{ opacity: 0, position: 'absolute', pointerEvents: 'none' }}
+        aria-hidden="true"
+      />
       <div
         ref={parallaxRef}
         style={{
@@ -37,7 +59,7 @@ export default function HeroSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={fadeUp}
+          variants={variants}
         >
           ● Disponibile per nuovi progetti · {new Date().getFullYear()}
         </motion.span>
@@ -48,7 +70,7 @@ export default function HeroSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={fadeUp}
+          variants={variants}
         >
           Tra i pochi professionisti italiani under-30 con esperienza enterprise e docenza strutturata.
         </motion.p>
@@ -59,7 +81,7 @@ export default function HeroSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeUp}
+            variants={variants}
           >
             Non costruisco software.
           </motion.h1>
@@ -68,7 +90,7 @@ export default function HeroSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeUp}
+            variants={variants}
           >
             Costruisco sistemi.
           </motion.h1>
@@ -80,7 +102,7 @@ export default function HeroSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={fadeUp}
+          variants={variants}
         >
           Formo chi li costruirà.
         </motion.p>
@@ -91,7 +113,7 @@ export default function HeroSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={fadeUp}
+          variants={variants}
           className="hero-cta"
           style={{
             display: 'inline-block',

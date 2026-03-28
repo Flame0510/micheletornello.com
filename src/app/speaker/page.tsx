@@ -1,5 +1,6 @@
 'use client';
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 import { 
   Mic2, 
   MapPin, 
@@ -54,7 +55,63 @@ const credentials = [
   { label: "TEDx Catania", detail: "Volontario Staff", icon: <MapPin className="w-4 h-4" /> }
 ];
 
+type FormData = {
+  name: string;
+  organization: string;
+  email: string;
+  eventType: string;
+  eventDate: string;
+  city: string;
+  topic: string;
+  attendees: string;
+  notes: string;
+};
+
 export default function SpeakerPage() {
+  const formRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    organization: '',
+    email: '',
+    eventType: '',
+    eventDate: '',
+    city: '',
+    topic: '',
+    attendees: '',
+    notes: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleScrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/speaker', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  const inputClass = "w-full bg-transparent border border-[var(--color-text)]/10 px-4 py-3 font-mono text-sm text-[var(--color-text)] placeholder-[var(--color-text)]/30 focus:outline-none focus:border-[var(--color-brand)] transition-colors";
+  const labelClass = "block font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/50 mb-2";
+
   return (
     <div className="min-h-screen text-[var(--color-text)] selection:bg-[var(--color-brand)]/30">
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-24 relative z-10">
@@ -76,12 +133,12 @@ export default function SpeakerPage() {
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10">
-            <a 
-              href="mailto:micheletornello5@gmail.com" 
+            <button
+              onClick={handleScrollToForm}
               className="px-6 py-3 bg-[var(--color-brand)] text-[var(--color-bg)] font-mono text-sm font-bold flex items-center gap-2 hover:bg-[var(--color-brand)]/90 transition-colors"
             >
               BOOK FOR EVENT <ArrowUpRight className="w-4 h-4" />
-            </a>
+            </button>
             <button className="px-6 py-3 border border-[var(--color-text)]/10 hover:border-[var(--color-brand)]/40 transition-colors font-mono text-sm flex items-center gap-2">
               DOWNLOAD KIT <Download className="w-4 h-4" />
             </button>
@@ -91,7 +148,7 @@ export default function SpeakerPage() {
         {/* Bio Section */}
         <section className="mb-24 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-8">
-            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-6 flex items-center gap-2">
+            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-24 flex items-center gap-2">
               <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Biography
             </h2>
             <div className="space-y-6">
@@ -105,14 +162,14 @@ export default function SpeakerPage() {
           </div>
           <div className="md:col-span-4">
              <div className="aspect-[3/4] bg-[#111] border border-[var(--color-text)]/5 relative group overflow-hidden">
-                {/* Placeholder for Speaker Photo */}
-                <div className="absolute inset-0 flex items-center justify-center text-[var(--color-text)]/20 font-mono text-[10px] uppercase tracking-widest p-12 text-center">
-                  Speaker Portrait (B&W)
-                </div>
+                <Image
+                  src="/speaker-unict.jpg"
+                  alt="Michele Tornello — Seminario React Native, Università di Catania"
+                  fill
+                  className="object-cover object-center grayscale"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4 right-4 h-1 bg-[var(--color-brand)]/20 overflow-hidden">
-                  <div className="w-1/3 h-full bg-[var(--color-brand)]" />
-                </div>
+
              </div>
           </div>
         </section>
@@ -138,7 +195,7 @@ export default function SpeakerPage() {
 
         {/* Topics List */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-12 flex items-center gap-2">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-24 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Speaking Topics
           </h2>
           
@@ -174,7 +231,7 @@ export default function SpeakerPage() {
 
         {/* Technologies Section */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-8 flex items-center gap-2">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-24 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Stack & Expertise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
@@ -191,7 +248,7 @@ export default function SpeakerPage() {
 
         {/* Past Media */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-8 flex items-center gap-2">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-24 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Featured In
           </h2>
           <a 
@@ -209,6 +266,163 @@ export default function SpeakerPage() {
               <ExternalLink className="w-5 h-5 text-[var(--color-text)]/20 group-hover:text-[var(--color-brand)] transition-colors" />
             </div>
           </a>
+        </section>
+
+        {/* Booking Form */}
+        <section ref={formRef} className="mb-24 scroll-mt-24">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-24 flex items-center gap-2">
+            <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Book for Your Event
+          </h2>
+
+          {status === 'success' ? (
+            <div className="border border-[var(--color-brand)]/30 bg-[var(--color-brand)]/5 p-10 text-center">
+              <p className="font-mono text-sm text-[var(--color-brand)]">
+                Richiesta inviata — ti rispondo entro 48 ore.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className={labelClass}>Nome *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Il tuo nome"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className={labelClass}>Organizzazione</label>
+                  <input
+                    type="text"
+                    name="organization"
+                    value={formData.organization}
+                    onChange={handleChange}
+                    placeholder="Azienda / università / associazione"
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className={labelClass}>Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="email@esempio.it"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className={labelClass}>Tipo evento *</label>
+                  <select
+                    name="eventType"
+                    required
+                    value={formData.eventType}
+                    onChange={handleChange}
+                    className={inputClass}
+                  >
+                    <option value="">Seleziona tipo evento</option>
+                    <option value="Conferenza tecnica">Conferenza tecnica</option>
+                    <option value="Workshop universitario">Workshop universitario</option>
+                    <option value="Evento aziendale">Evento aziendale</option>
+                    <option value="Panel discussion">Panel discussion</option>
+                    <option value="Altro">Altro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className={labelClass}>Data prevista</label>
+                  <input
+                    type="date"
+                    name="eventDate"
+                    value={formData.eventDate}
+                    onChange={handleChange}
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className={labelClass}>Città</label>
+                  <input
+                    type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    placeholder="Es. Catania, Milano, Roma"
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className={labelClass}>Topic preferito</label>
+                  <select
+                    name="topic"
+                    value={formData.topic}
+                    onChange={handleChange}
+                    className={inputClass}
+                  >
+                    <option value="">Nessuna preferenza</option>
+                    <option value="Sviluppo software e architetture enterprise">Sviluppo software e architetture enterprise</option>
+                    <option value="Architettura software pragmatica">Architettura software pragmatica</option>
+                    <option value="Costruire prodotti digitali indipendenti">Costruire prodotti digitali indipendenti</option>
+                  </select>
+                </div>
+                <div>
+                  <label className={labelClass}>Partecipanti stimati</label>
+                  <select
+                    name="attendees"
+                    value={formData.attendees}
+                    onChange={handleChange}
+                    className={inputClass}
+                  >
+                    <option value="">Seleziona fascia</option>
+                    <option value="<50">&lt;50</option>
+                    <option value="50-200">50–200</option>
+                    <option value="200-500">200–500</option>
+                    <option value="500+">500+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className={labelClass}>Note aggiuntive</label>
+                <textarea
+                  name="notes"
+                  value={formData.notes}
+                  onChange={handleChange}
+                  rows={5}
+                  placeholder="Racconta il contesto dell'evento, eventuali richieste specifiche o domande..."
+                  className={inputClass + " resize-none"}
+                />
+              </div>
+
+              {status === 'error' && (
+                <p className="font-mono text-[10px] text-red-500 uppercase tracking-widest">
+                  Errore durante l&apos;invio — riprova tra qualche istante.
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="px-8 py-4 bg-[var(--color-brand)] text-[var(--color-bg)] font-mono text-sm font-bold flex items-center gap-2 hover:bg-[var(--color-brand)]/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === 'loading' ? 'INVIO IN CORSO...' : 'INVIA RICHIESTA'} <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </form>
+          )}
         </section>
       </main>
     </div>
