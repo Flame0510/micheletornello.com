@@ -40,8 +40,7 @@ export default function ChiSonoSection() {
               Poi il codice.
             </h2>
             <p className="chiB_intro">
-              Tornello, Michele — System Architect · Software Engineer · Tech Educator con oltre 3 anni di esperienza su sistemi enterprise in produzione.
-              Assunto a tempo indeterminato da Paradigma SPA nel 2022.
+              Laureato in Ingegneria Informatica. System Architect · Software Engineer · Tech Educator. Lavora su sistemi enterprise in produzione dal 2022.
             </p>
           </header>
 
