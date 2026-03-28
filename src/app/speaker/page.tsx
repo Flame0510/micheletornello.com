@@ -169,9 +169,7 @@ export default function SpeakerPage() {
                   className="object-cover object-center grayscale"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4 right-4 h-1 bg-[var(--color-brand)]/20 overflow-hidden">
-                  <div className="w-1/3 h-full bg-[var(--color-brand)]" />
-                </div>
+
              </div>
           </div>
         </section>
