@@ -152,9 +152,6 @@ export default function SpeakerPage() {
               <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Biography
             </h2>
             <div className="space-y-6">
-              <p className="font-display text-2xl md:text-3xl leading-snug">
-                {bio.short}
-              </p>
               <p className="text-[var(--color-text)]/70 leading-relaxed font-light">
                 {bio.long}
               </p>
