@@ -233,7 +233,7 @@ export default function SpeakerPage() {
 
         {/* Technologies Section */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-8 flex items-center gap-2">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-14 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Stack & Expertise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
@@ -250,7 +250,7 @@ export default function SpeakerPage() {
 
         {/* Past Media */}
         <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-8 flex items-center gap-2">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand)] mb-14 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--color-brand)]/30" /> Featured In
           </h2>
           <a 
