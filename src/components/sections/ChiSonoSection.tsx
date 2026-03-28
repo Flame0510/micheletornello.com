@@ -40,7 +40,7 @@ export default function ChiSonoSection() {
               Poi il codice.
             </h2>
             <p className="chiB_intro">
-              Laureato in Ingegneria Informatica. System Architect · Software Engineer · Tech Educator. Lavora su sistemi enterprise in produzione dal 2022.
+              Laureato in Ingegneria Informatica. System Architect · Product Engineer · Tech Educator. Lavora su sistemi enterprise in produzione dal 2022.
             </p>
           </header>
 

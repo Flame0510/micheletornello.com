@@ -17,8 +17,8 @@ import {
 
 // Content
 const bio = {
-  short: "Michele Tornello è System Architect, Software Engineer e docente presso la Steve Jobs Academy. Lavora alla progettazione di architetture scalabili per applicazioni web e mobile e sviluppa prodotti digitali indipendenti. È stato intervistato da RTL 102.5 e partecipa attivamente alla community tecnologica italiana.",
-  long: "Michele Tornello è System Architect, Software Engineer e docente presso la Steve Jobs Academy. Laureato in Ingegneria Informatica, si occupa della progettazione di architetture software scalabili e dello sviluppo di applicazioni web e mobile utilizzate in contesti enterprise dal 2022.\n\nLavora con tecnologie moderne dell'ecosistema JavaScript come React, Next.js e React Native, oltre ad avere esperienza con Angular, Vue, Nuxt, PHP e Java. Parallelamente allo sviluppo professionale si dedica alla formazione di nuovi programmatori, contribuendo alla crescita della nuova generazione di sviluppatori.\n\nHa sviluppato diversi progetti digitali indipendenti e partecipa attivamente alla community tecnologica italiana. È stato intervistato da RTL 102.5 e ha collaborato come volontario con TEDx Catania."
+  short: "Michele Tornello è System Architect, Product Engineer e docente presso la Steve Jobs Academy. Lavora alla progettazione di architetture scalabili per applicazioni web e mobile e sviluppa prodotti digitali indipendenti. È stato intervistato da RTL 102.5 e partecipa attivamente alla community tecnologica italiana.",
+  long: "Michele Tornello è System Architect, Product Engineer e docente presso la Steve Jobs Academy. Laureato in Ingegneria Informatica, si occupa della progettazione di architetture software scalabili e dello sviluppo di applicazioni web e mobile utilizzate in contesti enterprise dal 2022.\n\nLavora con tecnologie moderne dell'ecosistema JavaScript come React, Next.js e React Native, oltre ad avere esperienza con Angular, Vue, Nuxt, PHP e Java. Parallelamente allo sviluppo professionale si dedica alla formazione di nuovi programmatori, contribuendo alla crescita della nuova generazione di sviluppatori.\n\nHa sviluppato diversi progetti digitali indipendenti e partecipa attivamente alla community tecnologica italiana. È stato intervistato da RTL 102.5 e ha collaborato come volontario con TEDx Catania."
 };
 
 const topics = [
@@ -129,7 +129,7 @@ export default function SpeakerPage() {
           </h1>
           
           <p className="font-mono text-sm md:text-base text-[var(--color-text)]/60 max-w-xl leading-relaxed">
-            System Architect · Software Engineer · Tech Educator
+            System Architect · Product Engineer · Tech Educator
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10">

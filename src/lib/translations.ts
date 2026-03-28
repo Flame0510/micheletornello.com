@@ -3,14 +3,14 @@ export type Lang = 'it' | 'en';
 export const translations = {
   meta: {
     it: {
-      title: 'Michele Tornello — System Architect · Software Engineer',
+      title: 'Michele Tornello — System Architect · Product Engineer',
       description:
-        'System Architecture, Software Engineering e consulenza tecnica per startup e aziende. Docente Steve Jobs Academy in Sicilia.',
+        'System Architecture, Product Engineering e consulenza tecnica per startup e aziende. Docente Steve Jobs Academy in Sicilia.',
     },
     en: {
-      title: 'Michele Tornello — System Architect · Software Engineer',
+      title: 'Michele Tornello — System Architect · Product Engineer',
       description:
-        'System Architecture, Software Engineering and tech consulting for startups and enterprises. Steve Jobs Academy instructor in Sicily.',
+        'System Architecture, Product Engineering and tech consulting for startups and enterprises. Steve Jobs Academy instructor in Sicily.',
     },
   },
   navbar: {
@@ -95,7 +95,7 @@ export const translations = {
       subtitle: 'Quello che faccio, fatto bene.',
       items: [
         {
-          title: 'Software Engineering',
+          title: 'Product Engineering',
           description:
             "Dal database all'interfaccia, costruisco applicazioni web e mobile complete. Stack moderno, codice manutenibile, zero debito tecnico nascosto.",
         },
@@ -116,7 +116,7 @@ export const translations = {
       subtitle: 'What I do, done right.',
       items: [
         {
-          title: 'Software Engineering',
+          title: 'Product Engineering',
           description:
             'From database to interface, I build complete web and mobile applications. Modern stack, maintainable code, zero hidden tech debt.',
         },
