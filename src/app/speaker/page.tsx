@@ -52,7 +52,7 @@ const credentials = [
   { label: "System Architect", detail: "Software Design", icon: <Terminal className="w-4 h-4" /> },
   { label: "Docente SJA", detail: "Steve Jobs Academy", icon: <Users className="w-4 h-4" /> },
   { label: "RTL 102.5", detail: "Intervista Nazionale", icon: <Radio className="w-4 h-4" /> },
-  { label: "Ing. Informatica", detail: "UniCT · 2024", icon: <Cpu className="w-4 h-4" /> }
+  { label: "Ing. Informatica", detail: "Laurea · 2024", icon: <Cpu className="w-4 h-4" /> }
 ];
 
 type FormData = {

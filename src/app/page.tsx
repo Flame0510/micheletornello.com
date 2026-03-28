@@ -113,7 +113,7 @@ export default function HomePage() {
                 <div className="pv3G_meta">PRESENZA VERIFICABILE</div>
                 <ul className="pv3G_list">
                   <li><strong>RTL 102.5</strong><span>Intervista nazionale</span></li>
-                  <li><strong>UniCT</strong><span>Speaker · Architetture Mobile</span></li>
+                  <li><strong>Univ. Catania</strong><span>Speaker · Architetture Mobile</span></li>
                   <li><strong>TEDx Catania</strong><span>Staff volontario</span></li>
                 </ul>
               </div>
