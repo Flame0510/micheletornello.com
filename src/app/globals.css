@@ -1200,7 +1200,9 @@ h1 {
   color: var(--color-brand); letter-spacing: 0.12em; margin-bottom: 0.75rem;
   padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-brand-30);
 }
-.ck_banner_links { margin-top: 0.75rem; }
+.ck_banner_links { margin-top: 0.75rem; display: flex; gap: 1rem; align-items: center; }
+.ck_link_settings_mobile { display: none; background: transparent; border: none; cursor: pointer; padding: 0; font-family: var(--font-mono); font-size: 0.7rem; color: rgba(184,115,51,0.7); text-decoration: underline; }
+.ck_link_settings_mobile:hover { color: var(--color-brand); }
 .ck_actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
 .ck_float_btn {
@@ -1261,8 +1263,36 @@ h1 {
 .ck_switch input:checked + .ck_slider { background: var(--color-brand-20); border-color: var(--color-brand); }
 .ck_switch input:checked + .ck_slider:before { transform: translateX(20px); background: var(--color-brand); }
 
-@media (max-width: 480px) {
-  .ck_banner { bottom: 0; right: 0; left: 0; max-width: 100%; border-left: none; border-right: none; border-bottom: none; }
+@media (max-width: 768px) {
+  /* Cookie drawer bottom — mobile */
+  .ck_banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 24px 20px 32px;
+    margin: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  .ck_actions {
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  .ck_actions .ck_btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  /* Nascondi SETTINGS come bottone, mostra come link */
+  .ck_btn_settings_desktop { display: none; }
+  .ck_link_settings_mobile { display: inline; }
   .ck_panel { max-width: 100%; }
 }
 
