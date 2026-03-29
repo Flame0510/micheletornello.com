@@ -29,11 +29,8 @@ export const Services = () => {
           <motion.div
             key={i}
             variants={fadeUp}
-            className="pGamma_card rounded-xl h-full flex flex-col relative overflow-hidden"
+            className="pGamma_card h-full flex flex-col"
           >
-
-            {/* Top gradient line */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
             {/* Header secondario — > SERVICE_0X */}
             <span
