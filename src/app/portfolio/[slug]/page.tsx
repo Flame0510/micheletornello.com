@@ -34,7 +34,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
 
       <div className="max-w-3xl mx-auto px-6">
         {/* Back link */}
-        <Link href="/#portfolio" className="inline-flex items-center gap-2 text-text-muted hover:text-accent text-sm font-mono mt-8 mb-12 transition-colors">
+        <Link href="/#lavori" className="inline-flex items-center gap-2 text-text-muted hover:text-accent text-sm font-mono mt-8 mb-12 transition-colors">
           <ArrowLeft size={14} /> {l.back}
         </Link>
 
@@ -97,7 +97,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
 
           {/* CTA */}
           <motion.div variants={fadeUp} className="pt-8 border-t border-border/50">
-            <Link href="/#contact" className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium transition-colors">
+            <Link href="/#contatto" className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium transition-colors">
               {lang === 'it' ? 'Hai un progetto simile? Parliamone' : 'Have a similar project? Let\'s talk'} <ExternalLink size={14} />
             </Link>
           </motion.div>
