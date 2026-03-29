@@ -41,7 +41,7 @@ export const PageLoader = () => {
       {!done && (
         <motion.div
           key="loader"
-          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          className="fixed inset-0 z-[99999] flex items-center justify-center"
           style={{ background: "#060606" }}
           exit={{
             clipPath: ["circle(0% at 50% 50%)", "circle(150% at 50% 50%)"],

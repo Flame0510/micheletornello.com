@@ -1,12 +1,24 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCookieConsent } from '@/hooks/useCookieConsent';
 
 export const CookieConsent = () => {
   const { consent, isBannerVisible, isPanelOpen, acceptAll, rejectAll, savePreferences, openPanel, closePanel } = useCookieConsent();
   const [tempAnalytics, setTempAnalytics] = useState(consent?.analytics ?? false);
+  const [bannerReady, setBannerReady] = useState(false);
+
+  useEffect(() => {
+    const visited = sessionStorage.getItem('mt_visited');
+    if (!visited) {
+      // Prima visita: aspetta che il loader finisca (~1.4s)
+      const timer = setTimeout(() => setBannerReady(true), 1400);
+      return () => clearTimeout(timer);
+    } else {
+      setBannerReady(true);
+    }
+  }, []);
 
   React.useEffect(() => {
     if (isPanelOpen) setTempAnalytics(consent?.analytics ?? false);
@@ -33,7 +45,7 @@ export const CookieConsent = () => {
 
       {/* Banner */}
       <AnimatePresence>
-        {isBannerVisible && !isPanelOpen && (
+        {isBannerVisible && !isPanelOpen && bannerReady && (
           <motion.div
             initial={{ y: '100%', opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
