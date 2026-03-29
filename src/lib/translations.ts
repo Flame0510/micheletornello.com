@@ -92,43 +92,67 @@ export const translations = {
   services: {
     it: {
       title: 'Servizi',
-      subtitle: 'Quello che faccio, fatto bene.',
+      subtitle: 'Decisioni tecniche critiche, esecuzione concreta, team che crescono.',
       items: [
         {
-          title: 'Product Engineering',
+          title: 'Tech Lead & System Architecture',
+          problem: 'Il tuo progetto ha bisogno di qualcuno che progetti il sistema e guidi le decisioni tecniche critiche — non solo di qualcuno che scriva codice.',
           description:
-            "Dal database all'interfaccia, costruisco applicazioni web e mobile complete. Stack moderno, codice manutenibile, zero debito tecnico nascosto.",
+            'Progetto l\'architettura del sistema, scelgo lo stack, definisco i pattern e guido le decisioni tecnologiche che impattano il prodotto nel lungo periodo.',
+          deliverables: ['Documento architetturale', 'Roadmap tecnica', 'Raccomandazioni su stack e pattern'],
+          process: ['Discovery call', 'Analisi architettura esistente', 'Piano strutturato'],
+          cta: 'Prenota una consulenza',
         },
         {
-          title: 'System Architecture',
+          title: 'Full-Stack Development',
+          problem: 'Hai bisogno di esecuzione diretta e concreta — non di un\'altra consulenza che resta ferma sulla carta.',
           description:
-            "Disegno l'infrastruttura prima che diventi un problema. Microservizi, API, database, deploy — progettati per scalare dal giorno uno.",
+            'Costruisco il prodotto dall\'inizio alla fine: frontend, backend, database, deploy. Codice strutturato, documentato e pronto a evolvere.',
+          deliverables: ['Prodotto funzionante', 'Codice strutturato e documentato', 'Architettura scalabile'],
+          process: ['Discovery call', 'Progettazione tecnica', 'Sviluppo iterativo con rilasci frequenti'],
+          cta: 'Prenota una consulenza',
         },
         {
-          title: 'Consulenza Tecnica',
+          title: 'Training & Formazione Aziendale',
+          problem: 'Il tuo team ha gap tecnici su architettura software, React/React Native o sistemi moderni — e la formazione standard non è abbastanza.',
           description:
-            'Audit del codice esistente, scelte tecnologiche, roadmap di prodotto. Ti dico cosa funziona, cosa no, e come sistemarlo.',
+            'Formo il team con un percorso costruito sulle loro esigenze reali: architettura software, React, React Native, sistemi scalabili. Sessioni pratiche, non slide.',
+          deliverables: ['Corso su misura per il team', 'Materiali didattici', 'Sessioni pratiche hands-on'],
+          process: ['Assessment del team', 'Piano formativo personalizzato', 'Erogazione con esercizi reali'],
+          cta: 'Prenota una consulenza',
         },
       ],
     },
     en: {
       title: 'Services',
-      subtitle: 'What I do, done right.',
+      subtitle: 'Critical technical decisions, concrete execution, teams that grow.',
       items: [
         {
-          title: 'Product Engineering',
+          title: 'Tech Lead & System Architecture',
+          problem: 'Your project needs someone who designs the system and drives critical technical decisions — not just someone who writes code.',
           description:
-            'From database to interface, I build complete web and mobile applications. Modern stack, maintainable code, zero hidden tech debt.',
+            'I architect the system, choose the stack, define patterns, and lead the technology decisions that shape your product long-term.',
+          deliverables: ['Architecture document', 'Technical roadmap', 'Stack and pattern recommendations'],
+          process: ['Discovery call', 'Architecture analysis', 'Structured plan'],
+          cta: 'Book a consultation',
         },
         {
-          title: 'System Architecture',
+          title: 'Full-Stack Development',
+          problem: 'You need direct, concrete execution — not another consulting engagement that stays on paper.',
           description:
-            'I design infrastructure before it becomes a problem. Microservices, APIs, databases, deploy — built to scale from day one.',
+            'I build the product end to end: frontend, backend, database, deployment. Structured, documented code that\'s ready to scale.',
+          deliverables: ['Working product', 'Structured and documented code', 'Scalable architecture'],
+          process: ['Discovery call', 'Technical design', 'Iterative development with frequent releases'],
+          cta: 'Book a consultation',
         },
         {
-          title: 'Tech Consulting',
+          title: 'Corporate Training',
+          problem: 'Your team has technical gaps in software architecture, React/React Native, or modern systems — and generic training isn\'t cutting it.',
           description:
-            "Codebase audits, technology decisions, product roadmaps. I tell you what works, what doesn't, and how to fix it.",
+            'I train your team with a path built around their real needs: software architecture, React, React Native, scalable systems. Hands-on sessions, not slides.',
+          deliverables: ['Custom team curriculum', 'Learning materials', 'Hands-on practical sessions'],
+          process: ['Team assessment', 'Personalized training plan', 'Delivery with real exercises'],
+          cta: 'Book a consultation',
         },
       ],
     },
