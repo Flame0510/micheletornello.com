@@ -171,7 +171,7 @@ export const Services = () => {
                 style={{ borderTop: "1px solid rgba(184,115,51,0.1)", marginTop: "auto" }}
               >
                 <a
-                  href="#contact"
+                  href="#contatto"
                   className="inline-flex items-center gap-1 font-semibold transition-all group/cta hover:underline"
                   style={{
                     fontSize: "0.82rem",
