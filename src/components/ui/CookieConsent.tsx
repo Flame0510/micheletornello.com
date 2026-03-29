@@ -35,9 +35,9 @@ export const CookieConsent = () => {
       <AnimatePresence>
         {isBannerVisible && !isPanelOpen && (
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: '100%', opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 100, opacity: 0 }}
+            exit={{ y: '100%', opacity: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="ck_banner"
             role="dialog"
@@ -50,10 +50,11 @@ export const CookieConsent = () => {
             </p>
             <div className="ck_actions">
               <button onClick={acceptAll} className="ck_btn ck_btn_primary">ACCEPT_ALL</button>
-              <button onClick={openPanel} className="ck_btn">SETTINGS</button>
+              <button onClick={openPanel} className="ck_btn ck_btn_settings_desktop">SETTINGS</button>
               <button onClick={rejectAll} className="ck_btn ck_btn_ghost">REJECT</button>
             </div>
             <div className="ck_banner_links">
+              <button onClick={openPanel} className="ck_link ck_link_settings_mobile">Impostazioni</button>
               <a href="/privacy" className="ck_link">Privacy Policy</a>
             </div>
           </motion.div>
