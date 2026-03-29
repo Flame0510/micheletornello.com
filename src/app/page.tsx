@@ -5,6 +5,7 @@ import AcademySection from '@/components/sections/AcademySection';
 import ContactSection from '@/components/sections/ContactSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import ProcessSection from '@/components/sections/ProcessSection';
+import { Services } from '@/components/sections/Services';
 
 const timeline = [
   {
@@ -61,6 +62,9 @@ export default function HomePage() {
 
       {/* 4. Chi Sono */}
       <ChiSonoSection />
+
+      {/* 5. Services */}
+      <Services />
 
       {/* 5. Proof of Work */}
       <section id="proof" className="pv3G_section">
