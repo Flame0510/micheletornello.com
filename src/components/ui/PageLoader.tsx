@@ -44,7 +44,7 @@ export const PageLoader = () => {
           className="fixed inset-0 z-[99999] flex items-center justify-center"
           style={{ background: "#060606" }}
           exit={{
-            clipPath: ["circle(0% at 50% 50%)", "circle(150% at 50% 50%)"],
+            clipPath: ["circle(150% at 50% 50%)", "circle(0% at 50% 50%)"],
             transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
           }}
         >
