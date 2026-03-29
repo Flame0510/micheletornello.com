@@ -1216,13 +1216,13 @@ h1 {
 
 .ck_overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.75);
-  z-index: 10000; backdrop-filter: blur(2px);
+  z-index: 90; backdrop-filter: blur(2px);
 }
 .ck_panel {
   position: fixed; top: 0; right: 0; bottom: 0;
   width: 100%; max-width: 400px;
   background: var(--color-bg); border-left: 1px solid var(--color-brand);
-  z-index: 10001; overflow-y: auto;
+  z-index: 95; overflow-y: auto;
 }
 .ck_panel_content { padding: 2rem; display: flex; flex-direction: column; min-height: 100%; }
 .ck_panel_footer { margin-top: auto; padding-top: 1.5rem; }
