@@ -78,10 +78,10 @@ export default function ValueProposition() {
               background: "var(--bg-card)",
               border: "1px solid var(--border)",
             }}
-            whileHover={{ borderColor: "var(--accent-copper)", transition: { duration: 0.2 } }}
+            whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
           >
             <div className="mb-6">
-              <item.icon size={32} style={{ color: "var(--accent-copper)" }} />
+              <item.icon size={32} style={{ color: "var(--accent-primary)" }} />
             </div>
             <h3 className="font-display text-xl mb-4" style={{ color: "var(--text-primary)" }}>
               {item.title}

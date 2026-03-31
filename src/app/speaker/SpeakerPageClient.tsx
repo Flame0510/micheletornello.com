@@ -110,23 +110,23 @@ export default function SpeakerPageClient() {
     }
   };
 
-  const inputClass = "w-full bg-transparent border border-[var(--text-primary)]/10 px-4 py-3 font-mono text-sm text-[var(--text-primary)] placeholder-[var(--text-primary)]/30 focus:outline-none focus:border-[var(--accent-copper)] transition-colors";
+  const inputClass = "w-full bg-transparent border border-[var(--text-primary)]/10 px-4 py-3 font-mono text-sm text-[var(--text-primary)] placeholder-[var(--text-primary)]/30 focus:outline-none focus:border-[var(--accent-primary)] transition-colors";
   const labelClass = "block font-mono text-[10px] uppercase tracking-widest text-[var(--text-primary)]/50 mb-2";
 
   return (
-    <div className="min-h-screen text-[var(--text-primary)] selection:bg-[var(--accent-copper)]/30" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen text-[var(--text-primary)] selection:bg-[var(--accent-primary)]/30" style={{ background: 'var(--bg-base)' }}>
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-24 relative z-10">
         
         {/* Header Section */}
         <header className="mb-20 pt-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[var(--accent-copper)]/30 bg-[var(--accent-copper)]/5 rounded-full mb-6">
-            <span className="w-2 h-2 rounded-full bg-[var(--accent-copper)] animate-pulse" />
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--accent-copper)]">Available for Speaking</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[var(--accent-primary)]/30 bg-[var(--accent-primary)]/5 rounded-full mb-6">
+            <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)] animate-pulse" />
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--accent-primary)]">Available for Speaking</span>
           </div>
           
           <h1 className="font-display text-6xl md:text-8xl mb-6 leading-[0.9] tracking-tighter">
             Michele <br />
-            <span className="text-[var(--accent-copper)]">Tornello</span>
+            <span className="text-[var(--accent-primary)]">Tornello</span>
           </h1>
           
           <p className="font-mono text-sm md:text-base text-[var(--text-primary)]/60 max-w-xl leading-relaxed">
@@ -179,7 +179,7 @@ export default function SpeakerPageClient() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {credentials.map((item, i) => (
               <div key={i} className="group">
-                <div className="text-[var(--accent-copper)] mb-3 group-hover:scale-110 transition-transform origin-left">
+                <div className="text-[var(--accent-primary)] mb-3 group-hover:scale-110 transition-transform origin-left">
                   {item.icon}
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--text-primary)]/40 mb-1">
@@ -199,16 +199,16 @@ export default function SpeakerPageClient() {
           
           <div className="space-y-12">
             {topics.map((topic, i) => (
-              <div key={i} className="group border border-[var(--text-primary)]/5 p-6 md:p-8 hover:border-[var(--accent-copper)]/40 transition-colors overflow-hidden">
+              <div key={i} className="group border border-[var(--text-primary)]/5 p-6 md:p-8 hover:border-[var(--accent-primary)]/40 transition-colors overflow-hidden">
                 <div className="mb-4 flex items-start gap-4">
-                  <div className="w-10 h-10 shrink-0 bg-[var(--bg-base)] border border-[var(--text-primary)]/10 rounded-full flex items-center justify-center text-[var(--accent-copper)] group-hover:border-[var(--accent-copper)]/40 transition-colors">
+                  <div className="w-10 h-10 shrink-0 bg-[var(--bg-base)] border border-[var(--text-primary)]/10 rounded-full flex items-center justify-center text-[var(--accent-primary)] group-hover:border-[var(--accent-primary)]/40 transition-colors">
                     {topic.icon}
                   </div>
                   <div>
-                    <h3 className="font-display text-3xl mb-2 group-hover:text-[var(--accent-copper)] transition-colors leading-tight">
+                    <h3 className="font-display text-3xl mb-2 group-hover:text-[var(--accent-primary)] transition-colors leading-tight">
                       {topic.title}
                     </h3>
-                    <p className="font-mono text-xs text-[var(--accent-copper)]/80 italic">
+                    <p className="font-mono text-xs text-[var(--accent-primary)]/80 italic">
                       {topic.subtitle}
                     </p>
                   </div>
@@ -251,15 +251,15 @@ export default function SpeakerPageClient() {
             href="https://play.rtl.it/ospiti/1/michele-tornello-il-post-in-fabbrica-mercoledi-27-marzo-2024/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-8 border border-[var(--text-primary)]/5 bg-[var(--text-primary)]/[0.02] hover:bg-[var(--accent-copper)]/5 hover:border-[var(--accent-copper)]/20 transition-all group"
+            className="block p-8 border border-[var(--text-primary)]/5 bg-[var(--text-primary)]/[0.02] hover:bg-[var(--accent-primary)]/5 hover:border-[var(--accent-primary)]/20 transition-all group"
           >
             <div className="flex justify-between items-start">
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--accent-copper)] mb-2">Interview / Radio</div>
-                <h3 className="font-display text-2xl group-hover:underline decoration-[var(--accent-copper)]">RTL 102.5 — Il Post in Fabbrica</h3>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--accent-primary)] mb-2">Interview / Radio</div>
+                <h3 className="font-display text-2xl group-hover:underline decoration-[var(--accent-primary)]">RTL 102.5 — Il Post in Fabbrica</h3>
                 <p className="text-[var(--text-primary)]/50 text-sm mt-2 font-mono">27 Marzo 2024</p>
               </div>
-              <ExternalLink className="w-5 h-5 text-[var(--text-primary)]/20 group-hover:text-[var(--accent-copper)] transition-colors" />
+              <ExternalLink className="w-5 h-5 text-[var(--text-primary)]/20 group-hover:text-[var(--accent-primary)] transition-colors" />
             </div>
           </a>
         </section>
@@ -269,8 +269,8 @@ export default function SpeakerPageClient() {
           <SectionLabel>Book for Your Event</SectionLabel>
 
           {status === 'success' ? (
-            <div className="border border-[var(--accent-copper)]/30 bg-[var(--accent-copper)]/5 p-10 text-center">
-              <p className="font-mono text-sm text-[var(--accent-copper)]">
+            <div className="border border-[var(--accent-primary)]/30 bg-[var(--accent-primary)]/5 p-10 text-center">
+              <p className="font-mono text-sm text-[var(--accent-primary)]">
                 Richiesta inviata — ti rispondo entro 48 ore.
               </p>
             </div>

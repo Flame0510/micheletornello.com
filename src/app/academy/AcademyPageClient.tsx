@@ -36,7 +36,7 @@ export default function AcademyPageClient() {
           >
             ←
           </motion.span>
-          <span className="group-hover:text-[var(--accent-copper)] transition-colors">{t.backHome}</span>
+          <span className="group-hover:text-[var(--accent-primary)] transition-colors">{t.backHome}</span>
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start relative z-10">
@@ -57,23 +57,23 @@ export default function AcademyPageClient() {
             className="rounded-2xl p-6 space-y-4"
             style={{ border: "1px solid var(--border-accent)", background: "var(--bg-card)", boxShadow: "var(--shadow-card)" }}
           >
-            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--accent-copper)" }}>
+            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--accent-primary)" }}>
               {t.infoTitle}
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
-                <span style={{ color: "var(--accent-copper)" }}>·</span>
+                <span style={{ color: "var(--accent-primary)" }}>·</span>
                 {`${t.infoCard.locationsLabel}: Catania, Caltagirone, Palermo`}
               </li>
               <li className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
-                <span style={{ color: "var(--accent-copper)" }}>·</span>
+                <span style={{ color: "var(--accent-primary)" }}>·</span>
                 {`${t.infoCard.formatLabel}: ${t.infoCard.formatValue}`}
               </li>
               <li className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
-                <span style={{ color: "var(--accent-copper)" }}>·</span>
+                <span style={{ color: "var(--accent-primary)" }}>·</span>
                 <span>
                   {lang === 'it' ? 'Vuoi saperne di più? ' : 'Want to know more? '}
-                  <a href="/#contatto" style={{ color: "var(--accent-copper)", textDecoration: "underline", fontWeight: 600 }}>
+                  <a href="/#contatto" style={{ color: "var(--accent-primary)", textDecoration: "underline", fontWeight: 600 }}>
                     {lang === 'it' ? 'Contattami' : 'Contact me'}
                   </a>
                   .

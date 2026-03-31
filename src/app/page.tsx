@@ -6,6 +6,7 @@ import ContactSection from '@/components/sections/ContactSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import { Services } from '@/components/sections/Services';
+import { TimelineItem } from '@/components/ui/TimelineItem';
 
 const timeline = [
   {
@@ -168,9 +169,13 @@ export default function HomePage() {
           <h2>TIMELINE</h2>
           <div className="timelineLine">
             {timeline.map((item) => (
-              <article key={item.year} className="timeCard">
-                <p className="year">{item.year}</p><h3>{item.title}</h3><p>{item.text}</p>
-              </article>
+              <TimelineItem
+                key={item.year}
+                year={item.year}
+                title={item.title}
+                text={item.text}
+                variant="page"
+              />
             ))}
           </div>
         </div>

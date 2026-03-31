@@ -55,19 +55,19 @@ export default function CourseGrid() {
                 background: "var(--bg-card)",
                 border: "1px solid var(--border)",
               }}
-              whileHover={{ borderColor: "var(--accent-copper)", transition: { duration: 0.2 } }}
+              whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
             >
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <span className="font-mono text-xs" style={{ color: "var(--accent-copper)" }}>
+                    <span className="font-mono text-xs" style={{ color: "var(--accent-primary)" }}>
                       0{i + 1}
                     </span>
                     <h3 className="font-display text-2xl mt-2" style={{ color: "var(--text-primary)" }}>
                       {subject.name}
                     </h3>
                   </div>
-                  {Icon && <Icon size={32} style={{ color: "var(--accent-copper)", opacity: 0.7 }} />}
+                  {Icon && <Icon size={32} style={{ color: "var(--accent-primary)", opacity: 0.7 }} />}
                 </div>
                 <p className="text-sm leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
                   {subject.description}

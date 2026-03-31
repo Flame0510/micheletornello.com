@@ -60,7 +60,7 @@ export default function EventTimeline() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-copper)" }}>
+      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-primary)" }}>
         05
       </p>
       <h2 className="font-display mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
@@ -81,15 +81,15 @@ export default function EventTimeline() {
             {/* Punto sulla timeline */}
             <div
               className="absolute left-4 top-2 w-8 h-8 rounded-full border-2 flex items-center justify-center"
-              style={{ borderColor: "var(--accent-copper)", background: "var(--bg-base)" }}
+              style={{ borderColor: "var(--accent-primary)", background: "var(--bg-base)" }}
             >
-              <div className="w-2 h-2 rounded-full" style={{ background: "var(--accent-copper)" }} />
+              <div className="w-2 h-2 rounded-full" style={{ background: "var(--accent-primary)" }} />
             </div>
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <Calendar size={16} style={{ color: "var(--accent-copper)" }} />
-                  <span className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--accent-copper)" }}>
+                  <Calendar size={16} style={{ color: "var(--accent-primary)" }} />
+                  <span className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--accent-primary)" }}>
                     {event.date}
                   </span>
                 </div>
@@ -109,8 +109,8 @@ export default function EventTimeline() {
               <motion.a
                 href={event.link}
                 className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2 self-start"
-                style={{ color: "var(--accent-copper)", border: "1px solid var(--accent-copper)" }}
-                whileHover={{ background: "var(--accent-copper)", color: "var(--bg-base)" }}
+                style={{ color: "var(--accent-primary)", border: "1px solid var(--accent-primary)" }}
+                whileHover={{ background: "var(--accent-primary)", color: "var(--bg-base)" }}
               >
                 <span>{lang === "it" ? "Scopri di più" : "Learn more"}</span>
                 <ExternalLink size={12} />

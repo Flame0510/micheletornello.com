@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
-import { getCaseStudy } from '@/lib/case-studies';
+import { getCaseStudy, caseStudies } from '@/lib/case-studies';
 import CaseStudyPageClient from './CaseStudyPageClient';
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return caseStudies.map((cs) => ({ slug: cs.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

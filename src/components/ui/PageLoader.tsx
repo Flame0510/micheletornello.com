@@ -42,7 +42,7 @@ export const PageLoader = () => {
         <motion.div
           key="loader"
           className="fixed inset-0 z-[99999] flex items-center justify-center"
-          style={{ background: "#060606" }}
+          style={{ background: 'var(--bg-loader)' }}
           exit={{
             clipPath: ["circle(150% at 50% 50%)", "circle(0% at 50% 50%)"],
             transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
@@ -52,7 +52,7 @@ export const PageLoader = () => {
             className="font-mono tabular-nums select-none"
             style={{
               fontSize: "clamp(3rem, 8vw, 6rem)",
-              color: "#E8E8E8",
+              color: "var(--text-loader)",
               letterSpacing: "0.1em",
               fontVariantNumeric: "tabular-nums",
             }}

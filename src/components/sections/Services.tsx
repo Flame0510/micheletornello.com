@@ -40,7 +40,7 @@ export const Services = () => {
               transition: 'box-shadow 0.2s, border-color 0.2s',
             }}
             onMouseOver={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(37,99,235,0.08)';
+              (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-card-hover)';
               (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-accent)';
             }}
             onMouseOut={(e) => {
@@ -52,13 +52,13 @@ export const Services = () => {
             <div style={{
               width: 48, height: 48,
               borderRadius: '50%',
-              background: 'var(--accent-copper-subtle)',
+              background: 'var(--accent-primary-subtle)',
               border: '1px solid var(--border-accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '1.25rem',
-              color: 'var(--accent-copper)',
+              color: 'var(--accent-primary)',
               fontSize: '1.1rem',
               fontWeight: 700,
               fontFamily: 'var(--font-body)',
@@ -70,7 +70,7 @@ export const Services = () => {
             <span style={{
               fontSize: "0.65rem",
               letterSpacing: "0.15em",
-              color: "var(--accent-copper)",
+              color: "var(--accent-primary)",
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
               marginBottom: '0.25rem',
@@ -133,7 +133,7 @@ export const Services = () => {
                         style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: "0.85rem", color: "var(--text-secondary)" }}
                       >
                         <span style={{
-                          color: "var(--accent-copper)",
+                          color: "var(--accent-primary)",
                           fontSize: "0.7rem",
                           lineHeight: "1.6",
                           flexShrink: 0,
@@ -169,7 +169,7 @@ export const Services = () => {
                           {step}
                         </span>
                         {j < arr.length - 1 && (
-                          <span style={{ color: "var(--accent-copper)", opacity: 0.5 }}>→</span>
+                          <span style={{ color: "var(--accent-primary)", opacity: 0.5 }}>→</span>
                         )}
                       </span>
                     )
@@ -186,14 +186,14 @@ export const Services = () => {
                   style={{
                     display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
                     fontSize: "0.88rem",
-                    color: "var(--accent-copper)",
+                    color: "var(--accent-primary)",
                     fontWeight: 600,
                     textDecoration: 'none',
                     fontFamily: 'var(--font-body)',
                     transition: 'color 0.2s',
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = 'var(--accent-copper-dark)')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = 'var(--accent-copper)')}
+                  onMouseOver={(e) => (e.currentTarget.style.color = 'var(--accent-primary-dark)')}
+                  onMouseOut={(e) => (e.currentTarget.style.color = 'var(--accent-primary)')}
                 >
                   {(service as { cta: string }).cta}
                   <span style={{ fontSize: "0.95rem" }}>→</span>

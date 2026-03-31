@@ -1,6 +1,28 @@
 'use client';
 
 import Image from 'next/image';
+import { TimelineItem } from '@/components/ui/TimelineItem';
+
+const timelineItems = [
+  {
+    year: '2020',
+    title: 'PRIMA ARCHITETTURA LIVE',
+    text: 'Primo sistema in produzione.\nStabilità reale, utenti reali, responsabilità reale.',
+    highlight: false,
+  },
+  {
+    year: '2022',
+    title: 'SCALING ENTERPRISE',
+    text: 'Dalla build alla resilienza: osservabilità,\nperformance e qualità operativa.',
+    highlight: true,
+  },
+  {
+    year: '2024',
+    title: 'SYSTEM THINKING',
+    text: 'Focus su sistemi duraturi: design decisionale,\nmanutenzione evolutiva, impatto globale.',
+    highlight: false,
+  },
+];
 
 export default function ChiSonoSection() {
   return (
@@ -51,47 +73,16 @@ export default function ChiSonoSection() {
           </header>
 
           <div className="chiB_timeline">
-            <div className="chiB_tlItem">
-              <div className="chiB_tlDot" />
-              <div className="chiB_tlContent">
-                <div className="chiB_tlMeta">
-                  <span className="chiB_tlYear">2020</span>
-                  <span className="chiB_tlTag">PRIMA ARCHITETTURA LIVE</span>
-                </div>
-                <p className="chiB_tlText">
-                  Primo sistema in produzione.<br />
-                  Stabilità reale, utenti reali, responsabilità reale.
-                </p>
-              </div>
-            </div>
-
-            <div className="chiB_tlItem chiB_tlHighlight">
-              <div className="chiB_tlDot" />
-              <div className="chiB_tlContent">
-                <div className="chiB_tlMeta">
-                  <span className="chiB_tlYear">2022</span>
-                  <span className="chiB_tlTag">SCALING ENTERPRISE</span>
-                </div>
-                <p className="chiB_tlText">
-                  Dalla build alla resilienza: osservabilità,<br />
-                  performance e qualità operativa.
-                </p>
-              </div>
-            </div>
-
-            <div className="chiB_tlItem">
-              <div className="chiB_tlDot" />
-              <div className="chiB_tlContent">
-                <div className="chiB_tlMeta">
-                  <span className="chiB_tlYear">2024</span>
-                  <span className="chiB_tlTag">SYSTEM THINKING</span>
-                </div>
-                <p className="chiB_tlText">
-                  Focus su sistemi duraturi: design decisionale,<br />
-                  manutenzione evolutiva, impatto globale.
-                </p>
-              </div>
-            </div>
+            {timelineItems.map((item) => (
+              <TimelineItem
+                key={item.year}
+                year={item.year}
+                title={item.title}
+                text={item.text}
+                variant="chi-sono"
+                highlight={item.highlight}
+              />
+            ))}
           </div>
 
           <div style={{ marginTop: '2rem' }}>

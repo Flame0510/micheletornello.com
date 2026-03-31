@@ -32,7 +32,7 @@ const Footer = () => {
           </p>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', opacity: 0.6 }}>P.IVA 06217000873</p>
           <a href="/privacy" style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', opacity: 0.6, transition: 'color 0.2s' }}
-            onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-copper)')}
+            onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
             onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-muted)')}
           >
             Privacy & Cookie Policy
@@ -47,7 +47,7 @@ const Footer = () => {
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', transition: 'color 0.2s' }}
-              onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-copper)')}
+              onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
               onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-muted)')}
             >
               {link.name}
@@ -58,7 +58,7 @@ const Footer = () => {
         <div className="flex flex-col gap-2 md:items-end">
           <a 
             href="mailto:micheletornello5@gmail.com" 
-            style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent-copper)', transition: 'opacity 0.2s' }}
+            style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent-primary)', transition: 'opacity 0.2s' }}
             onMouseOver={(e) => ((e.target as HTMLElement).style.opacity = '0.75')}
             onMouseOut={(e) => ((e.target as HTMLElement).style.opacity = '1')}
           >

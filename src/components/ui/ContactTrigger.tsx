@@ -57,7 +57,7 @@ export default function ContactTrigger() {
 
           <p
             className="text-[10px] uppercase tracking-widest mb-3 font-semibold"
-            style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent-copper)' }}
+            style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent-primary)' }}
           >
             Contatto diretto
           </p>
@@ -67,7 +67,7 @@ export default function ContactTrigger() {
               href="mailto:micheletornello5@gmail.com"
               className="text-sm transition-colors"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)' }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-copper)')}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-primary)')}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
             >
               → Email
@@ -78,7 +78,7 @@ export default function ContactTrigger() {
               rel="noopener noreferrer"
               className="text-sm transition-colors"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)' }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-copper)')}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-primary)')}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
             >
               → LinkedIn
@@ -87,7 +87,7 @@ export default function ContactTrigger() {
               href="/#contatto"
               className="text-sm transition-colors"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)' }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-copper)')}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-primary)')}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
             >
               → Form contatti

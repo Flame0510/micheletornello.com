@@ -14,7 +14,7 @@ export default function SectionLabel({ children, className = '' }: SectionLabelP
           display: 'inline-block',
           width: '2rem',
           height: '1px',
-          background: 'var(--accent-copper)',
+          background: 'var(--accent-primary)',
           flexShrink: 0,
         }}
       />

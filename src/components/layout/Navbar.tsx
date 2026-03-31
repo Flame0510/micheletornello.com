@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,6 +9,53 @@ import Logo from '../ui/Logo';
 const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const openBtnRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+    // Return focus to open button
+    setTimeout(() => openBtnRef.current?.focus(), 50);
+  }, []);
+
+  // ESC to close
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isMenuOpen) return;
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+      // Focus trap
+      if (e.key === 'Tab' && menuRef.current) {
+        const focusable = menuRef.current.querySelectorAll<HTMLElement>(
+          'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen, closeMenu]);
+
+  // Auto-focus close button when menu opens
+  useEffect(() => {
+    if (isMenuOpen && menuRef.current) {
+      const closeBtn = menuRef.current.querySelector<HTMLElement>('button[aria-label="Chiudi menu"]');
+      setTimeout(() => closeBtn?.focus(), 50);
+    }
+  }, [isMenuOpen]);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
 
@@ -70,7 +117,7 @@ const Navbar = () => {
           zIndex: 50,
           transition: 'all 0.3s ease',
           padding: scrolled ? '0.75rem 0' : '1.5rem 0',
-          background: scrolled ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0)',
+          background: scrolled ? 'var(--bg-nav-scrolled)' : 'transparent',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
           borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
         }}
@@ -102,7 +149,7 @@ const Navbar = () => {
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     fontWeight: active ? 600 : 500,
-                    color: active ? 'var(--accent-copper)' : 'var(--text-muted)',
+                    color: active ? 'var(--accent-primary)' : 'var(--text-muted)',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => !active && ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
@@ -120,7 +167,7 @@ const Navbar = () => {
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 fontWeight: pathname === '/speaker' ? 600 : 500,
-                color: pathname === '/speaker' ? 'var(--accent-copper)' : 'var(--text-muted)',
+                color: pathname === '/speaker' ? 'var(--accent-primary)' : 'var(--text-muted)',
                 transition: 'color 0.2s',
               }}
             >
@@ -129,10 +176,13 @@ const Navbar = () => {
           </nav>
 
           <button 
-            className="md:hidden focus-visible:ring-2 focus-visible:ring-[var(--accent-copper)] focus-visible:outline-none rounded p-3 -mr-3"
+            className="md:hidden focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] focus-visible:outline-none rounded p-3 -mr-3"
             style={{ color: 'var(--text-primary)' }}
+            ref={openBtnRef}
             onClick={() => setIsMenuOpen(true)}
             aria-label="Apri menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -146,6 +196,11 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
+            ref={menuRef}
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu di navigazione"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -171,7 +226,7 @@ const Navbar = () => {
                 border: 'none',
                 cursor: 'pointer',
               }}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => closeMenu()}
               aria-label="Chiudi menu"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -185,7 +240,7 @@ const Navbar = () => {
                 <Link 
                   key={link.name} 
                   href={isHome ? link.anchor : link.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => closeMenu()}
                   style={{
                     fontFamily: 'var(--font-heading)',
                     fontSize: 'clamp(2rem, 8vw, 3rem)',
@@ -194,7 +249,7 @@ const Navbar = () => {
                     textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
-                  onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-copper)')}
+                  onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
                   onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
                 >
                   {link.name.split('] ')[1]}
@@ -202,12 +257,12 @@ const Navbar = () => {
               ))}
               <Link 
                 href="/speaker"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => closeMenu()}
                 style={{
                   fontFamily: 'var(--font-heading)',
                   fontSize: 'clamp(2rem, 8vw, 3rem)',
                   fontWeight: 700,
-                  color: pathname === '/speaker' ? 'var(--accent-copper)' : 'var(--text-primary)',
+                  color: pathname === '/speaker' ? 'var(--accent-primary)' : 'var(--text-primary)',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                 }}

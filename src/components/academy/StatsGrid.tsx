@@ -34,12 +34,12 @@ export default function StatsGrid() {
                 background: "var(--bg-card)",
                 border: "1px solid var(--border)",
               }}
-              whileHover={{ borderColor: "var(--accent-copper)", transition: { duration: 0.2 } }}
+              whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
             >
               <div className="absolute top-6 right-6">
-                <Icon size={24} style={{ color: "var(--accent-copper)", opacity: 0.5 }} />
+                <Icon size={24} style={{ color: "var(--accent-primary)", opacity: 0.5 }} />
               </div>
-              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "var(--accent-copper)" }}>
+              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "var(--accent-primary)" }}>
                 {stat.value}
               </div>
               <div className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
