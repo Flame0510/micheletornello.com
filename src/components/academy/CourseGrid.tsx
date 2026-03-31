@@ -34,10 +34,10 @@ export default function CourseGrid() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto pb-12 md:pb-16">
-      <p className="section-label mb-2">
+      <p className="section-label mb-3">
         04
       </p>
-      <h2 className="section-title mb-6">
+      <h2 className="section-title mb-10">
         {lang === "it" ? "Materie" : "Subjects"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
