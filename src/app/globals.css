@@ -929,6 +929,7 @@ h1 {
   gap: 32px;
   border-left: 2px solid var(--border-accent);
   padding-left: 32px;
+  position: relative;
 }
 
 .chiB_step {
@@ -936,6 +937,20 @@ h1 {
   flex-direction: column;
   gap: 8px;
   position: relative;
+}
+
+/* Dot on the timeline line */
+.chiB_step::before {
+  content: '';
+  position: absolute;
+  left: -37px; /* padding-left(32px) + half border(1px) + half dot(4px) = 37px from left edge of step */
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-copper);
+  border: 2px solid var(--bg-base);
+  box-shadow: 0 0 0 2px var(--accent-copper);
 }
 
 .chiB_year {
@@ -1068,19 +1083,13 @@ h1 {
 .chiB_stepMeta {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 4px;
 }
 
+/* Remove the old inline node element styling */
 .chiB_node {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent-copper);
-  flex-shrink: 0;
-  position: relative;
-  left: -36px;
+  display: none; /* hide old dot — we use ::before now */
 }
 
 .chiB_stepTag {
