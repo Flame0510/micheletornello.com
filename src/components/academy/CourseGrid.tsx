@@ -53,9 +53,9 @@ export default function CourseGrid() {
               className="relative overflow-hidden rounded-lg"
               style={{
                 background: "var(--bg-card)",
-                border: "1px solid rgba(184,115,51,0.2)",
+                border: "1px solid var(--border)",
               }}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              whileHover={{ borderColor: "var(--accent-copper)", transition: { duration: 0.2 } }}
             >
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
