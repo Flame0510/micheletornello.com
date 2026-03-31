@@ -37,7 +37,7 @@ const timeline = [
 
 export default function HomePage() {
   return (
-    <main>
+    <main id="main-content">
       {/* 1. Hero */}
       <HeroSection />
 
@@ -46,13 +46,13 @@ export default function HomePage() {
         <p className="credStrip_label">// RICONOSCIMENTI & COMMUNITY</p>
         <div className="credStrip_items">
           <span className="credStrip_item"><span className="credStrip_name">RTL 102.5</span><span className="credStrip_role">Intervista in diretta nazionale</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">Università di Catania</span><span className="credStrip_role">Speaker · Architetture Mobile</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">TEDx Catania</span><span className="credStrip_role">Staff Volontario</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">Friends of Figma Catania</span><span className="credStrip_role">Contributore</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">Google Developer Group Catania</span><span className="credStrip_role">Membro attivo</span></span>
         </div>
       </div>
@@ -149,11 +149,11 @@ export default function HomePage() {
                 <div className="pv3G_live_grid">
                   <a href="https://watchingstars.it" target="_blank" rel="noopener noreferrer" className="pv3G_live_link">
                     <span className="pv3G_live_name">Watching Stars</span>
-                    <span className="pv3G_live_url">watchingstars.it →</span>
+                    <span className="pv3G_live_url">watchingstars.it <span aria-hidden="true">→</span></span>
                   </a>
                   <a href="https://memorycloud.it" target="_blank" rel="noopener noreferrer" className="pv3G_live_link">
                     <span className="pv3G_live_name">Memory Cloud</span>
-                    <span className="pv3G_live_url">memorycloud.it →</span>
+                    <span className="pv3G_live_url">memorycloud.it <span aria-hidden="true">→</span></span>
                   </a>
                 </div>
               </div>

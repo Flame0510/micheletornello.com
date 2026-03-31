@@ -40,7 +40,7 @@ export default function HeroSection() {
               viewport={{ once: true }}
               variants={variants}
             >
-              ● Disponibile per nuovi progetti · {new Date().getFullYear()}
+              <span aria-hidden="true">● </span>Disponibile per nuovi progetti <span aria-hidden="true">·</span> {new Date().getFullYear()}
             </motion.span>
 
             <motion.p
@@ -54,28 +54,27 @@ export default function HeroSection() {
               Tra i pochi professionisti italiani under-30 con esperienza enterprise e docenza strutturata.
             </motion.p>
 
-            <div className="flex flex-col">
-              <motion.h1
-                custom={1}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={variants}
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
-              >
-                Non costruisco software.
-              </motion.h1>
-              <motion.h1
+            {/* Single h1 with two visual lines */}
+            <motion.h1
+              custom={1}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={variants}
+              style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
+              className="flex flex-col"
+            >
+              <span>Non costruisco software.</span>
+              <motion.span
                 custom={2}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={variants}
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
               >
                 Costruisco sistemi.
-              </motion.h1>
-            </div>
+              </motion.span>
+            </motion.h1>
 
             <motion.p
               className="sub"
@@ -97,7 +96,7 @@ export default function HeroSection() {
               viewport={{ once: true }}
               variants={variants}
             >
-              Parliamo del tuo progetto →
+              Parliamo del tuo progetto <span aria-hidden="true">→</span>
             </motion.a>
           </div>
         </div>

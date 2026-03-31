@@ -36,7 +36,7 @@ export const Services = () => {
               padding: '36px 32px',
               display: 'flex',
               flexDirection: 'column',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04)',
+              boxShadow: 'var(--shadow-card)',
               transition: 'box-shadow 0.2s, border-color 0.2s',
             }}
             onMouseOver={(e) => {
@@ -44,7 +44,7 @@ export const Services = () => {
               (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-accent)';
             }}
             onMouseOut={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04)';
+              (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-card)';
               (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)';
             }}
           >

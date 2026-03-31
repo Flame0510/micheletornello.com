@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer style={{
+    <footer aria-label="Footer" style={{
       background: 'var(--bg-alt)',
       borderTop: '1px solid var(--border)',
       paddingTop: '4rem',
