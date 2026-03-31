@@ -62,7 +62,7 @@ function ContactForm() {
         value={form.message}
         onChange={e => setForm(f => ({...f, message: e.target.value}))}
       />
-      <button className="contactBtn" type="submit" disabled={status === 'sending'}>
+      <button className="btn-primary" type="submit" disabled={status === 'sending'}>
         {status === 'sending' ? 'INVIO...' : 'INVIA MESSAGGIO →'}
       </button>
       {status === 'error' && <p className="contactError">Errore nell&apos;invio. Scrivi a micheletornello5@gmail.com</p>}

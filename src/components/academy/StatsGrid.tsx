@@ -57,15 +57,12 @@ export default function StatsGrid() {
         <p className="text-xl mb-8" style={{ color: "var(--color-text)" }}>
           {t.cta}
         </p>
-        <motion.a
+        <a
           href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
-          className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-          style={{ background: "var(--accent-copper)", color: "#fff" }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
+          className="btn-primary"
         >
           {t.ctaButton}
-        </motion.a>
+        </a>
       </div>
     </section>
   );

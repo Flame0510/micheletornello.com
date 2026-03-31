@@ -90,28 +90,12 @@ export default function HeroSection() {
 
             <motion.a
               href="#contatto"
+              className="btn-primary"
               custom={5}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={variants}
-              style={{
-                display: 'inline-block',
-                marginTop: '2rem',
-                padding: '0.9rem 2rem',
-                background: 'var(--accent-copper)',
-                color: '#fff',
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                letterSpacing: '0.04em',
-                textDecoration: 'none',
-                textTransform: 'uppercase' as const,
-                transition: 'background 0.2s ease',
-                borderRadius: '0.5rem',
-              }}
-              onMouseOver={(e) => (e.currentTarget.style.background = 'var(--accent-copper-dark)')}
-              onMouseOut={(e) => (e.currentTarget.style.background = 'var(--accent-copper)')}
             >
               Parliamo del tuo progetto →
             </motion.a>

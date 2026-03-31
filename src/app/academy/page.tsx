@@ -113,26 +113,20 @@ export default function AcademyPage() {
             : "Contact me for course info, talk or workshop availability."}
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <motion.a
+          <a
             href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
-            className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-            style={{ background: "var(--accent-copper)", color: "#fff" }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
+            className="btn-primary"
           >
             {lang === "it" ? "Contattami via email" : "Email me"}
-          </motion.a>
-          <motion.a
+          </a>
+          <a
             href="https://wa.me/393341593912"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-            style={{ border: "1px solid var(--border-accent)", color: "var(--accent-copper)" }}
-            whileHover={{ background: "var(--accent-copper)", color: "#fff" }}
-            whileTap={{ scale: 0.98 }}
+            className="btn-outline"
           >
             {lang === "it" ? "Scrivimi su WhatsApp" : "Message on WhatsApp"}
-          </motion.a>
+          </a>
         </div>
       </section>
     </main>

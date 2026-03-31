@@ -97,20 +97,7 @@ export default function ChiSonoSection() {
           <div style={{ marginTop: '2rem' }}>
             <a
               href="#contatto"
-              style={{
-                display: 'inline-block',
-                background: 'var(--accent-copper)',
-                color: '#fff',
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                padding: '0.9rem 2rem',
-                textDecoration: 'none',
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase' as const,
-                transition: 'background 0.2s ease',
-                borderRadius: '0.5rem',
-              }}
+              className="btn-primary"
             >
               Parliamo del tuo progetto →
             </a>

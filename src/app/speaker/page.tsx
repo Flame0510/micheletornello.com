@@ -135,11 +135,11 @@ export default function SpeakerPage() {
           <div className="flex flex-wrap gap-4 mt-10">
             <button
               onClick={handleScrollToForm}
-              className="px-6 py-3 bg-[var(--accent-copper)] text-white font-mono text-sm font-bold flex items-center gap-2 hover:bg-[var(--accent-copper)]/90 transition-colors"
+              className="btn-primary inline-flex items-center gap-2"
             >
               BOOK FOR EVENT <ArrowUpRight className="w-4 h-4" />
             </button>
-            <button className="px-6 py-3 border border-[var(--text-primary)]/10 hover:border-[var(--accent-copper)]/40 transition-colors font-mono text-sm flex items-center gap-2">
+            <button className="btn-outline inline-flex items-center gap-2">
               DOWNLOAD KIT <Download className="w-4 h-4" />
             </button>
           </div>
@@ -414,7 +414,7 @@ export default function SpeakerPage() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="px-8 py-4 bg-[var(--accent-copper)] text-white font-mono text-sm font-bold flex items-center gap-2 hover:bg-[var(--accent-copper)]/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="btn-primary inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {status === 'loading' ? 'INVIO IN CORSO...' : 'INVIA RICHIESTA'} <ArrowUpRight className="w-4 h-4" />
               </button>
