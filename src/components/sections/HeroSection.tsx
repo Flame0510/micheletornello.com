@@ -1,7 +1,6 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -27,9 +26,11 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="hero">
+      {/* Light overlay — lascia vedere la foto ma mantiene testo scuro leggibile */}
+      <div className="heroOverlay" />
       <div className="heroContent" style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
         <div className="heroInner">
-          {/* Left column — text */}
+          {/* Text column — layout singola colonna, senza portrait */}
           <div className="heroText">
             <motion.span
               className="badge"
@@ -115,27 +116,6 @@ export default function HeroSection() {
               Parliamo del tuo progetto →
             </motion.a>
           </div>
-
-          {/* Right column — photo */}
-          <motion.div
-            className="heroPhoto"
-            custom={6}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={variants}
-          >
-            <div className="heroPhotoWrap">
-              <Image
-                src="/profile-photo.png"
-                alt="Michele Tornello"
-                fill
-                priority
-                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 300px, 420px"
-                style={{ objectFit: 'cover', objectPosition: '30% center' }}
-              />
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

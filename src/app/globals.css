@@ -126,7 +126,9 @@ main {
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%);
+  background-image: url('/desk-setup.png');
+  background-size: cover;
+  background-position: 30% center;
   position: relative;
   display: flex;
   align-items: center;
@@ -142,6 +144,14 @@ main {
   }
 }
 
+/* Overlay leggero — foto visibile, testo scuro leggibile */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.60);
+  z-index: 1;
+}
+
 .overlay {
   display: none;
 }
@@ -153,64 +163,13 @@ main {
   width: 100%;
 }
 
-/* Hero split layout */
+/* Hero layout — colonna singola, niente foto portrait */
 .heroInner {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: center;
-}
-
-@media (max-width: 1023px) {
-  .heroInner {
-    grid-template-columns: 1fr 300px;
-    gap: 2.5rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .heroInner {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-}
-
-.heroText {
-  /* Left column */
-}
-
-.heroPhoto {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (max-width: 767px) {
-  .heroPhoto {
-    display: flex;
-    width: 100%;
-    margin-top: 2rem;
-  }
-}
-
-.heroPhotoWrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  min-height: 480px;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(37, 99, 235, 0.12), 0 2px 8px rgba(0,0,0,0.06);
-  border: 2px solid var(--border-accent);
-  background: var(--bg-card);
-}
-
-@media (max-width: 767px) {
-  .heroPhotoWrap {
-    min-height: 350px;
-    aspect-ratio: unset;
-    height: max(350px, 60vw);
-  }
+  max-width: 720px;
 }
 
 .badge {
