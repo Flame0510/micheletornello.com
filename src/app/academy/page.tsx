@@ -8,6 +8,7 @@ import { translations } from "@/lib/translations";
 import StatsGrid from "@/components/academy/StatsGrid";
 import ValueProposition from "@/components/academy/ValueProposition";
 import CourseGrid from "@/components/academy/CourseGrid";
+import SectionLabel from '@/components/ui/SectionLabel';
 
 export default function AcademyPage() {
   const { lang } = useLang();
@@ -40,9 +41,9 @@ export default function AcademyPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start relative z-10">
           <div>
-            <p className="section-label mb-6">
+            <SectionLabel className="mb-6">
               Docenza · Steve Jobs Academy
-            </p>
+            </SectionLabel>
             <h1 className="leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--text-primary)", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
               {t.heroTitle}
             </h1>
