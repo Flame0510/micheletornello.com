@@ -17,10 +17,10 @@ export default function StatsGrid() {
       <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-copper)" }}>
         02
       </p>
-      <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+      <h2 className="font-display mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
         {t.title}
       </h2>
-      <p className="text-lg leading-relaxed max-w-2xl mb-16" style={{ color: "var(--text-muted)" }}>
+      <p className="text-lg leading-relaxed max-w-2xl mb-10" style={{ color: "var(--text-muted)" }}>
         {t.subtitle}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -35,10 +35,10 @@ export default function StatsGrid() {
               transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
               className="relative p-8 rounded-lg"
               style={{
-                background: "linear-gradient(145deg, rgba(184,115,51,0.05) 0%, rgba(184,115,51,0.01) 100%)",
-                border: "1px solid rgba(184,115,51,0.1)",
+                background: "var(--bg-card)",
+                border: "1px solid var(--border)",
               }}
-              whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+              whileHover={{ borderColor: "var(--accent-copper)", transition: { duration: 0.2 } }}
             >
               <div className="absolute top-6 right-6">
                 <Icon size={24} style={{ color: "var(--accent-copper)", opacity: 0.5 }} />
