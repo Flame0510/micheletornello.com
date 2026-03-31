@@ -13,12 +13,12 @@ export default function StatsGrid() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto py-24">
+    <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
       <p className="section-label mb-2">
         02
       </p>
-      <h2 className="section-title mb-6">{t.title}</h2>
-      <p className="section-subtitle mb-10">{t.subtitle}</p>
+      <h2 className="section-title mb-4">{t.title}</h2>
+      <p className="section-subtitle mb-8">{t.subtitle}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {t.stats.map((stat, i) => {
           const Icon = iconsList[i];
@@ -49,7 +49,7 @@ export default function StatsGrid() {
           );
         })}
       </div>
-      <div className="mt-24 text-center">
+      <div className="mt-12 text-center">
         <p className="text-xl mb-8" style={{ color: "var(--color-text)" }}>
           {t.cta}
         </p>

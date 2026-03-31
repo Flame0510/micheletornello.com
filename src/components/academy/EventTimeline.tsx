@@ -59,11 +59,11 @@ export default function EventTimeline() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto py-24">
+    <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
       <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-copper)" }}>
         05
       </p>
-      <h2 className="font-display mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+      <h2 className="font-display mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
         {lang === "it" ? "Prossimi eventi" : "Upcoming Events"}
       </h2>
       <div className="relative">
@@ -72,11 +72,11 @@ export default function EventTimeline() {
         {items.map((event, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -20 }}
+            initial={{ opacity: 1, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.2 }}
-            className="relative pl-24 pb-16 last:pb-0"
+            transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.12 }}
+            className="relative pl-24 pb-10 last:pb-0"
           >
             {/* Punto sulla timeline */}
             <div

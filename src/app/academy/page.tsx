@@ -17,7 +17,7 @@ export default function AcademyPage() {
   return (
     <main className="min-h-screen" style={{ background: "var(--bg-base)" }}>
       {/* Hero con gradiente */}
-      <section className="pt-40 pb-24 px-6 max-w-[1120px] mx-auto relative">
+      <section className="pt-32 md:pt-40 pb-12 md:pb-16 px-6 max-w-[1120px] mx-auto relative">
         <div
           className="absolute inset-0 opacity-5 pointer-events-none"
           style={{
@@ -26,7 +26,7 @@ export default function AcademyPage() {
         />
         <Link
           href="/"
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest transition-colors mb-16 group relative z-10"
+          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest transition-colors mb-8 group relative z-10"
           style={{ color: "var(--text-muted)" }}
         >
           <motion.span
@@ -84,7 +84,7 @@ export default function AcademyPage() {
       <ValueProposition />
 
       {/* Photo strip */}
-      <div className="relative h-64 overflow-hidden my-24">
+      <div className="relative h-64 overflow-hidden my-16">
         <Image
           src="/academy-class.jpg"
           alt="Classe Steve Jobs Academy"
@@ -103,11 +103,11 @@ export default function AcademyPage() {
       <EventTimeline />
 
       {/* CTA finale */}
-      <section className="px-6 max-w-[1120px] mx-auto pb-24 text-center">
+      <section className="px-6 max-w-[1120px] mx-auto pb-12 md:pb-16 text-center">
         <h2 className="section-title mb-8">
           {lang === "it" ? "Pronto a iniziare?" : "Ready to start?"}
         </h2>
-        <p className="text-xl mb-12 max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>
+        <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>
           {lang === "it"
             ? "Scrivimi per informazioni sui corsi, disponibilità per talk o workshop."
             : "Contact me for course info, talk or workshop availability."}
