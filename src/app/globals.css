@@ -129,7 +129,7 @@ main {
   background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%);
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding: 7rem 1.2rem 4.5rem;
 }
 
@@ -137,7 +137,7 @@ main {
   .hero {
     min-height: 100vh;
     min-height: 100svh;
-    align-items: center;
+    align-items: flex-start;
     padding: 7rem 1.4rem 3rem;
   }
 }
@@ -149,7 +149,57 @@ main {
 .heroContent {
   position: relative;
   z-index: 2;
-  max-width: 980px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* Hero split layout */
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 1023px) {
+  .heroInner {
+    grid-template-columns: 1fr 300px;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.heroText {
+  /* Left column */
+}
+
+.heroPhoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .heroPhoto {
+    display: none;
+  }
+}
+
+.heroPhotoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(37, 99, 235, 0.12), 0 2px 8px rgba(0,0,0,0.06);
+  border: 2px solid var(--border-accent);
+  background: var(--bg-card);
 }
 
 .badge {

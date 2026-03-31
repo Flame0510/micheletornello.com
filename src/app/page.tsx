@@ -188,8 +188,8 @@ export default function HomePage() {
       {/* 9. Contatti */}
       <ContactSection />
 
-      {/* Newsletter */}
-      <section className="newsletter sectionWrap">
+      {/* Newsletter — temporaneamente nascosta */}
+      {/* <section className="newsletter sectionWrap">
         <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
           <p className="newsletterLabel">// BUILD DIFFERENT</p>
           <h2>Architettura, sistemi e tech dal Sud Italia.</h2>
@@ -212,7 +212,7 @@ export default function HomePage() {
           </form>
           <p className="newsletterNote">Zero spam. Annulla quando vuoi.</p>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
