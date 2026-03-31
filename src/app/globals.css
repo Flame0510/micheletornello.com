@@ -914,6 +914,12 @@ h1 {
   box-shadow: var(--shadow-card);
 }
 
+@media (max-width: 767px) {
+  .chiB_photoBox {
+    aspect-ratio: 3/5;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .chiB_photoBox {
     min-height: 360px;
