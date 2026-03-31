@@ -967,6 +967,7 @@ h1 {
 .chiB_photoBox {
   position: relative;
   aspect-ratio: 4/5;
+  min-height: 420px;
   background: var(--bg-alt);
   overflow: hidden;
   border-radius: 1.25rem;
@@ -1027,13 +1028,27 @@ h1 {
   }
   .chiB_visual { width: 100%; }
   .chiB_photoBox {
-    aspect-ratio: 16/9;
-    max-height: 350px;
     width: 100%;
   }
   .chiB_story { gap: 32px; }
   .chiB_title { font-size: clamp(2.2rem, 10vw, 3.2rem); }
   .chiB_flow { padding-left: 20px; gap: 24px; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .chiB_photoBox {
+    min-height: 380px;
+    aspect-ratio: 3/4;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .chiB_photoBox {
+    min-height: 480px;
+    aspect-ratio: 4/5;
+  }
 }
 
 @media (max-width: 768px) {
