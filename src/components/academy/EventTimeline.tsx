@@ -60,10 +60,10 @@ export default function EventTimeline() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--color-brand)" }}>
+      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-copper)" }}>
         05
       </p>
-      <h2 className="font-display mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
+      <h2 className="font-display mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
         {lang === "it" ? "Prossimi eventi" : "Upcoming Events"}
       </h2>
       <div className="relative">
@@ -81,36 +81,36 @@ export default function EventTimeline() {
             {/* Punto sulla timeline */}
             <div
               className="absolute left-4 top-2 w-8 h-8 rounded-full border-2 flex items-center justify-center"
-              style={{ borderColor: "var(--color-brand)", background: "var(--color-bg)" }}
+              style={{ borderColor: "var(--accent-copper)", background: "var(--bg-base)" }}
             >
-              <div className="w-2 h-2 rounded-full" style={{ background: "var(--color-brand)" }} />
+              <div className="w-2 h-2 rounded-full" style={{ background: "var(--accent-copper)" }} />
             </div>
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <Calendar size={16} style={{ color: "var(--color-brand)" }} />
-                  <span className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--color-brand)" }}>
+                  <Calendar size={16} style={{ color: "var(--accent-copper)" }} />
+                  <span className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--accent-copper)" }}>
                     {event.date}
                   </span>
                 </div>
-                <h3 className="font-display text-2xl mb-2" style={{ color: "#E8E8E8" }}>
+                <h3 className="font-display text-2xl mb-2" style={{ color: "var(--text-primary)" }}>
                   {event.title}
                 </h3>
                 <div className="flex items-center gap-2 mb-4">
-                  <MapPin size={14} style={{ color: "#707070" }} />
-                  <span className="font-mono text-sm" style={{ color: "#707070" }}>
+                  <MapPin size={14} style={{ color: "var(--text-muted)" }} />
+                  <span className="font-mono text-sm" style={{ color: "var(--text-muted)" }}>
                     {event.location}
                   </span>
                 </div>
-                <p className="text-sm leading-relaxed max-w-2xl" style={{ color: "#707070" }}>
+                <p className="text-sm leading-relaxed max-w-2xl" style={{ color: "var(--text-muted)" }}>
                   {event.description}
                 </p>
               </div>
               <motion.a
                 href={event.link}
                 className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2 self-start"
-                style={{ color: "var(--color-brand)", border: "1px solid var(--color-brand)" }}
-                whileHover={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
+                style={{ color: "var(--accent-copper)", border: "1px solid var(--accent-copper)" }}
+                whileHover={{ background: "var(--accent-copper)", color: "var(--bg-base)" }}
               >
                 <span>{lang === "it" ? "Scopri di più" : "Learn more"}</span>
                 <ExternalLink size={12} />

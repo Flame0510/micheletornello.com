@@ -14,13 +14,13 @@ export default function StatsGrid() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--color-brand)" }}>
+      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-copper)" }}>
         02
       </p>
-      <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
+      <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
         {t.title}
       </h2>
-      <p className="text-lg leading-relaxed max-w-2xl mb-16" style={{ color: "#707070" }}>
+      <p className="text-lg leading-relaxed max-w-2xl mb-16" style={{ color: "var(--text-muted)" }}>
         {t.subtitle}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -41,12 +41,12 @@ export default function StatsGrid() {
               whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
             >
               <div className="absolute top-6 right-6">
-                <Icon size={24} style={{ color: "var(--color-brand)", opacity: 0.5 }} />
+                <Icon size={24} style={{ color: "var(--accent-copper)", opacity: 0.5 }} />
               </div>
-              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "var(--color-brand)" }}>
+              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "var(--accent-copper)" }}>
                 {stat.value}
               </div>
-              <div className="font-mono text-sm uppercase tracking-widest" style={{ color: "#707070" }}>
+              <div className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
                 {stat.label}
               </div>
             </motion.div>
@@ -60,7 +60,7 @@ export default function StatsGrid() {
         <motion.a
           href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
           className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-          style={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
+          style={{ background: "var(--accent-copper)", color: "#fff" }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
         >

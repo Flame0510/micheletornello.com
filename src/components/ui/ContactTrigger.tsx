@@ -12,7 +12,7 @@ export default function ContactTrigger() {
     let countdownStarted = false;
 
     const handleScroll = () => {
-      if (countdownStarted) return; // non resettare se già partito
+      if (countdownStarted) return;
       if (window.scrollY > window.innerHeight * 0.6) {
         countdownStarted = true;
         idleTimer = setTimeout(() => setVisible(true), 15000);
@@ -39,25 +39,36 @@ export default function ContactTrigger() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-6 right-6 z-50 bg-[var(--color-bg-surface)] border border-[var(--color-brand)]/40 p-5 shadow-2xl"
-          style={{ minWidth: '220px' }}
+          className="fixed bottom-6 right-6 z-50 p-5 shadow-xl rounded-2xl"
+          style={{
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-accent)',
+            minWidth: '220px',
+          }}
         >
           <button
             onClick={dismiss}
-            className="absolute top-3 right-3 text-[var(--color-text)]/30 hover:text-[var(--color-text)]/70 transition-colors text-xs font-mono"
+            className="absolute top-3 right-3 transition-colors text-xs"
+            style={{ color: 'var(--text-muted)' }}
             aria-label="Chiudi"
           >
             ✕
           </button>
 
-          <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-brand)] mb-3">
-            // Contatto diretto
+          <p
+            className="text-[10px] uppercase tracking-widest mb-3 font-semibold"
+            style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent-copper)' }}
+          >
+            Contatto diretto
           </p>
 
           <div className="flex flex-col gap-2">
             <a
               href="mailto:micheletornello5@gmail.com"
-              className="font-mono text-xs text-[var(--color-text)]/70 hover:text-[var(--color-brand)] transition-colors tracking-wide"
+              className="text-sm transition-colors"
+              style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-copper)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
             >
               → Email
             </a>
@@ -65,13 +76,19 @@ export default function ContactTrigger() {
               href="https://www.linkedin.com/in/michele-tornello-06a6341aa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-[var(--color-text)]/70 hover:text-[var(--color-brand)] transition-colors tracking-wide"
+              className="text-sm transition-colors"
+              style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-copper)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
             >
               → LinkedIn
             </a>
             <a
               href="/#contatto"
-              className="font-mono text-xs text-[var(--color-text)]/70 hover:text-[var(--color-brand)] transition-colors tracking-wide"
+              className="text-sm transition-colors"
+              style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-copper)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
             >
               → Form contatti
             </a>

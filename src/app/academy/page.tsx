@@ -15,19 +15,19 @@ export default function AcademyPage() {
   const t = translations.academyPage[lang];
 
   return (
-    <main className="min-h-screen" style={{ background: "#060606" }}>
+    <main className="min-h-screen" style={{ background: "var(--bg-base)" }}>
       {/* Hero con gradiente */}
       <section className="pt-40 pb-24 px-6 max-w-[1120px] mx-auto relative">
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
+          className="absolute inset-0 opacity-5 pointer-events-none"
           style={{
-            background: "radial-gradient(circle at 30% 50%, rgba(184,115,51,0.4) 0%, transparent 50%)",
+            background: "radial-gradient(circle at 30% 50%, rgba(37,99,235,0.3) 0%, transparent 50%)",
           }}
         />
         <Link
           href="/"
           className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest transition-colors mb-16 group relative z-10"
-          style={{ color: "#707070" }}
+          style={{ color: "var(--text-muted)" }}
         >
           <motion.span
             className="inline-block"
@@ -36,28 +36,28 @@ export default function AcademyPage() {
           >
             ←
           </motion.span>
-          <span className="group-hover:text-white transition-colors">{t.backHome}</span>
+          <span className="group-hover:text-[var(--accent-copper)] transition-colors">{t.backHome}</span>
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start relative z-10">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "var(--color-brand)" }}>
+            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "var(--accent-copper)" }}>
               Docenza · Steve Jobs Academy
             </p>
-            <h1 className="font-display leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "#E8E8E8", letterSpacing: "-0.03em" }}>
+            <h1 className="font-display leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--text-primary)", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
               {t.heroTitle}
             </h1>
-            <p className="text-lg leading-relaxed max-w-xl" style={{ color: "#707070" }}>
+            <p className="text-lg leading-relaxed max-w-xl" style={{ color: "var(--text-muted)" }}>
               {t.intro}
             </p>
           </div>
 
           {/* Info box */}
           <div
-            className="rounded-sm p-6 space-y-4"
-            style={{ border: "1px solid rgba(184,115,51,0.15)", background: "rgba(184,115,51,0.03)" }}
+            className="rounded-2xl p-6 space-y-4"
+            style={{ border: "1px solid var(--border-accent)", background: "var(--bg-card)", boxShadow: "var(--shadow-card)" }}
           >
-            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-brand)" }}>
+            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--accent-copper)" }}>
               {t.infoTitle}
             </p>
             <ul className="space-y-3">
@@ -67,8 +67,8 @@ export default function AcademyPage() {
                 `${t.infoCard.formatLabel}: ${t.infoCard.formatValue}`,
                 t.infoCard.cta,
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#707070" }}>
-                  <span style={{ color: "var(--color-brand)" }}>·</span>
+                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
+                  <span style={{ color: "var(--accent-copper)" }}>·</span>
                   {item}
                 </li>
               ))}
@@ -92,8 +92,8 @@ export default function AcademyPage() {
           className="object-cover object-center"
           style={{ filter: "grayscale(80%) contrast(1.1)", opacity: 0.6 }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #060606 0%, transparent 30%, transparent 70%, #060606 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, #060606 0%, transparent 20%, transparent 80%, #060606 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, var(--bg-base) 0%, transparent 30%, transparent 70%, var(--bg-base) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, var(--bg-base) 0%, transparent 20%, transparent 80%, var(--bg-base) 100%)" }} />
       </div>
 
       {/* Course Grid */}
@@ -104,10 +104,10 @@ export default function AcademyPage() {
 
       {/* CTA finale */}
       <section className="px-6 max-w-[1120px] mx-auto pb-24 text-center">
-        <h2 className="font-display mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
+        <h2 className="font-display mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em", fontFamily: "var(--font-heading)" }}>
           {lang === "it" ? "Pronto a iniziare?" : "Ready to start?"}
         </h2>
-        <p className="text-xl mb-12 max-w-2xl mx-auto" style={{ color: "#707070" }}>
+        <p className="text-xl mb-12 max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>
           {lang === "it"
             ? "Scrivimi per informazioni sui corsi, disponibilità per talk o workshop."
             : "Contact me for course info, talk or workshop availability."}
@@ -116,7 +116,7 @@ export default function AcademyPage() {
           <motion.a
             href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
             className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-            style={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
+            style={{ background: "var(--accent-copper)", color: "#fff" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -127,8 +127,8 @@ export default function AcademyPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-            style={{ border: "1px solid var(--color-brand)", color: "var(--color-brand)" }}
-            whileHover={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
+            style={{ border: "1px solid var(--border-accent)", color: "var(--accent-copper)" }}
+            whileHover={{ background: "var(--accent-copper)", color: "#fff" }}
             whileTap={{ scale: 0.98 }}
           >
             {lang === "it" ? "Scrivimi su WhatsApp" : "Message on WhatsApp"}
