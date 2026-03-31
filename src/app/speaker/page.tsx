@@ -152,9 +152,9 @@ export default function SpeakerPage() {
         {/* Bio Section */}
         <section className="mb-12 md:mb-16 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-8">
-            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
+            <p className="section-label mb-8 flex items-center gap-2">
               <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Biography
-            </h2>
+            </p>
             <div className="space-y-6">
               <p className="text-[var(--text-primary)]/70 leading-relaxed font-light">
                 {bio.long}
@@ -196,9 +196,9 @@ export default function SpeakerPage() {
 
         {/* Topics List */}
         <section className="mb-12 md:mb-16">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
+          <p className="section-label mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Speaking Topics
-          </h2>
+          </p>
           
           <div className="space-y-12">
             {topics.map((topic, i) => (
@@ -234,9 +234,9 @@ export default function SpeakerPage() {
 
         {/* Technologies Section */}
         <section className="mb-12 md:mb-16">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
+          <p className="section-label mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Stack & Expertise
-          </h2>
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             <div>
               <h3 className="font-mono text-[10px] uppercase tracking-widest text-[var(--text-primary)]/40 mb-3">Sistemi Web & Mobile</h3>
@@ -251,9 +251,9 @@ export default function SpeakerPage() {
 
         {/* Past Media */}
         <section className="mb-12 md:mb-16">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
+          <p className="section-label mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Featured In
-          </h2>
+          </p>
           <a 
             href="https://play.rtl.it/ospiti/1/michele-tornello-il-post-in-fabbrica-mercoledi-27-marzo-2024/"
             target="_blank"
@@ -273,9 +273,9 @@ export default function SpeakerPage() {
 
         {/* Booking Form */}
         <section ref={formRef} className="mb-12 md:mb-16 scroll-mt-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
+          <p className="section-label mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Book for Your Event
-          </h2>
+          </p>
 
           {status === 'success' ? (
             <div className="border border-[var(--accent-copper)]/30 bg-[var(--accent-copper)]/5 p-10 text-center">
