@@ -8,7 +8,6 @@ import { translations } from "@/lib/translations";
 import StatsGrid from "@/components/academy/StatsGrid";
 import ValueProposition from "@/components/academy/ValueProposition";
 import CourseGrid from "@/components/academy/CourseGrid";
-import EventTimeline from "@/components/academy/EventTimeline";
 
 export default function AcademyPage() {
   const { lang } = useLang();
@@ -105,9 +104,6 @@ export default function AcademyPage() {
 
       {/* Course Grid */}
       <CourseGrid />
-
-      {/* Event Timeline */}
-      <EventTimeline />
 
       {/* CTA finale */}
       <section className="px-6 max-w-[1120px] mx-auto pb-12 md:pb-16 text-center">
