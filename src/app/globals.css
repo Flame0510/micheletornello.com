@@ -137,10 +137,15 @@ main {
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 100vh;
     min-height: 100svh;
     align-items: flex-start;
     padding: 7rem 1.4rem 5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    min-height: 85vh;
   }
 }
 
