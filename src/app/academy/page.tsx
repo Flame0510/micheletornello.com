@@ -112,7 +112,7 @@ export default function AcademyPage() {
             ? "Scrivimi per informazioni sui corsi, disponibilità per talk o workshop."
             : "Contact me for course info, talk or workshop availability."}
         </p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-start sm:items-center">
           <a
             href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
             className="btn-primary"

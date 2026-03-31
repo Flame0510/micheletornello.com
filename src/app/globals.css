@@ -536,6 +536,7 @@ h1 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: .8rem;
   text-align: left;
 }
@@ -1896,7 +1897,11 @@ h1 {
 /* ── SHARED BUTTONS ── */
 
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  align-self: flex-start;
   background: var(--accent-copper);
   color: var(--text-white);
   font-family: var(--font-body);
@@ -1918,7 +1923,11 @@ h1 {
 }
 
 .btn-outline {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  align-self: flex-start;
   background: transparent;
   color: var(--accent-copper);
   font-family: var(--font-body);

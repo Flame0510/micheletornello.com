@@ -31,7 +31,7 @@ export default function HeroSection() {
       <div className="heroContent" style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
         <div className="heroInner">
           {/* Text column — layout singola colonna, senza portrait */}
-          <div className="heroText">
+          <div className="heroText flex flex-col items-start">
             <motion.span
               className="badge"
               custom={0}

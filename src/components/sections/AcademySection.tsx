@@ -81,7 +81,9 @@ export default function AcademySection() {
                   <StatBox value={7} label="Materie Insegnate" />
                 </div>
 
-                <a href="/academy" className="btn-primary">Scopri il programma →</a>
+                <div className="flex items-start">
+                  <a href="/academy" className="btn-primary">Scopri il programma →</a>
+                </div>
               </div>
             </div>
           </div>

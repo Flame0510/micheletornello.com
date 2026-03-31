@@ -135,12 +135,16 @@ export default function SpeakerPage() {
           <div className="flex flex-wrap gap-4 mt-10">
             <button
               onClick={handleScrollToForm}
-              className="btn-primary inline-flex items-center gap-2"
+              className="btn-primary"
             >
-              BOOK FOR EVENT <ArrowUpRight className="w-4 h-4" />
+              <span className="inline-flex items-center gap-2">
+                BOOK FOR EVENT <ArrowUpRight className="w-4 h-4" />
+              </span>
             </button>
-            <button className="btn-outline inline-flex items-center gap-2">
-              DOWNLOAD KIT <Download className="w-4 h-4" />
+            <button className="btn-outline">
+              <span className="inline-flex items-center gap-2">
+                DOWNLOAD KIT <Download className="w-4 h-4" />
+              </span>
             </button>
           </div>
         </header>
@@ -414,9 +418,11 @@ export default function SpeakerPage() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="btn-primary inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {status === 'loading' ? 'INVIO IN CORSO...' : 'INVIA RICHIESTA'} <ArrowUpRight className="w-4 h-4" />
+                <span className="inline-flex items-center gap-2">
+                  {status === 'loading' ? 'INVIO IN CORSO...' : 'INVIA RICHIESTA'} <ArrowUpRight className="w-4 h-4" />
+                </span>
               </button>
             </form>
           )}
