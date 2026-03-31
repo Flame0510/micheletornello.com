@@ -47,7 +47,7 @@ export default function AcademySection() {
           <div className="docH_grid">
             <div className="docH_visual">
               <div className="docH_imageWrapper">
-                <Image src="/academy-class.jpg" alt="Michele Tornello in aula" className="docH_img" fill style={{ objectFit: 'cover', filter: 'grayscale(1) contrast(1.1)', transition: 'transform 0.8s cubic-bezier(0.16,1,0.3,1)' }} />
+                <Image src="/academy-class.jpg" alt="Michele Tornello in aula" className="docH_img" fill style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16,1,0.3,1)' }} />
                 <div className="docH_imageOverlay"></div>
               </div>
               <div className="docH_imgMeta">

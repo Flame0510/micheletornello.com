@@ -1,8 +1,6 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
-import { useParallax } from '@/hooks/useParallax';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -23,36 +21,12 @@ const fadeUpReduced = {
 };
 
 export default function HeroSection() {
-  const parallaxRef = useParallax(0.25);
   const shouldReduceMotion = useReducedMotion();
   const variants = shouldReduceMotion ? fadeUpReduced : fadeUp;
 
   return (
-    <section id="hero" className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* LCP preload: priority image for desk-setup.png hero background */}
-      <Image
-        src="/desk-setup.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        style={{ opacity: 0, position: 'absolute', pointerEvents: 'none' }}
-        aria-hidden="true"
-      />
-      <div
-        ref={parallaxRef}
-        style={{
-          position: 'absolute',
-          inset: '-20% 0',
-          backgroundImage: "url('/desk-setup.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: '30% center',
-          willChange: 'transform',
-        }}
-        aria-hidden="true"
-      />
-      <div className="overlay" style={{ position: 'absolute', inset: 0, zIndex: 1 }} />
-      <div className="heroContent" style={{ position: 'relative', zIndex: 2, maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
+    <section id="hero" className="hero">
+      <div className="heroContent" style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
         <motion.span
           className="badge"
           custom={0}
@@ -82,6 +56,7 @@ export default function HeroSection() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={variants}
+            style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
           >
             Non costruisco software.
           </motion.h1>
@@ -91,6 +66,7 @@ export default function HeroSection() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={variants}
+            style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
           >
             Costruisco sistemi.
           </motion.h1>
@@ -114,23 +90,23 @@ export default function HeroSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={variants}
-          className="hero-cta"
           style={{
             display: 'inline-block',
             marginTop: '2rem',
-            padding: '0.85rem 1.8rem',
-            background: 'var(--color-brand)',
-            color: 'var(--color-bg)',
-            fontFamily: 'var(--font-jetbrains-mono), monospace',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            letterSpacing: '0.08em',
+            padding: '0.9rem 2rem',
+            background: 'var(--accent-copper)',
+            color: '#fff',
+            fontFamily: 'var(--font-body)',
+            fontSize: '0.9rem',
+            fontWeight: 600,
+            letterSpacing: '0.04em',
             textDecoration: 'none',
             textTransform: 'uppercase' as const,
-            transition: 'opacity 0.2s ease',
+            transition: 'background 0.2s ease',
+            borderRadius: '0.5rem',
           }}
-          onMouseOver={(e) => (e.currentTarget.style.opacity = '0.85')}
-          onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
+          onMouseOver={(e) => (e.currentTarget.style.background = 'var(--accent-copper-dark)')}
+          onMouseOut={(e) => (e.currentTarget.style.background = 'var(--accent-copper)')}
         >
           Parliamo del tuo progetto →
         </motion.a>

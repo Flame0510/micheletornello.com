@@ -7,7 +7,7 @@ export const Footer = () => {
   const { lang, setLang } = useLang();
 
   return (
-    <footer className="mt-32" style={{ borderTop: "1px solid #1A1A1A" }}>
+    <footer className="mt-32" style={{ borderTop: "1px solid var(--border)", background: 'var(--bg-alt)' }}>
       <div className="px-6 md:px-12 py-6">
         <div className="max-w-[1120px] mx-auto flex flex-col gap-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">

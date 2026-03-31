@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -9,15 +9,16 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ContactTrigger from '@/components/ui/ContactTrigger';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const outfit = Outfit({
+  variable: '--font-outfit',
   subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: '--font-instrument-serif',
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: '--font-plus-jakarta',
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '500', '600'],
 });
 
 const jetBrainsMono = JetBrains_Mono({
@@ -73,7 +74,8 @@ export default function RootLayout({
   return (
     <html lang="it" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${instrumentSerif.variable} ${jetBrainsMono.variable} font-sans antialiased bg-background text-text-main`}
+        className={`${outfit.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} font-sans antialiased`}
+        style={{ background: 'var(--bg-base)', color: 'var(--text-primary)' }}
       >
         <PageLoader />
         <CustomCursor />

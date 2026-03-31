@@ -57,30 +57,35 @@ const Navbar = () => {
   ];
 
   const currentYear = new Date().getFullYear();
-
   const isHome = pathname === '/';
 
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'py-3 bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--color-brand)]/20' : 'py-6 bg-transparent'
-        }`}
-        style={{ width: '100%' }}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 50,
+          transition: 'all 0.3s ease',
+          padding: scrolled ? '0.75rem 0' : '1.5rem 0',
+          background: scrolled ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0)',
+          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
+        }}
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Logo />
-            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[var(--color-text)]/20">·</span>
-            <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-[var(--color-text)]/60">{currentYear}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>·</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>{currentYear}</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const isNavActive = () => {
-                // Pagine dedicate (non homepage)
                 if (link.href === '/academy') return pathname === '/academy';
-                // Sezioni homepage via scroll
                 if (pathname !== '/') return false;
                 const sectionId = link.anchor.replace('#', '');
                 return activeSection === sectionId;
@@ -91,8 +96,17 @@ const Navbar = () => {
                 <Link 
                   key={link.name} 
                   href={isHome ? link.anchor : link.href}
-                  className="font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors"
-                  style={{ color: active ? 'var(--color-brand)' : 'rgba(242, 237, 232, 0.6)' }}
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.72rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    fontWeight: active ? 600 : 500,
+                    color: active ? 'var(--accent-copper)' : 'var(--text-muted)',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={(e) => !active && ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
+                  onMouseOut={(e) => !active && ((e.target as HTMLElement).style.color = 'var(--text-muted)')}
                 >
                   {link.name}
                 </Link>
@@ -100,15 +114,23 @@ const Navbar = () => {
             })}
             <Link 
               href="/speaker"
-              className="font-mono text-[10px] lg:text-xs uppercase tracking-widest transition-colors"
-              style={{ color: pathname === '/speaker' ? 'var(--color-brand)' : 'rgba(242, 237, 232, 0.6)' }}
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.72rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                fontWeight: pathname === '/speaker' ? 600 : 500,
+                color: pathname === '/speaker' ? 'var(--accent-copper)' : 'var(--text-muted)',
+                transition: 'color 0.2s',
+              }}
             >
               [07] Speaker
             </Link>
           </nav>
 
           <button 
-            className="md:hidden text-[var(--color-text)] focus-visible:outline-none p-3 -mr-3"
+            className="md:hidden focus-visible:outline-none p-3 -mr-3"
+            style={{ color: 'var(--text-primary)' }}
             onClick={() => setIsMenuOpen(true)}
             aria-label="Apri menu"
           >
@@ -127,10 +149,28 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[100] bg-[var(--color-bg)] flex flex-col items-center justify-center p-6"
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 100,
+              background: 'var(--bg-alt)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1.5rem',
+            }}
           >
             <button 
-              className="absolute top-8 right-8 text-[var(--color-text)] focus-visible:outline-none"
+              style={{
+                position: 'absolute',
+                top: '2rem',
+                right: '2rem',
+                color: 'var(--text-primary)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+              }}
               onClick={() => setIsMenuOpen(false)}
               aria-label="Chiudi menu"
             >
@@ -140,13 +180,22 @@ const Navbar = () => {
               </svg>
             </button>
 
-            <nav className="flex flex-col items-center gap-8">
+            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   href={isHome ? link.anchor : link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="font-display text-4xl hover:text-[var(--color-brand)] transition-colors italic"
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: 'clamp(2rem, 8vw, 3rem)',
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-copper)')}
+                  onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
                 >
                   {link.name.split('] ')[1]}
                 </Link>
@@ -154,15 +203,28 @@ const Navbar = () => {
               <Link 
                 href="/speaker"
                 onClick={() => setIsMenuOpen(false)}
-                className={`font-display text-4xl transition-colors italic ${
-                  pathname === '/speaker' ? 'text-[var(--color-brand)]' : 'hover:text-[var(--color-brand)]'
-                }`}
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 'clamp(2rem, 8vw, 3rem)',
+                  fontWeight: 700,
+                  color: pathname === '/speaker' ? 'var(--accent-copper)' : 'var(--text-primary)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                }}
               >
                 Speaker
               </Link>
             </nav>
 
-            <div className="absolute bottom-12 font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/30">
+            <div style={{
+              position: 'absolute',
+              bottom: '3rem',
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.7rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: 'var(--text-muted)',
+            }}>
               © {currentYear} Michele Tornello · Catania · IT
             </div>
           </motion.div>

@@ -8,7 +8,7 @@ export default function ChiSonoSection() {
       <div className="chiB_container">
         <div className="chiB_visual">
           <div className="chiB_photoBox">
-            <Image src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" fill style={{ objectFit: 'cover', filter: 'grayscale(1) contrast(1.1)' }} />
+            <Image src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" fill style={{ objectFit: 'cover' }} />
             <div className="chiB_texture"></div>
           </div>
 
@@ -87,19 +87,20 @@ export default function ChiSonoSection() {
               href="#contatto"
               style={{
                 display: 'inline-block',
-                background: 'var(--color-brand)',
-                color: 'var(--color-bg)',
-                fontFamily: 'var(--font-jetbrains-mono), monospace',
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                padding: '0.85rem 1.8rem',
+                background: 'var(--accent-copper)',
+                color: '#fff',
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                padding: '0.9rem 2rem',
                 textDecoration: 'none',
-                letterSpacing: '0.08em',
+                letterSpacing: '0.04em',
                 textTransform: 'uppercase' as const,
-                transition: 'opacity 0.2s ease',
+                transition: 'background 0.2s ease',
+                borderRadius: '0.5rem',
               }}
-              onMouseOver={(e) => (e.currentTarget.style.opacity = '0.85')}
-              onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
+              onMouseOver={(e) => (e.currentTarget.style.background = 'var(--accent-copper-dark)')}
+              onMouseOut={(e) => (e.currentTarget.style.background = 'var(--accent-copper)')}
             >
               Parliamo del tuo progetto →
             </a>

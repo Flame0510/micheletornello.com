@@ -63,7 +63,7 @@ function ContactForm() {
         onChange={e => setForm(f => ({...f, message: e.target.value}))}
       />
       <button className="contactBtn" type="submit" disabled={status === 'sending'}>
-        {status === 'sending' ? '// INVIO...' : 'INVIA MESSAGGIO →'}
+        {status === 'sending' ? 'INVIO...' : 'INVIA MESSAGGIO →'}
       </button>
       {status === 'error' && <p className="contactError">Errore nell&apos;invio. Scrivi a micheletornello5@gmail.com</p>}
     </form>
@@ -74,7 +74,7 @@ export default function ContactSection() {
   return (
     <section id="contatto" className="cta sectionWrap">
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
-        <h2>Hai un sistema che deve durare?</h2>
+        <h2 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontWeight: 800 }}>Hai un sistema che deve durare?</h2>
         <p className="ctaSub">Raccontami il progetto — rispondo entro 24h.</p>
         <ContactForm />
       </div>

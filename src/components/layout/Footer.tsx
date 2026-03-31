@@ -15,16 +15,26 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[var(--color-bg)] border-t border-[var(--color-text)]/10 py-16 px-6">
+    <footer style={{
+      background: 'var(--bg-alt)',
+      borderTop: '1px solid var(--border)',
+      paddingTop: '4rem',
+      paddingBottom: '4rem',
+      paddingLeft: '1.5rem',
+      paddingRight: '1.5rem',
+    }}>
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         
         <div className="flex flex-col gap-2">
           <Logo />
-          <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/40">
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)' }}>
             © {currentYear} Michele Tornello
           </p>
-          <p className="font-mono text-[9px] uppercase tracking-widest text-[var(--color-text)]/20">P.IVA 06217000873</p>
-          <a href="/privacy" className="font-mono text-[9px] uppercase tracking-widest text-[var(--color-text)]/20 hover:text-[var(--color-brand)] transition-colors">
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', opacity: 0.6 }}>P.IVA 06217000873</p>
+          <a href="/privacy" style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', opacity: 0.6, transition: 'color 0.2s' }}
+            onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-copper)')}
+            onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-muted)')}
+          >
             Privacy & Cookie Policy
           </a>
         </div>
@@ -36,7 +46,9 @@ const Footer = () => {
               href={link.href} 
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text)]/40 hover:text-[var(--color-brand)] transition-colors"
+              style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', transition: 'color 0.2s' }}
+              onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-copper)')}
+              onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-muted)')}
             >
               {link.name}
             </Link>
@@ -44,13 +56,15 @@ const Footer = () => {
         </nav>
 
         <div className="flex flex-col gap-2 md:items-end">
-           <a 
+          <a 
             href="mailto:micheletornello5@gmail.com" 
-            className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-brand)] hover:underline"
+            style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent-copper)', transition: 'opacity 0.2s' }}
+            onMouseOver={(e) => ((e.target as HTMLElement).style.opacity = '0.75')}
+            onMouseOut={(e) => ((e.target as HTMLElement).style.opacity = '1')}
           >
             micheletornello5@gmail.com
           </a>
-          <p className="font-mono text-[9px] uppercase tracking-widest text-[var(--color-text)]/20">
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', opacity: 0.5 }}>
             Catania · IT · Europe
           </p>
         </div>
