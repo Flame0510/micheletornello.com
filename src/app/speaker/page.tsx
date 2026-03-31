@@ -150,9 +150,9 @@ export default function SpeakerPage() {
         </header>
 
         {/* Bio Section */}
-        <section className="mb-24 grid md:grid-cols-12 gap-12">
+        <section className="mb-12 md:mb-16 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-8">
-            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-24 flex items-center gap-2">
+            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
               <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Biography
             </h2>
             <div className="space-y-6">
@@ -176,7 +176,7 @@ export default function SpeakerPage() {
         </section>
 
         {/* Credentials Grid */}
-        <section className="mb-24 border-y border-[var(--text-primary)]/5 py-12">
+        <section className="mb-12 md:mb-16 border-y border-[var(--text-primary)]/5 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {credentials.map((item, i) => (
               <div key={i} className="group">
@@ -195,24 +195,26 @@ export default function SpeakerPage() {
         </section>
 
         {/* Topics List */}
-        <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-24 flex items-center gap-2">
+        <section className="mb-12 md:mb-16">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Speaking Topics
           </h2>
           
           <div className="space-y-12">
             {topics.map((topic, i) => (
-              <div key={i} className="group relative border-l border-[var(--text-primary)]/5 pl-8 hover:border-[var(--accent-copper)]/40 transition-colors">
-                <div className="absolute -left-2.5 top-0 w-5 h-5 bg-[var(--bg-base)] border border-[var(--text-primary)]/10 rounded-full flex items-center justify-center text-[var(--accent-copper)] group-hover:border-[var(--accent-copper)]/40 transition-colors">
-                  {topic.icon}
-                </div>
-                <div className="mb-4">
-                  <h3 className="font-display text-3xl mb-2 group-hover:text-[var(--accent-copper)] transition-colors leading-tight">
-                    {topic.title}
-                  </h3>
-                  <p className="font-mono text-xs text-[var(--accent-copper)]/80 italic">
-                    {topic.subtitle}
-                  </p>
+              <div key={i} className="group border border-[var(--text-primary)]/5 p-6 md:p-8 hover:border-[var(--accent-copper)]/40 transition-colors overflow-hidden">
+                <div className="mb-4 flex items-start gap-4">
+                  <div className="w-10 h-10 shrink-0 bg-[var(--bg-base)] border border-[var(--text-primary)]/10 rounded-full flex items-center justify-center text-[var(--accent-copper)] group-hover:border-[var(--accent-copper)]/40 transition-colors">
+                    {topic.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-display text-3xl mb-2 group-hover:text-[var(--accent-copper)] transition-colors leading-tight">
+                      {topic.title}
+                    </h3>
+                    <p className="font-mono text-xs text-[var(--accent-copper)]/80 italic">
+                      {topic.subtitle}
+                    </p>
+                  </div>
                 </div>
                 <p className="text-[var(--text-primary)]/60 text-sm leading-relaxed max-w-2xl mb-6">
                   {topic.abstract}
@@ -231,8 +233,8 @@ export default function SpeakerPage() {
         </section>
 
         {/* Technologies Section */}
-        <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-24 flex items-center gap-2">
+        <section className="mb-12 md:mb-16">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Stack & Expertise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
@@ -248,8 +250,8 @@ export default function SpeakerPage() {
         </section>
 
         {/* Past Media */}
-        <section className="mb-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-24 flex items-center gap-2">
+        <section className="mb-12 md:mb-16">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Featured In
           </h2>
           <a 
@@ -270,8 +272,8 @@ export default function SpeakerPage() {
         </section>
 
         {/* Booking Form */}
-        <section ref={formRef} className="mb-24 scroll-mt-24">
-          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-24 flex items-center gap-2">
+        <section ref={formRef} className="mb-12 md:mb-16 scroll-mt-24">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-copper)] mb-8 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-[var(--accent-copper)]/30" /> Book for Your Event
           </h2>
 
@@ -415,15 +417,17 @@ export default function SpeakerPage() {
                 </p>
               )}
 
-              <button
-                type="submit"
-                disabled={status === 'loading'}
-                className="btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                <span className="inline-flex items-center gap-2">
-                  {status === 'loading' ? 'INVIO IN CORSO...' : 'INVIA RICHIESTA'} <ArrowUpRight className="w-4 h-4" />
-                </span>
-              </button>
+              <div className="flex">
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="btn-primary mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    {status === 'loading' ? 'INVIO IN CORSO...' : 'INVIA RICHIESTA'} <ArrowUpRight className="w-4 h-4" />
+                  </span>
+                </button>
+              </div>
             </form>
           )}
         </section>
