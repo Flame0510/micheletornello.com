@@ -68,7 +68,7 @@ export default function EventTimeline() {
       </h2>
       <div className="relative">
         {/* Linea verticale */}
-        <div className="absolute left-8 top-0 bottom-0 w-0.5" style={{ background: "rgba(184,115,51,0.3)" }} />
+        <div className="absolute left-8 top-0 bottom-0 w-0.5" style={{ background: "var(--border-accent)" }} />
         {items.map((event, i) => (
           <motion.div
             key={i}

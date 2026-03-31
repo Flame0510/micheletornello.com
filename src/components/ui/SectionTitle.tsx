@@ -12,7 +12,7 @@ interface SectionTitleProps {
 export const SectionTitle = ({ title, subtitle, prefix, className = '' }: SectionTitleProps) => (
   <div className={`mb-12 md:mb-16 ${className}`}>
     {prefix && (
-      <p className="font-mono-label mb-3" style={{ color: "#707070" }}>
+      <p className="font-mono-label mb-3" style={{ color: "var(--text-muted)" }}>
         {prefix}
       </p>
     )}

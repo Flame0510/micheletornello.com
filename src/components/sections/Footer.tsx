@@ -41,7 +41,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="font-mono text-xs text-text-muted" style={{ color: "#707070" }}>
+          <div className="font-mono text-xs text-text-muted" style={{ color: "var(--text-muted)" }}>
             &gt; available for systems that matter
           </div>
         </div>

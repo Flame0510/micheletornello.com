@@ -59,7 +59,7 @@ export const Hero = () => {
         <div ref={word2Ref} className="font-display leading-none mb-8" style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)", color: "var(--color-brand-alt)" }}>
           Formo chi li costruirà.
         </div>
-        <div ref={taglineRef} className="font-mono text-sm mb-6" style={{ color: "#707070", letterSpacing: "0.1em" }}>
+        <div ref={taglineRef} className="font-mono text-sm mb-6" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
           System Architect · Docente · Catania
         </div>
         <div ref={nameRef} className="font-display" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "#E8E8E8", opacity: 0.4 }}>

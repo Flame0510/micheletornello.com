@@ -72,12 +72,12 @@ export default function CourseGrid() {
                 <p className="text-sm leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
                   {subject.description}
                 </p>
-                <div className="pt-6 space-y-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <div className="pt-6 space-y-2" style={{ borderTop: "1px solid var(--border)" }}>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-2 font-mono text-xs" style={{ color: "var(--text-muted)" }}>
                       {t.resourcesLabel} <ExternalLink size={10} />
                     </span>
-                    <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ color: "#404040", border: "1px solid rgba(255,255,255,0.06)" }}>
+                    <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ color: "var(--text-muted)", border: "1px solid var(--border)" }}>
                       {t.comingSoon}
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export default function CourseGrid() {
                     <span className="flex items-center gap-2 font-mono text-xs" style={{ color: "var(--text-muted)" }}>
                       {t.repositoryLabel} <ExternalLink size={10} />
                     </span>
-                    <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ color: "#404040", border: "1px solid rgba(255,255,255,0.06)" }}>
+                    <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ color: "var(--text-muted)", border: "1px solid var(--border)" }}>
                       {t.comingSoon}
                     </span>
                   </div>
