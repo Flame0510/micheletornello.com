@@ -880,7 +880,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 80px;
-  align-items: start;
+  align-items: center;
 }
 
 @media (max-width: 1023px) {
