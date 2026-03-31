@@ -61,17 +61,24 @@ export default function AcademyPage() {
               {t.infoTitle}
             </p>
             <ul className="space-y-3">
-              {[
-                `${t.infoCard.yearLabel}: ${translations.academyStats[lang].stats[1].value}`,
-                `${t.infoCard.locationsLabel}: Catania, Caltagirone, Palermo`,
-                `${t.infoCard.formatLabel}: ${t.infoCard.formatValue}`,
-                t.infoCard.cta,
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
-                  <span style={{ color: "var(--accent-copper)" }}>·</span>
-                  {item}
-                </li>
-              ))}
+              <li className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
+                <span style={{ color: "var(--accent-copper)" }}>·</span>
+                {`${t.infoCard.locationsLabel}: Catania, Caltagirone, Palermo`}
+              </li>
+              <li className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
+                <span style={{ color: "var(--accent-copper)" }}>·</span>
+                {`${t.infoCard.formatLabel}: ${t.infoCard.formatValue}`}
+              </li>
+              <li className="flex items-start gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
+                <span style={{ color: "var(--accent-copper)" }}>·</span>
+                <span>
+                  {lang === 'it' ? 'Vuoi saperne di più? ' : 'Want to know more? '}
+                  <a href="/#contatto" style={{ color: "var(--accent-copper)", textDecoration: "underline", fontWeight: 600 }}>
+                    {lang === 'it' ? 'Contattami' : 'Contact me'}
+                  </a>
+                  .
+                </span>
+              </li>
             </ul>
           </div>
         </div>
