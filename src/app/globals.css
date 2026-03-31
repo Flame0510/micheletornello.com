@@ -138,7 +138,7 @@ main {
     min-height: 100vh;
     min-height: 100svh;
     align-items: flex-start;
-    padding: 7rem 1.4rem 3rem;
+    padding: 7rem 1.4rem 5rem;
   }
 }
 
@@ -187,7 +187,9 @@ main {
 
 @media (max-width: 767px) {
   .heroPhoto {
-    display: none;
+    display: flex;
+    width: 100%;
+    margin-top: 2rem;
   }
 }
 
@@ -195,11 +197,20 @@ main {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
+  min-height: 480px;
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 8px 40px rgba(37, 99, 235, 0.12), 0 2px 8px rgba(0,0,0,0.06);
   border: 2px solid var(--border-accent);
   background: var(--bg-card);
+}
+
+@media (max-width: 767px) {
+  .heroPhotoWrap {
+    min-height: 350px;
+    aspect-ratio: unset;
+    height: max(350px, 60vw);
+  }
 }
 
 .badge {

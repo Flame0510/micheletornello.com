@@ -131,8 +131,8 @@ export default function HeroSection() {
                 alt="Michele Tornello"
                 fill
                 priority
-                sizes="(max-width: 767px) 0px, (max-width: 1023px) 300px, 420px"
-                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 300px, 420px"
+                style={{ objectFit: 'cover', objectPosition: '30% center' }}
               />
             </div>
           </motion.div>
