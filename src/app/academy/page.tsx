@@ -41,10 +41,10 @@ export default function AcademyPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start relative z-10">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: "var(--accent-copper)" }}>
+            <p className="section-label mb-6">
               Docenza · Steve Jobs Academy
             </p>
-            <h1 className="font-display leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--text-primary)", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
+            <h1 className="leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--text-primary)", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
               {t.heroTitle}
             </h1>
             <p className="text-lg leading-relaxed max-w-xl" style={{ color: "var(--text-muted)" }}>
@@ -104,7 +104,7 @@ export default function AcademyPage() {
 
       {/* CTA finale */}
       <section className="px-6 max-w-[1120px] mx-auto pb-24 text-center">
-        <h2 className="font-display mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em", fontFamily: "var(--font-heading)" }}>
+        <h2 className="section-title mb-8">
           {lang === "it" ? "Pronto a iniziare?" : "Ready to start?"}
         </h2>
         <p className="text-xl mb-12 max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>

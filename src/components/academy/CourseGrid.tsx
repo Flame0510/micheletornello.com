@@ -34,10 +34,10 @@ export default function CourseGrid() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto pb-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-copper)" }}>
+      <p className="section-label mb-2">
         04
       </p>
-      <h2 className="font-display mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+      <h2 className="section-title mb-8">
         {lang === "it" ? "Materie" : "Subjects"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

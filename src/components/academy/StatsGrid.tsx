@@ -14,15 +14,11 @@ export default function StatsGrid() {
 
   return (
     <section className="px-6 max-w-[1120px] mx-auto py-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-copper)" }}>
+      <p className="section-label mb-2">
         02
       </p>
-      <h2 className="font-display mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
-        {t.title}
-      </h2>
-      <p className="text-lg leading-relaxed max-w-2xl mb-10" style={{ color: "var(--text-muted)" }}>
-        {t.subtitle}
-      </p>
+      <h2 className="section-title mb-6">{t.title}</h2>
+      <p className="section-subtitle mb-10">{t.subtitle}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {t.stats.map((stat, i) => {
           const Icon = iconsList[i];
