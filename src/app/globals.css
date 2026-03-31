@@ -144,6 +144,24 @@ main {
   }
 }
 
+/* ── HERO SECTION HEIGHT — responsive fix ── */
+/* Mobile first: 100svh evita il problema del browser chrome su iOS/Android */
+.heroSection {
+  min-height: 100svh;
+}
+/* Tablet 768–1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .heroSection {
+    min-height: 85vh;
+  }
+}
+/* Desktop >1024px — invariato */
+@media (min-width: 1025px) {
+  .heroSection {
+    min-height: 100vh;
+  }
+}
+
 /* Overlay leggero — foto visibile, testo scuro leggibile */
 .heroOverlay {
   position: absolute;

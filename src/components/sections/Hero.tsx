@@ -44,7 +44,7 @@ export const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="heroSection relative flex flex-col justify-center overflow-hidden"
       style={{
         backgroundImage: "url('/desk-setup.png')",
         backgroundSize: "cover",
