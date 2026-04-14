@@ -1,33 +1,61 @@
 'use client';
 
 import Image from 'next/image';
+import { TimelineItem } from '@/components/ui/TimelineItem';
+
+const timelineItems = [
+  {
+    year: '2020',
+    title: 'PRIMA ARCHITETTURA LIVE',
+    text: 'Primo sistema in produzione.\nStabilità reale, utenti reali, responsabilità reale.',
+    highlight: false,
+  },
+  {
+    year: '2022',
+    title: 'SCALING ENTERPRISE',
+    text: 'Dalla build alla resilienza: osservabilità,\nperformance e qualità operativa.',
+    highlight: true,
+  },
+  {
+    year: '2024',
+    title: 'SYSTEM THINKING',
+    text: 'Focus su sistemi duraturi: design decisionale,\nmanutenzione evolutiva, impatto globale.',
+    highlight: false,
+  },
+];
 
 export default function ChiSonoSection() {
   return (
     <section id="chi-sono" className="chiB_section">
       <div className="chiB_container">
+
         <div className="chiB_visual">
           <div className="chiB_photoBox">
-            <Image src="/profile-photo.png" alt="Michele Tornello" className="chiB_img" fill style={{ objectFit: 'cover', filter: 'grayscale(1) contrast(1.1)' }} />
-            <div className="chiB_texture"></div>
-          </div>
-
-          <div className="chiB_stats">
-            <div className="chiB_stat">
-              <span className="chiB_val">2022</span>
-              <span className="chiB_lab">Inizio Docenza SJA</span>
-            </div>
-            <div className="chiB_stat">
-              <span className="chiB_val">150+</span>
-              <span className="chiB_lab">Studenti Formati</span>
-            </div>
-            <div className="chiB_stat">
-              <span className="chiB_val">06</span>
-              <span className="chiB_lab">Progetti Lanciati</span>
-            </div>
-            <div className="chiB_stat">
-              <span className="chiB_val">SJA</span>
-              <span className="chiB_lab">Partner Tecnico</span>
+            <Image
+              src="/profile-photo.png"
+              alt="Michele Tornello"
+              className="chiB_img"
+              fill
+              style={{ objectFit: 'cover', objectPosition: '50% 20%' }}
+            />
+            <div className="chiB_texture" />
+            <div className="chiB_statsOverlay">
+              <div className="chiB_stat">
+                <span className="chiB_val">2022</span>
+                <span className="chiB_lab">Inizio Docenza SJA</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">150+</span>
+                <span className="chiB_lab">Studenti Formati</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">06</span>
+                <span className="chiB_lab">Progetti Lanciati</span>
+              </div>
+              <div className="chiB_stat">
+                <span className="chiB_val">SJA</span>
+                <span className="chiB_lab">Partner Tecnico</span>
+              </div>
             </div>
           </div>
         </div>
@@ -44,67 +72,29 @@ export default function ChiSonoSection() {
             </p>
           </header>
 
-          <div className="chiB_flow">
-            <div className="chiB_step">
-              <div className="chiB_stepMeta">
-                <span className="chiB_node"></span>
-                <span className="chiB_year">2020</span>
-                <span className="chiB_stepTag">PRIMA ARCHITETTURA LIVE</span>
-              </div>
-              <p className="chiB_stepText">
-                Primo sistema in produzione.<br />
-                Stabilità reale, utenti reali, responsabilità reale.
-              </p>
-            </div>
-
-            <div className="chiB_step chiB_highlight">
-              <div className="chiB_stepMeta">
-                <span className="chiB_node"></span>
-                <span className="chiB_year">2022</span>
-                <span className="chiB_stepTag">SCALING ENTERPRISE</span>
-              </div>
-              <p className="chiB_stepText">
-                Dalla build alla resilienza: osservabilità,<br />
-                performance e qualità operativa.
-              </p>
-            </div>
-
-            <div className="chiB_step">
-              <div className="chiB_stepMeta">
-                <span className="chiB_node"></span>
-                <span className="chiB_year">2024</span>
-                <span className="chiB_stepTag">SYSTEM THINKING</span>
-              </div>
-              <p className="chiB_stepText">
-                Focus su sistemi duraturi: design decisionale,<br />
-                manutenzione evolutiva, impatto globale.
-              </p>
-            </div>
+          <div className="chiB_timeline">
+            {timelineItems.map((item) => (
+              <TimelineItem
+                key={item.year}
+                year={item.year}
+                title={item.title}
+                text={item.text}
+                variant="chi-sono"
+                highlight={item.highlight}
+              />
+            ))}
           </div>
 
-          <div style={{ marginTop: '20px' }}>
+          <div style={{ marginTop: '2rem' }}>
             <a
               href="#contatto"
-              style={{
-                display: 'inline-block',
-                background: 'var(--color-brand)',
-                color: 'var(--color-bg)',
-                fontFamily: 'var(--font-jetbrains-mono), monospace',
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                padding: '0.85rem 1.8rem',
-                textDecoration: 'none',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase' as const,
-                transition: 'opacity 0.2s ease',
-              }}
-              onMouseOver={(e) => (e.currentTarget.style.opacity = '0.85')}
-              onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
+              className="btn-primary"
             >
               Parliamo del tuo progetto →
             </a>
           </div>
         </div>
+
       </div>
     </section>
   );

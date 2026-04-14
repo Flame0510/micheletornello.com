@@ -22,7 +22,7 @@ function ContactForm() {
   };
 
   if (status === 'ok') return (
-    <div className="contactSuccess">
+    <div className="contactSuccess" role="status" aria-live="polite">
       <p className="contactSuccessCode">// 200 OK</p>
       <p>Messaggio ricevuto. Ti rispondo entro 24h.</p>
     </div>
@@ -62,10 +62,10 @@ function ContactForm() {
         value={form.message}
         onChange={e => setForm(f => ({...f, message: e.target.value}))}
       />
-      <button className="contactBtn" type="submit" disabled={status === 'sending'}>
-        {status === 'sending' ? '// INVIO...' : 'INVIA MESSAGGIO →'}
+      <button className="btn-primary" type="submit" disabled={status === 'sending'}>
+        {status === 'sending' ? 'INVIO...' : 'INVIA MESSAGGIO →'}
       </button>
-      {status === 'error' && <p className="contactError">Errore nell&apos;invio. Scrivi a micheletornello5@gmail.com</p>}
+      {status === 'error' && <p className="contactError" role="status" aria-live="polite">Errore nell&apos;invio. Scrivi a micheletornello5@gmail.com</p>}
     </form>
   );
 }
@@ -74,7 +74,7 @@ export default function ContactSection() {
   return (
     <section id="contatto" className="cta sectionWrap">
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
-        <h2>Hai un sistema che deve durare?</h2>
+        <h2 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontWeight: 800 }}>Hai un sistema che deve durare?</h2>
         <p className="ctaSub">Raccontami il progetto — rispondo entro 24h.</p>
         <ContactForm />
       </div>

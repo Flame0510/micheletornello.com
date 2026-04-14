@@ -1,6 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { StatBox } from '@/components/ui/StatBox';
+
+const stats = [
+  { num: '5', lab: 'SETTORI INDUSTRY' },
+  { num: '130+', lab: 'PAESI RAGGIUNTI' },
+  { num: '2022–24', lab: 'CORE ENTERPRISE' },
+  { num: 'M+', lab: 'UTENTI ATTIVI' },
+];
 
 export default function EnterpriseSection() {
   return (
@@ -35,22 +43,22 @@ export default function EnterpriseSection() {
           </div>
 
           <div className="entG_stats">
-            {[
-              { num: '5', lab: 'SETTORI INDUSTRY' },
-              { num: '130+', lab: 'PAESI RAGGIUNTI' },
-              { num: '2022–24', lab: 'CORE ENTERPRISE' },
-              { num: 'M+', lab: 'UTENTI ATTIVI' }
-            ].map((stat, i) => (
+            {stats.map((stat, i) => (
               <motion.div
                 key={stat.lab}
-                className="entG_stat"
                 initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.8, delay: 0.2 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
               >
-                <span className="entG_number">{stat.num}</span>
-                <span className="entG_label">{stat.lab}</span>
+                <StatBox
+                  value={stat.num}
+                  label={stat.lab}
+                  isNumber={/\d/.test(stat.num) && stat.num !== '2022–24'}
+                  className="entG_stat"
+                  valueClassName="entG_number"
+                  labelClassName="entG_label"
+                />
               </motion.div>
             ))}
           </div>

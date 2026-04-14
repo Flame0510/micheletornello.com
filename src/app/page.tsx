@@ -6,6 +6,7 @@ import ContactSection from '@/components/sections/ContactSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import { Services } from '@/components/sections/Services';
+import { TimelineItem } from '@/components/ui/TimelineItem';
 
 const timeline = [
   {
@@ -37,7 +38,7 @@ const timeline = [
 
 export default function HomePage() {
   return (
-    <main>
+    <main id="main-content">
       {/* 1. Hero */}
       <HeroSection />
 
@@ -46,13 +47,13 @@ export default function HomePage() {
         <p className="credStrip_label">// RICONOSCIMENTI & COMMUNITY</p>
         <div className="credStrip_items">
           <span className="credStrip_item"><span className="credStrip_name">RTL 102.5</span><span className="credStrip_role">Intervista in diretta nazionale</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">Università di Catania</span><span className="credStrip_role">Speaker · Architetture Mobile</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">TEDx Catania</span><span className="credStrip_role">Staff Volontario</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">Friends of Figma Catania</span><span className="credStrip_role">Contributore</span></span>
-          <span className="credStrip_sep">·</span>
+          <span className="credStrip_sep" aria-hidden="true">·</span>
           <span className="credStrip_item"><span className="credStrip_name">Google Developer Group Catania</span><span className="credStrip_role">Membro attivo</span></span>
         </div>
       </div>
@@ -149,11 +150,11 @@ export default function HomePage() {
                 <div className="pv3G_live_grid">
                   <a href="https://watchingstars.it" target="_blank" rel="noopener noreferrer" className="pv3G_live_link">
                     <span className="pv3G_live_name">Watching Stars</span>
-                    <span className="pv3G_live_url">watchingstars.it →</span>
+                    <span className="pv3G_live_url">watchingstars.it <span aria-hidden="true">→</span></span>
                   </a>
                   <a href="https://memorycloud.it" target="_blank" rel="noopener noreferrer" className="pv3G_live_link">
                     <span className="pv3G_live_name">Memory Cloud</span>
-                    <span className="pv3G_live_url">memorycloud.it →</span>
+                    <span className="pv3G_live_url">memorycloud.it <span aria-hidden="true">→</span></span>
                   </a>
                 </div>
               </div>
@@ -168,9 +169,13 @@ export default function HomePage() {
           <h2>TIMELINE</h2>
           <div className="timelineLine">
             {timeline.map((item) => (
-              <article key={item.year} className="timeCard">
-                <p className="year">{item.year}</p><h3>{item.title}</h3><p>{item.text}</p>
-              </article>
+              <TimelineItem
+                key={item.year}
+                year={item.year}
+                title={item.title}
+                text={item.text}
+                variant="page"
+              />
             ))}
           </div>
         </div>
@@ -188,8 +193,8 @@ export default function HomePage() {
       {/* 9. Contatti */}
       <ContactSection />
 
-      {/* Newsletter */}
-      <section className="newsletter sectionWrap">
+      {/* Newsletter — temporaneamente nascosta */}
+      {/* <section className="newsletter sectionWrap">
         <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
           <p className="newsletterLabel">// BUILD DIFFERENT</p>
           <h2>Architettura, sistemi e tech dal Sud Italia.</h2>
@@ -212,7 +217,7 @@ export default function HomePage() {
           </form>
           <p className="newsletterNote">Zero spam. Annulla quando vuoi.</p>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

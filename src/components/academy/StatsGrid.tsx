@@ -13,16 +13,12 @@ export default function StatsGrid() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto py-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--color-brand)" }}>
+    <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
+      <p className="section-label mb-3">
         02
       </p>
-      <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
-        {t.title}
-      </h2>
-      <p className="text-lg leading-relaxed max-w-2xl mb-16" style={{ color: "#707070" }}>
-        {t.subtitle}
-      </p>
+      <h2 className="section-title mb-8">{t.title}</h2>
+      <p className="section-subtitle mb-10">{t.subtitle}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {t.stats.map((stat, i) => {
           const Icon = iconsList[i];
@@ -35,37 +31,34 @@ export default function StatsGrid() {
               transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
               className="relative p-8 rounded-lg"
               style={{
-                background: "linear-gradient(145deg, rgba(184,115,51,0.05) 0%, rgba(184,115,51,0.01) 100%)",
-                border: "1px solid rgba(184,115,51,0.1)",
+                background: "var(--bg-card)",
+                border: "1px solid var(--border)",
               }}
-              whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+              whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
             >
               <div className="absolute top-6 right-6">
-                <Icon size={24} style={{ color: "var(--color-brand)", opacity: 0.5 }} />
+                <Icon size={24} style={{ color: "var(--accent-primary)", opacity: 0.5 }} />
               </div>
-              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "var(--color-brand)" }}>
+              <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: "var(--accent-primary)" }}>
                 {stat.value}
               </div>
-              <div className="font-mono text-sm uppercase tracking-widest" style={{ color: "#707070" }}>
+              <div className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
                 {stat.label}
               </div>
             </motion.div>
           );
         })}
       </div>
-      <div className="mt-24 text-center">
+      <div className="mt-12 text-center">
         <p className="text-xl mb-8" style={{ color: "var(--color-text)" }}>
           {t.cta}
         </p>
-        <motion.a
+        <a
           href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
-          className="inline-flex items-center justify-center px-8 py-4 font-mono text-sm uppercase tracking-widest transition-colors"
-          style={{ background: "var(--color-brand)", color: "var(--color-bg)" }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
+          className="btn-primary"
         >
           {t.ctaButton}
-        </motion.a>
+        </a>
       </div>
     </section>
   );

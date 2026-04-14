@@ -46,7 +46,7 @@ export const Press = () => {
   return (
     <section ref={sectionRef} className="overflow-hidden" style={{ background: "#060606" }}>
       <div className="px-6 pt-16 pb-4">
-        <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#707070" }}>02 — Press</span>
+        <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>02 — Press</span>
       </div>
       <div ref={trackRef} className="flex" style={{ width: "max-content", paddingLeft: "6rem" }}>
         {pressItems.map((item, i) => (
@@ -63,7 +63,7 @@ export const Press = () => {
           >
             <span className="font-mono text-xs mb-4" style={{ color: "var(--color-brand-alt)" }}>{item.year}</span>
             <p className="font-display mb-2" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "#E8E8E8" }}>{item.label}</p>
-            <p className="font-mono text-sm" style={{ color: "#707070" }}>{item.title}</p>
+            <p className="font-mono text-sm" style={{ color: "var(--text-muted)" }}>{item.title}</p>
           </div>
         ))}
       </div>

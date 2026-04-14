@@ -38,7 +38,7 @@ export const CookieConsent = () => {
             aria-label="Gestisci preferenze cookie"
             title="Privacy & Cookie"
           >
-            [PRIVACY]
+            Privacy
           </motion.button>
         )}
       </AnimatePresence>
@@ -55,15 +55,15 @@ export const CookieConsent = () => {
             role="dialog"
             aria-label="Cookie consent"
           >
-            <div className="ck_banner_header">COOKIE_MANAGER.sh</div>
+            <div className="ck_banner_header">Cookie & Privacy</div>
             <p className="ck_text">
               Utilizziamo cookie tecnici e analitici (GA4) per migliorare l&apos;esperienza.<br/>
               Scegli cosa attivare.
             </p>
             <div className="ck_actions">
-              <button onClick={acceptAll} className="ck_btn ck_btn_primary">ACCEPT_ALL</button>
-              <button onClick={openPanel} className="ck_btn ck_btn_settings_desktop">SETTINGS</button>
-              <button onClick={rejectAll} className="ck_btn ck_btn_ghost">REJECT</button>
+              <button onClick={acceptAll} className="ck_btn ck_btn_primary">Accetta tutti</button>
+              <button onClick={openPanel} className="ck_btn ck_btn_settings_desktop">Impostazioni</button>
+              <button onClick={rejectAll} className="ck_btn ck_btn_ghost">Rifiuta</button>
             </div>
             <div className="ck_banner_links">
               <button onClick={openPanel} className="ck_link ck_link_settings_mobile">Impostazioni</button>
@@ -94,7 +94,7 @@ export const CookieConsent = () => {
               aria-label="Preferenze privacy"
             >
               <div className="ck_panel_content">
-                <h2 className="ck_title">PRIVACY_PREFERENCES</h2>
+                <h2 className="ck_title">Preferenze privacy</h2>
                 <p className="ck_text">Personalizza l&apos;uso dei cookie. I necessari sono sempre attivi.</p>
 
                 <div className="ck_setting_item">
@@ -102,7 +102,7 @@ export const CookieConsent = () => {
                     <span className="ck_setting_label">Necessari</span>
                     <span className="ck_setting_desc">Indispensabili per il funzionamento del sito e per memorizzare le tue scelte.</span>
                   </div>
-                  <div className="ck_badge">ALWAYS_ON</div>
+                  <div className="ck_badge">Sempre attivo</div>
                 </div>
 
                 <div className="ck_setting_item">
@@ -122,13 +122,13 @@ export const CookieConsent = () => {
 
                 <div className="ck_panel_footer">
                   <button onClick={() => savePreferences({ analytics: tempAnalytics })} className="ck_btn ck_btn_primary ck_btn_full">
-                    SAVE_AND_APPLY
+                    Salva preferenze
                   </button>
                   <button onClick={acceptAll} className="ck_btn ck_btn_full" style={{marginTop:'0.5rem'}}>
-                    ACCEPT_ALL
+                    Accetta tutti
                   </button>
                   <button onClick={rejectAll} className="ck_btn ck_btn_ghost ck_btn_full" style={{marginTop:'0.5rem'}}>
-                    REJECT_ALL
+                    Rifiuta tutti
                   </button>
                   <div className="ck_panel_links">
                     <a href="/privacy" className="ck_link">Privacy Policy</a>

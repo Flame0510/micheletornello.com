@@ -66,10 +66,10 @@ function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 
 
 function StartupCard({ project, lang }: { project: StartupProject; lang: 'it' | 'en' }) {
   return (
-    <div className="pGamma_card opacity-80" style={{ borderColor: 'rgba(184, 115, 51, 0.2)' }}>
+    <div className="pGamma_card opacity-80" style={{ borderColor: 'var(--border-accent)' }}>
       <header className="pGamma_header">
         <span className="pGamma_id">{project.id}</span>
-        <span className="pGamma_status" style={{ color: '#707070', fontFamily: 'var(--font-jetbrains-mono)' }}>
+        <span className="pGamma_status" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-jetbrains-mono)' }}>
           {project.status}
         </span>
       </header>

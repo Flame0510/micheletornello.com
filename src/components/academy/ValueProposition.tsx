@@ -58,11 +58,11 @@ export default function ValueProposition() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto py-24">
-      <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--color-brand)" }}>
+    <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
+      <p className="section-label mb-3">
         03
       </p>
-      <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#E8E8E8", letterSpacing: "-0.02em" }}>
+      <h2 className="section-title mb-10">
         {lang === "it" ? "Perché scegliere questa Academy" : "Why Choose This Academy"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -75,18 +75,18 @@ export default function ValueProposition() {
             transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
             className="relative p-8 rounded-lg"
             style={{
-              background: "linear-gradient(145deg, rgba(184,115,51,0.03) 0%, rgba(184,115,51,0) 100%)",
-              border: "1px solid rgba(255,255,255,0.06)",
+              background: "var(--bg-card)",
+              border: "1px solid var(--border)",
             }}
-            whileHover={{ y: -8, transition: { duration: 0.2 } }}
+            whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
           >
             <div className="mb-6">
-              <item.icon size={32} style={{ color: "var(--color-brand)" }} />
+              <item.icon size={32} style={{ color: "var(--accent-primary)" }} />
             </div>
-            <h3 className="font-display text-xl mb-4" style={{ color: "#E8E8E8" }}>
+            <h3 className="font-display text-xl mb-4" style={{ color: "var(--text-primary)" }}>
               {item.title}
             </h3>
-            <p className="text-sm leading-relaxed" style={{ color: "#707070" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
               {item.description}
             </p>
           </motion.div>

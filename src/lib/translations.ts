@@ -466,7 +466,7 @@ export const translations = {
       heroTitle: 'Steve Jobs Academy – Dove la teoria incontra il codice.',
       heroSubtitle: 'Formazione tecnica in presenza, in Sicilia.',
       intro:
-        'Insegno sviluppo software e architettura dei sistemi alla Steve Jobs Academy. Lezioni in aula, esercitazioni pratiche, progetti reali. Più di 150 studenti formati, 3 sedi in Sicilia, talk universitari e workshop. Trasferisco l’esperienza concreta di chi costruisce software per professione.',
+        'Insegno sviluppo software e architettura dei sistemi alla Steve Jobs Academy. Lezioni in aula, esercitazioni pratiche, progetti reali. Più di 150 studenti formati, 3 sedi in Sicilia, 1 talk universitario e 2 workshop. Trasferisco l’esperienza concreta di chi costruisce software per professione.',
       infoTitle: 'Info Corsi',
       infoCard: {
         yearLabel: 'Anno Accademico',
@@ -485,7 +485,7 @@ export const translations = {
       heroTitle: 'Steve Jobs Academy – Where theory meets code.',
       heroSubtitle: 'In-person technical training, in Sicily.',
       intro:
-        'I teach software development and system architecture at the Steve Jobs Academy. Classroom lectures, hands‑on exercises, real projects. Over 150 students trained, 3 locations in Sicily, university talks and workshops. I transfer the concrete experience of someone who builds software for a living.',
+        'I teach software development and system architecture at the Steve Jobs Academy. Classroom lectures, hands‑on exercises, real projects. Over 150 students trained, 3 locations in Sicily, 1 university talk and 2 workshops. I transfer the concrete experience of someone who builds software for a living.',
       infoTitle: 'Course Info',
       infoCard: {
         yearLabel: 'Academic Year',
@@ -507,9 +507,9 @@ export const translations = {
         { value: '150+', label: 'Studenti formati' },
         { value: '3', label: 'Sedi attive' },
         { value: '500+', label: 'Ore di docenza' },
-        { value: '10+', label: 'Talk universitari' },
-        { value: '5+', label: 'Workshop organizzati' },
-        { value: '2', label: 'Panel come speaker' },
+        { value: '1', label: 'Talk universitario' },
+        { value: '2', label: 'Workshop organizzati' },
+        { value: 'RTL', label: 'Intervista nazionale' },
       ],
       cta: 'Vuoi portare questa esperienza nella tua università o azienda?',
       ctaButton: 'Contattami',
@@ -521,9 +521,9 @@ export const translations = {
         { value: '150+', label: 'Students trained' },
         { value: '3', label: 'Active locations' },
         { value: '500+', label: 'Teaching hours' },
-        { value: '10+', label: 'University talks' },
-        { value: '5+', label: 'Workshops organized' },
-        { value: '2', label: 'Speaker panels' },
+        { value: '1', label: 'University talk' },
+        { value: '2', label: 'Workshops organized' },
+        { value: 'RTL', label: 'National interview' },
       ],
       cta: 'Want to bring this experience to your university or company?',
       ctaButton: 'Get in touch',

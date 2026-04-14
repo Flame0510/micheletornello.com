@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         <p>I cookie sono piccoli file salvati sul tuo browser. Questo sito utilizza:</p>
         <table style={{width:'100%', borderCollapse:'collapse', marginTop:'1rem', fontSize:'0.85rem'}}>
           <thead>
-            <tr style={{borderBottom:'1px solid rgba(184,115,51,0.3)'}}>
+            <tr style={{borderBottom:'1px solid var(--border-accent)'}}>
               <th style={{textAlign:'left', padding:'0.5rem', color:'var(--color-brand)', fontFamily:'JetBrains Mono, monospace', fontWeight:'normal'}}>Nome</th>
               <th style={{textAlign:'left', padding:'0.5rem', color:'var(--color-brand)', fontFamily:'JetBrains Mono, monospace', fontWeight:'normal'}}>Tipo</th>
               <th style={{textAlign:'left', padding:'0.5rem', color:'var(--color-brand)', fontFamily:'JetBrains Mono, monospace', fontWeight:'normal'}}>Finalità</th>
