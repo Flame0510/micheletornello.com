@@ -32,10 +32,11 @@ export default function ChiSonoSection() {
         <div className="chiB_visual">
           <div className="chiB_photoBox">
             <Image
-              src="/profile-photo.png"
+              src="/profile-photo.webp"
               alt="Michele Tornello"
               className="chiB_img"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: 'cover', objectPosition: '50% 20%' }}
             />
             <div className="chiB_texture" />

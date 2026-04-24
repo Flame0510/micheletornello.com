@@ -1,12 +1,15 @@
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/HeroSection';
-import EnterpriseSection from '@/components/sections/EnterpriseSection';
-import ChiSonoSection from '@/components/sections/ChiSonoSection';
-import AcademySection from '@/components/sections/AcademySection';
-import ContactSection from '@/components/sections/ContactSection';
-import PortfolioSection from '@/components/sections/PortfolioSection';
-import ProcessSection from '@/components/sections/ProcessSection';
-import { Services } from '@/components/sections/Services';
 import { TimelineItem } from '@/components/ui/TimelineItem';
+
+// Below-the-fold sections — lazy loaded for better FCP/LCP
+const EnterpriseSection = dynamic(() => import('@/components/sections/EnterpriseSection'));
+const ChiSonoSection = dynamic(() => import('@/components/sections/ChiSonoSection'));
+const AcademySection = dynamic(() => import('@/components/sections/AcademySection'));
+const ContactSection = dynamic(() => import('@/components/sections/ContactSection'));
+const PortfolioSection = dynamic(() => import('@/components/sections/PortfolioSection'));
+const ProcessSection = dynamic(() => import('@/components/sections/ProcessSection'));
+const Services = dynamic(() => import('@/components/sections/Services').then(m => ({ default: m.Services })));
 
 const timeline = [
   {

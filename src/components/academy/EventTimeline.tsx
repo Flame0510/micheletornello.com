@@ -59,11 +59,11 @@ export default function EventTimeline() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
+    <section className="container py-16 md:py-20">
       <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-primary)" }}>
         05
       </p>
-      <h2 className="font-display mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+      <h2 className="font-display mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
         {lang === "it" ? "Prossimi eventi" : "Upcoming Events"}
       </h2>
       <div className="relative">

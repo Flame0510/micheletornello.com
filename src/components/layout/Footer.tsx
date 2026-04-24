@@ -20,10 +20,8 @@ const Footer = () => {
       borderTop: '1px solid var(--border)',
       paddingTop: '4rem',
       paddingBottom: '4rem',
-      paddingLeft: '1.5rem',
-      paddingRight: '1.5rem',
     }}>
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      <div className="container-nav flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         
         <div className="flex flex-col gap-2">
           <Logo />

@@ -76,8 +76,11 @@
   --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
   --shadow-card-hover: 0 8px 24px var(--accent-primary-subtle);
 
-  --container-md: 1180px;
+  --container-sm: 768px;
+  --container-md: 1120px;
   --container-lg: 1400px;
+  --container-nav: 1440px;
+  --container-padding: 1.5rem;
 
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
@@ -89,6 +92,42 @@
   --ghost-black: #111827;
   --ghost-white: #ffffff;
   --ghost-sage: #059669;
+}
+
+/* ── CONTAINER UTILITY CLASSES ── */
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: var(--container-md);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .container-lg {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .container-nav {
+    width: 100%;
+    max-width: var(--container-nav);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
+  }
 }
 
 * {
@@ -129,7 +168,7 @@ main {
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  background-image: url('/desk-setup.png');
+  background-image: url('/desk-setup.webp');
   background-size: cover;
   background-position: 30% center;
   position: relative;
@@ -186,7 +225,7 @@ main {
 .heroContent {
   position: relative;
   z-index: 2;
-  max-width: 1400px;
+  max-width: var(--container-lg);
   width: 100%;
 }
 
@@ -224,11 +263,13 @@ main {
   font-weight: 500;
 }
 
-h1, h2, h3, blockquote {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  margin: 0;
-  color: var(--text-primary);
+@layer base {
+  h1, h2, h3, blockquote {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+  }
 }
 
 h1 {
@@ -240,6 +281,7 @@ h1 {
 
 .sub {
   margin-top: .65rem;
+  margin-bottom: 1.5rem;
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--accent-primary);
@@ -294,7 +336,7 @@ h1 {
 
 .sectionWrap {
   padding: 4.2rem 1.2rem;
-  max-width: 1180px;
+  max-width: var(--container-md);
   margin: 0 auto;
 }
 
@@ -691,7 +733,7 @@ h1 {
 }
 
 .docH_container {
-  max-width: 1200px;
+  max-width: var(--container-md);
   margin: 0 auto;
 }
 
@@ -839,7 +881,7 @@ h1 {
 }
 
 .chiB_container {
-  max-width: 1120px;
+  max-width: var(--container-md);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -1124,7 +1166,7 @@ h1 {
 }
 
 .entG_container {
-  max-width: 1400px;
+  max-width: var(--container-lg);
   margin: 0 auto;
   width: 100%;
   padding: 0 24px;
@@ -1337,7 +1379,7 @@ h1 {
   padding: 100px 0;
 }
 .pv3G_container {
-  max-width: 1400px;
+  max-width: var(--container-lg);
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -1575,7 +1617,7 @@ h1 {
   font-family: var(--font-body);
 }
 .pGamma_inner {
-  max-width: 1400px;
+  max-width: var(--container-lg);
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -1749,7 +1791,7 @@ h1 {
 }
 
 .proc_container {
-  max-width: 1200px;
+  max-width: var(--container-md);
   margin: 0 auto;
   width: 100%;
 }
