@@ -107,7 +107,7 @@ export default function AcademyPageClient() {
       <CourseGrid />
 
       {/* CTA finale */}
-      <section className="container pb-12 md:pb-16 text-center">
+      <section className="container py-12 md:py-16 text-center">
         <h2 className="section-title mb-8">
           {lang === "it" ? "Pronto a iniziare?" : "Ready to start?"}
         </h2>
