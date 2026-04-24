@@ -59,7 +59,7 @@ export default function EventTimeline() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
+    <section className="container py-12 md:py-16">
       <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--accent-primary)" }}>
         05
       </p>

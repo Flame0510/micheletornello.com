@@ -58,7 +58,7 @@ export default function ValueProposition() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto py-12 md:py-16">
+    <section className="container py-12 md:py-16">
       <p className="section-label mb-3">
         03
       </p>

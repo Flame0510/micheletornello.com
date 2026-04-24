@@ -115,7 +115,7 @@ export default function SpeakerPageClient() {
 
   return (
     <div className="min-h-screen text-[var(--text-primary)] selection:bg-[var(--accent-primary)]/30" style={{ background: 'var(--bg-base)' }}>
-      <main className="max-w-4xl mx-auto px-6 py-12 md:py-24 relative z-10">
+      <main className="container py-12 md:py-24 relative z-10">
         
         {/* Header Section */}
         <header className="mb-20 pt-16">

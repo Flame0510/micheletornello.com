@@ -33,7 +33,7 @@ export default function CourseGrid() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="px-6 max-w-[1120px] mx-auto pb-12 md:pb-16">
+    <section className="container pb-12 md:pb-16">
       <p className="section-label mb-3">
         04
       </p>

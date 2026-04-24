@@ -17,7 +17,7 @@ export default function AcademyPageClient() {
   return (
     <main className="min-h-screen" style={{ background: "var(--bg-base)" }}>
       {/* Hero con gradiente */}
-      <section className="pt-32 md:pt-40 pb-12 md:pb-16 px-6 max-w-[1120px] mx-auto relative">
+      <section className="container pt-32 md:pt-40 pb-12 md:pb-16 relative">
         <div
           className="absolute inset-0 opacity-5 pointer-events-none"
           style={{
@@ -107,7 +107,7 @@ export default function AcademyPageClient() {
       <CourseGrid />
 
       {/* CTA finale */}
-      <section className="px-6 max-w-[1120px] mx-auto pb-12 md:pb-16 text-center">
+      <section className="container pb-12 md:pb-16 text-center">
         <h2 className="section-title mb-8">
           {lang === "it" ? "Pronto a iniziare?" : "Ready to start?"}
         </h2>
