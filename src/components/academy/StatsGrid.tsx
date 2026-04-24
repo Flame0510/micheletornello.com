@@ -13,11 +13,11 @@ export default function StatsGrid() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="container py-12 md:py-16">
+    <section className="container py-16 md:py-20">
       <p className="section-label mb-3">
         02
       </p>
-      <h2 className="section-title mb-8">{t.title}</h2>
+      <h2 className="section-title mb-12">{t.title}</h2>
       <p className="section-subtitle mb-10">{t.subtitle}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {t.stats.map((stat, i) => {

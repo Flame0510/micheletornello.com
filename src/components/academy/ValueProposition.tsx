@@ -58,11 +58,11 @@ export default function ValueProposition() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="container py-12 md:py-16">
+    <section className="container py-16 md:py-20">
       <p className="section-label mb-3">
         03
       </p>
-      <h2 className="section-title mb-10">
+      <h2 className="section-title mb-12">
         {lang === "it" ? "Perché scegliere questa Academy" : "Why Choose This Academy"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
