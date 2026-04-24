@@ -73,7 +73,7 @@ export default function RootLayout({
     <html lang="it" className="scroll-smooth">
       <head>
         {/* Preload hero LCP background image */}
-        <link rel="preload" href="/desk-setup.png" as="image" fetchPriority="high" />
+        <link rel="preload" href="/desk-setup.webp" as="image" fetchPriority="high" />
       </head>
       <body
         className={`${outfit.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} font-sans antialiased`}

@@ -93,7 +93,7 @@ export default function AcademyPageClient() {
       {/* Photo strip */}
       <div className="relative h-64 overflow-hidden my-16">
         <Image
-          src="/academy-class.jpg"
+          src="/academy-class.webp"
           alt="Classe Steve Jobs Academy"
           fill
           className="object-cover object-center"

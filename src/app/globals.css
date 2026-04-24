@@ -168,7 +168,7 @@ main {
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  background-image: url('/desk-setup.png');
+  background-image: url('/desk-setup.webp');
   background-size: cover;
   background-position: 30% center;
   position: relative;
