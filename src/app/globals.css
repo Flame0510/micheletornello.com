@@ -281,6 +281,7 @@ h1 {
 
 .sub {
   margin-top: .65rem;
+  margin-bottom: 1.5rem;
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--accent-primary);
