@@ -95,31 +95,33 @@
 }
 
 /* ── CONTAINER UTILITY CLASSES ── */
-.container {
-  width: 100%;
-  max-width: var(--container-md);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-}
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: var(--container-md);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
 
-.container-lg {
-  width: 100%;
-  max-width: var(--container-lg);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-}
+  .container-lg {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
 
-.container-nav {
-  width: 100%;
-  max-width: var(--container-nav);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
+  .container-nav {
+    width: 100%;
+    max-width: var(--container-nav);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
 }
 
 @media (max-width: 768px) {
