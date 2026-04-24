@@ -15,7 +15,7 @@ export const Services = () => {
   const serviceKeys = ["SERVICE_01", "SERVICE_02", "SERVICE_03"];
 
   return (
-    <section id="services" className="container py-24 overflow-hidden" style={{ background: 'var(--bg-base)' }}>
+    <section id="services" className="container-lg py-24 overflow-hidden" style={{ background: 'var(--bg-base)' }}>
       <SectionTitle prefix="// 02" title={t.title} subtitle={t.subtitle} />
 
       <motion.div

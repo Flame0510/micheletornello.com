@@ -122,7 +122,7 @@ const Navbar = () => {
           borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
         }}
       >
-        <div className="container-nav flex items-center justify-between">
+        <div className="container-nav flex items-center justify-between" style={{ paddingLeft: 'clamp(1rem, 4vw, 1.5rem)', paddingRight: 'clamp(1rem, 4vw, 1.5rem)' }}>
           <div className="flex items-center gap-4">
             <Logo />
             <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>·</span>
