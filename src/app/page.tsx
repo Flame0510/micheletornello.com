@@ -51,26 +51,26 @@ export default function HomePage() {
         <div className="credStrip_marquee" aria-hidden="false">
           <div className="credStrip_track marquee-track">
             <span className="credStrip_text">RTL 102.5 · Intervista nazionale</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">TEDx Catania · Staff Volontario</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">Speaker UniCT · React Native</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">Friends of Figma · Contributor</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">GDG Catania · Membro attivo</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             {/* Duplicate for seamless infinite loop */}
             <span className="credStrip_text">RTL 102.5 · Intervista nazionale</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">TEDx Catania · Staff Volontario</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">Speaker UniCT · React Native</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">Friends of Figma · Contributor</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
             <span className="credStrip_text">GDG Catania · Membro attivo</span>
-            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_divider" aria-hidden="true"> — </span>
           </div>
         </div>
       </div>
