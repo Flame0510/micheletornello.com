@@ -47,17 +47,31 @@ export default function HomePage() {
 
       {/* 2. Credibility Strip */}
       <div className="credStrip_wrap">
-        <p className="credStrip_label">// RICONOSCIMENTI & COMMUNITY</p>
-        <div className="credStrip_items">
-          <span className="credStrip_item"><span className="credStrip_name">RTL 102.5</span><span className="credStrip_role">Intervista in diretta nazionale</span></span>
-          <span className="credStrip_sep" aria-hidden="true">·</span>
-          <span className="credStrip_item"><span className="credStrip_name">Università di Catania</span><span className="credStrip_role">Speaker · Architetture Mobile</span></span>
-          <span className="credStrip_sep" aria-hidden="true">·</span>
-          <span className="credStrip_item"><span className="credStrip_name">TEDx Catania</span><span className="credStrip_role">Staff Volontario</span></span>
-          <span className="credStrip_sep" aria-hidden="true">·</span>
-          <span className="credStrip_item"><span className="credStrip_name">Friends of Figma Catania</span><span className="credStrip_role">Contributore</span></span>
-          <span className="credStrip_sep" aria-hidden="true">·</span>
-          <span className="credStrip_item"><span className="credStrip_name">Google Developer Group Catania</span><span className="credStrip_role">Membro attivo</span></span>
+        <p className="credStrip_label">Riconoscimenti</p>
+        <div className="credStrip_marquee" aria-hidden="false">
+          <div className="credStrip_track marquee-track">
+            <span className="credStrip_text">RTL 102.5 · Intervista nazionale</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">TEDx Catania · Staff Volontario</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">Speaker UniCT · React Native</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">Friends of Figma · Contributor</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">GDG Catania · Membro attivo</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            {/* Duplicate for seamless infinite loop */}
+            <span className="credStrip_text">RTL 102.5 · Intervista nazionale</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">TEDx Catania · Staff Volontario</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">Speaker UniCT · React Native</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">Friends of Figma · Contributor</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+            <span className="credStrip_text">GDG Catania · Membro attivo</span>
+            <span className="credStrip_divider" aria-hidden="true"> —— </span>
+          </div>
         </div>
       </div>
 

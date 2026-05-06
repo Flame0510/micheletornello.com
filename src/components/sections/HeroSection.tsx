@@ -32,17 +32,6 @@ export default function HeroSection() {
         <div className="heroInner">
           {/* Text column — layout singola colonna, senza portrait */}
           <div className="heroText flex flex-col items-start">
-            <motion.span
-              className="badge"
-              custom={0}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={variants}
-            >
-              <span aria-hidden="true">● </span>Disponibile per nuovi progetti <span aria-hidden="true">·</span> {new Date().getFullYear()}
-            </motion.span>
-
             <motion.p
               className="thesis"
               custom={3}
