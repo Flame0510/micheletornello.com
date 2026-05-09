@@ -96,6 +96,13 @@
 
 /* ── CONTAINER UTILITY CLASSES ── */
 @layer utilities {
+  /* Glow effect for accent-colored interactive elements */
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.35);
+  }
+  .glow-accent:hover {
+    box-shadow: 0 0 28px rgba(37, 99, 235, 0.5);
+  }
   .container {
     width: 100%;
     max-width: var(--container-md);
