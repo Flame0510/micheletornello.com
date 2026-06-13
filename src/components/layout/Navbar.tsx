@@ -129,7 +129,7 @@ const Navbar = () => {
             <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>{currentYear}</span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navigazione principale">
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Navigazione principale">
             {navLinks.map((link) => {
               const isNavActive = () => {
                 if (link.href === '/academy') return pathname === '/academy';
@@ -176,7 +176,7 @@ const Navbar = () => {
           </nav>
 
           <button 
-            className="md:hidden focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] focus-visible:outline-none rounded p-3 -mr-3"
+            className="lg:hidden focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] focus-visible:outline-none rounded p-3 -mr-3"
             style={{ color: 'var(--text-primary)' }}
             ref={openBtnRef}
             onClick={() => setIsMenuOpen(true)}
