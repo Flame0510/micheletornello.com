@@ -597,6 +597,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: .8rem;
+  width: 100%;
 }
 
 .contactInput {
@@ -625,6 +626,7 @@ h1 {
 .contactTextarea {
   resize: vertical;
   min-height: 120px;
+  width: 100%;
 }
 
 
@@ -1211,12 +1213,8 @@ h1 {
 }
 
 .entG_stat {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent-primary);
-  padding: 1.25rem 1.5rem;
-  border-radius: .75rem;
-  box-shadow: var(--shadow-card);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
 }
 
 .entG_number {
@@ -1266,7 +1264,7 @@ h1 {
 @media (max-width: 767px) {
   .entG_section { padding-top: 80px; }
   .entG_stats { grid-template-columns: 1fr; gap: 1rem; }
-  .entG_stat { padding: 1rem; }
+  .entG_stat { padding: 1rem 0; }
 }
 
 /* ── COOKIE CONSENT ── */
