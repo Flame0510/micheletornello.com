@@ -187,7 +187,7 @@ export default function HomePage() {
           <div className="timelineLine">
             {timeline.map((item) => (
               <TimelineItem
-                key={item.year}
+                key={item.title}
                 year={item.year}
                 title={item.title}
                 text={item.text}
@@ -198,7 +198,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Portfolio */}
+      {/* 7. Process */}
       <ProcessSection />
 
       {/* 8. Portfolio */}

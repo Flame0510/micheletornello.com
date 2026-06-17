@@ -32,10 +32,14 @@ export function TimelineItem({
           <span className="chiB_tlYear">{year}</span>
           <span className="chiB_tlTag">{title}</span>
         </div>
-        <p
-          className="chiB_tlText"
-          dangerouslySetInnerHTML={{ __html: text.replace(/\n/g, '<br />') }}
-        />
+        <p className="chiB_tlText">
+          {text.split('\n').map((line, i, arr) => (
+            <span key={i}>
+              {line}
+              {i < arr.length - 1 && <br />}
+            </span>
+          ))}
+        </p>
       </div>
     </div>
   );
