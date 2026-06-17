@@ -100,7 +100,8 @@ const Navbar = () => {
     { name: '[03] Proof', href: '/#proof', anchor: '#proof' },
     { name: '[04] Lavori', href: '/#lavori', anchor: '#lavori' },
     { name: '[05] Academy', href: '/academy', anchor: '/academy' },
-    { name: '[06] Contatto', href: '/#contatto', anchor: '#contatto' },
+    { name: '[06] Showcases', href: '/showcases', anchor: '/showcases' },
+    { name: '[07] Contatto', href: '/#contatto', anchor: '#contatto' },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -159,7 +160,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <Link 
+            <Link
               href="/speaker"
               style={{
                 fontFamily: 'var(--font-body)',
@@ -171,7 +172,7 @@ const Navbar = () => {
                 transition: 'color 0.2s',
               }}
             >
-              [07] Speaker
+              [08] Speaker
             </Link>
           </nav>
 
@@ -255,7 +256,23 @@ const Navbar = () => {
                   {link.name.split('] ')[1]}
                 </Link>
               ))}
-              <Link 
+              <Link
+                href="/showcases"
+                onClick={() => closeMenu()}
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 'clamp(2rem, 8vw, 3rem)',
+                  fontWeight: 700,
+                  color: pathname === '/showcases' ? 'var(--accent-primary)' : 'var(--text-primary)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                }}
+                onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
+                onMouseOut={(e) => ((e.target as HTMLElement).style.color = pathname === '/showcases' ? 'var(--accent-primary)' : 'var(--text-primary)')}
+              >
+                Showcases
+              </Link>
+              <Link
                 href="/speaker"
                 onClick={() => closeMenu()}
                 style={{
