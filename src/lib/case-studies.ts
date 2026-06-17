@@ -1,4 +1,4 @@
-export type Lang = 'it' | 'en';
+export type { Lang } from './translations';
 
 export interface CaseStudy {
   slug: string;
