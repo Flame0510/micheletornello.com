@@ -1,12 +1,14 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ExternalLink, Code, Server, Cpu, Cloud, Database, GitBranch, Layout } from "lucide-react";
+import type { LucideProps } from "lucide-react";
+import { ExternalLink, Code, Server, Cpu, Cloud, GitBranch, Layout } from "lucide-react";
 import { academy } from "@/lib/data";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
+import type { FC } from "react";
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+const iconMap: Record<string, FC<LucideProps>> = {
   PHP: Server,
   "Sistemi Operativi": Cpu,
   "Programmazione 1": Code,
@@ -16,20 +18,9 @@ const iconMap: Record<string, React.ComponentType<any>> = {
   "Sistemi di Versioning": GitBranch,
 };
 
-const iconMapEn: Record<string, React.ComponentType<any>> = {
-  PHP: Server,
-  "Operating Systems": Cpu,
-  "Programming 1": Code,
-  "Cloud Computing": Cloud,
-  Angular: Layout,
-  React: Code,
-  "Versioning Systems": GitBranch,
-};
-
 export default function CourseGrid() {
   const { lang } = useLang();
   const t = translations.academyPage[lang];
-  const icons = lang === "it" ? iconMap : iconMapEn;
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -42,7 +33,7 @@ export default function CourseGrid() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {academy.subjects.map((subject, i) => {
-          const Icon = icons[subject.name];
+          const Icon = iconMap[subject.name];
           return (
             <motion.div
               key={i}

@@ -92,17 +92,15 @@ export const Services = () => {
             </h3>
 
             {/* Problem — italic */}
-            {"problem" in service && (
-              <p style={{
-                fontSize: "0.85rem",
-                color: "var(--text-muted)",
-                fontStyle: 'italic',
-                marginBottom: '1rem',
-                lineHeight: 1.5,
-              }}>
-                {(service as { problem: string }).problem}
-              </p>
-            )}
+            <p style={{
+              fontSize: "0.85rem",
+              color: "var(--text-muted)",
+              fontStyle: 'italic',
+              marginBottom: '1rem',
+              lineHeight: 1.5,
+            }}>
+              {service.problem}
+            </p>
 
             {/* Divider */}
             <div style={{
@@ -123,83 +121,73 @@ export const Services = () => {
             </p>
 
             {/* Deliverables */}
-            {"deliverables" in service && (
-              <div style={{ marginBottom: '1.25rem' }}>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {(service as { deliverables: string[] }).deliverables.map(
-                    (d, j) => (
-                      <li
-                        key={j}
-                        style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: "0.85rem", color: "var(--text-secondary)" }}
-                      >
-                        <span style={{
-                          color: "var(--accent-primary)",
-                          fontSize: "0.7rem",
-                          lineHeight: "1.6",
-                          flexShrink: 0,
-                          marginTop: '0.1rem',
-                        }}>
-                          ●
-                        </span>
-                        <span>{d}</span>
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
-            )}
+            <div style={{ marginBottom: '1.25rem' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {service.deliverables.map((d, j) => (
+                  <li
+                    key={j}
+                    style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: "0.85rem", color: "var(--text-secondary)" }}
+                  >
+                    <span style={{
+                      color: "var(--accent-primary)",
+                      fontSize: "0.7rem",
+                      lineHeight: "1.6",
+                      flexShrink: 0,
+                      marginTop: '0.1rem',
+                    }}>
+                      ●
+                    </span>
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             {/* Processo */}
-            {"process" in service && (
-              <div style={{ marginBottom: '1.5rem', marginTop: 'auto' }}>
-                <div style={{
-                  display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem',
-                  fontFamily: 'var(--font-body)', fontSize: "0.7rem", color: "var(--text-muted)"
-                }}>
-                  {(service as { process: string[] }).process.map(
-                    (step, j, arr) => (
-                      <span key={j} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                        <span style={{
-                          border: "1px solid var(--border)",
-                          padding: "0.2rem 0.6rem",
-                          borderRadius: '0.35rem',
-                          color: "var(--text-secondary)",
-                          background: 'var(--bg-base)',
-                        }}>
-                          {step}
-                        </span>
-                        {j < arr.length - 1 && (
-                          <span style={{ color: "var(--accent-primary)", opacity: 0.5 }}>→</span>
-                        )}
-                      </span>
-                    )
-                  )}
-                </div>
+            <div style={{ marginBottom: '1.5rem', marginTop: 'auto' }}>
+              <div style={{
+                display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem',
+                fontFamily: 'var(--font-body)', fontSize: "0.7rem", color: "var(--text-muted)"
+              }}>
+                {service.process.map((step, j, arr) => (
+                  <span key={j} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <span style={{
+                      border: "1px solid var(--border)",
+                      padding: "0.2rem 0.6rem",
+                      borderRadius: '0.35rem',
+                      color: "var(--text-secondary)",
+                      background: 'var(--bg-base)',
+                    }}>
+                      {step}
+                    </span>
+                    {j < arr.length - 1 && (
+                      <span style={{ color: "var(--accent-primary)", opacity: 0.5 }}>→</span>
+                    )}
+                  </span>
+                ))}
               </div>
-            )}
+            </div>
 
             {/* CTA */}
-            {"cta" in service && (
-              <div style={{ borderTop: "1px solid var(--border)", paddingTop: '1rem', marginTop: 'auto' }}>
-                <a
-                  href="#contatto"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
-                    fontSize: "0.88rem",
-                    color: "var(--accent-primary)",
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    fontFamily: 'var(--font-body)',
-                    transition: 'color 0.2s',
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = 'var(--accent-primary-dark)')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = 'var(--accent-primary)')}
-                >
-                  {(service as { cta: string }).cta}
-                  <span style={{ fontSize: "0.95rem" }}>→</span>
-                </a>
-              </div>
-            )}
+            <div style={{ borderTop: "1px solid var(--border)", paddingTop: '1rem', marginTop: 'auto' }}>
+              <a
+                href="#contatto"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
+                  fontSize: "0.88rem",
+                  color: "var(--accent-primary)",
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-body)',
+                  transition: 'color 0.2s',
+                }}
+                onMouseOver={(e) => (e.currentTarget.style.color = 'var(--accent-primary-dark)')}
+                onMouseOut={(e) => (e.currentTarget.style.color = 'var(--accent-primary)')}
+              >
+                {service.cta}
+                <span style={{ fontSize: "0.95rem" }}>→</span>
+              </a>
+            </div>
           </motion.div>
         ))}
       </motion.div>
