@@ -95,13 +95,13 @@ const Navbar = () => {
   }, [pathname]);
 
   const navLinks = [
-    { name: '[01] Enterprise', href: '/#enterprise', anchor: '#enterprise' },
-    { name: '[02] Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
-    { name: '[03] Proof', href: '/#proof', anchor: '#proof' },
-    { name: '[04] Lavori', href: '/#lavori', anchor: '#lavori' },
-    { name: '[05] Academy', href: '/academy', anchor: '/academy' },
-    { name: '[06] Showcases', href: '/showcases', anchor: '/showcases' },
-    { name: '[07] Contatto', href: '/#contatto', anchor: '#contatto' },
+    { name: 'Enterprise', href: '/#enterprise', anchor: '#enterprise' },
+    { name: 'Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
+    { name: 'Proof', href: '/#proof', anchor: '#proof' },
+    { name: 'Lavori', href: '/#lavori', anchor: '#lavori' },
+    { name: 'Academy', href: '/academy', anchor: '/academy' },
+    { name: 'Showcases', href: '/showcases', anchor: '/showcases' },
+    { name: 'Contatto', href: '/#contatto', anchor: '#contatto' },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -172,7 +172,7 @@ const Navbar = () => {
                 transition: 'color 0.2s',
               }}
             >
-              [08] Speaker
+              Speaker
             </Link>
           </nav>
 
@@ -253,7 +253,7 @@ const Navbar = () => {
                   onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
                   onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
                 >
-                  {link.name.split('] ')[1]}
+                  {link.name}
                 </Link>
               ))}
               <Link

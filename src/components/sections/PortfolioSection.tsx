@@ -106,8 +106,7 @@ export default function PortfolioSection() {
         {/* LIVE PROJECTS */}
         <header className="pGamma_section_header">
           <h2 className="pGamma_section_title">
-            // {lang === 'it' ? 'portfolio_live' : 'live_portfolio'} 
-            <span className="pGamma_counter">[{t.items.length.toString().padStart(2, '0')}]</span>
+            // {lang === 'it' ? 'portfolio_live' : 'live_portfolio'}
           </h2>
         </header>
 
