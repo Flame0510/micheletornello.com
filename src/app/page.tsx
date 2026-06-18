@@ -47,30 +47,26 @@ export default function HomePage() {
 
       {/* 2. Credibility Strip */}
       <div className="credStrip_wrap">
-        <p className="credStrip_label">Riconoscimenti</p>
         <div className="credStrip_marquee" aria-hidden="false">
           <div className="credStrip_track marquee-track">
-            <span className="credStrip_text">RTL 102.5: Intervista nazionale</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">TEDx Catania: Staff Volontario</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">Speaker UniCT: React Native</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">Friends of Figma: Contributor</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">GDG Catania: Membro attivo</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            {/* Duplicate for seamless infinite loop */}
-            <span className="credStrip_text">RTL 102.5: Intervista nazionale</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">TEDx Catania: Staff Volontario</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">Speaker UniCT: React Native</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">Friends of Figma: Contributor</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
-            <span className="credStrip_text">GDG Catania: Membro attivo</span>
-            <span className="credStrip_divider" aria-hidden="true"> — </span>
+            {[
+              { source: 'RTL 102.5', role: 'Intervista nazionale' },
+              { source: 'TEDx Catania', role: 'Staff Volontario' },
+              { source: 'Speaker UniCT', role: 'React Native' },
+              { source: 'Friends of Figma', role: 'Contributor' },
+              { source: 'GDG Catania', role: 'Membro attivo' },
+              { source: 'RTL 102.5', role: 'Intervista nazionale' },
+              { source: 'TEDx Catania', role: 'Staff Volontario' },
+              { source: 'Speaker UniCT', role: 'React Native' },
+              { source: 'Friends of Figma', role: 'Contributor' },
+              { source: 'GDG Catania', role: 'Membro attivo' },
+            ].map((item, i) => (
+              <span key={i} className="credStrip_item">
+                <span className="credStrip_source">{item.source}</span>
+                <span className="credStrip_role">{item.role}</span>
+                <span className="credStrip_divider" aria-hidden="true">·</span>
+              </span>
+            ))}
           </div>
         </div>
       </div>

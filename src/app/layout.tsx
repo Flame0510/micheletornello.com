@@ -78,6 +78,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} font-sans antialiased`}
         style={{ background: 'var(--bg-base)', color: 'var(--text-primary)' }}
+        suppressHydrationWarning
       >
         <a
           href="#main-content"
