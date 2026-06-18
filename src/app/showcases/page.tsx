@@ -4,7 +4,7 @@ import ShowcasesPageClient from './ShowcasesPageClient';
 export const metadata: Metadata = {
   title: 'Showcases | Michele Tornello',
   description:
-    'Piattaforme interattive open source per la didattica: AI Fundamentals, Design Pattern Trainer, Angular Showcase e Operating Systems. Costruiti per la Steve Jobs Academy e per la community.',
+    'Piattaforme interattive open source per la didattica: AI Fundamentals, Design Pattern, Angular Showcase e Operating Systems. Costruiti per la Steve Jobs Academy e per la community.',
   openGraph: {
     title: 'Showcases | Michele Tornello',
     description:

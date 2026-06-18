@@ -2,18 +2,9 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Github, ExternalLink } from 'lucide-react';
 import { showcases } from '@/lib/showcases-data';
 import type { Showcase } from '@/lib/showcases-data';
-
-function StatusDot({ status }: { status: Showcase['status'] }) {
-  const cls =
-    status === 'LIVE'
-      ? 'shw_dot shw_dot_live'
-      : status === 'BETA'
-      ? 'shw_dot shw_dot_beta'
-      : 'shw_dot shw_dot_dev';
-  return <span className={cls} />;
-}
 
 function ShowcaseCard({ s, index }: { s: Showcase; index: number }) {
   return (
@@ -26,19 +17,7 @@ function ShowcaseCard({ s, index }: { s: Showcase; index: number }) {
     >
       <header className="shw_card_header">
         <span className="shw_card_id">{s.id}</span>
-        <div className="shw_card_meta_right">
-          <span className="shw_card_type">{s.type.replace('-', '·')}</span>
-          <span className="shw_card_status">
-            <StatusDot status={s.status} />
-            {s.status}
-          </span>
-        </div>
       </header>
-
-      <div className="shw_card_metric">
-        <span className="shw_metric_val">{s.metric.value}</span>
-        <span className="shw_metric_lab">{s.metric.label}</span>
-      </div>
 
       <div className="shw_card_body">
         <h3 className="shw_card_title">{s.title}</h3>
@@ -59,22 +38,21 @@ function ShowcaseCard({ s, index }: { s: Showcase; index: number }) {
           href={s.repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="shw_link shw_link_ghost"
+          className="shw_btn shw_btn_ghost"
         >
-          GitHub ↗
+          <Github size={14} />
+          Repository
         </a>
-        {s.liveUrl ? (
+        {s.liveUrl && (
           <a
             href={s.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shw_link shw_link_live"
+            className="shw_btn shw_btn_accent"
           >
-            <span className="shw_live_pulse" />
-            Live ↗
+            <ExternalLink size={14} />
+            Apri
           </a>
-        ) : (
-          <span className="shw_wip">// WIP</span>
         )}
       </footer>
     </motion.article>
@@ -144,9 +122,6 @@ export default function ShowcasesPageClient() {
             <span className="shw_section_label">// SHW_LAB_INDEX</span>
             <h2 className="shw_section_title">
               Showcases
-              <span className="shw_counter">
-                [{showcases.length.toString().padStart(2, '0')}]
-              </span>
             </h2>
           </header>
 
