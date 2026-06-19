@@ -1,6 +1,14 @@
 import { MetadataRoute } from 'next'
+import { caseStudies } from '@/lib/case-studies'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const portfolioRoutes = caseStudies.map((cs) => ({
+    url: `https://micheletornello.com/portfolio/${cs.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     {
       url: 'https://micheletornello.com',
@@ -32,5 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    ...portfolioRoutes,
   ]
 }
