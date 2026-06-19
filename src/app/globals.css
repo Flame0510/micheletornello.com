@@ -1116,17 +1116,6 @@ h1 {
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
-.credStrip_header {
-  padding: 1rem clamp(1rem, 4vw, 1.5rem) 0.6rem;
-}
-.credStrip_label {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
 .credStrip_marquee {
   overflow: hidden;
   width: 100%;
@@ -1646,10 +1635,6 @@ h1 {
   margin: 0;
   font-family: var(--font-body);
   font-weight: 600;
-}
-.pGamma_counter {
-  color: var(--accent-primary);
-  font-weight: 700;
 }
 .pGamma_grid {
   display: grid;
@@ -2178,13 +2163,6 @@ html { scroll-behavior: smooth; }
   align-items: baseline;
   gap: 0.75rem;
 }
-.shw_counter {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--accent-primary);
-  opacity: 0.6;
-}
-
 /* ── Grid ── */
 .shw_grid {
   display: grid;
@@ -2220,77 +2198,6 @@ html { scroll-behavior: smooth; }
   color: var(--text-muted);
   opacity: 0.6;
 }
-.shw_card_meta_right {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.shw_card_type {
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  border: 1px solid var(--border);
-  padding: 0.15rem 0.5rem;
-  border-radius: 0.25rem;
-}
-.shw_card_status {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-
-/* Status dots */
-.shw_dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.shw_dot_live {
-  background: var(--accent-green);
-  animation: shw_pulse_live 2s ease-in-out infinite;
-}
-.shw_dot_beta {
-  background: var(--accent-highlight);
-}
-.shw_dot_dev {
-  background: var(--text-muted);
-  opacity: 0.5;
-}
-@keyframes shw_pulse_live {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-/* Metric */
-.shw_card_metric {
-  padding: 1.5rem 1.5rem 0;
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-}
-.shw_metric_val {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  color: var(--accent-primary);
-  line-height: 1;
-}
-.shw_metric_lab {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-
 /* Body */
 .shw_card_body {
   padding: 1.25rem 1.5rem 0;
@@ -2423,5 +2330,4 @@ html { scroll-behavior: smooth; }
 /* ── Responsive ── */
 @media (max-width: 767px) {
   .shw_grid { grid-template-columns: 1fr; }
-  .shw_card_metric { padding-top: 1.25rem; }
 }

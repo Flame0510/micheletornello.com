@@ -8,7 +8,7 @@ export const Press = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let ctx: any;
+    let ctx: { revert: () => void } | undefined;
     const init = async () => {
       const { gsap } = await import("@/lib/gsap");
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -44,7 +44,7 @@ export const Press = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="overflow-hidden" style={{ background: "#060606" }}>
+    <section ref={sectionRef} className="overflow-hidden" style={{ background: "var(--bg-loader)" }}>
       <div className="px-6 pt-16 pb-4">
         <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>02 — Press</span>
       </div>
@@ -62,7 +62,7 @@ export const Press = () => {
             }}
           >
             <span className="font-mono text-xs mb-4" style={{ color: "var(--color-brand-alt)" }}>{item.year}</span>
-            <p className="font-display mb-2" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "#E8E8E8" }}>{item.label}</p>
+            <p className="font-display mb-2" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "var(--text-primary)" }}>{item.label}</p>
             <p className="font-mono text-sm" style={{ color: "var(--text-muted)" }}>{item.title}</p>
           </div>
         ))}

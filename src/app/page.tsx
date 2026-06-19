@@ -47,7 +47,7 @@ export default function HomePage() {
 
       {/* 2. Credibility Strip */}
       <div className="credStrip_wrap">
-        <div className="credStrip_marquee" aria-hidden="false">
+        <div className="credStrip_marquee">
           <div className="credStrip_track marquee-track">
             {[
               { source: 'RTL 102.5', role: 'Intervista nazionale' },
@@ -80,7 +80,7 @@ export default function HomePage() {
       {/* 5. Services */}
       <Services />
 
-      {/* 5. Proof of Work */}
+      {/* 6. Proof of Work */}
       <section id="proof" className="pv3G_section">
         <div className="pv3G_container">
           <header className="pv3G_header">
