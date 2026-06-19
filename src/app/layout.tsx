@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
-import './globals.css';
+import './globals.scss';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 import { PageLoader, CustomCursor, ContactTrigger } from '@/components/layout/ClientOnlyComponents';
