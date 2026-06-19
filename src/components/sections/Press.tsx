@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useLang } from "@/lib/LanguageContext";
+import { pressItems } from "@/lib/press-data";
 
 export const Press = () => {
   const { lang } = useLang();
@@ -37,14 +38,13 @@ export const Press = () => {
     return () => ctx?.revert();
   }, []);
 
-  const pressItems = [
-    { label: "RTL 102.5", title: lang === "it" ? "Intervista in diretta nazionale" : "National live interview", year: "2024" },
-    { label: "Università di Catania", title: lang === "it" ? "Speaker · Architetture Mobile" : "Speaker · Mobile Architectures", year: "2024" },
-    { label: "TEDx Catania", title: lang === "it" ? "Staff organizzativo" : "Organizing Staff", year: "2023" },
-  ];
-
   return (
-    <section ref={sectionRef} className="overflow-hidden" style={{ background: "var(--bg-loader)" }}>
+    <section
+      ref={sectionRef}
+      className="overflow-hidden"
+      style={{ background: "var(--bg-loader)" }}
+      aria-label="Riconoscimenti — scorri orizzontalmente per vedere tutti"
+    >
       <div className="px-6 pt-16 pb-4">
         <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>02 — Press</span>
       </div>
@@ -63,7 +63,7 @@ export const Press = () => {
           >
             <span className="font-mono text-xs mb-4" style={{ color: "var(--color-brand-alt)" }}>{item.year}</span>
             <p className="font-display mb-2" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "var(--text-primary)" }}>{item.label}</p>
-            <p className="font-mono text-sm" style={{ color: "var(--text-muted)" }}>{item.title}</p>
+            <p className="font-mono text-sm" style={{ color: "var(--text-muted)" }}>{item.title[lang]}</p>
           </div>
         ))}
       </div>

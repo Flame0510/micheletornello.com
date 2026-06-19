@@ -51,10 +51,11 @@ function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 
             ))}
           </div>
         </div>
-        <a 
-          href={project.link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visita ${project.title}`}
           className="pGamma_link text-[var(--color-text)] hover:text-[var(--color-brand)] transition-colors"
         >
           ↗ {project.link.replace('https://', '').replace('www.', '')}
@@ -69,7 +70,7 @@ function StartupCard({ project, lang }: { project: StartupProject; lang: 'it' | 
     <div className="pGamma_card opacity-80" style={{ borderColor: 'var(--border-accent)' }}>
       <header className="pGamma_header">
         <span className="pGamma_id">{project.id}</span>
-        <span className="pGamma_status" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-jetbrains-mono)' }}>
+        <span className="pGamma_status" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-body)' }}>
           {project.status}
         </span>
       </header>
@@ -127,7 +128,7 @@ export default function PortfolioSection() {
             </h2>
             <p style={{ 
               fontSize: '0.9rem', 
-              color: 'var(--text-dim)', 
+              color: 'var(--text-muted)',
               fontFamily: 'var(--font-mono)',
               opacity: 0.7 
             }}>

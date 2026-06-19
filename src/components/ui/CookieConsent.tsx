@@ -20,7 +20,7 @@ export const CookieConsent = () => {
     }
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isPanelOpen) setTempAnalytics(consent?.analytics ?? false);
   }, [isPanelOpen, consent]);
 

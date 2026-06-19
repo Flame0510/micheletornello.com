@@ -1,7 +1,5 @@
-import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
-
-const resend = new Resend(process.env.RESEND_API_KEY ?? '');
+import { resend, escapeHtml } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -11,18 +9,22 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Campi mancanti' }, { status: 400 });
     }
 
+    const n = escapeHtml(String(name));
+    const e = escapeHtml(String(email));
+    const m = escapeHtml(String(message));
+
     await resend.emails.send({
       from: 'Sito micheletornello.com <onboarding@resend.dev>',
       to: 'micheletornello5@gmail.com',
       replyTo: email,
-      subject: `Nuovo messaggio dal sito — ${name}`,
+      subject: `Nuovo messaggio dal sito — ${n}`,
       html: `
-        <div style="font-family: monospace; background: var(--color-bg); color: var(--color-text); padding: 32px; max-width: 600px;">
-          <p style="color: var(--color-brand); font-size: 12px; letter-spacing: 0.1em;">// NUOVO MESSAGGIO — micheletornello.com</p>
-          <p><strong>Nome:</strong> ${name}</p>
-          <p><strong>Email:</strong> <a href="mailto:${email}" style="color: var(--color-brand);">${email}</a></p>
-          <hr style="border-color: rgba(242,237,232,0.1); margin: 24px 0;" />
-          <p style="white-space: pre-wrap;">${message}</p>
+        <div style="font-family: monospace; padding: 32px; max-width: 600px;">
+          <p style="color: #2563EB; font-size: 12px; letter-spacing: 0.1em;">// NUOVO MESSAGGIO — micheletornello.com</p>
+          <p><strong>Nome:</strong> ${n}</p>
+          <p><strong>Email:</strong> <a href="mailto:${e}" style="color: #2563EB;">${e}</a></p>
+          <hr style="border-color: #E5E7EB; margin: 24px 0;" />
+          <p style="white-space: pre-wrap;">${m}</p>
         </div>
       `,
     });

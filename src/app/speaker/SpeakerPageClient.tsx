@@ -2,59 +2,8 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import SectionLabel from '@/components/ui/SectionLabel';
-import { 
-  Mic2, 
-  MapPin, 
-  Calendar, 
-  ArrowUpRight, 
-  Download, 
-  ExternalLink,
-  Users,
-  Terminal,
-  Cpu,
-  Radio,
-  Briefcase
-} from 'lucide-react';
-
-// Content
-const bio = {
-  short: "Michele Tornello è System Architect, Product Engineer e docente presso la Steve Jobs Academy. Lavora alla progettazione di architetture scalabili per applicazioni web e mobile e sviluppa prodotti digitali indipendenti. È stato intervistato da RTL 102.5 e partecipa attivamente alla community tecnologica italiana.",
-  long: "Michele Tornello è System Architect, Product Engineer e docente presso la Steve Jobs Academy. Laureato in Ingegneria Informatica, si occupa della progettazione di architetture software scalabili e dello sviluppo di applicazioni web e mobile utilizzate in contesti enterprise dal 2022.\n\nLavora con tecnologie moderne dell'ecosistema JavaScript come React, Next.js e React Native, oltre ad avere esperienza con Angular, Vue, Nuxt, PHP e Java. Parallelamente allo sviluppo professionale si dedica alla formazione di nuovi programmatori, contribuendo alla crescita della nuova generazione di sviluppatori.\n\nHa sviluppato diversi progetti digitali indipendenti e partecipa attivamente alla community tecnologica italiana. È stato intervistato da RTL 102.5 e ha collaborato come volontario con TEDx Catania."
-};
-
-const topics = [
-  {
-    title: "Sviluppo software e architetture enterprise",
-    subtitle: "Dal primo prototipo alla produzione: come progettare codebase mantenibili e scalabili.",
-    abstract: "Il passaggio da un prototipo a un prodotto in produzione richiede rigore architettonico. Questo talk esplora come progettare sistemi che durano nel tempo, concentrandosi su architettura di progetto, gestione dello stato, modularità del codice e risoluzione degli errori comuni che rallentano lo scaling.",
-    format: "Talk tecnico (30-45 min)",
-    target: "Web & Mobile Developer, Tech Lead",
-    icon: <Cpu className="w-5 h-5" />
-  },
-  {
-    title: "Architettura software pragmatica",
-    subtitle: "Come progettare sistemi scalabili senza creare complessità inutile.",
-    abstract: "Spesso l'over-engineering è il primo nemico della velocità. Michele condivide un approccio pragmatico alla scelta delle tecnologie e alla progettazione di servizi semplici ma robusti. Vedremo come far evolvere le architetture nel tempo, mantenendo la flessibilità necessaria per rispondere al business senza sacrificare la stabilità.",
-    format: "Workshop pratico / Talk",
-    target: "Architect, CTO, Senior Developer",
-    icon: <Briefcase className="w-5 h-5" />
-  },
-  {
-    title: "Costruire prodotti digitali indipendenti",
-    subtitle: "Dallo sviluppo tecnico alla creazione di prodotti reali: come passare dall'idea al software funzionante.",
-    abstract: "Sviluppare un prodotto non significa solo scrivere codice. Questo intervento analizza il percorso completo: dalla progettazione di un MVP efficace all'iterazione rapida basata sul feedback. Approfondiremo la gestione tecnica del prodotto, la scelta delle infrastrutture e le strategie per garantire la scalabilità fin dal primo giorno.",
-    format: "Panel discussion / Talk",
-    target: "Product Manager, Indie Hackers, Full-stack Developer",
-    icon: <Radio className="w-5 h-5" />
-  }
-];
-
-const credentials = [
-  { label: "System Architect", detail: "Software Design", icon: <Terminal className="w-4 h-4" /> },
-  { label: "Docente SJA", detail: "Steve Jobs Academy", icon: <Users className="w-4 h-4" /> },
-  { label: "RTL 102.5", detail: "Intervista Nazionale", icon: <Radio className="w-4 h-4" /> },
-  { label: "Ing. Informatica", detail: "Laurea · 2024", icon: <Cpu className="w-4 h-4" /> }
-];
+import { Download } from 'lucide-react';
+import { bio, topics, credentials, Mic2, MapPin, Calendar, ArrowUpRight, ExternalLink, Users } from '@/lib/speaker-data';
 
 type FormData = {
   name: string;
@@ -142,11 +91,11 @@ export default function SpeakerPageClient() {
                 BOOK FOR EVENT <ArrowUpRight className="w-4 h-4" />
               </span>
             </button>
-            <button className="btn-outline">
+            <a href="/speaker-kit.pdf" download className="btn-outline">
               <span className="inline-flex items-center gap-2">
                 DOWNLOAD KIT <Download className="w-4 h-4" />
               </span>
-            </button>
+            </a>
           </div>
         </header>
 
@@ -180,7 +129,7 @@ export default function SpeakerPageClient() {
             {credentials.map((item, i) => (
               <div key={i} className="group">
                 <div className="text-[var(--accent-primary)] mb-3 group-hover:scale-110 transition-transform origin-left">
-                  {item.icon}
+                  <item.Icon className="w-4 h-4" />
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--text-primary)]/40 mb-1">
                   {item.label}
@@ -202,7 +151,7 @@ export default function SpeakerPageClient() {
               <div key={i} className="group border border-[var(--text-primary)]/5 p-6 md:p-8 hover:border-[var(--accent-primary)]/40 transition-colors overflow-hidden">
                 <div className="mb-4 flex items-start gap-4">
                   <div className="w-10 h-10 shrink-0 bg-[var(--bg-base)] border border-[var(--text-primary)]/10 rounded-full flex items-center justify-center text-[var(--accent-primary)] group-hover:border-[var(--accent-primary)]/40 transition-colors">
-                    {topic.icon}
+                    <topic.Icon className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="font-display text-3xl mb-2 group-hover:text-[var(--accent-primary)] transition-colors leading-tight">
