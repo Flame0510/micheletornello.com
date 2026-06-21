@@ -101,6 +101,8 @@ const Navbar = () => {
     { name: 'Lavori', href: '/#lavori', anchor: '#lavori' },
     { name: 'Academy', href: '/academy', anchor: '/academy' },
     { name: 'Showcases', href: '/showcases', anchor: '/showcases' },
+    { name: 'Lab', href: '/lab', anchor: '/lab' },
+    { name: 'Speaker', href: '/speaker', anchor: '/speaker' },
     { name: 'Contatto', href: '/#contatto', anchor: '#contatto' },
   ];
 
@@ -133,10 +135,9 @@ const Navbar = () => {
           <nav className="hidden lg:flex items-center gap-8" aria-label="Navigazione principale">
             {navLinks.map((link) => {
               const isNavActive = () => {
-                if (link.href === '/academy') return pathname === '/academy';
+                if (!link.anchor.startsWith('#')) return pathname === link.href;
                 if (pathname !== '/') return false;
-                const sectionId = link.anchor.replace('#', '');
-                return activeSection === sectionId;
+                return activeSection === link.anchor.replace('#', '');
               };
 
               const active = isNavActive();
@@ -160,20 +161,6 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <Link
-              href="/speaker"
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.72rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                fontWeight: pathname === '/speaker' ? 600 : 500,
-                color: pathname === '/speaker' ? 'var(--accent-primary)' : 'var(--text-muted)',
-                transition: 'color 0.2s',
-              }}
-            >
-              Speaker
-            </Link>
           </nav>
 
           <button 
@@ -256,36 +243,6 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="/showcases"
-                onClick={() => closeMenu()}
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: 'clamp(2rem, 8vw, 3rem)',
-                  fontWeight: 700,
-                  color: pathname === '/showcases' ? 'var(--accent-primary)' : 'var(--text-primary)',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                }}
-                onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
-                onMouseOut={(e) => ((e.target as HTMLElement).style.color = pathname === '/showcases' ? 'var(--accent-primary)' : 'var(--text-primary)')}
-              >
-                Showcases
-              </Link>
-              <Link
-                href="/speaker"
-                onClick={() => closeMenu()}
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: 'clamp(2rem, 8vw, 3rem)',
-                  fontWeight: 700,
-                  color: pathname === '/speaker' ? 'var(--accent-primary)' : 'var(--text-primary)',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                }}
-              >
-                Speaker
-              </Link>
             </nav>
 
             <div style={{
