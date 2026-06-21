@@ -2491,3 +2491,36 @@ html { scroll-behavior: smooth; }
   color: var(--text-muted);
   opacity: 0.5;
 }
+
+/* ── Mobile nav overlay ── */
+.nav_mobile_links {
+  @media (orientation: landscape) {
+    display: grid !important;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    column-gap: 0;
+    row-gap: 0.5em;
+    justify-content: center;
+    align-content: center;
+    flex: unset !important;
+    padding: 1rem 0;
+    position: relative;
+
+    a {
+      padding-left: clamp(1.5rem, 4vw, 3rem);
+      padding-right: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+  }
+}

@@ -197,16 +197,9 @@ const Navbar = () => {
               inset: 0,
               zIndex: 100,
               background: 'var(--bg-alt)',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              overflowY: 'auto',
-              paddingTop: '5rem',
-              paddingBottom: '2rem',
-              paddingLeft: '1.5rem',
-              paddingRight: '1.5rem',
             }}
           >
+            {/* Close button — outside the scroll area, always visible */}
             <button
               style={{
                 position: 'absolute',
@@ -216,6 +209,7 @@ const Navbar = () => {
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
+                zIndex: 1,
               }}
               onClick={() => closeMenu()}
               aria-label="Chiudi menu"
@@ -226,48 +220,66 @@ const Navbar = () => {
               </svg>
             </button>
 
-            <nav
+            {/* Scrollable content — fallback only if content somehow overflows */}
+            <div
               style={{
+                position: 'absolute',
+                inset: 0,
+                overflowY: 'auto',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
-                gap: 'clamp(0.4rem, 2vh, 2rem)',
-                flex: 1,
+                paddingTop: '5rem',
+                paddingBottom: '5rem',
+                paddingLeft: '1.5rem',
+                paddingRight: '1.5rem',
               }}
-              aria-label="Navigazione mobile"
             >
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={isHome ? link.anchor : link.href}
-                  onClick={() => closeMenu()}
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: 'clamp(1rem, 5vh, 3rem)',
-                    fontWeight: 700,
-                    color: 'var(--text-primary)',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s',
-                  }}
-                  onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
-                  onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
+              <nav
+                className="nav_mobile_links"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5em',
+                  flex: 1,
+                }}
+                aria-label="Navigazione mobile"
+              >
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={isHome ? link.anchor : link.href}
+                    onClick={() => closeMenu()}
+                    style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: 'clamp(0.875rem, calc((100svh - 9rem) / 18), 2.5rem)',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      textDecoration: 'none',
+                      transition: 'color 0.2s',
+                    }}
+                    onMouseOver={(e) => ((e.target as HTMLElement).style.color = 'var(--accent-primary)')}
+                    onMouseOut={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
 
-            <div style={{
-              marginTop: 'auto',
-              paddingTop: '1.5rem',
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.7rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              color: 'var(--text-muted)',
-            }}>
-              © {currentYear} Michele Tornello · Catania · IT
+              <div style={{
+                marginTop: 'auto',
+                paddingTop: '1.5rem',
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.7rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: 'var(--text-muted)',
+                textAlign: 'center',
+              }}>
+                © {currentYear} Michele Tornello · Catania · IT
+              </div>
             </div>
           </motion.div>
         )}
