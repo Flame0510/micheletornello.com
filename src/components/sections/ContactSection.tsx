@@ -65,7 +65,7 @@ function ContactForm() {
       <button className="btn-primary" type="submit" disabled={status === 'sending'}>
         {status === 'sending' ? 'INVIO...' : 'INVIA MESSAGGIO →'}
       </button>
-      {status === 'error' && <p className="contactError" role="status" aria-live="polite">Errore nell&apos;invio. Scrivi a micheletornello5@gmail.com</p>}
+      {status === 'error' && <p className="contactError" role="status" aria-live="polite">Errore nell&apos;invio. Scrivi a {process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ''}</p>}
     </form>
   );
 }

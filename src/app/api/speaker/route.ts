@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { resend, escapeHtml } from '@/lib/email';
+import { getResend, escapeHtml } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -11,9 +11,9 @@ export async function POST(req: Request) {
 
     const esc = (v: unknown) => escapeHtml(String(v ?? '—'));
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Speaker Request <onboarding@resend.dev>',
-      to: 'micheletornello5@gmail.com',
+      to: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? '',
       replyTo: email,
       subject: `Richiesta Speaker — ${esc(eventType)} — ${esc(name)}`,
       html: `

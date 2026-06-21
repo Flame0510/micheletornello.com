@@ -94,7 +94,7 @@ export default function RootLayout({
           <Footer />
           <ContactTrigger />
         </LanguageProvider>
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-6SQB1T42VN" />
+        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID ?? ''} />
         <CookieConsent />
         <div
           className="fixed inset-0 pointer-events-none"

@@ -4,7 +4,7 @@ export function useParallax(speed: number = 0.2) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Solo desktop
+    // Desktop only
     if (typeof window !== 'undefined' && window.innerWidth < 768) return;
 
     const el = ref.current;

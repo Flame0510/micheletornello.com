@@ -118,13 +118,13 @@ export default function AcademyPageClient() {
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-start sm:items-center">
           <a
-            href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
+            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ''}?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
             className="btn-primary"
           >
             {lang === "it" ? "Contattami via email" : "Email me"}
           </a>
           <a
-            href="https://wa.me/393341593912"
+            href={process.env.NEXT_PUBLIC_WHATSAPP_URL ?? ''}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"

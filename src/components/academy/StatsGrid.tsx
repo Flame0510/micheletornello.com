@@ -54,7 +54,7 @@ export default function StatsGrid() {
           {t.cta}
         </p>
         <a
-          href={`mailto:micheletornello5@gmail.com?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
+          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ''}?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
           className="btn-primary"
         >
           {t.ctaButton}

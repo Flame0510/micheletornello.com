@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { resend, escapeHtml } from '@/lib/email';
+import { getResend, escapeHtml } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -13,9 +13,9 @@ export async function POST(req: Request) {
     const e = escapeHtml(String(email));
     const m = escapeHtml(String(message));
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Sito micheletornello.com <onboarding@resend.dev>',
-      to: 'micheletornello5@gmail.com',
+      to: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? '',
       replyTo: email,
       subject: `Nuovo messaggio dal sito — ${n}`,
       html: `

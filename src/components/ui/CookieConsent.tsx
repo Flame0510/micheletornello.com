@@ -12,7 +12,7 @@ export const CookieConsent = () => {
   useEffect(() => {
     const visited = sessionStorage.getItem('mt_visited');
     if (!visited) {
-      // Prima visita: aspetta che il loader finisca (~1.4s)
+      // First visit: wait for the loader to finish (~1.4s)
       const timer = setTimeout(() => setBannerReady(true), 1400);
       return () => clearTimeout(timer);
     } else {

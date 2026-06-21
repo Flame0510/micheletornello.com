@@ -55,12 +55,12 @@ const Footer = () => {
 
         <div className="flex flex-col gap-2 md:items-end">
           <a 
-            href="mailto:micheletornello5@gmail.com" 
+            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ''}`}
             style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent-primary)', transition: 'opacity 0.2s' }}
             onMouseOver={(e) => ((e.target as HTMLElement).style.opacity = '0.75')}
             onMouseOut={(e) => ((e.target as HTMLElement).style.opacity = '1')}
           >
-            micheletornello5@gmail.com
+            {process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ''}
           </a>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-muted)', opacity: 0.5 }}>
             Catania · IT · Europe

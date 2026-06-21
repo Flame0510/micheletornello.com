@@ -1,3 +1,5 @@
+import { config } from './config';
+
 export const bio = {
   name: "Michele Tornello",
   role: "Product Engineer | Full-Stack & System Architecture",
@@ -134,13 +136,13 @@ export const academy = {
 };
 
 export const contact = {
-  email: "info@micheletornello.com",
-  whatsappNumber: "+393341593912",
+  email: config.contact.email,
+  whatsappUrl: config.contact.whatsapp,
 };
 
 export const social = {
   linkedin: "https://www.linkedin.com/in/michele-tornello-06a6341aa/",
   github: "https://github.com/Flame0510",
   instagram: "https://www.instagram.com/michele_tornello",
-  whatsapp: "https://wa.me/393341593912"
+  whatsapp: config.contact.whatsapp,
 };

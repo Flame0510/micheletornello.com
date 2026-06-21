@@ -64,7 +64,7 @@ export default function ContactTrigger() {
 
           <div className="flex flex-col gap-2">
             <a
-              href="mailto:micheletornello5@gmail.com"
+              href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ''}`}
               className="text-sm transition-colors"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)' }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-primary)')}
