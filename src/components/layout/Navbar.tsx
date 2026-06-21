@@ -183,7 +183,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             ref={menuRef}
             id="mobile-menu"
             role="dialog"
@@ -200,11 +200,14 @@ const Navbar = () => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
-              padding: '1.5rem',
+              overflowY: 'auto',
+              paddingTop: '5rem',
+              paddingBottom: '2rem',
+              paddingLeft: '1.5rem',
+              paddingRight: '1.5rem',
             }}
           >
-            <button 
+            <button
               style={{
                 position: 'absolute',
                 top: '2rem',
@@ -223,15 +226,25 @@ const Navbar = () => {
               </svg>
             </button>
 
-            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }} aria-label="Navigazione mobile">
+            <nav
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 'clamp(0.4rem, 2vh, 2rem)',
+                flex: 1,
+              }}
+              aria-label="Navigazione mobile"
+            >
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
+                <Link
+                  key={link.name}
                   href={isHome ? link.anchor : link.href}
                   onClick={() => closeMenu()}
                   style={{
                     fontFamily: 'var(--font-heading)',
-                    fontSize: 'clamp(2rem, 8vw, 3rem)',
+                    fontSize: 'clamp(1rem, 5vh, 3rem)',
                     fontWeight: 700,
                     color: 'var(--text-primary)',
                     textDecoration: 'none',
@@ -246,8 +259,8 @@ const Navbar = () => {
             </nav>
 
             <div style={{
-              position: 'absolute',
-              bottom: '3rem',
+              marginTop: 'auto',
+              paddingTop: '1.5rem',
               fontFamily: 'var(--font-body)',
               fontSize: '0.7rem',
               textTransform: 'uppercase',

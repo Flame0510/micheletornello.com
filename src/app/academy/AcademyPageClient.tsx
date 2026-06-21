@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 import StatsGrid from "@/components/academy/StatsGrid";
@@ -13,6 +14,10 @@ import SectionLabel from '@/components/ui/SectionLabel';
 export default function AcademyPageClient() {
   const { lang } = useLang();
   const t = translations.academyPage[lang];
+
+  const photoRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: photoRef, offset: ["start end", "end start"] });
+  const imageY = useTransform(scrollYProgress, [0, 1], [-150, 150]);
 
   return (
     <main className="min-h-screen" style={{ background: "var(--bg-base)" }}>
@@ -90,17 +95,24 @@ export default function AcademyPageClient() {
       {/* Value Proposition */}
       <ValueProposition />
 
-      {/* Photo strip */}
-      <div className="relative h-64 overflow-hidden my-16">
-        <Image
-          src="/academy-class.webp"
-          alt="Classe Steve Jobs Academy"
-          fill
-          className="object-cover object-center"
-          style={{ filter: "grayscale(80%) contrast(1.1)", opacity: 0.6 }}
-        />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, var(--bg-base) 0%, transparent 30%, transparent 70%, var(--bg-base) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, var(--bg-base) 0%, transparent 20%, transparent 80%, var(--bg-base) 100%)" }} />
+      {/* Photo strip with parallax */}
+      <div className="container my-20">
+        <div ref={photoRef} className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "3/4" }}>
+        <motion.div
+          className="absolute inset-x-0"
+          style={{ y: imageY, top: "-150px", bottom: "-150px" }}
+        >
+          <Image
+            src="/academy-class.webp"
+            alt="Classe Steve Jobs Academy"
+            fill
+            className="object-cover object-center"
+            style={{ filter: "grayscale(80%) contrast(1.1)", opacity: 0.6 }}
+          />
+        </motion.div>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, var(--bg-base) 0%, transparent 20%, transparent 80%, var(--bg-base) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, var(--bg-base) 0%, transparent 12%, transparent 88%, var(--bg-base) 100%)" }} />
+        </div>
       </div>
 
       {/* Course Grid */}
@@ -116,7 +128,7 @@ export default function AcademyPageClient() {
             ? "Scrivimi per informazioni sui corsi, disponibilità per talk o workshop."
             : "Contact me for course info, talk or workshop availability."}
         </p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-start sm:items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a
             href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ''}?subject=${encodeURIComponent(lang === 'it' ? 'Info Academy' : 'Academy Info')}`}
             className="btn-primary"

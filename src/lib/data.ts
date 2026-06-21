@@ -1,5 +1,17 @@
 import { config } from './config';
 
+export interface AcademySubject {
+  name: string;
+  description: string;
+  slidesUrl?: string;
+  showcaseUrl?: string;
+}
+
+export interface AcademySubjectGroup {
+  label: string;
+  subjects: AcademySubject[];
+}
+
 export const bio = {
   name: "Michele Tornello",
   role: "Product Engineer | Full-Stack & System Architecture",
@@ -103,36 +115,79 @@ export const academy = {
   intro: "Docente presso Steve Jobs Academy, trasmetto competenze tecniche su tecnologie moderne e architetture software a studenti di Catania, Caltagirone e Palermo.",
   locations: ["Catania", "Caltagirone", "Palermo"],
   year: "A.A. 2025 / 2026",
-  subjects: [
+  subjectGroups: [
     {
-      name: "PHP",
-      description: "Fondamenti e sviluppo avanzato lato server con PHP moderno: OOP, framework, API REST.",
+      label: "Web & Mobile",
+      subjects: [
+        {
+          name: "Angular",
+          description: "Architetture SPA aziendali con Angular: componenti, RxJS, routing e gestione dello stato.",
+          slidesUrl: "https://canva.link/xjv4xbs3s1jw69f",
+        },
+        {
+          name: "React",
+          description: "UI moderne con React 19: hooks, gestione dello stato, composizione di componenti e API REST.",
+          slidesUrl: "https://canva.link/dqe787p11wuqv0u",
+        },
+        {
+          name: "React Native",
+          description: "App mobile cross-platform con React Native: componenti nativi, navigazione e API di sistema.",
+          slidesUrl: "https://canva.link/tvcvl1pg7sfwgco",
+        },
+      ],
     },
     {
-      name: "Sistemi Operativi",
-      description: "Architetture, processi, gestione della memoria e risorse di sistema su Linux e Windows.",
+      label: "Backend & Infrastructure",
+      subjects: [
+        {
+          name: "PHP",
+          description: "Backend con PHP moderno: OOP, framework MVC, autenticazione e progettazione di API REST.",
+          slidesUrl: "https://gamma.app/docs/u5u4mxmnguhrpx3",
+        },
+        {
+          name: "Sistemi Operativi",
+          description: "Architetture, processi, gestione della memoria e risorse di sistema su Linux e Windows.",
+          showcaseUrl: "https://operating-systems-showcase-kappa.vercel.app/",
+        },
+        {
+          name: "Cloud Computing",
+          description: "Cloud su AWS e GCP: containerizzazione con Docker, orchestrazione e deployment scalabile.",
+          slidesUrl: "https://canva.link/4mey8gtfy5qtzjl",
+        },
+      ],
     },
     {
-      name: "Programmazione 1",
-      description: "Introduzione alla logica di programmazione: algoritmi, strutture dati e problem solving.",
+      label: "Software Engineering",
+      subjects: [
+        {
+          name: "Programmazione 1",
+          description: "Introduzione alla logica di programmazione: algoritmi, strutture dati e problem solving.",
+          slidesUrl: "https://gamma.app/docs/5vuk49rj0p22avv",
+        },
+        {
+          name: "Design Pattern",
+          description: "Pattern GoF e architetturali: soluzioni riutilizzabili ai problemi classici del software.",
+          slidesUrl: "https://canva.link/xb6xaw5dzo4a7p3",
+          showcaseUrl: "https://design-patterns-showcase.micheletornello.com/",
+        },
+        {
+          name: "Fondamenti di AI",
+          description: "Intelligenza artificiale e machine learning dal principio: algoritmi, reti neurali e dati.",
+          showcaseUrl: "https://ai-fundamentals.micheletornello.com",
+        },
+        {
+          name: "Git & Versioning",
+          description: "Git avanzato e workflow collaborativi: GitFlow, PR review, CI/CD e standard di qualità.",
+          slidesUrl: "https://canva.link/xlyig79hhzbteya",
+        },
+        {
+          name: "Metodologie Agile",
+          description: "Agile, Scrum, Kanban e DevOps: metodologie operative per team di sviluppo professionali.",
+          slidesUrl: "https://canva.link/rlr3tn06lt8sx2q",
+        },
+      ],
     },
-    {
-      name: "Cloud Computing",
-      description: "Architetture cloud, servizi AWS/GCP, containerizzazione e deployment scalabile.",
-    },
-    {
-      name: "Angular",
-      description: "Sviluppo di SPA aziendali complesse con Angular, RxJS e architetture modulari.",
-    },
-    {
-      name: "React",
-      description: "Modern UI development con React, state management e integrazione con API.",
-    },
-    {
-      name: "Sistemi di Versioning",
-      description: "Git workflow collaborativi: GitFlow, PR review, CI/CD e best practice di team.",
-    }
-  ]
+  ] as AcademySubjectGroup[],
 };
 
 export const contact = {

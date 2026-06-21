@@ -51,7 +51,7 @@ function LabCard({ p, index }: { p: LabProject; index: number }) {
             <Github size={14} /> Repository
           </a>
         ) : (
-          <span className="lab_repo_pending">// repo soon</span>
+          <span className="lab_repo_pending">// soon</span>
         )}
         {p.liveUrl && (
           <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="shw_btn shw_btn_accent">

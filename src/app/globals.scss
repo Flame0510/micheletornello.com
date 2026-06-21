@@ -1983,6 +1983,10 @@ h1 {
   cursor: pointer;
   transition: background 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    align-self: center;
+  }
 }
 
 .btn-primary:hover {
@@ -2009,6 +2013,10 @@ h1 {
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    align-self: center;
+  }
 }
 
 .btn-outline:hover {
@@ -2276,6 +2284,16 @@ html { scroll-behavior: smooth; }
   padding: 1rem 1.5rem;
   margin-top: 1.25rem;
   border-top: 1px solid var(--border);
+
+  @media ($mobile) {
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .shw_btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 }
 .shw_btn {
   display: inline-flex;
@@ -2290,6 +2308,12 @@ html { scroll-behavior: smooth; }
   padding: 0.45rem 0.9rem;
   border-radius: 4px;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
+
+  @media (max-width: 768px) {
+    font-size: 0.78rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+  }
 }
 .shw_btn_ghost {
   color: var(--text-muted);
@@ -2395,7 +2419,7 @@ html { scroll-behavior: smooth; }
   &:hover { border-color: rgba(167, 139, 250, 0.35); }
 
   .shw_stack       { padding-left: 0; padding-right: 0; }
-  .shw_card_footer { padding-left: 0; padding-right: 0; }
+  .shw_card_footer { padding: 1rem 0 0; margin-top: 0; }
 }
 
 .lab_card_header {
