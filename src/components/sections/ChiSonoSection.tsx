@@ -5,22 +5,34 @@ import { TimelineItem } from '@/components/ui/TimelineItem';
 
 const timelineItems = [
   {
-    year: '2020',
-    title: 'PRIMA ARCHITETTURA LIVE',
-    text: 'Primo sistema in produzione.\nStabilità reale, utenti reali, responsabilità reale.',
-    highlight: false,
-  },
-  {
     year: '2022',
-    title: 'SCALING ENTERPRISE',
-    text: 'Dalla build alla resilienza: osservabilità,\nperformance e qualità operativa.',
+    title: 'ENTERPRISE & DOCENZA',
+    text: 'Prima architettura enterprise in produzione.\nInizio docenza Steve Jobs Academy.',
     highlight: true,
   },
   {
-    year: '2024',
-    title: 'SYSTEM THINKING',
-    text: 'Focus su sistemi duraturi: design decisionale,\nmanutenzione evolutiva, impatto globale.',
+    year: '2023',
+    title: 'PRESENZA TECNICA',
+    text: 'TEDx Catania, GDG, workshop universitari.\nCostruzione di metodo e comunità.',
     highlight: false,
+  },
+  {
+    year: '2024',
+    title: 'LAUREA & MEDIA',
+    text: 'Laurea in Ingegneria Informatica.\nIntervista RTL 102.5. Speaker UniCT.',
+    highlight: false,
+  },
+  {
+    year: '2025',
+    title: 'PRODOTTI LIVE',
+    text: 'Watching Stars, Memory Cloud, Cashbee.\nDall\'architettura ai prodotti in mercato.',
+    highlight: false,
+  },
+  {
+    year: '2026',
+    title: 'ADESSO',
+    text: 'System Architect attivo, docente SJA,\nAI applicata — Olympus, Keeper e oltre.',
+    highlight: true,
   },
 ];
 

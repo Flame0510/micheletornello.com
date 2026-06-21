@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { StatBox } from '@/components/ui/StatBox';
+import { ENTERPRISE_SECTORS } from '@/lib/enterprise-data';
 
 const stats = [
   { num: '5', lab: 'SETTORI INDUSTRY' },
   { num: '130+', lab: 'PAESI RAGGIUNTI' },
-  { num: '2022–24', lab: 'CORE ENTERPRISE' },
+  { num: '2022+', lab: 'CORE ENTERPRISE' },
   { num: 'M+', lab: 'UTENTI ATTIVI' },
 ];
 
@@ -16,9 +17,10 @@ export default function EnterpriseSection() {
       <div className="entG_container">
         <motion.div
           className="entG_main"
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
           <div className="entG_left">
             <motion.h2
@@ -54,7 +56,7 @@ export default function EnterpriseSection() {
                 <StatBox
                   value={stat.num}
                   label={stat.lab}
-                  isNumber={/\d/.test(stat.num) && stat.num !== '2022–24'}
+                  isNumber={/\d/.test(stat.num) && stat.num !== '2022+'}
                   className="entG_stat"
                   valueClassName="entG_number"
                   labelClassName="entG_label"
@@ -72,10 +74,10 @@ export default function EnterpriseSection() {
           viewport={{ once: true }}
         >
           <div className="entG_sectors">
-            Smart Home / IoT · Healthcare IT · Cloud Networking · Food-Tech · Energia & Infrastrutture
+            {ENTERPRISE_SECTORS.join(' · ')}
           </div>
           <div className="entG_firma">
-            // VERIFIED_BY: SYSTEM_ARCHITECT · SISTEMI DISTRIBUITI · PERIOD: 2022–2024
+            // VERIFIED_BY: SYSTEM_ARCHITECT · SISTEMI DISTRIBUITI · PERIOD: 2022–PRESENT
           </div>
         </motion.footer>
       </div>
