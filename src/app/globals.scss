@@ -1,6 +1,9 @@
 // ── BREAKPOINTS ─────────────────────────────────────────────────────────────
 // Single source of truth. Use these everywhere — never hardcode px values.
 $mobile:        "max-width: 767px";
+$mobile-md:     "max-width: 600px";
+$mobile-sm:     "max-width: 560px";
+$mobile-xs:     "max-width: 480px";
 // $tablet omits outer parens — @media (#{$tablet}) produces valid compound query:
 // → @media (min-width: 768px) and (max-width: 1023px)
 $tablet:        "min-width: 768px) and (max-width: 1023px";
@@ -53,6 +56,7 @@ $wide:          "min-width: 1280px";
   --accent-primary-dark: #1D4ED8;
   --accent-green-subtle: rgba(5,150,105,0.08);
   --accent-orange: #EA580C;
+  --accent-lab: #A78BFA;
   --text-dark: #0E0C0A;
   --bg-loader: #060606;
   --text-loader: #E8E8E8;
@@ -875,7 +879,7 @@ h1 {
   .docH_stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
-@media (max-width: 600px) {
+@media (#{$mobile-md}) {
   .statusGrid { grid-template-columns: repeat(2, 1fr); }
   .svcGrid { grid-template-columns: 1fr; }
   .opsGrid { grid-template-columns: 1fr; }
@@ -884,11 +888,11 @@ h1 {
   h1 { font-size: 2.8rem; }
 }
 
-@media (max-width: 560px) {
+@media (#{$mobile-sm}) {
   .contactRow { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 480px) {
+@media (#{$mobile-xs}) {
   .newsletterForm { flex-direction: column; }
 }
 
@@ -2349,4 +2353,117 @@ html { scroll-behavior: smooth; }
 /* ── Responsive ── */
 @media (#{$mobile}) {
   .shw_grid { grid-template-columns: 1fr; }
+}
+
+/* ── Press cards ─────────────────────────────────────────────────────────── */
+.press-card--link {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+.press-card_link_icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+  transition: opacity 0.2s ease, color 0.2s ease;
+
+  .press-card--link:hover & {
+    opacity: 1;
+    color: var(--text-primary);
+  }
+}
+
+/* ── Lab cards ───────────────────────────────────────────────────────────── */
+.lab_card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.2s ease;
+
+  &:hover { border-color: rgba(167, 139, 250, 0.35); }
+
+  .shw_stack       { padding-left: 0; padding-right: 0; }
+  .shw_card_footer { padding-left: 0; padding-right: 0; }
+}
+
+.lab_card_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lab_card_header_left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lab_category {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+.lab_status {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lab_card_body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.lab_card_name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.lab_card_tagline {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-lab);
+  opacity: 0.8;
+}
+
+.lab_card_desc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.lab_repo_pending {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  opacity: 0.5;
 }

@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/HeroSection';
 import { TimelineItem } from '@/components/ui/TimelineItem';
+import { ENTERPRISE_SECTORS } from '@/lib/enterprise-data';
 
 // Below-the-fold sections — lazy loaded for better FCP/LCP
 const EnterpriseSection = dynamic(() => import('@/components/sections/EnterpriseSection'));
@@ -10,6 +11,14 @@ const ContactSection = dynamic(() => import('@/components/sections/ContactSectio
 const PortfolioSection = dynamic(() => import('@/components/sections/PortfolioSection'));
 const ProcessSection = dynamic(() => import('@/components/sections/ProcessSection'));
 const Services = dynamic(() => import('@/components/sections/Services').then(m => ({ default: m.Services })));
+
+const CRED_ITEMS = [
+  { source: 'RTL 102.5', role: 'Intervista nazionale' },
+  { source: 'TEDx Catania', role: 'Staff Volontario' },
+  { source: 'Speaker UniCT', role: 'React Native' },
+  { source: 'Friends of Figma', role: 'Contributor' },
+  { source: 'GDG Catania', role: 'Membro attivo' },
+];
 
 const timeline = [
   {
@@ -49,18 +58,7 @@ export default function HomePage() {
       <div className="credStrip_wrap">
         <div className="credStrip_marquee">
           <div className="credStrip_track marquee-track">
-            {[
-              { source: 'RTL 102.5', role: 'Intervista nazionale' },
-              { source: 'TEDx Catania', role: 'Staff Volontario' },
-              { source: 'Speaker UniCT', role: 'React Native' },
-              { source: 'Friends of Figma', role: 'Contributor' },
-              { source: 'GDG Catania', role: 'Membro attivo' },
-              { source: 'RTL 102.5', role: 'Intervista nazionale' },
-              { source: 'TEDx Catania', role: 'Staff Volontario' },
-              { source: 'Speaker UniCT', role: 'React Native' },
-              { source: 'Friends of Figma', role: 'Contributor' },
-              { source: 'GDG Catania', role: 'Membro attivo' },
-            ].map((item, i) => (
+            {[...CRED_ITEMS, ...CRED_ITEMS].map((item, i) => (
               <span key={i} className="credStrip_item">
                 <span className="credStrip_source">{item.source}</span>
                 <span className="credStrip_role">{item.role}</span>
@@ -94,7 +92,7 @@ export default function HomePage() {
           <div className="pv3G_grid">
             <div className="pv3G_card pv3G_col8 pv3G_enterprise">
               <div className="pv3G_card_content">
-                <div className="pv3G_meta">2022 — 2024 · SYSTEM ARCHITECT · ENTERPRISE</div>
+                <div className="pv3G_meta">dal 2022 · SYSTEM ARCHITECT · ENTERPRISE</div>
                 <h3 className="pv3G_card_title">Enterprise Systems Architecture</h3>
                 <div className="pv3G_stats_grid">
                   {[
@@ -110,7 +108,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="pv3G_sectors">
-                  {['Smart Home / IoT', 'Healthcare IT', 'Cloud Networking', 'Food-Tech', 'Energia & Infrastrutture'].map((s) => (
+                  {ENTERPRISE_SECTORS.map((s) => (
                     <span key={s} className="pv3G_sector_tag">{s}</span>
                   ))}
                 </div>
