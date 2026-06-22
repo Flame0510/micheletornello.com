@@ -49,11 +49,19 @@ export default function AcademyPageClient() {
             <SectionLabel className="mb-6">
               Docenza · Steve Jobs Academy
             </SectionLabel>
-            <h1 className="leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--text-primary)", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
-              {t.heroTitle}
+            <h1 className="leading-[0.9] tracking-tight mb-8" style={{ fontSize: "clamp(2.5rem, 5.5vw, 5rem)", color: "var(--text-primary)", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
+              {lang === 'it' ? (
+                <>Steve Jobs Academy –<br /><em style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Dove la teoria incontra il codice.</em></>
+              ) : (
+                <>Steve Jobs Academy –<br /><em style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Where theory meets code.</em></>
+              )}
             </h1>
             <p className="text-lg leading-relaxed max-w-xl" style={{ color: "var(--text-muted)" }}>
-              {t.intro}
+              {lang === 'it' ? (
+                <>Insegno sviluppo software e architettura dei sistemi alla Steve Jobs Academy. Lezioni in aula, esercitazioni pratiche, progetti reali. Più di <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>150 studenti formati</strong>, <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3 sedi in Sicilia</strong>, 1 talk universitario e 2 workshop. Trasferisco l'esperienza concreta di chi costruisce software per professione.</>
+              ) : (
+                <>I teach software development and system architecture at the Steve Jobs Academy. Classroom lectures, hands‑on exercises, real projects. Over <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>150 students trained</strong>, <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3 locations in Sicily</strong>, 1 university talk and 2 workshops. I transfer the concrete experience of someone who builds software for a living.</>
+              )}
             </p>
           </div>
 

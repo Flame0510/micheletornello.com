@@ -1,53 +1,56 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Code, Users, Briefcase, Globe } from "lucide-react";
 import { useLang } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 
-const propositions = {
+type Proposition = { icon: React.ElementType; title: string; description: ReactNode };
+
+const propositions: Record<'it' | 'en', Proposition[]> = {
   it: [
     {
       icon: Code,
       title: "Docente nel settore",
-      description: "Insegno tecnologie che uso ogni giorno in progetti reali. Niente teoria slegata dalla pratica.",
+      description: <>Insegno tecnologie che uso ogni giorno in <strong>progetti reali</strong>. Niente teoria slegata dalla pratica.</>,
     },
     {
       icon: Users,
       title: "Network di ex-allievi",
-      description: "Entri in una community di sviluppatori che già lavorano in aziende locali e internazionali.",
+      description: <>Entri in una <strong>community di sviluppatori</strong> già attivi in aziende locali e internazionali.</>,
     },
     {
       icon: Briefcase,
       title: "Progetti reali",
-      description: "Ogni corso include un progetto concreto, dal concept al deploy, da aggiungere al tuo portfolio.",
+      description: <>Ogni corso include un <strong>progetto concreto</strong> — dal concept al deploy — da aggiungere al tuo portfolio.</>,
     },
     {
       icon: Globe,
       title: "Sicilia e oltre",
-      description: "Lezioni in presenza a Catania, Caltagirone e Palermo. Talk in tutta Italia.",
+      description: <>Lezioni in presenza a <strong>Catania, Caltagirone e Palermo</strong>. Talk in tutta Italia.</>,
     },
   ],
   en: [
     {
       icon: Code,
       title: "Industry Practitioner",
-      description: "I teach technologies I use every day on real projects. No theory disconnected from practice.",
+      description: <>I teach technologies I use every day on <strong>real projects</strong>. No theory disconnected from practice.</>,
     },
     {
       icon: Users,
       title: "Alumni Network",
-      description: "You join a community of developers already working in local and international companies.",
+      description: <>You join a <strong>community of developers</strong> already working in local and international companies.</>,
     },
     {
       icon: Briefcase,
       title: "Real Projects",
-      description: "Each course includes a concrete project, from concept to deploy, to add to your portfolio.",
+      description: <>Every course includes a <strong>concrete project</strong> — from concept to deploy — to add to your portfolio.</>,
     },
     {
       icon: Globe,
       title: "Sicily & Beyond",
-      description: "In‑person classes in Catania, Caltagirone and Palermo. Talks across Italy.",
+      description: <>In‑person classes in <strong>Catania, Caltagirone and Palermo</strong>. Talks across Italy.</>,
     },
   ],
 };
