@@ -6,7 +6,6 @@ import { ENTERPRISE_SECTORS } from '@/lib/enterprise-data';
 // Below-the-fold sections — lazy loaded for better FCP/LCP
 const EnterpriseSection = dynamic(() => import('@/components/sections/EnterpriseSection'));
 const ChiSonoSection = dynamic(() => import('@/components/sections/ChiSonoSection'));
-const AcademySection = dynamic(() => import('@/components/sections/AcademySection'));
 const ContactSection = dynamic(() => import('@/components/sections/ContactSection'));
 const PortfolioSection = dynamic(() => import('@/components/sections/PortfolioSection'));
 const ProcessSection = dynamic(() => import('@/components/sections/ProcessSection'));
@@ -72,13 +71,10 @@ export default function HomePage() {
       {/* 3. Enterprise */}
       <EnterpriseSection />
 
-      {/* 4. Chi Sono */}
-      <ChiSonoSection />
-
-      {/* 5. Services */}
+      {/* 4. Services */}
       <Services />
 
-      {/* 6. Proof of Work */}
+      {/* 5. Proof of Work */}
       <section id="proof" className="pv3G_section">
         <div className="pv3G_container">
           <header className="pv3G_header">
@@ -92,8 +88,11 @@ export default function HomePage() {
           <div className="pv3G_grid">
             <div className="pv3G_card pv3G_col8 pv3G_enterprise">
               <div className="pv3G_card_content">
-                <div className="pv3G_meta">dal 2022 · SYSTEM ARCHITECT · ENTERPRISE</div>
-                <h3 className="pv3G_card_title">Enterprise Systems Architecture</h3>
+                <div className="pv3G_meta">SVILUPPATORE · ENTERPRISE</div>
+                <h3 className="pv3G_card_title">Enterprise Engineering</h3>
+                <p className="pv3G_card_text" style={{ marginBottom: '1.5rem', opacity: 0.7 }}>
+                  Ambienti enterprise in cui ho operato come sviluppatore senior.
+                </p>
                 <div className="pv3G_stats_grid">
                   {[
                     { value: '5', label: 'Settori critici' },
@@ -198,10 +197,10 @@ export default function HomePage() {
       {/* 8. Portfolio */}
       <PortfolioSection />
 
-      {/* 8. Academy */}
-      <AcademySection />
+      {/* 9. Chi Sono */}
+      <ChiSonoSection />
 
-      {/* 9. Contatti */}
+      {/* 10. Contatti */}
       <ContactSection />
 
       {/* Newsletter — temporaneamente nascosta */}

@@ -95,17 +95,17 @@ export const translations = {
       subtitle: 'Decisioni tecniche critiche, esecuzione concreta, team che crescono.',
       items: [
         {
-          title: 'Tech Lead & System Architecture',
-          problem: 'Il tuo progetto ha bisogno di qualcuno che progetti il sistema e guidi le decisioni tecniche critiche — non solo di qualcuno che scriva codice.',
+          title: 'Tech Lead & Architecture',
+          problem: 'Il tuo progetto ha bisogno di qualcuno che guidi le decisioni tecniche critiche — non solo di chi sa scrivere codice.',
           description:
-            'Progetto l\'architettura del sistema, scelgo lo stack, definisco i pattern e guido le decisioni tecnologiche che impattano il prodotto nel lungo periodo.',
+            'Progetto l\'architettura, scelgo lo stack, definisco i pattern e guido le decisioni tecnologiche che impattano il prodotto nel lungo periodo.',
           deliverables: ['Documento architetturale', 'Roadmap tecnica', 'Raccomandazioni su stack e pattern'],
           process: ['Discovery call', 'Analisi architettura esistente', 'Piano strutturato'],
           cta: 'Prenota una consulenza',
         },
         {
           title: 'Full-Stack Development',
-          problem: 'Hai bisogno di esecuzione diretta e concreta — non di un\'altra consulenza che resta ferma sulla carta.',
+          problem: 'Hai bisogno di esecuzione diretta e concreta — non di un\'altra consulenza che resta ferma sulla carta senza produrre.',
           description:
             'Costruisco il prodotto dall\'inizio alla fine: frontend, backend, database, deploy. Codice strutturato, documentato e pronto a evolvere.',
           deliverables: ['Prodotto funzionante', 'Codice strutturato e documentato', 'Architettura scalabile'],
@@ -113,10 +113,10 @@ export const translations = {
           cta: 'Prenota una consulenza',
         },
         {
-          title: 'Training & Formazione Aziendale',
-          problem: 'Il tuo team ha gap tecnici su architettura software, React/React Native o sistemi moderni — e la formazione standard non è abbastanza.',
+          title: 'Formazione Aziendale',
+          problem: 'Il tuo team ha gap tecnici su architettura, React/React Native o sistemi moderni — e la formazione generica non basta.',
           description:
-            'Formo il team con un percorso costruito sulle loro esigenze reali: architettura software, React, React Native, sistemi scalabili. Sessioni pratiche, non slide.',
+            'Formo il team con un percorso su misura: architettura software, React, React Native, sistemi scalabili. Sessioni pratiche, non slide.',
           deliverables: ['Corso su misura per il team', 'Materiali didattici', 'Sessioni pratiche hands-on'],
           process: ['Assessment del team', 'Piano formativo personalizzato', 'Erogazione con esercizi reali'],
           cta: 'Prenota una consulenza',
@@ -128,8 +128,8 @@ export const translations = {
       subtitle: 'Critical technical decisions, concrete execution, teams that grow.',
       items: [
         {
-          title: 'Tech Lead & System Architecture',
-          problem: 'Your project needs someone who designs the system and drives critical technical decisions — not just someone who writes code.',
+          title: 'Tech Lead & Architecture',
+          problem: 'Your project needs someone who drives critical technical decisions — not just someone who knows how to write code.',
           description:
             'I architect the system, choose the stack, define patterns, and lead the technology decisions that shape your product long-term.',
           deliverables: ['Architecture document', 'Technical roadmap', 'Stack and pattern recommendations'],
@@ -138,7 +138,7 @@ export const translations = {
         },
         {
           title: 'Full-Stack Development',
-          problem: 'You need direct, concrete execution — not another consulting engagement that stays on paper.',
+          problem: 'You need direct, concrete execution — not another consulting engagement that stays on paper without producing results.',
           description:
             'I build the product end to end: frontend, backend, database, deployment. Structured, documented code that\'s ready to scale.',
           deliverables: ['Working product', 'Structured and documented code', 'Scalable architecture'],
@@ -147,9 +147,9 @@ export const translations = {
         },
         {
           title: 'Corporate Training',
-          problem: 'Your team has technical gaps in software architecture, React/React Native, or modern systems — and generic training isn\'t cutting it.',
+          problem: 'Your team has technical gaps in architecture, React/React Native, or modern systems — and generic training never cuts it.',
           description:
-            'I train your team with a path built around their real needs: software architecture, React, React Native, scalable systems. Hands-on sessions, not slides.',
+            'I train your team with a custom path: software architecture, React, React Native, scalable systems. Hands-on sessions, not slides.',
           deliverables: ['Custom team curriculum', 'Learning materials', 'Hands-on practical sessions'],
           process: ['Team assessment', 'Personalized training plan', 'Delivery with real exercises'],
           cta: 'Book a consultation',

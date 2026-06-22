@@ -58,6 +58,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
+  const [altroOpen, setAltroOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +76,7 @@ const Navbar = () => {
   useEffect(() => {
     if (pathname !== '/') return;
     
-    const sections = ['enterprise', 'chi-sono', 'proof', 'lavori', 'academy', 'contatto'];
+    const sections = ['enterprise', 'proof', 'lavori', 'chi-sono', 'contatto'];
     const observers: IntersectionObserver[] = [];
 
     sections.forEach(id => {
@@ -94,17 +95,22 @@ const Navbar = () => {
     return () => observers.forEach(o => o.disconnect());
   }, [pathname]);
 
-  const navLinks = [
+  const primaryLinks = [
     { name: 'Enterprise', href: '/#enterprise', anchor: '#enterprise' },
-    { name: 'Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
     { name: 'Proof', href: '/#proof', anchor: '#proof' },
     { name: 'Lavori', href: '/#lavori', anchor: '#lavori' },
+    { name: 'Chi sono', href: '/#chi-sono', anchor: '#chi-sono' },
+    { name: 'Contatto', href: '/#contatto', anchor: '#contatto' },
+  ];
+
+  const secondaryLinks = [
     { name: 'Academy', href: '/academy', anchor: '/academy' },
     { name: 'Showcases', href: '/showcases', anchor: '/showcases' },
     { name: 'Lab', href: '/lab', anchor: '/lab' },
     { name: 'Speaker', href: '/speaker', anchor: '/speaker' },
-    { name: 'Contatto', href: '/#contatto', anchor: '#contatto' },
   ];
+
+  const navLinks = [...primaryLinks, ...secondaryLinks];
 
   const currentYear = new Date().getFullYear();
   const isHome = pathname === '/';
@@ -133,17 +139,16 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden lg:flex items-center gap-8" aria-label="Navigazione principale">
-            {navLinks.map((link) => {
+            {primaryLinks.map((link) => {
               const isNavActive = () => {
                 if (!link.anchor.startsWith('#')) return pathname === link.href;
                 if (pathname !== '/') return false;
                 return activeSection === link.anchor.replace('#', '');
               };
-
               const active = isNavActive();
               return (
-                <Link 
-                  key={link.name} 
+                <Link
+                  key={link.name}
                   href={isHome ? link.anchor : link.href}
                   style={{
                     fontFamily: 'var(--font-body)',
@@ -161,6 +166,102 @@ const Navbar = () => {
                 </Link>
               );
             })}
+
+            <div
+              style={{ position: 'relative' }}
+              onMouseEnter={() => setAltroOpen(true)}
+              onMouseLeave={() => setAltroOpen(false)}
+            >
+              <button
+                aria-haspopup="true"
+                aria-expanded={altroOpen}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.72rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  fontWeight: secondaryLinks.some(l => pathname === l.href) ? 600 : 500,
+                  color: secondaryLinks.some(l => pathname === l.href)
+                    ? 'var(--accent-primary)'
+                    : altroOpen ? 'var(--text-primary)' : 'var(--text-muted)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.3rem',
+                  padding: 0,
+                  transition: 'color 0.2s',
+                }}
+              >
+                Altro
+                <svg
+                  width="8" height="8" viewBox="0 0 8 8" fill="currentColor"
+                  style={{ transition: 'transform 0.2s', transform: altroOpen ? 'rotate(180deg)' : 'rotate(0deg)', marginTop: '1px' }}
+                >
+                  <path d="M4 6L0 2h8z" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {altroOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
+                    style={{
+                      position: 'absolute',
+                      top: 'calc(100% + 0.6rem)',
+                      right: 0,
+                      background: 'var(--bg-alt)',
+                      border: '1px solid var(--border)',
+                      borderRadius: '0.5rem',
+                      padding: '0.375rem',
+                      minWidth: '140px',
+                      zIndex: 200,
+                      boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                    }}
+                  >
+                    {secondaryLinks.map((link) => {
+                      const active = pathname === link.href;
+                      return (
+                        <Link
+                          key={link.name}
+                          href={link.href}
+                          onClick={() => setAltroOpen(false)}
+                          style={{
+                            display: 'block',
+                            padding: '0.5rem 0.75rem',
+                            borderRadius: '0.25rem',
+                            fontFamily: 'var(--font-body)',
+                            fontSize: '0.72rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.1em',
+                            fontWeight: active ? 600 : 400,
+                            color: active ? 'var(--accent-primary)' : 'var(--text-muted)',
+                            textDecoration: 'none',
+                            transition: 'color 0.15s, background 0.15s',
+                          }}
+                          onMouseOver={(e) => {
+                            const el = e.currentTarget as HTMLElement;
+                            if (!active) el.style.color = 'var(--text-primary)';
+                            el.style.background = 'var(--bg-card)';
+                          }}
+                          onMouseOut={(e) => {
+                            const el = e.currentTarget as HTMLElement;
+                            if (!active) el.style.color = 'var(--text-muted)';
+                            el.style.background = 'transparent';
+                          }}
+                        >
+                          {link.name}
+                        </Link>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           <button 

@@ -32,17 +32,6 @@ export default function HeroSection() {
         <div className="heroInner">
           {/* Text column — layout singola colonna, senza portrait */}
           <div className="heroText flex flex-col items-start">
-            <motion.p
-              className="thesis"
-              custom={3}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={variants}
-            >
-              Tra i pochi professionisti italiani under-30 con esperienza enterprise e docenza strutturata.
-            </motion.p>
-
             {/* Single h1 with two visual lines */}
             <motion.h1
               custom={1}

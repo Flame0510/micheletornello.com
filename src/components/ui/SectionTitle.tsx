@@ -7,16 +7,17 @@ interface SectionTitleProps {
   subtitle?: string;
   prefix?: string;
   className?: string;
+  hideLine?: boolean;
 }
 
-export const SectionTitle = ({ title, subtitle, prefix, className = '' }: SectionTitleProps) => (
+export const SectionTitle = ({ title, subtitle, prefix, className = '', hideLine = false }: SectionTitleProps) => (
   <div className={`mb-12 md:mb-16 ${className}`}>
     {prefix && (
       <p className="font-mono-label mb-3" style={{ color: "var(--text-muted)" }}>
         {prefix}
       </p>
     )}
-    <RevealLine />
+    {!hideLine && <RevealLine />}
     <motion.h2
       className="font-display text-text-main mb-4"
       style={{
