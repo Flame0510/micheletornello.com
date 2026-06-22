@@ -44,7 +44,7 @@ export default function ChiSonoSection() {
         <div className="chiB_visual">
           <div className="chiB_photoBox">
             <Image
-              src="/profile-photo.webp"
+              src="/michele-profile.webp"
               alt="Michele Tornello"
               className="chiB_img"
               fill
