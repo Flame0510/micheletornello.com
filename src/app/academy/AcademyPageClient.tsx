@@ -10,23 +10,26 @@ import StatsGrid from "@/components/academy/StatsGrid";
 import ValueProposition from "@/components/academy/ValueProposition";
 import CourseGrid from "@/components/academy/CourseGrid";
 import SectionLabel from '@/components/ui/SectionLabel';
+import SJAWatermark from '@/components/ui/SJAWatermark';
 
 export default function AcademyPageClient() {
   const { lang } = useLang();
   const t = translations.academyPage[lang];
 
   const photoRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: photoRef, offset: ["start end", "end start"] });
-  const imageY = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+  const { scrollYProgress: photoProgress } = useScroll({ target: photoRef, offset: ["start end", "end start"] });
+  const imageY = useTransform(photoProgress, [0, 1], [-150, 150]);
 
   return (
     <main className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+      <SJAWatermark />
+
       {/* Hero con gradiente */}
       <section className="container pt-32 md:pt-40 pb-12 md:pb-16 relative">
         <div
           className="absolute inset-0 opacity-5 pointer-events-none"
           style={{
-            background: "radial-gradient(circle at 30% 50%, rgba(37,99,235,0.3) 0%, transparent 50%)",
+            background: "radial-gradient(circle at 30% 50%, var(--accent-primary-subtle) 0%, transparent 50%)",
           }}
         />
         <Link
@@ -68,7 +71,7 @@ export default function AcademyPageClient() {
           {/* Info box */}
           <div
             className="rounded-2xl p-6 space-y-4"
-            style={{ border: "1px solid var(--border-accent)", background: "var(--bg-card)", boxShadow: "var(--shadow-card)" }}
+            style={{ background: "var(--bg-card)" }}
           >
             <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--accent-primary)" }}>
               {t.infoTitle}
@@ -105,21 +108,21 @@ export default function AcademyPageClient() {
 
       {/* Photo strip with parallax */}
       <div className="container my-20">
-        <div ref={photoRef} className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "3/4" }}>
-        <motion.div
-          className="absolute inset-x-0"
-          style={{ y: imageY, top: "-150px", bottom: "-150px" }}
-        >
-          <Image
-            src="/academy-class.webp"
-            alt="Classe Steve Jobs Academy"
-            fill
-            className="object-cover object-center"
-            style={{ filter: "grayscale(80%) contrast(1.1)", opacity: 0.6 }}
-          />
-        </motion.div>
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, var(--bg-base) 0%, transparent 20%, transparent 80%, var(--bg-base) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, var(--bg-base) 0%, transparent 12%, transparent 88%, var(--bg-base) 100%)" }} />
+        <div ref={photoRef} className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: '3/4', width: '100%' }}>
+          <motion.div
+            className="absolute inset-x-0"
+            style={{ y: imageY, top: '-150px', bottom: '-150px' }}
+          >
+            <Image
+              src="/academy-class.webp"
+              alt="Classe Steve Jobs Academy"
+              fill
+              className="object-cover object-center"
+              style={{ filter: 'grayscale(80%) contrast(1.1)', opacity: 0.6 }}
+            />
+          </motion.div>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, var(--bg-base) 0%, transparent 20%, transparent 80%, var(--bg-base) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--bg-base) 0%, transparent 12%, transparent 88%, var(--bg-base) 100%)' }} />
         </div>
       </div>
 
