@@ -47,7 +47,7 @@ export const Press = () => {
       aria-label="Riconoscimenti — scorri orizzontalmente per vedere tutti"
     >
       <div className="px-6 pt-16 pb-4">
-        <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>02 — Press</span>
+        <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>Press</span>
       </div>
       <div ref={trackRef} className="flex" style={{ width: "max-content", paddingLeft: "6rem" }}>
         {pressItems.map((item, i) => {

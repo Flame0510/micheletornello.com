@@ -42,13 +42,16 @@ export default function HeroSection() {
               style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
               className="flex flex-col"
             >
-              <span>Non costruisco software.</span>
+              <span style={{ color: 'var(--text-muted)', fontStyle: 'italic', fontWeight: 400 }}>
+                Non costruisco software.
+              </span>
               <motion.span
                 custom={2}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={variants}
+                style={{ color: 'var(--accent-primary)', fontStyle: 'normal', fontWeight: 800 }}
               >
                 Costruisco sistemi.
               </motion.span>
