@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { StatBox } from '@/components/ui/StatBox';
-import { ENTERPRISE_SECTORS } from '@/lib/enterprise-data';
+import { ENTERPRISE_SECTORS, ENTERPRISE_CASE_STUDIES } from '@/lib/enterprise-data';
 
 const stats = [
   { num: '5', lab: 'SETTORI INDUSTRY' },
@@ -65,6 +65,31 @@ export default function EnterpriseSection() {
             ))}
           </div>
         </motion.div>
+
+        <div className="entG_cases">
+          {ENTERPRISE_CASE_STUDIES.map((cs, i) => (
+            <motion.div
+              key={i}
+              className="entG_case_card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="entG_case_meta">
+                <span className="entG_case_category">{cs.category}</span>
+                <span className="entG_case_scale">{cs.scale}</span>
+              </div>
+              <h3 className="entG_case_title">{cs.title}</h3>
+              <p className="entG_case_desc">{cs.description}</p>
+              <div className="entG_case_stack">
+                {cs.stack.map((tag) => (
+                  <span key={tag} className="entG_case_tag">{tag}</span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
         <motion.footer
           className="entG_footer"

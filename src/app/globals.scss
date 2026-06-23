@@ -1284,10 +1284,99 @@ h1 {
   letter-spacing: 0.05em;
 }
 
+.entG_cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.entG_case_card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: var(--border-accent);
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07);
+  }
+}
+
+.entG_case_meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.entG_case_category {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.entG_case_scale {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.entG_case_title {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.entG_case_desc {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.entG_case_stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.entG_case_tag {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.35rem;
+}
+
 @media (#{$mobile}) {
   .entG_section { padding-top: 80px; }
   .entG_stats { grid-template-columns: 1fr; gap: 1rem; }
   .entG_stat { padding: 1rem 0; }
+  .entG_cases { grid-template-columns: 1fr; }
+}
+
+@media (#{$tablet}) {
+  .entG_cases { grid-template-columns: 1fr; }
 }
 
 /* ── COOKIE CONSENT ── */
