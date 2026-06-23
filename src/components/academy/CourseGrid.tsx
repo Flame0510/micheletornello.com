@@ -29,7 +29,6 @@ export default function CourseGrid() {
 
   return (
     <section className="container py-16 md:py-20">
-      <p className="section-label mb-3">04</p>
       <h2 className="section-title mb-16">
         {lang === "it" ? "Materie" : "Subjects"}
       </h2>
@@ -57,9 +56,8 @@ export default function CourseGrid() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
-                    className="relative overflow-hidden rounded-lg"
-                    style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}
-                    whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
+                    className="relative overflow-hidden rounded-lg card-hoverable"
+                    style={{ background: "var(--bg-card)" }}
                   >
                     <div className="p-8 flex flex-col h-full">
                       <div className="flex items-start justify-between mb-6">

@@ -62,9 +62,6 @@ export default function ValueProposition() {
 
   return (
     <section className="container py-16 md:py-20">
-      <p className="section-label mb-3">
-        03
-      </p>
       <h2 className="section-title mb-12">
         {lang === "it" ? "Perché scegliere questa Academy" : "Why Choose This Academy"}
       </h2>
@@ -76,12 +73,10 @@ export default function ValueProposition() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
-            className="relative p-8 rounded-lg"
+            className="relative p-8 rounded-lg card-hoverable"
             style={{
               background: "var(--bg-card)",
-              border: "1px solid var(--border)",
             }}
-            whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
           >
             <div className="mb-6">
               <item.icon size={32} style={{ color: "var(--accent-primary)" }} />

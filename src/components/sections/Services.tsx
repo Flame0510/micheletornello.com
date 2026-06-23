@@ -31,21 +31,19 @@ export const Services = () => {
             variants={fadeUp}
             style={{
               background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
+              border: 'none',
               borderRadius: '1.25rem',
               padding: '36px 32px',
               display: 'flex',
               flexDirection: 'column',
-              boxShadow: 'var(--shadow-card)',
-              transition: 'box-shadow 0.2s, border-color 0.2s',
+              boxShadow: 'none',
+              transition: 'background 0.3s ease',
             }}
             onMouseOver={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-card-hover)';
-              (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-accent)';
+              (e.currentTarget as HTMLElement).style.background = 'var(--card-hover-bg)';
             }}
             onMouseOut={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-card)';
-              (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)';
+              (e.currentTarget as HTMLElement).style.background = 'var(--bg-card)';
             }}
           >
             {/* Icon circle */}
@@ -53,7 +51,7 @@ export const Services = () => {
               width: 48, height: 48,
               borderRadius: '50%',
               background: 'var(--accent-primary-subtle)',
-              border: '1px solid var(--border-accent)',
+              border: 'none',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -102,13 +100,8 @@ export const Services = () => {
               {service.problem}
             </p>
 
-            {/* Divider */}
-            <div style={{
-              height: "1px",
-              backgroundColor: "var(--border)",
-              width: "100%",
-              marginBottom: '1rem',
-            }} />
+            {/* Spacer */}
+            <div style={{ marginBottom: '1rem' }} />
 
             {/* Descrizione */}
             <p style={{
@@ -152,11 +145,11 @@ export const Services = () => {
                 {service.process.map((step, j, arr) => (
                   <span key={j} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                     <span style={{
-                      border: "1px solid var(--border)",
+                      border: "none",
                       padding: "0.2rem 0.6rem",
                       borderRadius: '0.35rem',
                       color: "var(--text-secondary)",
-                      background: 'var(--bg-base)',
+                      background: 'var(--chip-bg)',
                     }}>
                       {step}
                     </span>
@@ -169,7 +162,7 @@ export const Services = () => {
             </div>
 
             {/* CTA */}
-            <div style={{ borderTop: "1px solid var(--border)", paddingTop: '1rem', marginTop: 'auto' }}>
+            <div style={{ paddingTop: '1rem', marginTop: 'auto' }}>
               <a
                 href="#contatto"
                 style={{

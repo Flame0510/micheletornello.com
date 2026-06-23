@@ -42,7 +42,8 @@ export default function ContactTrigger() {
           className="fixed bottom-6 right-6 z-50 p-5 shadow-xl rounded-2xl"
           style={{
             background: 'var(--bg-card)',
-            border: '1px solid var(--border-accent)',
+            border: 'none',
+            boxShadow: 'none',
             minWidth: '220px',
           }}
         >

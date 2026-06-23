@@ -68,7 +68,7 @@ export default function EventTimeline() {
       </h2>
       <div className="relative">
         {/* Linea verticale */}
-        <div className="absolute left-8 top-0 bottom-0 w-0.5" style={{ background: "var(--border-accent)" }} />
+        <div className="absolute left-8 top-0 bottom-0 w-0.5" style={{ background: "rgba(255,255,255,0.06)" }} />
         {items.map((event, i) => (
           <motion.div
             key={i}
@@ -109,8 +109,8 @@ export default function EventTimeline() {
               <motion.a
                 href={event.link}
                 className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2 self-start"
-                style={{ color: "var(--accent-primary)", border: "1px solid var(--accent-primary)" }}
-                whileHover={{ background: "var(--accent-primary)", color: "var(--bg-base)" }}
+                style={{ color: "var(--accent-primary)", background: "rgba(255,107,80,0.08)", border: "none" }}
+                whileHover={{ background: "var(--accent-primary)", color: "var(--bg-base)", transition: { duration: 0.2 } }}
               >
                 <span>{lang === "it" ? "Scopri di più" : "Learn more"}</span>
                 <ExternalLink size={12} />

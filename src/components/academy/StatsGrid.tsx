@@ -14,9 +14,6 @@ export default function StatsGrid() {
 
   return (
     <section className="container py-16 md:py-20">
-      <p className="section-label mb-3">
-        02
-      </p>
       <h2 className="section-title mb-12">{t.title}</h2>
       <p className="section-subtitle mb-10">{t.subtitle}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -29,12 +26,10 @@ export default function StatsGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, delay: shouldReduceMotion ? 0 : i * 0.1 }}
-              className="relative p-8 rounded-lg"
+              className="relative p-8 rounded-lg card-hoverable"
               style={{
                 background: "var(--bg-card)",
-                border: "1px solid var(--border)",
               }}
-              whileHover={{ borderColor: "var(--accent-primary)", transition: { duration: 0.2 } }}
             >
               <div className="absolute top-6 right-6">
                 <Icon size={24} style={{ color: "var(--accent-primary)", opacity: 0.5 }} />
