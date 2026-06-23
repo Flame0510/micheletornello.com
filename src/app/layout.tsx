@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import { Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.scss';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -7,10 +7,10 @@ import { PageLoader, CustomCursor, ContactTrigger } from '@/components/layout/Cl
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
-const outfit = Outfit({
-  variable: '--font-outfit',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -76,7 +76,7 @@ export default function RootLayout({
         <link rel="preload" href="/desk-setup.webp" as="image" fetchPriority="high" />
       </head>
       <body
-        className={`${outfit.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} font-sans antialiased`}
+        className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} font-sans antialiased`}
         style={{ background: 'var(--bg-base)', color: 'var(--text-primary)' }}
         suppressHydrationWarning
       >
