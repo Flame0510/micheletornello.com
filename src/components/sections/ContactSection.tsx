@@ -1,6 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+
+const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
 
 function ContactForm() {
   const [status, setStatus] = useState<'idle'|'sending'|'ok'|'error'>('idle');
@@ -71,12 +74,30 @@ function ContactForm() {
 }
 
 export default function ContactSection() {
+  const reduced = useReducedMotion();
+
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: reduced ? 0 : 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: '-40px' },
+    transition: { duration: reduced ? 0.1 : 0.55, ease, delay: reduced ? 0 : delay },
+  });
+
   return (
     <section id="contatto" className="cta sectionWrap">
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
-        <h2 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontWeight: 800 }}>Hai un sistema che deve durare?</h2>
-        <p className="ctaSub">Raccontami il progetto — rispondo entro 24h.</p>
-        <ContactForm />
+        <motion.h2
+          {...fadeUp(0)}
+          style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontWeight: 800 }}
+        >
+          Hai un sistema che deve durare?
+        </motion.h2>
+        <motion.p className="ctaSub" {...fadeUp(0.1)}>
+          Raccontami il progetto — rispondo entro 24h.
+        </motion.p>
+        <motion.div {...fadeUp(0.2)}>
+          <ContactForm />
+        </motion.div>
       </div>
     </section>
   );

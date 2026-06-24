@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
 import { TimelineItem } from '@/components/ui/TimelineItem';
 
 const timelineItems = [
@@ -36,12 +37,30 @@ const timelineItems = [
   },
 ];
 
+const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+
 export default function ChiSonoSection() {
+  const reduced = useReducedMotion();
+
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: reduced ? 0 : 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: '-60px' },
+    transition: { duration: reduced ? 0.1 : 0.55, ease, delay: reduced ? 0 : delay },
+  });
+
+  const slideLeft = {
+    initial: { opacity: 0, x: reduced ? 0 : -40 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true, margin: '-60px' },
+    transition: { duration: reduced ? 0.1 : 0.65, ease },
+  };
+
   return (
     <section id="chi-sono" className="chiB_section">
       <div className="chiB_container">
 
-        <div className="chiB_visual">
+        <motion.div className="chiB_visual" {...slideLeft}>
           <div className="chiB_photoBox">
             <Image
               src="/michele-profile.webp"
@@ -71,10 +90,10 @@ export default function ChiSonoSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="chiB_story">
-          <header className="chiB_header">
+          <motion.header className="chiB_header" {...fadeUp(0)}>
             <span className="chiB_label">// CHI SONO</span>
             <h2 className="chiB_title">
               Prima il <em>pensiero</em>.<br />
@@ -83,29 +102,27 @@ export default function ChiSonoSection() {
             <p className="chiB_intro">
               Laureato in Ingegneria Informatica. System Architect · Product Engineer · Tech Educator. Lavora su sistemi enterprise in produzione dal 2022.
             </p>
-          </header>
+          </motion.header>
 
           <div className="chiB_timeline">
-            {timelineItems.map((item) => (
-              <TimelineItem
-                key={item.year}
-                year={item.year}
-                title={item.title}
-                text={item.text}
-                variant="chi-sono"
-                highlight={item.highlight}
-              />
+            {timelineItems.map((item, i) => (
+              <motion.div key={item.year} {...fadeUp(i * 0.07)}>
+                <TimelineItem
+                  year={item.year}
+                  title={item.title}
+                  text={item.text}
+                  variant="chi-sono"
+                  highlight={item.highlight}
+                />
+              </motion.div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
-            <a
-              href="#contatto"
-              className="btn-primary"
-            >
+          <motion.div style={{ marginTop: '2rem' }} {...fadeUp(0.35)}>
+            <a href="#contatto" className="btn-primary">
               Parliamo del tuo progetto →
             </a>
-          </div>
+          </motion.div>
         </div>
 
       </div>

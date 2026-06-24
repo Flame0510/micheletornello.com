@@ -1,4 +1,6 @@
 'use client';
+
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLang } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 
@@ -26,6 +28,8 @@ interface StartupProject {
   target: string[];
 }
 
+const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+
 function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 'en' }) {
   return (
     <div className="pGamma_card group">
@@ -35,7 +39,7 @@ function GammaCard({ project, lang }: { project: PortfolioProject; lang: 'it' | 
           STATUS: <span className="pGamma_dot">●</span> LIVE
         </span>
       </header>
-      
+
       <div className="pGamma_content">
         <h3 className="pGamma_title">{project.title}</h3>
         <div className="pGamma_sector">{project.sector[lang]}</div>
@@ -74,7 +78,7 @@ function StartupCard({ project, lang }: { project: StartupProject; lang: 'it' | 
           {project.status}
         </span>
       </header>
-      
+
       <div className="pGamma_content">
         <h3 className="pGamma_title">{project.title}</h3>
         <div className="pGamma_sector" style={{ color: 'var(--color-brand)', fontSize: '0.8rem', letterSpacing: '0.05em' }}>
@@ -100,62 +104,65 @@ function StartupCard({ project, lang }: { project: StartupProject; lang: 'it' | 
 export default function PortfolioSection() {
   const { lang } = useLang();
   const t = translations.portfolio[lang];
+  const reduced = useReducedMotion();
+
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: reduced ? 0 : 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: '-60px' },
+    transition: { duration: reduced ? 0.1 : 0.55, ease, delay: reduced ? 0 : delay },
+  });
 
   return (
     <section id="lavori" className="pGamma_container">
       <div className="pGamma_inner">
-        {/* LIVE PROJECTS */}
-        <header className="pGamma_section_header">
+        <motion.header className="pGamma_section_header" {...fadeUp(0)}>
           <h2 className="pGamma_section_title">
             // {lang === 'it' ? 'portfolio_live' : 'live_portfolio'}
           </h2>
-        </header>
+        </motion.header>
 
         <div className="pGamma_grid">
-          {t.items.map((project: PortfolioProject) => (
-            <GammaCard key={project.id} project={project} lang={lang} />
+          {t.items.map((project: PortfolioProject, i: number) => (
+            <motion.div key={project.id} {...fadeUp(i * 0.1)}>
+              <GammaCard project={project} lang={lang} />
+            </motion.div>
           ))}
         </div>
 
-        {/* SEPARATOR */}
         <div style={{ height: '4rem' }} />
 
-        {/* STARTUP LAB */}
-        <header className="pGamma_section_header">
+        <motion.header className="pGamma_section_header" {...fadeUp(0)}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <h2 className="pGamma_section_title" style={{ color: 'var(--color-brand)' }}>
               {t.startupLab.title}
             </h2>
-            <p style={{ 
-              fontSize: '0.9rem', 
-              color: 'var(--text-muted)',
-              fontFamily: 'var(--font-mono)',
-              opacity: 0.7 
-            }}>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', opacity: 0.7 }}>
               {t.startupLab.subtitle}
             </p>
           </div>
-        </header>
+        </motion.header>
 
         <div className="pGamma_grid">
-          {t.startupLab.items.map((project: StartupProject) => (
-            <StartupCard key={project.id} project={project} lang={lang} />
+          {t.startupLab.items.map((project: StartupProject, i: number) => (
+            <motion.div key={project.id} {...fadeUp(i * 0.1)}>
+              <StartupCard project={project} lang={lang} />
+            </motion.div>
           ))}
         </div>
 
-        {/* GITHUB BANNER */}
-        <div className="pA3_github_banner">
+        <motion.div className="pA3_github_banner" {...fadeUp(0.1)}>
           <div className="pA3_github_text">{t.githubBanner.text}</div>
           <a href="https://github.com/Flame0510" target="_blank" rel="noopener noreferrer" className="pA3_github_link">
             → {t.githubBanner.cta}
           </a>
-        </div>
+        </motion.div>
 
-        <footer className="pA3_summary_footer">
+        <motion.footer className="pA3_summary_footer" {...fadeUp(0.2)}>
           <div className="pA3_summary_text">
             TOTAL OPERATIONS: {t.items.length + t.startupLab.items.length} · SYSTEM STATUS: OPTIMAL
           </div>
-        </footer>
+        </motion.footer>
       </div>
     </section>
   );
