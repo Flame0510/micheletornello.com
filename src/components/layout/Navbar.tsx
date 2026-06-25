@@ -60,6 +60,17 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
   const [altroOpen, setAltroOpen] = useState(false);
+  const altroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (altroRef.current && !altroRef.current.contains(e.target as Node)) {
+        setAltroOpen(false);
+      }
+    };
+    if (altroOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [altroOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -151,17 +162,18 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={isHome ? link.anchor : link.href}
+                  className={active ? '' : 'nav_link_inactive'}
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.72rem',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     fontWeight: active ? 600 : 500,
-                    color: active ? 'var(--accent-primary)' : 'var(--text-muted)',
+                    color: active ? 'var(--accent-primary)' : undefined,
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => !active && ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
-                  onMouseOut={(e) => !active && ((e.target as HTMLElement).style.color = 'var(--text-muted)')}
+                  onMouseOut={(e) => !active && ((e.target as HTMLElement).style.color = '')}
                 >
                   {link.name}
                 </Link>
@@ -169,13 +181,14 @@ const Navbar = () => {
             })}
 
             <div
+              ref={altroRef}
               style={{ position: 'relative' }}
               onMouseEnter={() => setAltroOpen(true)}
-              onMouseLeave={() => setAltroOpen(false)}
             >
               <button
                 aria-haspopup="true"
                 aria-expanded={altroOpen}
+                onClick={() => setAltroOpen(prev => !prev)}
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '0.72rem',

@@ -189,6 +189,7 @@ $wide:          "min-width: 1280px";
   --stat-glass-bg: rgba(17,17,17,0.88);
 
   .hero_pre_title { color: var(--text-primary); }
+  .nav_link_inactive { color: var(--text-primary); }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -281,6 +282,7 @@ main {
 
 /* ── HERO ── */
 .hero_pre_title { color: var(--text-muted); }
+.nav_link_inactive { color: var(--text-muted); }
 
 .hero {
   min-height: 100vh;
