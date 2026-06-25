@@ -42,7 +42,7 @@ export default function HeroSection() {
               style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
               className="flex flex-col"
             >
-              <span style={{ color: 'var(--text-muted)', fontStyle: 'italic', fontWeight: 400 }}>
+              <span className="hero_pre_title" style={{ fontStyle: 'italic', fontWeight: 400 }}>
                 Non costruisco software.
               </span>
               <motion.span

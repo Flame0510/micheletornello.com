@@ -187,6 +187,8 @@ $wide:          "min-width: 1280px";
   --overlay-photo-texture: rgba(5,5,5,0.15);
   --overlay-stats-top: rgba(5,5,5,0.95);
   --stat-glass-bg: rgba(17,17,17,0.88);
+
+  .hero_pre_title { color: var(--text-primary); }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -278,6 +280,8 @@ main {
 }
 
 /* ── HERO ── */
+.hero_pre_title { color: var(--text-muted); }
+
 .hero {
   min-height: 100vh;
   background-image: url('/desk-setup.webp');
