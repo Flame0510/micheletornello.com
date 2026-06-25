@@ -72,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className="scroll-smooth">
+    <html lang="it" className="scroll-smooth" suppressHydrationWarning>
       <head>
         {/* Preload hero LCP background image */}
         <link rel="preload" href="/desk-setup.webp" as="image" fetchPriority="high" />
