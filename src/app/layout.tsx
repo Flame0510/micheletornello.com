@@ -63,6 +63,7 @@ export const metadata: Metadata = {
 
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { CookieConsent } from '@/components/ui/CookieConsent';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({
   children,
@@ -95,6 +96,7 @@ export default function RootLayout({
           <ContactTrigger />
         </LanguageProvider>
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID ?? ''} />
+        <Analytics />
         <CookieConsent />
         <div
           className="fixed inset-0 pointer-events-none"

@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   return (
     <main style={{background:'var(--color-bg)', minHeight:'100vh', padding:'6rem 1.5rem', maxWidth:'800px', margin:'0 auto'}}>
       <p style={{fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem', letterSpacing:'0.15em', color:'var(--color-brand)', marginBottom:'2rem'}}>
-        // LEGAL_DOCS · Ultimo aggiornamento: Marzo 2026
+        // LEGAL_DOCS · Ultimo aggiornamento: Giugno 2026
       </p>
       <h1 style={{fontFamily:'Instrument Serif, serif', fontSize:'clamp(2rem,4vw,3rem)', color:'var(--color-text)', marginBottom:'3rem', lineHeight:1.1}}>
         Privacy &<br/><em style={{color:'var(--color-brand)', fontStyle:'italic'}}>Cookie Policy</em>
@@ -26,7 +26,8 @@ export default function PrivacyPage() {
         <ul style={{paddingLeft:'1.5rem'}}>
           <li><strong style={{color:'var(--color-text)'}}>Form contatti:</strong> nome, email, messaggio — per rispondere alla tua richiesta.</li>
           <li><strong style={{color:'var(--color-text)'}}>Newsletter:</strong> indirizzo email — per inviarti aggiornamenti tecnici (solo previo consenso).</li>
-          <li><strong style={{color:'var(--color-text)'}}>Analytics:</strong> dati di navigazione anonimizzati — solo previo tuo consenso esplicito.</li>
+          <li><strong style={{color:'var(--color-text)'}}>Google Analytics (GA4):</strong> dati di navigazione anonimizzati — solo previo tuo consenso esplicito.</li>
+          <li><strong style={{color:'var(--color-text)'}}>Vercel Analytics:</strong> metriche di navigazione aggregate e anonime (pageview, paese, browser, OS) — senza cookie, senza dati personali identificabili, non richiede consenso.</li>
         </ul>
 
         <h2 style={{fontFamily:'Instrument Serif, serif', color:'var(--color-text)', fontSize:'1.4rem', marginTop:'2.5rem', marginBottom:'1rem'}}>3. Base Giuridica</h2>
@@ -38,7 +39,7 @@ export default function PrivacyPage() {
 
         <h2 style={{fontFamily:'Instrument Serif, serif', color:'var(--color-text)', fontSize:'1.4rem', marginTop:'2.5rem', marginBottom:'1rem'}}>4. Destinatari e Trasferimenti Extra-UE</h2>
         <ul style={{paddingLeft:'1.5rem'}}>
-          <li><strong style={{color:'var(--color-text)'}}>Vercel Inc.</strong> (hosting) — USA, aderisce al DPF EU-US.</li>
+          <li><strong style={{color:'var(--color-text)'}}>Vercel Inc.</strong> (hosting + Vercel Analytics) — USA, aderisce al DPF EU-US.</li>
           <li><strong style={{color:'var(--color-text)'}}>Resend Inc.</strong> (form email) — USA, Clausole Contrattuali Standard (SCC).</li>
           <li><strong style={{color:'var(--color-text)'}}>Beehiiv Inc.</strong> (newsletter) — USA, SCC.</li>
           <li><strong style={{color:'var(--color-text)'}}>Google LLC</strong> (Analytics GA4) — USA, aderisce al DPF EU-US.</li>
@@ -80,11 +81,17 @@ export default function PrivacyPage() {
               <td style={{padding:'0.5rem'}}>ID utente univoco anonimo (Google)</td>
               <td style={{padding:'0.5rem'}}>2 anni</td>
             </tr>
-            <tr>
+            <tr style={{borderBottom:'1px solid rgba(242,237,232,0.05)'}}>
               <td style={{padding:'0.5rem', fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem'}}>_ga_G-6SQB1T42VN</td>
               <td style={{padding:'0.5rem'}}>Analitico (3ª parti)</td>
               <td style={{padding:'0.5rem'}}>Stato sessione GA4 (Google)</td>
               <td style={{padding:'0.5rem'}}>2 anni</td>
+            </tr>
+            <tr>
+              <td style={{padding:'0.5rem', fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem'}}>—</td>
+              <td style={{padding:'0.5rem'}}>Analitico (1ª parte)</td>
+              <td style={{padding:'0.5rem'}}>Vercel Analytics — cookieless, dati aggregati anonimi</td>
+              <td style={{padding:'0.5rem'}}>Nessun cookie</td>
             </tr>
           </tbody>
         </table>
