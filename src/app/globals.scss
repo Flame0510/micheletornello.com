@@ -1478,15 +1478,15 @@ h1 {
 .ck_banner {
   position: fixed; bottom: 1.5rem; right: 1.5rem;
   width: calc(100% - 3rem); max-width: 380px;
-  background: var(--bg-alt); border: 1px solid var(--border);
+  background: var(--bg-card); border: none;
   padding: 1.5rem; z-index: 9999;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  box-shadow: none;
   border-radius: 1rem;
 }
 .ck_banner_header {
   font-family: var(--font-body); font-size: 0.65rem;
   color: var(--accent-primary); letter-spacing: 0.08em; margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem; border-bottom: none;
   font-weight: 600;
 }
 .ck_banner_links { margin-top: 0.75rem; display: flex; gap: 1rem; align-items: center; }
@@ -1496,12 +1496,12 @@ h1 {
 
 .ck_float_btn {
   position: fixed; bottom: 1.5rem; left: 1.5rem;
-  background: var(--bg-alt); border: 1px solid var(--border);
+  background: var(--bg-card); border: none;
   color: var(--text-muted); font-family: var(--font-body);
   padding: 0.4rem 0.7rem; font-size: 0.65rem; z-index: 9998; cursor: pointer;
-  transition: all 0.2s; border-radius: .5rem;
+  transition: background 0.2s, color 0.2s; border-radius: .5rem;
 }
-.ck_float_btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.ck_float_btn:hover { background: var(--card-hover-bg); color: var(--accent-primary); }
 
 .ck_overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.35);
@@ -1510,7 +1510,7 @@ h1 {
 .ck_panel {
   position: fixed; top: 0; right: 0; bottom: 0;
   width: 100%; max-width: 420px;
-  background: var(--bg-alt); border-left: 1px solid var(--border);
+  background: var(--bg-card); border: none;
   z-index: 95; overflow-y: auto;
 }
 .ck_panel_content { padding: 2rem; display: flex; flex-direction: column; min-height: 100%; }
@@ -1519,7 +1519,7 @@ h1 {
 
 .ck_setting_item {
   display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border);
+  gap: 1rem; padding: 1rem 0; border-bottom: none;
 }
 .ck_setting_info { flex: 1; }
 .ck_setting_label { display: block; font-family: var(--font-body); font-size: 0.85rem; color: var(--text-primary); margin-bottom: 0.25rem; font-weight: 500; }
@@ -1528,13 +1528,14 @@ h1 {
 
 .ck_btn {
   padding: 0.5rem 0.9rem; font-family: var(--font-body); font-size: 0.78rem;
-  cursor: pointer; border: 1px solid var(--border);
-  background: transparent; color: var(--text-secondary); transition: all 0.2s; white-space: nowrap; border-radius: .4rem;
+  cursor: pointer; border: none;
+  background: var(--chip-bg); color: var(--text-secondary); transition: background 0.2s; white-space: nowrap; border-radius: .4rem;
 }
-.ck_btn:hover { border-color: var(--text-secondary); }
-.ck_btn_primary { border-color: var(--accent-primary); color: var(--accent-primary); }
-.ck_btn_primary:hover { background: var(--accent-primary); color: var(--text-white); }
-.ck_btn_ghost { border-color: transparent; opacity: 0.5; }
+.ck_btn:hover { background: var(--card-hover-bg); }
+.ck_btn_primary { background: var(--accent-primary); color: var(--bg-base); }
+.ck_btn_primary:hover { background: var(--accent-primary-dark); color: var(--bg-base); }
+.ck_btn_ghost { background: transparent; opacity: 0.5; }
+.ck_btn_ghost:hover { background: var(--chip-bg); opacity: 0.8; }
 .ck_btn_ghost:hover { opacity: 0.8; }
 .ck_btn_full { display: block; width: 100%; text-align: center; }
 
