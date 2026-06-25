@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../ui/Logo';
+import ThemeToggle from '../ui/ThemeToggle';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -264,21 +265,28 @@ const Navbar = () => {
             </div>
           </nav>
 
-          <button 
-            className="lg:hidden focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] focus-visible:outline-none rounded p-3 -mr-3"
-            style={{ color: 'var(--text-primary)' }}
-            ref={openBtnRef}
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Apri menu"
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-          >
+          <div className="hidden lg:flex items-center">
+            <ThemeToggle />
+          </div>
+
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] focus-visible:outline-none rounded p-3 -mr-3"
+              style={{ color: 'var(--text-primary)' }}
+              ref={openBtnRef}
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Apri menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
-          </button>
+            </button>
+          </div>
         </div>
       </header>
 

@@ -28,6 +28,7 @@ export default function PrivacyPage() {
           <li><strong style={{color:'var(--color-text)'}}>Newsletter:</strong> indirizzo email — per inviarti aggiornamenti tecnici (solo previo consenso).</li>
           <li><strong style={{color:'var(--color-text)'}}>Google Analytics (GA4):</strong> dati di navigazione anonimizzati — solo previo tuo consenso esplicito.</li>
           <li><strong style={{color:'var(--color-text)'}}>Vercel Analytics:</strong> metriche di navigazione aggregate e anonime (pageview, paese, browser, OS) — senza cookie, senza dati personali identificabili, non richiede consenso.</li>
+          <li><strong style={{color:'var(--color-text)'}}>Vercel Speed Insights:</strong> metriche di performance reale (Core Web Vitals: LCP, CLS, FID) raccolte in forma anonima e aggregata — senza cookie, senza dati personali identificabili, non richiede consenso.</li>
         </ul>
 
         <h2 style={{fontFamily:'Instrument Serif, serif', color:'var(--color-text)', fontSize:'1.4rem', marginTop:'2.5rem', marginBottom:'1rem'}}>3. Base Giuridica</h2>
@@ -87,10 +88,16 @@ export default function PrivacyPage() {
               <td style={{padding:'0.5rem'}}>Stato sessione GA4 (Google)</td>
               <td style={{padding:'0.5rem'}}>2 anni</td>
             </tr>
-            <tr>
+            <tr style={{borderBottom:'1px solid rgba(242,237,232,0.05)'}}>
               <td style={{padding:'0.5rem', fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem'}}>—</td>
               <td style={{padding:'0.5rem'}}>Analitico (1ª parte)</td>
               <td style={{padding:'0.5rem'}}>Vercel Analytics — cookieless, dati aggregati anonimi</td>
+              <td style={{padding:'0.5rem'}}>Nessun cookie</td>
+            </tr>
+            <tr>
+              <td style={{padding:'0.5rem', fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem'}}>—</td>
+              <td style={{padding:'0.5rem'}}>Performance (1ª parte)</td>
+              <td style={{padding:'0.5rem'}}>Vercel Speed Insights — Core Web Vitals anonimi</td>
               <td style={{padding:'0.5rem'}}>Nessun cookie</td>
             </tr>
           </tbody>

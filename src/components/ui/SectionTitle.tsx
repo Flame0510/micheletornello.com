@@ -19,11 +19,12 @@ export const SectionTitle = ({ title, subtitle, prefix, className = '', hideLine
     )}
     {!hideLine && <RevealLine />}
     <motion.h2
-      className="font-display text-text-main mb-4"
+      className="font-display mb-4"
       style={{
         fontSize: "clamp(2rem, 4vw, 3.5rem)",
         letterSpacing: "-0.02em",
         lineHeight: 1.0,
+        color: "var(--text-primary)",
       }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +35,8 @@ export const SectionTitle = ({ title, subtitle, prefix, className = '', hideLine
     </motion.h2>
     {subtitle && (
       <motion.p
-        className="text-text-muted text-lg leading-relaxed max-w-2xl"
+        className="text-lg leading-relaxed max-w-2xl"
+        style={{ color: "var(--text-muted)" }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0 }}

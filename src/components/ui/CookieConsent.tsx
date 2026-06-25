@@ -57,8 +57,8 @@ export const CookieConsent = () => {
           >
             <div className="ck_banner_header">Cookie & Privacy</div>
             <p className="ck_text">
-              Utilizziamo cookie tecnici e analitici (GA4) per migliorare l&apos;esperienza.<br/>
-              Scegli cosa attivare.
+              Utilizziamo cookie tecnici e, previo consenso, Google Analytics (GA4).<br/>
+              Vercel Analytics e Speed Insights sono sempre attivi ma cookieless e anonimi.
             </p>
             <div className="ck_actions">
               <button onClick={acceptAll} className="ck_btn ck_btn_primary">Accetta tutti</button>

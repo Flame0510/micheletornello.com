@@ -124,7 +124,7 @@ export default function PortfolioSection() {
 
         <div className="pGamma_grid">
           {t.items.map((project: PortfolioProject, i: number) => (
-            <motion.div key={project.id} {...fadeUp(i * 0.1)}>
+            <motion.div key={project.id} {...fadeUp(i * 0.1)} style={{ height: '100%' }}>
               <GammaCard project={project} lang={lang} />
             </motion.div>
           ))}
@@ -145,7 +145,7 @@ export default function PortfolioSection() {
 
         <div className="pGamma_grid">
           {t.startupLab.items.map((project: StartupProject, i: number) => (
-            <motion.div key={project.id} {...fadeUp(i * 0.1)}>
+            <motion.div key={project.id} {...fadeUp(i * 0.1)} style={{ height: '100%' }}>
               <StartupCard project={project} lang={lang} />
             </motion.div>
           ))}
