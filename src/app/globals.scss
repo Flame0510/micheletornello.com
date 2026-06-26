@@ -125,7 +125,7 @@ $wide:          "min-width: 1280px";
 
   /* Override @theme static tokens so Tailwind utility classes (text-text-main etc.) adapt */
   --color-text-main: #F0EDE6;
-  --color-text-muted: #7A7570;
+  --color-text-muted: #B0AAA4;
   --color-text-secondary: #B8B3A9;
   --color-background: #050505;
   --color-surface: #111111;
@@ -139,7 +139,7 @@ $wide:          "min-width: 1280px";
   --bg-card: #111111;
   --text-primary: #F0EDE6;
   --text-secondary: #B8B3A9;
-  --text-muted: #7A7570;
+  --text-muted: #B0AAA4;
   --accent-primary: #3B82F6;
   --accent-primary-subtle: rgba(59,130,246,0.12);
   --bg-nav-scrolled: rgba(5,5,5,0.92);
@@ -169,7 +169,7 @@ $wide:          "min-width: 1280px";
   --color-text-40: rgba(240,237,230,0.40);
   --color-text-55: rgba(240,237,230,0.55);
   --color-text-70: rgba(240,237,230,0.70);
-  --color-muted: #7A7570;
+  --color-muted: #B0AAA4;
   --color-muted-dark: #B8B3A9;
 
   --border-brand: 1px solid rgba(59,130,246,0.45);
@@ -190,6 +190,8 @@ $wide:          "min-width: 1280px";
 
   .hero_pre_title { color: var(--text-primary); }
   .nav_link_inactive { color: var(--text-primary); }
+  .entG_firma { opacity: 0.75; }
+  .credStrip_divider { opacity: 0.6; }
 }
 
 @media (prefers-color-scheme: dark) {
